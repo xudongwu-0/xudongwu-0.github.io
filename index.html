@@ -1,27 +1,37 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html>
     <head>
-    <meta name="google-site-verification" content="eoPCGBBxDIK0Ff9Dk_dXsuHMTNzzSEZMbsfO4zriBK8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="shortcut icon" href="./images/logo.png">
-    <meta name="keywords" content="吴煦东, Xudong Wu, 吴煦东, Xudong Wu, 大连理工大学, DLUT, 爱丁堡大学, University of Edinburgh, UOE, Statistics, Data science, Machine Learning">
-    <meta name="description" content="Xudong Wu&#39;s Home Page">
-    <link rel="stylesheet" href="jemdoc.css" type="text/css">
-    <title>Xudong Wu | 吴煦东</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" href="./images/wuxudong.ico">
+        <meta name="keywords" content="吴煦东, Xudong Wu, 香港大学, University of Hong Kong, Statistics, Data Science, Machine Learning">
+        <meta name="description" content="Xudong Wu's Home Page">
+        <link rel="stylesheet" href="jemdoc.css" type="text/css">
+        <title>Xudong Wu | 吴煦东</title>
     </head>
 
-<body>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-    <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="shortcut icon" href="./images/wuxudong.ico">
-    <meta name="keywords" content="吴煦东, Xudong Wu, 吴煦东, Xudong Wu, 大连理工大学, DLUT，爱丁堡大学, University of Edinburgh, UOE, Statistics, Data science, Machine Learning">
-    <meta name="description" content="Xudong Wu&#39;s Home Page">
-    <link rel="stylesheet" href="jemdoc.css" type="text/css">
-    <title>Xudong Wu | 吴煦东</title>
-    </head>
+	<p id="academic-welcome" style="text-align: center; font-size: 18px; font-weight: bold;"></p>
+
+	<script>
+		fetch("https://ipapi.co/json/")
+			.then(response => response.json())
+			.then(data => {
+				var org = data.org || "unknown";
+				var academicInstitutes = ["University", "Institute", "College", "Academy", "Research", "Lab"];
+	
+				// 判断是否是学术机构
+				var isAcademic = academicInstitutes.some(keyword => org.includes(keyword));
+	
+				// 显示欢迎信息
+				if (isAcademic) {
+					document.getElementById("academic-welcome").innerHTML = `🎓 Welcome, researcher from ${org}!`;
+				} else {
+					document.getElementById("academic-welcome").innerHTML = "🔬 Welcome to my academic homepage!";
+				}
+			})
+			.catch(error => console.log("Error fetching organization data:", error));
+	</script>
+	
 
 <body>
 <table>
@@ -33,31 +43,31 @@
 					<h1 style="color:#FF0000">吴煦东</h1>
 				</div>
 
-				<h3>BSc Hons in Mathematics and Statistics </h3>
-				</h3>@ <a href="https://www.ed.ac.uk/" target="_blank">University of Edinburgh</a></h3>
-				<h3>BSc in Information and Computing Sciences </h3>
-				</h3>@ <a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a></h3>
-				<br>
-				<br>
-					Email1: X.Wu-97 at sms dot ed dot ac dot uk(primary)  <br>
-					Email1: 2373025856w at gmail dot com <br>
-				</p>
-			</p>
-<p> 
-    <span style="margin-left: 10px;">Click icons to download my CV, Transcript for DUT, Transcript for UoE and Mathematics and Coding background .</span>	<br>
-    <a href="files/CV.pdf"><img src="./images/cv2.png" height="40px" style="margin-bottom:-3px"></a>
-    <a href="files/Transcript for Dalian University of Technology.pdf"><img src="./images/Transcript.png" height="40px" style="margin-bottom:-3px"></a>
-    <a href="files/Transcript for University of Edinburgh.pdf"><img src="./images/Transcript.png" height="40px" style="margin-bottom:-3px"></a>
-    <a href="files/math and coding background.pdf"><img src="./images/bg.png" height="40px" style="margin-bottom:-3px"></a>
-	<br>
-    <a href="#C1">[<font size="3" color="#CB4335"><b>About Me</b></font>]</a>
-    <a href="#edu">[<font size="3" color="#CB4335"><b>Education</b></font>]</a>
-    <a href="#C3">[<font size="3" color="#CB4335"><b>Research Experience</b></font>]</a><br>
-    <a href="#C4">[<font size="3" color="#CB4335"><b>Key Academic Scores</b></font>]</a>
-    <a href="#C5">[<font size="3" color="#CB4335"><b>Honors and Awards</b></font>]</a>
-</p>
+				<h4>Incoming PhD in Reinforcement Learning @ <a href="https://www.hku.hk/" target="_blank">University of Hong Kong</a> (Fall 2025)</h4>
+				<h4>BSc Hons in Mathematics and Statistics @ <a href="https://www.ed.ac.uk/" target="_blank">University of Edinburgh</a></h4>
+				<h4>BSc in Information and Computing Sciences @ <a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a></h4>
 
+				
+				<br>
+				<b>Email:</b> X.Wu-97 [at] sms.ed.ac.uk (Primary) | xudongwu02 [at] gmail.com
+				<br><br>
+
+				<p style="margin-top: 10px;">
+					<a href="files/CV.pdf" download style="font-weight: bold; text-decoration: underline; color: #CB4335;">
+						[Download CV]
+					</a>
+				</p>
+				
+
+				<p>
+					<a href="#aboutme"><b>About Me</b></a> |
+					<a href="#edu"><b>Education</b></a> |
+					<a href="#research"><b>Research</b></a> |
+					<a href="#academicbackground"><b>Academic background</b></a> |
+					<a href="#honors"><b>Honors</b></a> 
+				</p>
 			</td>
+
 			<td>
 				<img src="./images/wuxudong.jpg" border="0" width="230"><br>
 			</td>
@@ -66,6 +76,7 @@
 </table>
 </body>
 </html>
+
 
 <!--<style>-->
 <!--ul-->
@@ -84,44 +95,69 @@
 
 <!--   #0F73B6-->
 
-<h2><a id="C1" ><font color="#CB4335">About Me</font></a></h2>
+<h2><a id="aboutme" ><font color="#CB4335">About Me</font></a></h2>
 <div style="text-align: center;">
+	<a href="https://www.hku.hk/"><img src="./images/HKU.jpg" height="100px" style="margin-bottom:-3px"></a>&nbsp &nbsp &nbsp
     <a href="https://www.ed.ac.uk/"><img src="./images/edinburgh.png" height="100px" style="margin-bottom:-3px"></a>&nbsp &nbsp &nbsp
     <a href="https://www.dlut.edu.cn/"><img src="./images/DUT.jpg" height="100px" style="margin-bottom:-3px"></a>
 </div>
 
 <br>
 <p>
-    I am a Year 3 undergraduate student majoring in Mathematics and Statistics at <a href="https://www.ed.ac.uk/">University of Edinburgh</a> . My research interests lie in statistics, and machine learning. I am particularly interested in the application of these fields to solve real-world problems.My current average score is 77, and I am on track to achieve a first-class degree.
+    I am an incoming Ph.D. student (Fall 2025) at 
+    <a href="https://www.hku.hk/" target="_blank">The University of Hong Kong (HKU)</a>, 
+    where I will be working on theoretical and algorithmic advancements in 
+    <strong>reinforcement learning (RL), bandit algorithms, policy optimization, and multi-agent systems</strong>. 
+    My research focuses on the mathematical foundations and computational methodologies for sequential decision-making, 
+    with applications in AI and large-scale learning systems.
 </p>
+
 <p>
-    Before that, I spent two years during my undergraduate studies at <a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a>, studying Information and Computational Science. During my time there, I developed a strong foundation in mathematical modeling and computational methods. My average score of the two year is 89, and rank top 5%.</p>
+    I am currently completing my undergraduate studies in Mathematics and Statistics at 
+    <a href="https://www.ed.ac.uk/">The University of Edinburgh</a>. 
+    My academic background includes statistical learning theory, optimization, and applied probability, 
+    with a strong focus on machine learning methodologies. 
+    I am on track to achieve a first-class degree.
+</p>
+
 <p>
-    My current research focuses include:
+    Prior to this, I studied Information and Computational Science at 
+    <a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a>, 
+    where I built a strong foundation in mathematical modeling, computational methods, and probability theory. 
+    My academic performance placed me in the <strong>top 5%</strong> of my cohort, with an average score of 89.
+</p>
+
+<p>
+    My current research interests build upon my previous experience in statistical modeling, Bayesian inference, 
+    and machine learning frameworks. I am particularly interested in:
     <ul>
-        <li>Statistical methodologies and their applications in AI</li>
-        <li>Data analysis and interpretation using statistical tools</li>
-        <li>Application of AI and statistics in various fields such as healthcare and finance</li>
+        <li>Reinforcement learning (RL) and its theoretical foundations</li>
+        <li>Bandit algorithms, policy gradient methods, and RLHF (Reinforcement Learning from Human Feedback)</li>
+        <li>Multi-agent systems and sequential decision-making, inspired by my work on 
+            <strong>simulation-based inference</strong> and <strong>decision processes in stochastic models</strong></li>
+        <li>Optimization and statistical learning for AI-driven decision processes, building on my experience 
+            in <strong>Bayesian parameter estimation</strong> and <strong>machine learning workflow optimization</strong></li>
     </ul>
 </p>
+
 </p>
 
 
-
-<h2><a id="edu" ><font color="#CB4335">Education</font></a></h2>
+<h2><a id="edu"><font color="#CB4335">Education</font></a></h2>
 <table>
 	<tbody>
 		<tr>
 			<td width="800">
-			<h4>University of Edinburgh, Edinburgh, UK (Sep. 2023 - Present)</h4>
-			<ul>
-				<li>
-				<b>BSc (Hons) in Mathematics and Statistics</b></li>
-				<li>Average score: 77/100</li>
-			</ul>
+				<h4><a href="https://www.hku.hk/" target="_blank">The University of Hong Kong (HKU)</a>, Hong Kong SAR (Starting Sep. 2025)</h4>
+				<ul>
+					<li><b>Ph.D. in Reinforcement Learning and Optimization</b></li>
+					<li>Research areas: Theoretical RL, bandit algorithms, policy gradient algorithms, and RLHF</li>
+				</ul>
 			</td>
 			<td>
-				<img id="school_logo" src="./images/edinburgh.png" height="100px">
+				<a href="https://www.hku.hk/" target="_blank">
+					<img id="school_logo" src="./images/HKU.jpg" height="100px">
+				</a>
 			</td>
 		</tr>
 		<tr></tr>
@@ -132,15 +168,36 @@
 	<tbody>
 		<tr>
 			<td width="800">
-			<h4>Dalian University of Technology, Dalian, China (Sep. 2021 - Jun. 2023)</h4>
-			<ul>
-				<li>
-				<b>BSc in Information and Computing Science</b></li>
-				<li>Average score: 89/100, Rank: 10/195</li>
-			</ul>
+				<h4><a href="https://www.ed.ac.uk/" target="_blank">University of Edinburgh</a>, Edinburgh, UK (Sep. 2023 – Present)</h4>
+				<ul>
+					<li><b>BSc (Hons) in Mathematics and Statistics</b></li>
+					<li>First-Class Honours (Equivalent to 4.0/4.0 GPA)</li>
+				</ul>
 			</td>
 			<td>
-				<img id="school_logo" src="./images/DUT.jpg" height="100px">
+				<a href="https://www.ed.ac.uk/" target="_blank">
+					<img id="school_logo" src="./images/edinburgh.png" height="100px">
+				</a>
+			</td>
+		</tr>
+		<tr></tr>
+	</tbody>
+</table>
+
+<table>
+	<tbody>
+		<tr>
+			<td width="800">
+				<h4><a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a>, Dalian, China (Sep. 2021 – Jun. 2023)</h4>
+				<ul>
+					<li><b>BSc in Information and Computing Science</b></li>
+					<li>Average score: 89.2/100, Rank: 10/195</li>
+				</ul>
+			</td>
+			<td>
+				<a href="https://www.dlut.edu.cn/" target="_blank">
+					<img id="school_logo" src="./images/DUT.jpg" height="100px">
+				</a>
 			</td>
 		</tr>
 		<tr></tr>
@@ -148,52 +205,117 @@
 </table>
 
 
-<h2><a id="C3" ><font color="#CB4335">Research Experience</font></a></h2>
+
+<h2><a id="research"><font color="#CB4335">Research Experience</font></a></h2>
 
 <table>
 	<tbody>
 		<tr>
 			<td width="800">
-				<h4>UC Irvine, Irvine, CA, USA (June 2024 - Present) </h4>
+				<h4><a href="https://www.ed.ac.uk/" target="_blank">University of Edinburgh</a>, Edinburgh, UK (Jan. 18, 2025 - Present)</h4>
+				<ul>
+					<li>Position: Research Collaborator</li>
+					<li>Project: Self-Rewarding Model Replication & Qwen-7B Fine-Tuning</li>
+					<li>Research Focus:
+						<ul>
+							<li>Replicating the self-rewarding mechanism in reinforcement learning from human feedback (RLHF)</li>
+							<li>Fine-tuning the Qwen-7B model on an expert consultation database to enhance task-specific reasoning</li>
+							<li>Evaluating model performance across multiple NLP benchmarks (e.g., MMLU, TruthfulQA, GSM8K)</li>
+							<li>Exploring reward modeling techniques to improve alignment and generalization in large-scale language models</li>
+							<li>Investigating the trade-offs between self-generated rewards and human-labeled rewards in fine-tuning</li>
+						</ul>
+					</li>
+				</ul>
+			</td>
+			<td>
+				<a href="https://www.ed.ac.uk/" target="_blank">
+					<img id="school_logo" src="./images/edinburgh.png" height="100px">
+				</a>
+			</td>
+		</tr>
+		<tr></tr>
+	</tbody>
+</table>
+
+
+<table>
+	<tbody>
+		<tr>
+			<td width="800">
+				<h4><a href="https://www.ed.ac.uk/" target="_blank">University of Edinburgh</a>, Edinburgh, UK (Aug. 2024 - May 2025)</h4>
+				<ul>
+					<li>Position: Honours Dissertation / Final Year Project</li>
+					<li>Supervisor: Dr. Amanda Lenzi</li>
+					<li>Research Focus:
+						<ul>
+							<li>Comparative analysis of simulation-based inference (SBI) algorithms</li>
+							<li>Evaluating neural network-based Bayesian parameter estimation in stochastic models</li>
+							<li>Applying amortized inference methods to reinforcement learning settings</li>
+							<li>Using Bayesian neural networks to improve sample efficiency in sequential decision-making</li>
+						</ul>
+					</li>
+				</ul>
+			</td>
+			<td>
+				<a href="https://www.ed.ac.uk/" target="_blank">
+					<img id="school_logo" src="./images/edinburgh.png" height="100px">
+				</a>
+			</td>
+		</tr>
+		<tr></tr>
+	</tbody>
+</table>
+
+<table>
+	<tbody>
+		<tr>
+			<td width="800">
+				<h4><a href="https://www.uci.edu/" target="_blank">University of California, Irvine</a>, USA (June 2024 - Sep. 2024)</h4>
 				<ul>
 					<li>Position: Summer Research Assistant</li>
-					<li>Supervisor: Prof. Chen Li</li>
+					<li>Supervisor: Prof. Chen Li (IEEE Fellow)</li>
 					<li>Project: Optimizing Texera, a machine learning-based data analysis workflow platform</li>
 					<li>Responsibilities:
 						<ul>
-							<li>Enabling Texera to output PDF reports</li>
-							<li>Developing the Storyteller AI for workflow data analysis and comprehensive report generation</li>
-							<li>Enhancing data cleaning and data analysis components to support visualization</li>
+							<li>Integrated AI-driven automation for workflow optimization, enabling seamless machine learning pipeline execution</li>
+							<li>Developed an automated report generation system that converts data analysis workflows into structured insights</li>
+							<li>Enhanced Texera’s data cleaning and visualization capabilities to improve model interpretability</li>
 						</ul>
 					</li>
 				</ul>
 			</td>
 			<td>
-				<img id="school_logo" src="./images/UCI.jpg" height="100px">
+				<a href="https://www.uci.edu/" target="_blank">
+					<img id="school_logo" src="./images/UCI.jpg" height="100px">
+				</a>
 			</td>
 		</tr>
 		<tr></tr>
 	</tbody>
 </table>
 
+
+
 <table>
 	<tbody>
 		<tr>
 			<td width="800">
-				<h4>University of Edinburgh, Edinburgh, UK (March 2024 - June 2024) </h4>
+				<h4><a href="https://www.ed.ac.uk/" target="_blank">University of Edinburgh</a>, Edinburgh, UK (Feb. 2024 - May 2024)</h4>
 				<ul>
-					<li>Position: Project in Applied Statistics</li>
-					<li>Responsibilities:
+					<li>Position: Research Assistant in Uncertainty Economics</li>
+					<li>Research Focus:
 						<ul>
-							<li>Estimation of 3D printer materials using R language</li>
-							<li>Evaluation of different prior functions on the results</li>
-							<li>Parameter estimation using Bayesian statistics with the most reasonable prior function</li>
+							<li>Analyzed the economic impact of uncertainty during the COVID-19 pandemic using stochastic models</li>
+							<li>Implemented Monte Carlo simulations and Bayesian inference techniques for probabilistic estimation</li>
+							<li>Developed computational tools for visualizing uncertainty in economic forecasting</li>
 						</ul>
 					</li>
 				</ul>
 			</td>
 			<td>
-				<img id="school_logo" src="./images/edinburgh.png" height="100px">
+				<a href="https://www.ed.ac.uk/" target="_blank">
+					<img id="school_logo" src="./images/edinburgh.png" height="100px">
+				</a>
 			</td>
 		</tr>
 		<tr></tr>
@@ -204,76 +326,147 @@
 	<tbody>
 		<tr>
 			<td width="800">
-				<h4>Dalian University of Technology, Dalian, China (December 2022) </h4>
+				<h4><a href="https://www.ed.ac.uk/" target="_blank">University of Edinburgh</a>, Edinburgh, UK (Sep. 2023 - Dec. 2023)</h4>
 				<ul>
-					<li>Position: Project in Mathematical Modeling and Literature Search</li>
-					<li>Responsibilities:
+					<li>Position: Project Leader in Differential Equations</li>
+					<li>Research Focus:
 						<ul>
-							<li>Led a team project in mathematical modeling</li>
-							<li>Focused on the predictive ability of population models in different regions</li>
-							<li>Enhanced the model's predictive accuracy by adding new parameters such as fertility intentions of women of different age groups</li>
+							<li>Developed a system of ordinary differential equations (ODEs) to model bacterial infections and antibiotic treatments</li>
+							<li>Used Fourier series analysis and Laplace transforms to predict bacterial resistance patterns</li>
+							<li>Optimized drug treatment schedules using numerical simulations</li>
 						</ul>
 					</li>
 				</ul>
 			</td>
 			<td>
-				<img id="school_logo" src="./images/DUT.jpg" height="100px">
+				<a href="https://www.ed.ac.uk/" target="_blank">
+					<img id="school_logo" src="./images/edinburgh.png" height="100px">
+				</a>
 			</td>
 		</tr>
 		<tr></tr>
 	</tbody>
 </table>
 
-<h2><a id="C4" ><font color="#CB4335">Key Academic Scores</font></h2>
 <table>
 	<tbody>
 		<tr>
 			<td width="800">
-				<h4>University of Edinburgh, Edinburgh, UK (Sep. 2023 - Jun. 2024)</h4>
+				<h4><a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a>, Dalian, China (Dec. 2022)</h4>
 				<ul>
-					<li>Numerical Ordinary Differential Equations and Applications: 98/100 - Focused on numerical methods for ODEs, with applications in physics and epidemiology using Python. Emphasised consistency, stability, and convergence of methods.</li>
-					<li>Honours Complex Variables: 85/100 - An advanced honour lecture, covered holomorphic functions, and conformal mappings. Included rigorous study of integration and differentiation of complex functions and advanced topics behind it.</li>
-					<li>Financial Mathematics: 82/100 - Introduced financial markets, derivative instruments, and no-arbitrage pricing. Included stochastic analysis, Ito calculus, and the Black-Scholes model.</li>
+					<li>Position: Research Project in Mathematical Modeling</li>
+					<li>Research Focus:
+						<ul>
+							<li>Developed a population dynamics model incorporating fertility rate adjustments</li>
+							<li>Improved predictive accuracy by incorporating age-stratified birth rate variations</li>
+							<li>Performed parameter sensitivity analysis to optimize demographic forecasting</li>
+						</ul>
+					</li>
 				</ul>
 			</td>
 			<td>
-				<img id="school_logo" src="./images/edinburgh.png" height="100px">
+				<a href="https://www.dlut.edu.cn/" target="_blank">
+					<img id="school_logo" src="./images/DUT.jpg" height="100px">
+				</a>
 			</td>
 		</tr>
+		<tr></tr>
+	</tbody>
+</table>
+
+
+<h2><a id="academicbackground"><font color="#CB4335">Academic Background</font></a></h2>
+<table>
+	<tbody>
 		<tr>
 			<td width="800">
-				<h4>Dalian University of Technology, Dalian, China (Sep. 2021 - Jun. 2023)</h4>
+				<h4><a href="https://www.ed.ac.uk/" target="_blank">University of Edinburgh</a>, Edinburgh, UK (Sep. 2023 - Present)</h4>
 				<ul>
-					<li>Mathematical Modeling and Literature Search: 96/100 - Demonstrated strong capabilities in mathematical problem-solving and research methodologies.</li>
-					<li>Complex function theory: 92/100 - Consistently high performance in complex mathematical theories.</li>
-					<li>Ordinary Differential Equation: 99/100 - Achieved near-perfect score, showcasing analytical proficiency in differential equations.</li>
-					<li>Number Theory: 98/100 - Excelled in understanding and applying complex number theory concepts.</li>
+					<li><b>BSc in Mathematics and Statistics, First-Class Honours (Expected)</b></li>
+					<li><b>Mathematical & Optimization Courses:</b>
+						<ul>
+							<li>Numerical Ordinary Differential Equations – Stability & convergence analysis, applied to RL optimization</li>
+							<li>Honours Differential Equations – Applied in stochastic dynamic programming & Bellman equations</li>
+							<li>Honours Complex Variables – Conformal mapping & contour integration, useful for stochastic control</li>
+							<li>Honours Analysis – Functional analysis and variational methods, applicable to policy optimization</li>
+						</ul>
+					</li>
+					<li><b>Statistics & Probabilistic Modelling:</b>
+						<ul>
+							<li>Financial Mathematics – Stochastic processes, Ito calculus, and Black-Scholes model</li>
+							<li>Stochastic Modelling – Markov chains, Poisson processes, Brownian motion, key concepts for RL</li>
+							<li>Statistical Computing – Monte Carlo methods, MCMC, and Bayesian inference</li>
+							<li>Statistical Methodology – Hypothesis testing, regression, and statistical decision theory</li>
+						</ul>
+					</li>
+					<li><b>Programming & Computational Methods:</b>
+						<ul>
+							<li>Applied Statistics – Hands-on experience with real-world data, Bayesian updating in ML</li>
+							<li>Python, C++, MATLAB – Numerical computing, algorithm development for RL applications</li>
+						</ul>
+					</li>
 				</ul>
 			</td>
 			<td>
-				<img id="school_logo" src="./images/DUT.jpg" height="100px">
+				<a href="https://www.ed.ac.uk/" target="_blank">
+					<img id="school_logo" src="./images/edinburgh.png" height="100px">
+				</a>
+			</td>
+		</tr>
+
+		<tr>
+			<td width="800">
+				<h4><a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a>, Dalian, China (Sep. 2021 - Jun. 2023)</h4>
+				<ul>
+					<li><b>BSc in Information and Computing Science, GPA: 3.92/4.0 (Top 5%)</b></li>
+					<li><b>Mathematical & Theoretical Foundations:</b>
+						<ul>
+							<li>Mathematical Analysis (1-3) – Real & complex analysis, measure theory fundamentals</li>
+							<li>Ordinary Differential Equations – Theoretical and numerical solutions to dynamic systems</li>
+							<li>Abstract Algebra – Group theory, rings, and fields, applicable in cryptography & optimization</li>
+							<li>Complex Function Theory – Applications in function approximation & conformal mapping</li>
+						</ul>
+					</li>
+					<li><b>Probability & Statistical Modelling:</b>
+						<ul>
+							<li>Probability & Mathematical Statistics – Statistical inference, Bayesian learning, decision theory</li>
+							<li>Real Analysis – Measure theory and Lebesgue integration, foundation for stochastic processes</li>
+						</ul>
+					</li>
+					<li><b>Computational & Algorithmic Skills:</b>
+						<ul>
+							<li>C++ Programming – Algorithm design, object-oriented programming</li>
+							<li>Python Programming – Data structures, numerical computation, scientific computing</li>
+							<li>Mathematical Modelling – Applied techniques in RL-based decision-making and optimization</li>
+						</ul>
+					</li>
+				</ul>
+			</td>
+			<td>
+				<a href="https://www.dlut.edu.cn/" target="_blank">
+					<img id="school_logo" src="./images/DUT.jpg" height="100px">
+				</a>
 			</td>
 		</tr>
 	</tbody>
 </table>
 
-<h2><a id="C5" ><font color="#CB4335">Honors and Awards</font></h2>
+
+<h2><a id="honors"><font color="#CB4335">Honors and Awards</font></a></h2>
 <table>
 	<tbody>
 		<tr>
 			<td width="800">
 				<ul>
-					<li>September 2022 - June 2023: <b>First-Class Scholarship</b> </li>
-					<li>September 2022 - June 2023: <b>Elite Student</b> </li>
-					<li>September 2022 - June 2023: <b>Excellent League Secretary</b></li>
-					<li>September 2022 - June 2023: <b>Dual Degree Student Scholarship</b> (University of Edinburgh)</li>
-					<li>September 2022 - June 2023: <b>International Study Scholarship</b> </li>
-					<li>September 2021 - June 2022: <b>Second-Class Scholarship</b> </li>
-					<li>September 2021 - June 2022: <b>Elite Student</b> </li>
+					<li><b>First-Class Scholarship</b> - Dalian University of Technology, 2022-2023 (Top 5%)</li>
+					<li><b>Dual Degree Student Scholarship</b> - University of Edinburgh, 2022-2023</li>
+					<li><b>International Study Scholarship</b> - Dalian University of Technology, 2022-2023</li>
 				</ul>
 			</td>
 			<td>
-				<img id="school_logo" src="./images/DUT.jpg" height="100px"><br>
+				<a href="https://www.dlut.edu.cn/" target="_blank">
+					<img id="school_logo" src="./images/DUT.jpg" height="100px">
+				</a>
 			</td>
 		</tr>
 	</tbody>
@@ -281,8 +474,8 @@
 
 
 
-<p align="center"><font color="#999999">Last update: Jul. 8, 2024</font></p>
 
+<p align="center"><font color="#999999">Last update: 18 Feb 2025</font></p
 
 
 </body>
