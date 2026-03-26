@@ -1,0 +1,37 @@
+---
+layout: default
+title: Blog
+---
+
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2 class="section-title">Blog</h2>
+      <p class="section-subtitle">Thoughts on research, machine learning, and academic life.</p>
+    </div>
+
+    <div class="blog-list fade-in">
+      {% for post in site.posts %}
+      <article class="blog-card">
+        <span class="blog-card-date">{{ post.date | date: "%B %d, %Y" }}</span>
+        <h3 class="blog-card-title">
+          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h3>
+        {% if post.excerpt %}
+        <p class="blog-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+        {% endif %}
+        <a href="{{ post.url | prepend: site.baseurl }}" class="blog-card-readmore">
+          Read more <i class="fas fa-arrow-right"></i>
+        </a>
+      </article>
+      {% endfor %}
+
+      {% if site.posts.size == 0 %}
+      <div style="text-align: center; padding: 3rem 0; color: var(--text-muted);">
+        <i class="fas fa-pen-nib" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+        <p>Posts coming soon. Stay tuned!</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

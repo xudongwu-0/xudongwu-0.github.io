@@ -1,467 +1,224 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="shortcut icon" href="./images/wuxudong.ico">
-        <meta name="keywords" content="吴煦东, Xudong Wu, 香港大学, The University of Hong Kong, Statistics, Data Science, Machine Learning">
-        <meta name="description" content="Xudong Wu's Home Page">
-        <link rel="stylesheet" href="jemdoc.css" type="text/css">
-        <title>Xudong Wu | 吴煦东</title>
-    </head>
+---
+layout: default
+title: Home
+---
 
+<!-- ===== HERO / ABOUT ===== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-info">
+        <h1 class="hero-name">Xudong Wu</h1>
+        <p class="hero-name-cn">吴煦东</p>
+        <p class="hero-title">
+          Ph.D. Student in Reinforcement Learning<br>
+          <a href="https://www.hku.hk/" target="_blank">The University of Hong Kong</a>
+        </p>
 
-	<p id="academic-welcome" style="text-align: center; font-size: 18px; font-weight: bold;"></p>
+        <div class="hero-links">
+          <a href="files/CV.pdf" target="_blank" class="hero-link primary">
+            <i class="fas fa-file-alt"></i> Curriculum Vitae
+          </a>
+          <a href="https://github.com/xudongwu-0" target="_blank" class="hero-link outline">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="https://scholar.google.com/" target="_blank" class="hero-link outline">
+            <i class="fas fa-graduation-cap"></i> Scholar
+          </a>
+        </div>
 
-	<script>
-		fetch("https://ipapi.co/json/")
-			.then(response => response.json())
-			.then(data => {
-				var org = data.org || "unknown";
-				var academicInstitutes = ["University", "Institute", "College", "Academy", "Research", "Lab"];
-	
-				// 判断是否是学术机构
-				var isAcademic = academicInstitutes.some(keyword => org.includes(keyword));
-	
-				// 显示欢迎信息
-				if (isAcademic) {
-					document.getElementById("academic-welcome").innerHTML = `🎓 Welcome, researcher from ${org}!`;
-				} else {
-					document.getElementById("academic-welcome").innerHTML = "🔬 Welcome to my academic homepage!";
-				}
-			})
-			.catch(error => console.log("Error fetching organization data:", error));
-	</script>
-	
+        <div class="hero-contact">
+          <span><i class="fas fa-envelope"></i> wu.xudong [at] connect.hku.hk</span>
+          <span><i class="fas fa-envelope"></i> xudongwu02 [at] gmail.com</span>
+        </div>
+      </div>
 
-	<body>
-		<table>
-		  <tbody>
-			<tr>
-			  <td width="670">
-				<div id="toptitle">
-				  <h1 style="color:#003366; margin-bottom: 0;">Xudong Wu</h1>
-				  <h3 style="color:#003366; margin-top: 4px;">吴煦东</h3>
-				</div>
-	  
-				<h4>Ph.D. Student in Reinforcement Learning, <a href="https://www.hku.hk/" target="_blank">University of Hong Kong</a></h4>
-				<p style="margin-top: -5px;">
-					Previously:<br>
-					BSc (Hons) in Mathematics & Statistics, <a href="https://www.ed.ac.uk/" target="_blank">University of Edinburgh</a><br>
-					BSc in Information and Computing Science, <a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a>
-				</p>
-				  
-	  
-				<br>
-				<b>Email:</b> wu.xudong [at] connect.hku.hk (academic) | xudongwu02 [at] gmail.com (personal)
-	  
-				<p style="margin-top: 10px;">
-				  <a href="files/CV.pdf" target="_blank" style="font-weight: bold; color: #CB4335;">
-					📄 View My CV
-				  </a>
-				</p>
-	  
-				<p>
-				  <a href="#aboutme"><b>About Me</b></a> |
-				  <a href="#edu"><b>Education</b></a> |
-				  <a href="#research"><b>Research</b></a><br>
-				  <a href="#academicbackground"><b>Academic Background</b></a> |
-				  <a href="#honors"><b>Honors</b></a>
-				</p>
-			  </td>
-	  
-			  <td>
-				<img src="./images/wuxudong.jpg" border="0" width="230"><br>
-			  </td>
-			</tr>
-		  </tbody>
-		</table>
-	  </body>
-	  
+      <div class="hero-photo">
+        <img src="images/wuxudong.jpg" alt="Xudong Wu">
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ===== AFFILIATIONS ===== -->
+<section style="background: var(--bg-alt); padding: 1.5rem 0;">
+  <div class="container">
+    <div class="affiliations">
+      <a href="https://www.hku.hk/" target="_blank">
+        <img src="images/HKU.jpg" alt="HKU" class="affiliation-logo">
+      </a>
+      <a href="https://www.ed.ac.uk/" target="_blank">
+        <img src="images/edinburgh.png" alt="Edinburgh" class="affiliation-logo">
+      </a>
+      <a href="https://www.dlut.edu.cn/" target="_blank">
+        <img src="images/DUT.jpg" alt="DUT" class="affiliation-logo">
+      </a>
+    </div>
+  </div>
+</section>
 
-<!--<style>-->
-<!--ul-->
-<!--{-->
-<!--	list-style-type:none;-->
-<!--	margin:0;-->
-<!--	padding:0;-->
-<!--}-->
-<!--li a:hover {-->
-<!--    background-color: #555;-->
-<!--    color: white;-->
-<!--}-->
+<!-- ===== ABOUT ME ===== -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2 class="section-title">About Me</h2>
+    </div>
+    <div class="about-text fade-in">
+      <p>
+        I am a Ph.D. student (starting Fall 2025) at 
+        <a href="https://www.hku.hk/" target="_blank">The University of Hong Kong</a>, 
+        where I focus on the theoretical foundations and algorithmic development of 
+        <strong>reinforcement learning (RL) for Embodied AI and Large Language Models (LLMs)</strong>.
+      </p>
+      <p>
+        I completed my undergraduate studies in Mathematics and Statistics at 
+        <a href="https://www.ed.ac.uk/" target="_blank">The University of Edinburgh</a>, 
+        graduating with <strong>First-Class Honours</strong>. My academic background encompasses 
+        statistical learning theory, optimization, and applied probability, with a strong emphasis 
+        on machine learning methodologies.
+      </p>
+      <p>
+        Before that, I studied Information and Computational Science at 
+        <a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a>, 
+        where I built a solid foundation in mathematical modeling, computational methods, and probability theory.
+      </p>
+    </div>
+  </div>
+</section>
 
-<!--</style>-->
+<!-- ===== NEWS ===== -->
+<section class="section" id="news" style="background: var(--bg-alt);">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2 class="section-title">News</h2>
+    </div>
+    <div class="news-list fade-in">
+      <div class="news-item">
+        <span class="news-date">Sep 2025</span>
+        <span class="news-content">Starting Ph.D. at <strong>The University of Hong Kong</strong>, advised by Prof. Jiayu Chen.</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">Jul 2025</span>
+        <span class="news-content">Graduated from <strong>University of Edinburgh</strong> with First-Class Honours in Mathematics and Statistics.</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">Mar 2025</span>
+        <span class="news-content">Completed research on Dynamic Self-Rewarding for Medical LLMs.</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">Apr 2025</span>
+        <span class="news-content">Honours dissertation on Simulation-Based Inference completed — code released on <a href="https://github.com/xudongwu-0/SBI-comparison" target="_blank">GitHub</a>.</span>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ===== SELECTED RESEARCH ===== -->
+<section class="section" id="selected-research">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2 class="section-title">Selected Research</h2>
+      <p class="section-subtitle">Highlights from my research experience. <a href="research">View all →</a></p>
+    </div>
 
-<!--   #0F73B6-->
+    <div class="fade-in">
+      <div class="research-item">
+        <span class="research-venue">LLM Alignment</span>
+        <h3 class="research-title">Dynamic Self-Rewarding for Medical Large Language Models</h3>
+        <p class="research-authors">
+          University of Edinburgh · Research Collaborator · Jan–Mar 2025
+        </p>
+        <p class="research-abstract">
+          Developed a dynamic self-rewarding framework for aligning medical LLMs without human-annotated supervision. 
+          Integrated a two-tier judge system with ChatGPT-4o and executed multi-round DPO for adaptive reward modeling 
+          on domain-specific medical datasets.
+        </p>
+        <div class="card-tags">
+          <span class="tag">LLM Alignment</span>
+          <span class="tag">DPO</span>
+          <span class="tag">Medical AI</span>
+        </div>
+      </div>
 
-<h2><a id="aboutme" ><font color="#CB4335">About Me</font></a></h2>
-<div style="text-align: center;">
-	<a href="https://www.hku.hk/"><img src="./images/HKU.jpg" height="100px" style="margin-bottom:-3px"></a>&nbsp &nbsp &nbsp
-    <a href="https://www.ed.ac.uk/"><img src="./images/edinburgh.png" height="100px" style="margin-bottom:-3px"></a>&nbsp &nbsp &nbsp
-    <a href="https://www.dlut.edu.cn/"><img src="./images/DUT.jpg" height="100px" style="margin-bottom:-3px"></a>
-</div>
+      <div class="research-item">
+        <span class="research-venue">Bayesian Inference</span>
+        <h3 class="research-title">A Comparative Study of Simulation-Based Inference Algorithms</h3>
+        <p class="research-authors">
+          University of Edinburgh · Honours Dissertation · Aug 2024 – Apr 2025 · Supervisor: Dr. Amanda Lenzi
+        </p>
+        <p class="research-abstract">
+          Benchmarked three SBI algorithms — BayesFlow, SNL, and Affine Flow Matching — on synthetic and real-world inference tasks. 
+          Demonstrated AFM's superiority in capturing spatial structure in high-dimensional Poisson–CAR disease mapping models.
+        </p>
+        <div class="research-links">
+          <a href="https://github.com/xudongwu-0/SBI-comparison" target="_blank" class="research-link">
+            <i class="fab fa-github"></i> Code
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<br>
-<p>
-    I am a Ph.D. student (starting Fall 2025) at 
-    <a href="https://www.hku.hk/" target="_blank">The University of Hong Kong</a>, 
-    where I focus on the theoretical foundations and algorithmic development of 
-    <strong>reinforcement learning (RL) for Embodied AI and Large Language Models (LLMs)</strong>.
-</p>
+<!-- ===== EDUCATION (Brief) ===== -->
+<section class="section" id="education" style="background: var(--bg-alt);">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2 class="section-title">Education</h2>
+    </div>
 
+    <div class="timeline fade-in">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <img src="images/HKU.jpg" alt="HKU" class="timeline-logo">
+            <div>
+              <div class="timeline-date">Sep 2025 – Present</div>
+              <h3 class="timeline-title">The University of Hong Kong</h3>
+            </div>
+          </div>
+          <p class="timeline-subtitle">Ph.D. Student</p>
+          <div class="timeline-details">
+            <p>Research: Reinforcement Learning, LLMs, Embodied AI</p>
+            <p>Advisor: Prof. Jiayu Chen · Co-advisors: Prof. Vaneet Aggarwal (Purdue), Prof. Wenjie Huang (HKU)</p>
+          </div>
+        </div>
+      </div>
 
-<p>
-    I completed my undergraduate studies in Mathematics and Statistics at 
-    <a href="https://www.ed.ac.uk/">The University of Edinburgh</a>. 
-    My academic background encompassed statistical learning theory, optimization, and applied probability, 
-    with a strong emphasis on machine learning methodologies. 
-    I graduated with a first-class degree.
-</p>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <img src="images/edinburgh.png" alt="Edinburgh" class="timeline-logo">
+            <div>
+              <div class="timeline-date">Sep 2023 – Jul 2025</div>
+              <h3 class="timeline-title">University of Edinburgh</h3>
+            </div>
+          </div>
+          <p class="timeline-subtitle">BSc (Hons) in Mathematics and Statistics</p>
+          <div class="timeline-details">
+            <p>First-Class Honours (Equivalent to 4.0/4.0 GPA)</p>
+          </div>
+        </div>
+      </div>
 
-<p>
-    Before that, I studied Information and Computational Science at 
-    <a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a>, 
-    where I built a solid foundation in mathematical modeling, computational methods, and probability theory. 
-    My coursework and research performance consistently reflected strong academic engagement and technical proficiency.
-</p>
-
-</p>
-
-
-<h2><a id="edu"><font color="#CB4335">Education</font></a></h2>
-<table>
-	<tbody>
-		<tr>
-			<td width="800">
-				<h4><a href="https://www.hku.hk/" target="_blank">The University of Hong Kong</a>, Hong Kong SAR (Starting Sep. 2025)</h4>
-				<ul>
-					<li><b>Ph.D. Student</b></li>
-					<li>Research areas: Reinforcement Learning (RL), Large Language Models (LLMs), Embodied AI</li>
-					<li>Advisor: <a href="https://www.dase.hku.hk/people/j-y-chen" target="_blank">Prof. Jiayu Chen</a>, The University of Hong Kong</li>
-					<li>Co-advisor: <a href="https://www.cs.purdue.edu/people/faculty/vaneet.html" target="_blank">Prof. Vaneet Aggarwal</a>, Purdue University</li>
-					<li>Co-advisor: <a href="https://www.dase.hku.hk/people/wj-huang" target="_blank">Prof. Wenjie Huang</a>, The University of Hong Kong</li>
-				</ul>
-			</td>
-			<td>
-				<a href="https://www.hku.hk/" target="_blank">
-					<img id="school_logo" src="./images/HKU.jpg" height="100px">
-				</a>
-			</td>
-		</tr>
-	</tbody>
-</table>
-
-
-<table>
-	<tbody>
-		<tr>
-			<td width="800">
-				<h4><a href="https://www.ed.ac.uk/" target="_blank">University of Edinburgh</a>, Edinburgh, UK (Sep. 2023 – Jul.2025)</h4>
-				<ul>
-					<li><b>BSc (Hons) in Mathematics and Statistics</b></li>
-					<li>First-Class Honours (Equivalent to 4.0/4.0 GPA)</li>
-				</ul>
-			</td>
-			<td>
-				<a href="https://www.ed.ac.uk/" target="_blank">
-					<img id="school_logo" src="./images/edinburgh.png" height="100px">
-				</a>
-			</td>
-		</tr>
-		<tr></tr>
-	</tbody>
-</table>
-
-<table>
-	<tbody>
-		<tr>
-			<td width="800">
-				<h4><a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a>, Dalian, China (Sep. 2021 – Jun. 2023)</h4>
-				<ul>
-					<li><b>BSc in Information and Computing Science</b></li>
-					<li>Average score: 89.9/100</li>
-				</ul>
-			</td>
-			<td>
-				<a href="https://www.dlut.edu.cn/" target="_blank">
-					<img id="school_logo" src="./images/DUT.jpg" height="100px">
-				</a>
-			</td>
-		</tr>
-		<tr></tr>
-	</tbody>
-</table>
-
-
-
-<h2><a id="research"><font color="#CB4335">Research Experience</font></a></h2>
-
-<table>
-	<tbody>
-	  <tr>
-		<td width="800">
-		  <h4><a href="https://www.ed.ac.uk/" target="_blank">University of Edinburgh</a>, Edinburgh, UK (Jan. 2025 – Mar. 2025)</h4>
-		  <ul>
-			<li><b>Position:</b> Research Collaborator</li>
-			<li><b>Project:</b> Dynamic Self-Rewarding for Medical Large Language Models (Med-LLMs)</li>
-			<li><b>Research Focus:</b>
-			  <ul>
-				<li>Developed a dynamic self-rewarding framework for aligning medical LLMs without human-annotated supervision</li>
-				<li>Integrated a two-tier judge system where ChatGPT-4o dynamically refines evaluation prompts to mitigate reward misspecification and scoring bias</li>
-				<li>Executed multi-round Direct Preference Optimization (DPO) to align model behavior through self-generated preference pairs and adaptive reward modeling</li>
-				<li>Fine-tuned and evaluated LLMs (Mistral-7B) on domain-specific datasets (HealthCareMagic, PubMedQA, MedMCQA), targeting empathy, factuality, and coherence</li>
-				<li>Conducted task-specific benchmarking and error analysis to uncover performance bottlenecks due to hallucination and distributional drift across iteration stages</li>
-			  </ul>
-			</li>
-		  </ul>
-		</td>
-		<td>
-		  <a href="https://www.ed.ac.uk/" target="_blank">
-			<img id="school_logo" src="./images/edinburgh.png" height="100px">
-		  </a>
-		</td>
-	  </tr>
-	</tbody>
-  </table>
-  
-  <table>
-	<tbody>
-	  <tr>
-		<td width="800">
-		  <h4><a href="https://www.ed.ac.uk/" target="_blank">University of Edinburgh</a>, Edinburgh, UK (Aug. 2024 – Apr. 2025)</h4>
-		  <ul>
-			<li><b>Position:</b> Honours Dissertation / Final Year Project</li>
-			<li><b>Supervisor:</b> Dr. Amanda Lenzi</li>
-			<li><b>Thesis Title:</b> A Comparative Study of Simulation-Based Inference Algorithms</li>
-			<li><b>Research Focus:</b>
-			  <ul>
-				<li>Benchmarked three cutting-edge Simulation-Based Inference (SBI) algorithms—BayesFlow, Sequential Neural Likelihood (SNL), and Affine Flow Matching (AFM)—on both synthetic and structured real-world inference tasks</li>
-				<li>Demonstrated that AFM outperforms amortized and sequential methods in capturing spatial structure in high-dimensional Poisson–CAR disease mapping models</li>
-				<li>Designed a robust evaluation framework using recovery line metrics and ECDF-based posterior calibration to analyze estimation accuracy and uncertainty quantification</li>
-				<li>Identified a key trade-off in joint parameter inference: increasing dimensionality improves model expressiveness but amplifies uncertainty due to parameter interaction</li>
-				<li>Implemented a full end-to-end SBI workflow and published open-source code: <a href="https://github.com/xudongwu-0/SBI-comparison" target="_blank">github.com/xudongwu-0/SBI-comparison</a></li>
-			  </ul>
-			</li>
-		  </ul>
-		</td>
-		<td>
-		  <a href="https://www.ed.ac.uk/" target="_blank">
-			<img id="school_logo" src="./images/edinburgh.png" height="100px">
-		  </a>
-		</td>
-	  </tr>
-	</tbody>
-  </table>
-  
-<table>
-	<tbody>
-		<tr>
-			<td width="800">
-				<h4><a href="https://www.uci.edu/" target="_blank">University of California, Irvine</a>, USA (June 2024 - Sep. 2024)</h4>
-				<ul>
-					<li>Position: Summer Research Assistant</li>
-					<li>Supervisor: Prof. Chen Li (IEEE Fellow)</li>
-					<li>Project: Optimizing Texera, a machine learning-based data analysis workflow platform</li>
-					<li>Responsibilities:
-						<ul>
-							<li>Integrated AI-driven automation for workflow optimization, enabling seamless machine learning pipeline execution</li>
-							<li>Developed an automated report generation system that converts data analysis workflows into structured insights</li>
-							<li>Enhanced Texera’s data cleaning and visualization capabilities to improve model interpretability</li>
-						</ul>
-					</li>
-				</ul>
-			</td>
-			<td>
-				<a href="https://www.uci.edu/" target="_blank">
-					<img id="school_logo" src="./images/UCI.jpg" height="100px">
-				</a>
-			</td>
-		</tr>
-		<tr></tr>
-	</tbody>
-</table>
-
-
-
-<table>
-	<tbody>
-		<tr>
-			<td width="800">
-				<h4><a href="https://www.ed.ac.uk/" target="_blank">University of Edinburgh</a>, Edinburgh, UK (Feb. 2024 - May 2024)</h4>
-				<ul>
-					<li>Position: Research Assistant in Uncertainty Economics</li>
-					<li>Research Focus:
-						<ul>
-							<li>Analyzed the economic impact of uncertainty during the COVID-19 pandemic using stochastic models</li>
-							<li>Implemented Monte Carlo simulations and Bayesian inference techniques for probabilistic estimation</li>
-							<li>Developed computational tools for visualizing uncertainty in economic forecasting</li>
-						</ul>
-					</li>
-				</ul>
-			</td>
-			<td>
-				<a href="https://www.ed.ac.uk/" target="_blank">
-					<img id="school_logo" src="./images/edinburgh.png" height="100px">
-				</a>
-			</td>
-		</tr>
-		<tr></tr>
-	</tbody>
-</table>
-
-<table>
-	<tbody>
-		<tr>
-			<td width="800">
-				<h4><a href="https://www.ed.ac.uk/" target="_blank">University of Edinburgh</a>, Edinburgh, UK (Sep. 2023 - Dec. 2023)</h4>
-				<ul>
-					<li>Position: Project Leader in Differential Equations</li>
-					<li>Research Focus:
-						<ul>
-							<li>Developed a system of ordinary differential equations (ODEs) to model bacterial infections and antibiotic treatments</li>
-							<li>Used Fourier series analysis and Laplace transforms to predict bacterial resistance patterns</li>
-							<li>Optimized drug treatment schedules using numerical simulations</li>
-						</ul>
-					</li>
-				</ul>
-			</td>
-			<td>
-				<a href="https://www.ed.ac.uk/" target="_blank">
-					<img id="school_logo" src="./images/edinburgh.png" height="100px">
-				</a>
-			</td>
-		</tr>
-		<tr></tr>
-	</tbody>
-</table>
-
-<table>
-	<tbody>
-		<tr>
-			<td width="800">
-				<h4><a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a>, Dalian, China (Dec. 2022)</h4>
-				<ul>
-					<li>Position: Research Project in Mathematical Modeling</li>
-					<li>Research Focus:
-						<ul>
-							<li>Developed a population dynamics model incorporating fertility rate adjustments</li>
-							<li>Improved predictive accuracy by incorporating age-stratified birth rate variations</li>
-							<li>Performed parameter sensitivity analysis to optimize demographic forecasting</li>
-						</ul>
-					</li>
-				</ul>
-			</td>
-			<td>
-				<a href="https://www.dlut.edu.cn/" target="_blank">
-					<img id="school_logo" src="./images/DUT.jpg" height="100px">
-				</a>
-			</td>
-		</tr>
-		<tr></tr>
-	</tbody>
-</table>
-
-
-<h2><a id="academicbackground"><font color="#CB4335">Academic Background</font></a></h2>
-<table>
-	<tbody>
-		<tr>
-			<td width="800">
-				<h4><a href="https://www.ed.ac.uk/" target="_blank">University of Edinburgh</a>, Edinburgh, UK (Sep. 2023 - Jun. 2025)</h4>
-				<ul>
-					<li><b>BSc in Mathematics and Statistics, First-Class Honours</b></li>
-					<li><b>Mathematical & Optimization Courses:</b>
-						<ul>
-							<li>Numerical Ordinary Differential Equations – Stability & convergence analysis, applied to RL optimization</li>
-							<li>Honours Differential Equations – Applied in stochastic dynamic programming & Bellman equations</li>
-							<li>Honours Complex Variables – Conformal mapping & contour integration, useful for stochastic control</li>
-							<li>Honours Analysis – Functional analysis and variational methods, applicable to policy optimization</li>
-						</ul>
-					</li>
-					<li><b>Statistics & Probabilistic Modelling:</b>
-						<ul>
-							<li>Financial Mathematics – Stochastic processes, Ito calculus, and Black-Scholes model</li>
-							<li>Stochastic Modelling – Markov chains, Poisson processes, Brownian motion, key concepts for RL</li>
-							<li>Statistical Computing – Monte Carlo methods, MCMC, and Bayesian inference</li>
-							<li>Statistical Methodology – Hypothesis testing, regression, and statistical decision theory</li>
-						</ul>
-					</li>
-					<li><b>Programming & Computational Methods:</b>
-						<ul>
-							<li>Applied Statistics – Hands-on experience with real-world data, Bayesian updating in ML</li>
-							<li>Python, C++, MATLAB – Numerical computing, algorithm development for RL applications</li>
-						</ul>
-					</li>
-				</ul>
-			</td>
-			<td>
-				<a href="https://www.ed.ac.uk/" target="_blank">
-					<img id="school_logo" src="./images/edinburgh.png" height="100px">
-				</a>
-			</td>
-		</tr>
-
-		<tr>
-			<td width="800">
-				<h4><a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a>, Dalian, China (Sep. 2021 - Jun. 2023)</h4>
-				<ul>
-					<li><b>BSc in Information and Computing Science, GPA: 89.2/100</b></li>
-					<li><b>Mathematical & Theoretical Foundations:</b>
-						<ul>
-							<li>Mathematical Analysis (1-3) – Real & complex analysis, measure theory fundamentals</li>
-							<li>Ordinary Differential Equations – Theoretical and numerical solutions to dynamic systems</li>
-							<li>Abstract Algebra – Group theory, rings, and fields, applicable in cryptography & optimization</li>
-							<li>Complex Function Theory – Applications in function approximation & conformal mapping</li>
-						</ul>
-					</li>
-					<li><b>Probability & Statistical Modelling:</b>
-						<ul>
-							<li>Probability & Mathematical Statistics – Statistical inference, Bayesian learning, decision theory</li>
-							<li>Real Analysis – Measure theory and Lebesgue integration, foundation for stochastic processes</li>
-						</ul>
-					</li>
-					<li><b>Computational & Algorithmic Skills:</b>
-						<ul>
-							<li>C++ Programming – Algorithm design, object-oriented programming</li>
-							<li>Python Programming – Data structures, numerical computation, scientific computing</li>
-							<li>Mathematical Modelling – Applied techniques in RL-based decision-making and optimization</li>
-						</ul>
-					</li>
-				</ul>
-			</td>
-			<td>
-				<a href="https://www.dlut.edu.cn/" target="_blank">
-					<img id="school_logo" src="./images/DUT.jpg" height="100px">
-				</a>
-			</td>
-		</tr>
-	</tbody>
-</table>
-
-
-<h2><a id="honors"><font color="#CB4335">Honors and Awards</font></a></h2>
-<table>
-	<tbody>
-		<tr>
-			<td width="800">
-				<ul>
-					<li><b>First-Class Scholarship</b> - Dalian University of Technology, 2022-2023 (Top 5%)</li>
-					<li><b>Dual Degree Student Scholarship</b> - University of Edinburgh, 2022-2023</li>
-					<li><b>International Study Scholarship</b> - Dalian University of Technology, 2022-2023</li>
-				</ul>
-			</td>
-		</tr>
-	</tbody>
-</table>
-
-
-
-
-<p align="center"><font color="#999999">Last update: 31 Aug 2025</font></p
-
-
-</body>
-
-</html>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <img src="images/DUT.jpg" alt="DUT" class="timeline-logo">
+            <div>
+              <div class="timeline-date">Sep 2021 – Jun 2023</div>
+              <h3 class="timeline-title">Dalian University of Technology</h3>
+            </div>
+          </div>
+          <p class="timeline-subtitle">BSc in Information and Computing Science</p>
+          <div class="timeline-details">
+            <p>Average Score: 89.9/100</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
