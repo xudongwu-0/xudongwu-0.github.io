@@ -72,5 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     fadeElements.forEach((el) => observer.observe(el));
+
+    // Fallback for fast scrolling, print/full-page captures, or browsers that throttle observers.
+    window.setTimeout(() => {
+      fadeElements.forEach((el) => el.classList.add('visible'));
+    }, 900);
   }
 });

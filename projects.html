@@ -7,79 +7,106 @@ title: Projects
   <div class="container">
     <div class="section-header fade-in">
       <h2 class="section-title">Projects</h2>
-      <p class="section-subtitle">Open-source projects and software I've built or contributed to.</p>
+      <p class="section-subtitle">
+        Research and engineering projects in LLM agents, post-training, RL, evaluation infrastructure, and applied ML systems.
+      </p>
     </div>
 
     <div class="card-grid fade-in">
 
-      <!-- Project 1: SBI Comparison -->
+      <!-- Project 1: EnergyBridge -->
       <div class="project-card">
         <div class="project-card-body">
           <div class="project-card-header">
-            <i class="fas fa-chart-line project-icon"></i>
+            <i class="fas fa-bolt project-icon"></i>
             <h3 class="project-title">
-              <a href="https://github.com/xudongwu-0/SBI-comparison" target="_blank">SBI-Comparison</a>
+              <a href="https://github.com/Agentic-Intelligence-Lab/EnergyBridge" target="_blank">EnergyBridge</a>
             </h3>
           </div>
           <p class="project-description">
-            A comprehensive benchmarking framework for Simulation-Based Inference algorithms.
-            Compares BayesFlow, SNL, and Affine Flow Matching on synthetic and real-world tasks, 
-            with a complete evaluation pipeline including posterior calibration and recovery metrics.
+            End-to-end LLM-agent system for virtual power plant coordination. Builds preference-aware household agents
+            and grid-aware coordinator agents with tool use, memory, safety constraints, closed-loop execution, persona
+            simulation, trajectory logging, scenario replay, and policy comparison against MPC, rule-based agents, and RL controllers.
           </p>
           <div class="project-footer">
             <div class="project-tech">
+              <span class="tech-tag">LLM Agents</span>
               <span class="tech-tag">Python</span>
-              <span class="tech-tag">PyTorch</span>
-              <span class="tech-tag">SBI</span>
+              <span class="tech-tag">EnergyPlus</span>
+              <span class="tech-tag">MPC</span>
             </div>
-            <a href="https://github.com/xudongwu-0/SBI-comparison" target="_blank" class="project-link">
+            <a href="https://github.com/Agentic-Intelligence-Lab/EnergyBridge" target="_blank" class="project-link">
               View <i class="fas fa-arrow-right"></i>
             </a>
           </div>
         </div>
       </div>
 
-      <!-- Project 2: Medical LLM Self-Rewarding -->
+      <!-- Project 2: Self-Play Agent Post-training -->
       <div class="project-card">
         <div class="project-card-body">
           <div class="project-card-header">
-            <i class="fas fa-robot project-icon"></i>
-            <h3 class="project-title">Medical LLM Self-Rewarding</h3>
+            <i class="fas fa-chess project-icon"></i>
+            <h3 class="project-title">Self-Play LLM Agent Training</h3>
           </div>
           <p class="project-description">
-            Dynamic self-rewarding framework for aligning medical LLMs. 
-            Uses a two-tier GPT-4o judge system with multi-round DPO to achieve 
-            alignment without human-annotated supervision, tested on 
-            HealthCareMagic, PubMedQA, and MedMCQA.
+            Population-based post-training project for LLM agents using GRPO, policy rollouts, verifier rewards,
+            opponent sampling, and PSRO-style policy improvement. Targets stronger strategic reasoning, robust tool use,
+            multi-agent adaptation, and evaluation against evolving task and environment distributions.
           </p>
           <div class="project-footer">
             <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">LLMs</span>
-              <span class="tech-tag">DPO</span>
+              <span class="tech-tag">GRPO</span>
+              <span class="tech-tag">PSRO</span>
+              <span class="tech-tag">RLHF</span>
+              <span class="tech-tag">Agents</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Project 3: Texera ML Platform -->
+      <!-- Project 3: Online Alignment Theory -->
+      <div class="project-card">
+        <div class="project-card-body">
+          <div class="project-card-header">
+            <i class="fas fa-scale-balanced project-icon"></i>
+            <h3 class="project-title">Online LLM Alignment &amp; Preference Optimization</h3>
+          </div>
+          <p class="project-description">
+            Research program on self-improving online LLM alignment, robust listwise preference optimization, and
+            trust-region RLHF. Connects practical post-training algorithms with convergence guarantees, stability analysis,
+            preference-noise robustness, distribution shift, and controlled policy updates.
+          </p>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-tag">RLHF</span>
+              <span class="tech-tag">DPO</span>
+              <span class="tech-tag">Theory</span>
+              <span class="tech-tag">Optimization</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Texera ML Platform -->
       <div class="project-card">
         <div class="project-card-body">
           <div class="project-card-header">
             <i class="fas fa-cogs project-icon"></i>
             <h3 class="project-title">
-              <a href="https://github.com/Texera/texera" target="_blank">Texera — ML Workflow Platform</a>
+              <a href="https://github.com/Texera/texera" target="_blank">Texera - LLM Workflow Analysis</a>
             </h3>
           </div>
           <p class="project-description">
-            Contributed to Texera, a collaborative ML-based data analysis workflow platform at UC Irvine.
-            Integrated AI-driven pipeline automation, built automated report generation, and enhanced 
-            data cleaning and visualization capabilities.
+            Contributed to Texera, a collaborative data analytics workflow platform at UC Irvine. Designed an LLM-agent
+            reporting component for pipeline interpretation, structured summaries, backend integration, HTML report
+            generation, real-time visualization, and scalable workflow-oriented execution.
           </p>
           <div class="project-footer">
             <div class="project-tech">
-              <span class="tech-tag">Scala</span>
+              <span class="tech-tag">LLM Agents</span>
               <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Scala</span>
               <span class="tech-tag">Python</span>
             </div>
             <a href="https://github.com/Texera/texera" target="_blank" class="project-link">
@@ -89,66 +116,98 @@ title: Projects
         </div>
       </div>
 
-      <!-- Project 4: Bacterial ODE Model -->
+      <!-- Project 5: Medical LLM Self-Rewarding -->
       <div class="project-card">
         <div class="project-card-body">
           <div class="project-card-header">
-            <i class="fas fa-dna project-icon"></i>
-            <h3 class="project-title">Bacterial Infection ODE Model</h3>
+            <i class="fas fa-user-doctor project-icon"></i>
+            <h3 class="project-title">Self-Rewarding Framework for Medical LLMs</h3>
           </div>
           <p class="project-description">
-            Mathematical model of bacterial infections and antibiotic treatments using systems of ODEs.
-            Leveraged Fourier analysis and Laplace transforms for resistance prediction, 
-            and optimized drug schedules through numerical simulation.
+            DPO-style alignment framework for medical LLMs using dynamically refined LLM-as-a-judge prompts.
+            Built self-question generation, multi-response sampling, self-judgment scoring, reward refinement, and
+            failure-mode analysis for hallucination accumulation, reward misspecification, and task difficulty.
           </p>
           <div class="project-footer">
             <div class="project-tech">
-              <span class="tech-tag">MATLAB</span>
               <span class="tech-tag">Python</span>
-              <span class="tech-tag">ODEs</span>
+              <span class="tech-tag">LLMs</span>
+              <span class="tech-tag">DPO</span>
+              <span class="tech-tag">Evaluation</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Project 5: Economic Uncertainty -->
+      <!-- Project 6: SBI Comparison -->
       <div class="project-card">
         <div class="project-card-body">
           <div class="project-card-header">
-            <i class="fas fa-chart-area project-icon"></i>
-            <h3 class="project-title">COVID-19 Economic Uncertainty</h3>
+            <i class="fas fa-chart-line project-icon"></i>
+            <h3 class="project-title">
+              <a href="https://github.com/xudongwu-0/SBI-comparison" target="_blank">SBI-Comparison</a>
+            </h3>
           </div>
           <p class="project-description">
-            Analyzed economic uncertainty during the pandemic using stochastic models, 
-            Monte Carlo simulations, and Bayesian inference techniques. Built computational 
-            tools for uncertainty visualization in economic forecasting.
+            Reproducible benchmarking framework for amortized simulation-based inference algorithms. Compares BayesFlow,
+            Sequential Neural Likelihood, and Affine Flow Matching on controlled statistical tasks and Poisson-CAR spatial
+            disease-mapping models using posterior recovery, calibration, robustness, and diagnostic evaluation.
           </p>
           <div class="project-footer">
             <div class="project-tech">
-              <span class="tech-tag">R</span>
               <span class="tech-tag">Python</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">SBI</span>
               <span class="tech-tag">Bayesian</span>
             </div>
+            <a href="https://github.com/xudongwu-0/SBI-comparison" target="_blank" class="project-link">
+              View <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- Project 6: Population Dynamics -->
+      <!-- Project 7: Offline RL Reward Shaping -->
       <div class="project-card">
         <div class="project-card-body">
           <div class="project-card-header">
-            <i class="fas fa-users project-icon"></i>
-            <h3 class="project-title">Population Dynamics Modeling</h3>
+            <i class="fas fa-route project-icon"></i>
+            <h3 class="project-title">Offline Goal-Conditioned RL Reward Shaping</h3>
           </div>
           <p class="project-description">
-            Built a population dynamics model incorporating age-stratified fertility rate adjustments.
-            Performed parameter sensitivity analysis for demographic forecasting optimization.
+            Research contribution to occupancy-based reward shaping for offline goal-conditioned reinforcement learning,
+            improving credit assignment and policy learning in settings where direct online environment interaction is limited.
+            Work accepted to ICLR 2026.
           </p>
           <div class="project-footer">
             <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">MATLAB</span>
-              <span class="tech-tag">Modeling</span>
+              <span class="tech-tag">Offline RL</span>
+              <span class="tech-tag">Reward Shaping</span>
+              <span class="tech-tag">Theory</span>
+              <span class="tech-tag">ICLR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 8: Game-Theoretic Optimization -->
+      <div class="project-card">
+        <div class="project-card-body">
+          <div class="project-card-header">
+            <i class="fas fa-network-wired project-icon"></i>
+            <h3 class="project-title">Game-Theoretic RL &amp; Fixed-Point Optimization</h3>
+          </div>
+          <p class="project-description">
+            Collaboration on hierarchical counterfactual regret minimization and large-scale fixed-point problem decomposition.
+            Focus areas include algorithmic formulation, proof checking, theoretical positioning, and scalable decomposition for
+            decision-making systems.
+          </p>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-tag">Game Theory</span>
+              <span class="tech-tag">CFR</span>
+              <span class="tech-tag">Optimization</span>
+              <span class="tech-tag">RL</span>
             </div>
           </div>
         </div>

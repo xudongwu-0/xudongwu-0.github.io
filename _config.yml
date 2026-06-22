@@ -1,6 +1,6 @@
 # Site settings
 title: Xudong Wu | 吴煦东
-description: "Ph.D. Student in Reinforcement Learning at The University of Hong Kong"
+description: "Ph.D. student at The University of Hong Kong working on reinforcement learning, LLM alignment, agentic AI systems, and post-training; seeking industry research internships."
 url: "https://xudongwu-0.github.io"
 baseurl: ""
 
@@ -10,7 +10,7 @@ author:
   name_cn: 吴煦东
   email_academic: wu.xudong@connect.hku.hk
   email_personal: xudongwu02@gmail.com
-  position: Ph.D. Student
+  position: Ph.D. Student in Reinforcement Learning, LLM Alignment, and Agentic AI Systems
   university: The University of Hong Kong
   photo: images/wuxudong.jpg
   github: xudongwu-0
