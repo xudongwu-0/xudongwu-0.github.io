@@ -1,24 +1,17 @@
 <nav class="navbar" id="navbar">
   <div class="nav-container">
-    <a href="{{ site.baseurl }}/" class="nav-brand">
-      <span class="brand-text">XW</span>
-    </a>
+    <a href="{{ site.baseurl }}/" class="nav-brand">Xudong Wu</a>
     
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
       <span class="hamburger"></span>
     </button>
     
     <ul class="nav-links" id="navLinks">
-      <li><a href="{{ site.baseurl }}/" class="{% if page.url == '/' %}active{% endif %}">About</a></li>
+      <li><a href="{{ site.baseurl }}/" class="{% if page.url == '/' %}active{% endif %}">Home</a></li>
       <li><a href="{{ site.baseurl }}/research" class="{% if page.url == '/research' or page.url == '/research.html' %}active{% endif %}">Research</a></li>
       <li><a href="{{ site.baseurl }}/projects" class="{% if page.url == '/projects' or page.url == '/projects.html' %}active{% endif %}">Projects</a></li>
       <li><a href="{{ site.baseurl }}/cv" class="{% if page.url == '/cv' or page.url == '/cv.html' %}active{% endif %}">CV</a></li>
       <li><a href="{{ site.baseurl }}/blog" class="{% if page.url contains '/blog' %}active{% endif %}">Blog</a></li>
-      <li>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-          <i class="fas fa-moon"></i>
-        </button>
-      </li>
     </ul>
   </div>
 </nav>

@@ -4,19 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{{ site.description }}">
-  <meta name="keywords" content="Xudong Wu, 吴煦东, Reinforcement Learning, LLM Alignment, Agentic AI, RLHF, LLM Agents, Post-training, HKU, University of Hong Kong, Industry Research Internship">
+  <meta name="keywords" content="Xudong Wu, 吴煦东, Reinforcement Learning, LLM Alignment, Agentic AI, RLHF, LLM Agents, Post-training, HKU, University of Hong Kong">
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <link rel="shortcut icon" href="{{ site.baseurl }}/images/wuxudong.ico">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap">
 </head>
 <body>
   {% include nav.html %}
-  
-  <main class="main-content">
-    {{ content }}
-  </main>
+
+  <div class="site-shell">
+    {% include author.html %}
+    <main class="main-content" id="main-content">
+      {{ content }}
+    </main>
+  </div>
 
   {% include footer.html %}
   

@@ -3,385 +3,158 @@ layout: default
 title: Home
 ---
 
-<!-- ===== HERO / ABOUT ===== -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-grid">
-      <div class="hero-info">
-        <h1 class="hero-name">Xudong Wu</h1>
-        <p class="hero-name-cn">吴煦东</p>
-        <p class="hero-title">
-          Ph.D. Student in Reinforcement Learning, LLM Alignment &amp; Agentic AI Systems<br>
-          <a href="https://www.hku.hk/" target="_blank">The University of Hong Kong</a>
-        </p>
-        <p class="hero-summary">
-          I work on post-training, RLHF/RLAIF, preference optimization, self-play agents, and
-          long-horizon LLM-agent systems. I am actively seeking industry research internships
-          where rigorous RL theory, scalable ML systems, and agentic AI products meet.
-        </p>
+<article class="academic-page home-page">
+  <header class="page-header">
+    <h1>About Me</h1>
+  </header>
 
-        <div class="hero-badges" aria-label="Research focus areas">
-          <span class="hero-badge">Seeking Industry Internship</span>
-          <span class="hero-badge">LLM Post-training</span>
-          <span class="hero-badge">RLHF &amp; Preference Optimization</span>
-          <span class="hero-badge">Agentic AI Systems</span>
+  <div class="page-content">
+    <p>
+      I am a Ph.D. student at <a href="https://www.hku.hk/" target="_blank" rel="noopener noreferrer">The University of Hong Kong</a>,
+      advised by Prof. Jiayu Chen. My research focuses on <strong>reinforcement learning, LLM alignment,
+      preference optimization, and agentic AI systems</strong>.
+    </p>
+    <p>
+      I study the theory and systems behind self-improving language models: online alignment and RLHF,
+      robust preference learning, self-play post-training, and long-horizon agents that reason with tools,
+      memory, and feedback. I am particularly interested in turning principled learning algorithms into
+      reliable, scalable AI systems.
+    </p>
+    <p>
+      Before HKU, I earned a BSc (Hons) in Mathematics and Statistics from the
+      <a href="https://www.ed.ac.uk/" target="_blank" rel="noopener noreferrer">University of Edinburgh</a>
+      with First-Class Honours, and studied Information and Computing Science at
+      <a href="https://www.dlut.edu.cn/" target="_blank" rel="noopener noreferrer">Dalian University of Technology</a>.
+    </p>
+
+    <section class="home-section" id="news">
+      <h2>News</h2>
+      <div class="news-list">
+        <div class="news-item">
+          <time datetime="2026-09">Sep 2026</time>
+          <p>Joining <strong>Microsoft</strong> in Beijing as a Research Intern, working on Agent RSI and Auto Research.</p>
         </div>
-
-        <div class="hero-links">
-          <a href="{{ site.baseurl }}/files/CV.pdf" target="_blank" class="hero-link primary">
-            <i class="fas fa-file-alt"></i> Curriculum Vitae
-          </a>
-          <a href="mailto:wu.xudong@connect.hku.hk" class="hero-link outline">
-            <i class="fas fa-envelope"></i> Email
-          </a>
-          <a href="https://github.com/xudongwu-0" target="_blank" class="hero-link outline">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-          <a href="https://scholar.google.com/citations?user=LK-ANFUAAAAJ&hl=zh-CN&authuser=1" target="_blank" class="hero-link outline">
-            <i class="fas fa-graduation-cap"></i> Scholar
-          </a>
+        <div class="news-item">
+          <time datetime="2026-05">May 2026</time>
+          <p>Started leading <strong>EnergyBridge</strong>, a long-horizon LLM-agent system for virtual power plant coordination.</p>
         </div>
-
-        <div class="hero-contact">
-          <span><i class="fas fa-envelope"></i> wu.xudong [at] connect.hku.hk</span>
-          <span><i class="fas fa-envelope"></i> xudongwu02 [at] gmail.com</span>
-          <span><i class="fas fa-briefcase"></i> Open to research internships in LLMs, RL, agents, and applied ML systems</span>
+        <div class="news-item">
+          <time datetime="2026">2026</time>
+          <p><em>On the Convergence of Self-Improving Online LLM Alignment</em> accepted to <strong>UAI 2026</strong>.</p>
         </div>
-      </div>
-
-      <div class="hero-photo">
-        <img src="{{ site.baseurl }}/images/wuxudong.jpg" alt="Xudong Wu">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== INTERNSHIP AVAILABILITY ===== -->
-<section class="availability-strip">
-  <div class="container availability-content">
-    <div class="availability-copy">
-      <span class="section-kicker">Industry Internship Focus</span>
-      <h2>Research-ready for LLM agents, post-training, and decision-making systems.</h2>
-      <p>
-        I am looking for industry research internship opportunities where I can contribute to
-        practical agent systems and model-improvement pipelines while bringing a strong theoretical
-        background in reinforcement learning, online alignment, and preference optimization.
-      </p>
-    </div>
-    <div class="availability-list">
-      <div class="availability-item">
-        <i class="fas fa-robot"></i>
-        <span>LLM/agent research intern roles</span>
-      </div>
-      <div class="availability-item">
-        <i class="fas fa-gears"></i>
-        <span>Post-training and evaluation pipelines</span>
-      </div>
-      <div class="availability-item">
-        <i class="fas fa-chart-line"></i>
-        <span>RL, self-play, and preference learning</span>
-      </div>
-      <div class="availability-item">
-        <i class="fas fa-server"></i>
-        <span>ML systems, tools, APIs, and experiment dashboards</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== AFFILIATIONS ===== -->
-<section style="background: var(--bg-alt); padding: 1.5rem 0;">
-  <div class="container">
-    <div class="affiliations">
-      <a href="https://www.hku.hk/" target="_blank">
-        <img src="{{ site.baseurl }}/images/HKU.jpg" alt="HKU" class="affiliation-logo">
-      </a>
-      <a href="https://www.ed.ac.uk/" target="_blank">
-        <img src="{{ site.baseurl }}/images/edinburgh.png" alt="Edinburgh" class="affiliation-logo">
-      </a>
-      <a href="https://uci.edu/" target="_blank">
-        <img src="{{ site.baseurl }}/images/UCI.jpg" alt="UC Irvine" class="affiliation-logo">
-      </a>
-      <a href="https://www.dlut.edu.cn/" target="_blank">
-        <img src="{{ site.baseurl }}/images/DUT.jpg" alt="DUT" class="affiliation-logo">
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== ABOUT ME ===== -->
-<section class="section" id="about">
-  <div class="container">
-    <div class="section-header fade-in">
-      <h2 class="section-title">About Me</h2>
-    </div>
-    <div class="about-text fade-in">
-      <p>
-        I am a Ph.D. student at <a href="https://www.hku.hk/" target="_blank">The University of Hong Kong</a>,
-        advised by Prof. Jiayu Chen. My research centers on <strong>reinforcement learning, LLM alignment,
-        preference optimization, self-improving post-training, and agentic AI systems</strong>.
-      </p>
-      <p>
-        My current work connects theory and systems: I study convergence and stability for online LLM alignment,
-        design robust preference optimization algorithms, and build long-horizon LLM agents that reason with tools,
-        memory, safety constraints, and closed-loop feedback. Recent projects include EnergyBridge, self-play agent
-        training with GRPO and PSRO, trust-region online RLHF, and occupancy-based reward shaping for offline RL.
-      </p>
-      <p>
-        I am especially interested in industry research environments that turn model-improvement ideas into reliable
-        products: scalable training loops, evaluation infrastructure, agent benchmarks, data pipelines, and deployment-aware
-        feedback systems. I enjoy work that requires both mathematical clarity and practical engineering.
-      </p>
-      <p>
-        Before HKU, I completed a BSc (Hons) in Mathematics and Statistics at the
-        <a href="https://www.ed.ac.uk/" target="_blank">University of Edinburgh</a> with First-Class Honours, and studied
-        Information and Computing Science at <a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a>.
-        I also worked as a research assistant at UC Irvine on LLM-assisted workflow analysis for the Texera platform.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== INTERNSHIP STRENGTHS ===== -->
-<section class="section" id="internship-strengths" style="background: var(--bg-alt);">
-  <div class="container">
-    <div class="section-header fade-in">
-      <h2 class="section-title">Internship Fit</h2>
-      <p class="section-subtitle">Areas where I can contribute quickly in an industry research team.</p>
-    </div>
-
-    <div class="focus-grid fade-in">
-      <div class="focus-card">
-        <i class="fas fa-sliders"></i>
-        <h3>LLM Post-training &amp; Alignment</h3>
-        <p>DPO, GRPO, RLHF/RLAIF, listwise preference optimization, online alignment theory, reward modeling, and verifier-guided policy improvement.</p>
-      </div>
-      <div class="focus-card">
-        <i class="fas fa-diagram-project"></i>
-        <h3>Agentic AI Systems</h3>
-        <p>Tool use, persistent memory, multi-agent negotiation, safety guardrails, scenario replay, persona simulation, and long-horizon planning loops.</p>
-      </div>
-      <div class="focus-card">
-        <i class="fas fa-brain"></i>
-        <h3>Reinforcement Learning</h3>
-        <p>Offline goal-conditioned RL, reward shaping, trust-region methods, self-play, game-theoretic optimization, MPC comparisons, and policy evaluation.</p>
-      </div>
-      <div class="focus-card">
-        <i class="fas fa-code-branch"></i>
-        <h3>ML Engineering</h3>
-        <p>Python, PyTorch, HuggingFace Transformers, OpenAI-compatible APIs, Docker, Linux, GitHub workflows, experiment dashboards, and automated reports.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== NEWS ===== -->
-<section class="section" id="news">
-  <div class="container">
-    <div class="section-header fade-in">
-      <h2 class="section-title">News</h2>
-    </div>
-    <div class="news-list fade-in">
-      <div class="news-item">
-        <span class="news-date">Jun 2026</span>
-        <span class="news-content">Updated my CV and research profile for industry research internship opportunities in LLM agents, post-training, RL, and applied ML systems.</span>
-      </div>
-      <div class="news-item">
-        <span class="news-date">May 2026</span>
-        <span class="news-content">Started leading <strong>EnergyBridge</strong>, an end-to-end long-horizon LLM-agent system for virtual power plant coordination.</span>
-      </div>
-      <div class="news-item">
-        <span class="news-date">2026</span>
-        <span class="news-content">Paper accepted to <strong>UAI 2026</strong>: <em>On the Convergence of Self-Improving Online LLM Alignment</em>.</span>
-      </div>
-      <div class="news-item">
-        <span class="news-date">2026</span>
-        <span class="news-content">Paper accepted to <strong>ICLR 2026</strong>: <em>Occupancy Reward Shaping: Improving Credit Assignment for Offline Goal-Conditioned Reinforcement Learning</em>.</span>
-      </div>
-      <div class="news-item">
-        <span class="news-date">Oct 2025</span>
-        <span class="news-content">Started Ph.D. study at <strong>The University of Hong Kong</strong>, advised by Prof. Jiayu Chen.</span>
-      </div>
-      <div class="news-item">
-        <span class="news-date">Jul 2025</span>
-        <span class="news-content">Graduated from the <strong>University of Edinburgh</strong> with First-Class Honours in Mathematics and Statistics.</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SELECTED PUBLICATIONS ===== -->
-<section class="section" id="publications" style="background: var(--bg-alt);">
-  <div class="container">
-    <div class="section-header fade-in">
-      <h2 class="section-title">Selected Publications &amp; Preprints</h2>
-      <p class="section-subtitle">Recent work on online alignment, offline RL, and robust preference optimization.</p>
-    </div>
-
-    <div class="publication-list fade-in">
-      <div class="publication-item">
-        <span class="publication-status">UAI 2026 Accepted</span>
-        <h3>On the Convergence of Self-Improving Online LLM Alignment</h3>
-        <p><strong>Xudong Wu</strong>, Pangpang Liu, Vaneet Aggarwal, and Jiayu Chen.</p>
-      </div>
-      <div class="publication-item">
-        <span class="publication-status">ICLR 2026 Accepted</span>
-        <h3>Occupancy Reward Shaping: Improving Credit Assignment for Offline Goal-Conditioned Reinforcement Learning</h3>
-        <p>Aravind Venugopal, Jiayu Chen, <strong>Xudong Wu</strong>, Chongyi Zheng, Benjamin Eysenbach, and Jeff Schneider.</p>
-      </div>
-      <div class="publication-item">
-        <span class="publication-status">NeurIPS 2026 Under Review</span>
-        <h3>Distributionally Robust Listwise Preference Optimization</h3>
-        <p><strong>Xudong Wu</strong>, Jian Qian, Pangpang Liu, Vaneet Aggarwal, and Jiayu Chen.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SELECTED RESEARCH ===== -->
-<section class="section" id="selected-research">
-  <div class="container">
-    <div class="section-header fade-in">
-      <h2 class="section-title">Selected Research</h2>
-      <p class="section-subtitle">Highlights from research and project experience. <a href="research">View all &rarr;</a></p>
-    </div>
-
-    <div class="fade-in">
-      <div class="research-item">
-        <span class="research-venue">LLM Agents</span>
-        <h3 class="research-title">EnergyBridge: Long-Horizon LLM Agents for Virtual Power Plants</h3>
-        <p class="research-authors">
-          HKU · Project Lead, Agentic Intelligence Lab · May 2026 - Present
-        </p>
-        <p class="research-abstract">
-          Leading the development of an end-to-end home-grid coordination system that combines tool-augmented reasoning,
-          persistent memory, preference learning, safety guardrails, multi-agent negotiation, and closed-loop execution.
-        </p>
-        <div class="card-tags">
-          <span class="tag">LLM Agents</span>
-          <span class="tag">Preference Learning</span>
-          <span class="tag">Energy Systems</span>
-          <span class="tag">Evaluation</span>
+        <div class="news-item">
+          <time datetime="2026">2026</time>
+          <p><em>Occupancy Reward Shaping</em> accepted to <strong>ICLR 2026</strong>.</p>
+        </div>
+        <div class="news-item">
+          <time datetime="2025-10">Oct 2025</time>
+          <p>Started my Ph.D. at <strong>The University of Hong Kong</strong>.</p>
         </div>
       </div>
+    </section>
 
-      <div class="research-item">
-        <span class="research-venue">Post-training</span>
-        <h3 class="research-title">Self-Play LLM Agent Training with GRPO and PSRO</h3>
-        <p class="research-authors">
-          HKU · Researcher, Agentic Intelligence Lab · 2026 - Present
-        </p>
-        <p class="research-abstract">
-          Studying population-based reinforcement learning for LLM agents, combining GRPO, policy rollouts,
-          verifier rewards, PSRO, opponent sampling, and held-out strategic evaluation to improve tool use,
-          robustness, and multi-agent adaptation.
-        </p>
-        <div class="card-tags">
-          <span class="tag">GRPO</span>
-          <span class="tag">Self-play</span>
-          <span class="tag">PSRO</span>
-          <span class="tag">RLAIF</span>
-        </div>
-      </div>
-
-      <div class="research-item">
-        <span class="research-venue">LLM Alignment</span>
-        <h3 class="research-title">RLHF, Preference Optimization, and Online Alignment Theory</h3>
-        <p class="research-authors">
-          HKU · Researcher, Agentic Intelligence Lab · 2025 - Present
-        </p>
-        <p class="research-abstract">
-          Developing theoretical and algorithmic foundations for self-improving online LLM alignment, robust listwise
-          preference optimization, distribution-shift-aware RLHF, and trust-region online policy improvement.
-        </p>
-        <div class="card-tags">
-          <span class="tag">RLHF</span>
-          <span class="tag">Preference Optimization</span>
-          <span class="tag">Theory</span>
-          <span class="tag">Online Learning</span>
-        </div>
-      </div>
-
-      <div class="research-item">
-        <span class="research-venue">ML Systems</span>
-        <h3 class="research-title">LLM Agents for Automated Workflow Analysis on the Texera Platform</h3>
-        <p class="research-authors">
-          UC Irvine · Research Assistant · Jun 2024 - Sep 2024
-        </p>
-        <p class="research-abstract">
-          Built an LLM-assisted workflow interpretation and report-generation component for Texera, improving structured
-          summaries, backend integration, HTML report generation, and real-time visualization for data-analysis workflows.
-        </p>
-        <div class="research-links">
-          <a href="https://github.com/Texera/texera" target="_blank" class="research-link">
-            <i class="fab fa-github"></i> Texera
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== EDUCATION (Brief) ===== -->
-<section class="section" id="education" style="background: var(--bg-alt);">
-  <div class="container">
-    <div class="section-header fade-in">
-      <h2 class="section-title">Education</h2>
-    </div>
-
-    <div class="timeline fade-in">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <img src="{{ site.baseurl }}/images/HKU.jpg" alt="HKU" class="timeline-logo">
+    <section class="home-section" id="experience">
+      <h2>Experience</h2>
+      <div class="entry-list">
+        <article class="academic-entry featured-entry">
+          <div class="entry-header">
             <div>
-              <div class="timeline-date">Oct 2025 - Sep 2029 (Expected)</div>
-              <h3 class="timeline-title">The University of Hong Kong</h3>
+              <h3>Research Intern</h3>
+              <p class="entry-organization">Microsoft · Beijing, China</p>
             </div>
+            <time>Sep 2026 – Dec 2026</time>
           </div>
-          <p class="timeline-subtitle">Doctor of Philosophy</p>
-          <div class="timeline-details">
-            <p>Research: reinforcement learning, LLM alignment, agentic AI systems, and post-training</p>
-            <p>Supervisor: Prof. Jiayu Chen</p>
-          </div>
-        </div>
-      </div>
+          <p>Research on <strong>Agent RSI</strong> and <strong>Auto Research</strong>.</p>
+        </article>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <img src="{{ site.baseurl }}/images/edinburgh.png" alt="Edinburgh" class="timeline-logo">
+        <article class="academic-entry">
+          <div class="entry-header">
             <div>
-              <div class="timeline-date">Sep 2023 - Jul 2025</div>
-              <h3 class="timeline-title">University of Edinburgh</h3>
+              <h3>Project Lead, Agentic Intelligence Lab</h3>
+              <p class="entry-organization">The University of Hong Kong · Hong Kong SAR</p>
             </div>
+            <time>May 2026 – Present</time>
           </div>
-          <p class="timeline-subtitle">BSc (Hons) Mathematics and Statistics</p>
-          <div class="timeline-details">
-            <p>Average Score: 78/100 · First-Class Honours</p>
-            <p>Dissertation: Amortized Inference</p>
-          </div>
-        </div>
-      </div>
+          <p>Leading EnergyBridge, an end-to-end long-horizon LLM-agent system for home-grid and virtual power plant coordination.</p>
+        </article>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <img src="{{ site.baseurl }}/images/DUT.jpg" alt="DUT" class="timeline-logo">
+        <article class="academic-entry">
+          <div class="entry-header">
             <div>
-              <div class="timeline-date">Sep 2021 - Jun 2023</div>
-              <h3 class="timeline-title">Dalian University of Technology</h3>
+              <h3>Research Assistant</h3>
+              <p class="entry-organization">University of California, Irvine · Irvine, CA</p>
             </div>
+            <time>2024 – 2025</time>
           </div>
-          <p class="timeline-subtitle">BSc Information and Computing Science</p>
-          <div class="timeline-details">
-            <p>Overall GPA: 3.99/4.00 · Top 5%</p>
-          </div>
-        </div>
+          <p>Worked on LLM-assisted workflow analysis and reporting for the Texera data analytics platform.</p>
+        </article>
       </div>
-    </div>
+    </section>
+
+    <section class="home-section" id="publications">
+      <div class="section-heading-row">
+        <h2>Selected Publications</h2>
+        <a class="text-link" href="{{ site.baseurl }}/research">All research →</a>
+      </div>
+      <ol class="publication-list">
+        <li class="publication-item">
+          <h3>On the Convergence of Self-Improving Online LLM Alignment</h3>
+          <p><strong>Xudong Wu</strong>, Pangpang Liu, Vaneet Aggarwal, and Jiayu Chen.</p>
+          <span class="publication-venue">UAI 2026</span>
+        </li>
+        <li class="publication-item">
+          <h3>Occupancy Reward Shaping: Improving Credit Assignment for Offline Goal-Conditioned Reinforcement Learning</h3>
+          <p>Aravind Venugopal, Jiayu Chen, <strong>Xudong Wu</strong>, Chongyi Zheng, Benjamin Eysenbach, and Jeff Schneider.</p>
+          <span class="publication-venue">ICLR 2026</span>
+        </li>
+        <li class="publication-item">
+          <h3>Distributionally Robust Listwise Preference Optimization</h3>
+          <p><strong>Xudong Wu</strong>, Jian Qian, Pangpang Liu, Vaneet Aggarwal, and Jiayu Chen.</p>
+          <span class="publication-venue">Under review</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="home-section" id="research-interests">
+      <h2>Research Interests</h2>
+      <ul class="interest-list">
+        <li><strong>LLM post-training and alignment:</strong> RLHF/RLAIF, preference optimization, online alignment, and verifier-guided learning.</li>
+        <li><strong>Agentic AI:</strong> self-improving agents, tool use, persistent memory, multi-agent systems, and long-horizon planning.</li>
+        <li><strong>Reinforcement learning:</strong> offline and goal-conditioned RL, self-play, game-theoretic learning, and trust-region methods.</li>
+      </ul>
+    </section>
+
+    <section class="home-section" id="education">
+      <h2>Education</h2>
+      <div class="entry-list compact-entries">
+        <article class="academic-entry">
+          <div class="entry-header">
+            <div>
+              <h3>The University of Hong Kong</h3>
+              <p class="entry-organization">Ph.D. · Reinforcement Learning and LLM Alignment</p>
+            </div>
+            <time>2025 – 2029 (expected)</time>
+          </div>
+        </article>
+        <article class="academic-entry">
+          <div class="entry-header">
+            <div>
+              <h3>University of Edinburgh</h3>
+              <p class="entry-organization">BSc (Hons) Mathematics and Statistics · First-Class Honours</p>
+            </div>
+            <time>2023 – 2025</time>
+          </div>
+        </article>
+        <article class="academic-entry">
+          <div class="entry-header">
+            <div>
+              <h3>Dalian University of Technology</h3>
+              <p class="entry-organization">BSc Information and Computing Science</p>
+            </div>
+            <time>2021 – 2023</time>
+          </div>
+        </article>
+      </div>
+    </section>
   </div>
-</section>
+</article>
