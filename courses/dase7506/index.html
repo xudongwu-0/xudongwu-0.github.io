@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="DASE7506 mini-project 成绩提交与同伴复现平台。项目内容待教师确认。">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>DASE7506 · Mini-project Arena</title>
+  <link rel="icon" href="/images/wuxudong.ico">
+  <link rel="stylesheet" href="arena.css">
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="masthead"><div class="shell nav">
+    <a class="brand" href="/">Xudong Wu <span>/ Teaching</span></a>
+    <nav aria-label="课程导航"><a href="#leaderboard">排行榜</a><a href="#submit">提交入口</a></nav>
+  </div></header>
+  <main id="main" class="shell">
+    <section class="hero">
+      <div class="eyebrow">DASE7506 · ADVANCED MACHINE LEARNING METHODS</div>
+      <h1>Share your work.<br><span>Make it reproducible.</span></h1>
+      <p class="lead">Mini-project 成绩提交与同伴复现平台。<br class="desktop">填写学号、分数、代码链接和 checkpoint 链接，分享你的成果。</p>
+      <div class="actions"><a class="button" href="#submit">查看提交入口 <span>↗</span></a><a class="button secondary" href="#leaderboard">查看排行榜</a></div>
+      <div class="notice"><strong>项目待公布</strong><p>Mini-project 内容、评测指标与截止时间尚未确定，当前暂未开放提交。</p></div>
+      <div class="facts"><span>学号加密保存</span><span>成绩与材料链接公开</span><span>允许 AI 辅助，须披露使用情况</span></div>
+    </section>
+
+    <section id="leaderboard" aria-labelledby="leaderboard-title">
+      <div class="section-title"><div><span class="eyebrow">01 / COMPARE & REPRODUCE</span><h2 id="leaderboard-title">公开排行榜</h2></div><button class="text-button" id="refresh" type="button">刷新 ↻</button></div>
+      <div class="board-controls"><div class="tabs" role="group" aria-label="排行榜项目"><button type="button" data-project="mp1" aria-pressed="true">Mini-project 1</button><button type="button" data-project="mp2" aria-pressed="false">Mini-project 2</button><button type="button" data-project="mp3" aria-pressed="false">Mini-project 3</button></div><label class="check-label"><input id="history" type="checkbox">显示全部记录</label></div>
+      <p class="caption" id="board-note">每位同学每项展示最佳有效自报成绩；待核查与已作废记录不参与排名。教师参考成绩不占榜。</p>
+      <div class="table-wrap"><table><caption class="sr-only">学生自报成绩排行榜</caption><thead><tr><th scope="col">排名</th><th scope="col">同学</th><th scope="col" id="score-heading">分数</th><th scope="col">材料</th><th scope="col">状态</th><th scope="col">复现</th></tr></thead><tbody id="board-body"><tr><td colspan="6" class="empty">正在读取提交记录…</td></tr></tbody></table></div>
+      <div class="board-footer"><p class="caption" id="sync-status" role="status" aria-live="polite"></p><a href="https://github.com/xudongwu-0/xudongwu-0.github.io/issues?q=is%3Aissue+%22%5BDASE7506%5D%22">查看原始提交 ↗</a></div>
+      <details class="review-history"><summary>复现申请与教师裁定</summary><div id="review-list"><p class="caption">尚无复现申请。</p></div><p class="caption">同学可针对同一 checkpoint 提交复现证据，由教师听取双方说明并裁定。核查阈值和奖惩规则将在项目正式公布时确定；申请本身不会触发处罚。</p></details>
+    </section>
+
+    <section id="submit" class="submit-section" aria-labelledby="submit-title">
+      <div class="submit-copy"><span class="eyebrow">02 / SHARE YOUR RESULT</span><h2 id="submit-title">四项信息，<br>交出你的改进。</h2><p>选好项目，填写学号、分数、代码链接与 checkpoint 链接。</p><p>代码 README 放好固定 commit、复现命令、权重 SHA256、逐题输出 / 工具轨迹、实验结果、资源用量与 AI 使用说明。</p><p class="privacy-note">学号自动加密，仅教师可解密。GitHub 用户名、分数及两个链接公开。请勿把学号写入 README、文件名或公开评论。</p></div>
+      <form id="submission-form" class="form-panel">
+        <label for="project">项目</label><select id="project" name="project"><option value="mp1">Mini-project 1 · 待公布</option><option value="mp2">Mini-project 2 · 待公布</option><option value="mp3">Mini-project 3 · 待公布</option></select>
+        <div class="form-row"><div><label for="student-id">学号 <span>仅教师可读</span></label><input id="student-id" name="student_id" required maxlength="32" pattern="[A-Za-z0-9-]{3,32}" autocomplete="off" placeholder="你的学号"><small>请勿填写姓名。</small></div><div><label for="score">自报分数 <span id="score-unit">指标待公布</span></label><input id="score" name="score" type="number" required step="any" placeholder="项目公布后填写"><small id="score-help">填写所提交 checkpoint 的评测分数。</small></div></div>
+        <label for="code-url">代码链接</label><input id="code-url" name="code_url" type="url" required maxlength="500" placeholder="https://github.com/you/project/tree/commit" pattern="https://.*"><small>链接指向固定版本；README 包含复现材料。</small>
+        <label for="checkpoint-url">Checkpoint 链接</label><input id="checkpoint-url" name="checkpoint_url" type="url" required maxlength="500" placeholder="https://huggingface.co/you/model/resolve/…" pattern="https://.*"><small>确保其他同学可下载，按正式课程要求保留材料。</small>
+        <label class="check-label consent"><input id="consent" type="checkbox" required>我已按公布的课程协议评测，同意公开成绩和材料链接，并披露 AI 使用情况。</label>
+        <button class="button full" type="submit" id="prepare-submit">生成 GitHub 提交 ↗</button>
+        <p class="caption">下一步在 GitHub 登录并点击 <strong>Create / Submit new issue</strong>，记录才会保存；随后回到这里刷新榜单。每位同学使用一个 GitHub 账号。</p>
+        <div id="submission-status" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+    <section class="principles"><div><h3>算法要可解释</h3><p>允许 AI 辅助编码与写作。请能解释你的方法，并用消融证明改进来自哪里。</p></div><div><h3>成绩要可复现</h3><p>排行榜记录自报成绩。通过代码、权重和逐题结果，让同学能够独立核对。</p></div><div><h3>遵守评测协议</h3><p>按项目公布的数据、指标和资源预算评测。详细要求随项目一同发布。</p></div></section>
+  </main>
+  <footer class="shell footer"><span>DASE7506 · 项目内容与截止时间待公布</span><a href="/">返回个人网站 ↗</a></footer>
+  <dialog id="challenge-dialog"><form id="challenge-form"><div class="dialog-heading"><h2>申请复现核查</h2><button type="button" id="close-dialog" class="text-button" aria-label="关闭">×</button></div><p id="challenge-target"></p><label for="reproduced-score">你的复现分数</label><input id="reproduced-score" type="number" required step="any"><label for="evidence-url">复现证据链接</label><input id="evidence-url" type="url" required pattern="https://.*" maxlength="500" placeholder="https://github.com/you/reproduction"><p class="caption">包含同一 checkpoint 的 SHA256、环境、命令、日志与逐题差异。不要在公开记录中放学号。</p><button type="submit" class="button full">生成 GitHub 核查申请 ↗</button><div id="challenge-status" role="status" aria-live="polite"></div></form></dialog>
+  <noscript><p class="shell">提交表单和排行榜需要启用 JavaScript。任务书与下载包仍可直接访问。</p></noscript>
+</body>
+</html>
