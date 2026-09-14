@@ -1,6 +1,6 @@
 // Shared validation for the browser and the trusted snapshot builder. No dependencies.
 export const REPO = 'xudongwu-0/xudongwu-0.github.io';
-import {PROTOCOL, PROJECTS} from './projects.mjs';
+import {PROTOCOL, PROJECTS} from './projects.127dafd8d78d.mjs';
 export {PROTOCOL, PROJECTS};
 export const KEY_ID = '7506-2026-v1';
 export function validStudentID(value) {
