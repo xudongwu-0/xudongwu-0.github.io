@@ -14,6 +14,11 @@ Legacy test issues already containing plaintext links remain public records.
 Student IDs are now written in plaintext issue payloads, with consent on the form.
 They are not retained in browser localStorage. GitHub usernames are not displayed
 in the student leaderboard's identity column.
+The Student ID field also accepts result labels such as `[Baseline] GPT-128`:
+1–64 characters, including spaces, punctuation and other visible Unicode symbols.
+Leading/trailing whitespace is trimmed by the form; control characters are rejected.
+Labels are displayed as text. The GitHub account still determines ownership and
+which submission supplies the best score; result labels do not create new accounts.
 
 The private key is kept outside this repository by the instructor. Back it up
 privately; losing it prevents decryption of sealed links and legacy student IDs. To export a
@@ -130,17 +135,25 @@ The student page has no link to this overview and displays neither counts nor
 flags. This is a separate view, not an access-controlled backend: its source
 issues and snapshot can still be inspected through GitHub.
 
-“Total requests” includes duplicate, closed, rejected, late and self requests.
+“Total reports” includes duplicate, closed, rejected, late and self reports.
 “Active reporters” counts distinct GitHub accounts with pending or upheld
-requests, excluding self, closed, rejected and late requests. **More than 3**
+reports, excluding self, closed, rejected, late and scoreless reports. **More than 3**
 active reporters means **4 or more** and sets a flag. Flags do not invalidate a
 score, remove it from ranking, apply an instructor label or change grades.
 
-The Request review form requires a reason; evidence and a reproduced score are
-optional. During the seven-day review, supplying both creates a reproduction
-claim eligible for instructor adjudication under the original reward rules.
-Other requests are inspection leads, not automatic reward claims. Requests and
-the requester's GitHub account are public; this is stated in the form.
+The **Peer Review Report** form requires the reproduced score. The Markdown
+report and evidence link are optional. Current submissions use
+`dase7506/peer-review-v1`, which validates a numeric score even when both optional
+fields are omitted. Reports during the seven-day review enter the existing
+instructor adjudication flow; earlier reports remain inspection leads. Historical
+requests without scores remain visible in the overview as `score-missing` and do
+not contribute to active counts. Reports alone do not affect grades.
+
+Students may also email **wu.xudong@connect.hku.hk**. The email link checks the
+required score and opens a draft containing the submission number, reproduced
+score and any optional details. The student must send the email. Email reports
+are handled directly by the instructor and are not automatically imported into
+the GitHub counts. GitHub reports and their author accounts remain public.
 
 For a local instructor copy, including all request records:
 

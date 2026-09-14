@@ -1,4 +1,4 @@
-import {REPO,PROTOCOL,PROJECTS,safeURL,validStudentID} from './arena.mjs';
+import {REPO,PROTOCOL,PROJECTS,safeURL,validStudentID} from './arena.233381b09b3a.mjs';
 const $=id=>document.getElementById(id);
 let snapshot={submissions:[],review_requests:[]};
 function el(tag,text,className){const node=document.createElement(tag);if(text!=null)node.textContent=String(text);if(className)node.className=className;return node;}

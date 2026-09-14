@@ -35,7 +35,7 @@ test('unreleased projects reject submissions; enable synthetic metrics only insi
 test('submission accepts public student IDs and legacy encryption but rejects malformed input',()=>{
   assert.ok(validateSubmission(claim()));
   assert.ok(validateSubmission(claim({student_id:'3035999000'})));
-  for(const invalid of [{student_id:'<script>'},{student_id:''},{student_id:' a b '},{protocol:'other'},{score:101},{score:'70'},
+  for(const invalid of [{student_id:'bad\nid'},{student_id:''},{student_id:' a b '},{protocol:'other'},{score:101},{score:'70'},
     {project:'__proto__'},{score:NaN},{code_url:'javascript:alert(1)'},{code_url:'https://secret:token@example.org'},
     {checkpoint_url:'https://example.org/\nmalformed'}]) assert.ok(!validateSubmission(claim(invalid)));
   assert.ok(!parseIssue({...issue(1),pull_request:{}}));

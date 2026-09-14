@@ -48,7 +48,7 @@ for page in range(1,10000):
                 decrypted=subprocess.run(['openssl','pkeyutl','-decrypt','-inkey',str(args.key),
                     '-pkeyopt','rsa_padding_mode:oaep','-pkeyopt','rsa_oaep_md:sha256',
                     '-pkeyopt','rsa_mgf1_md:sha256'],input=ciphertext,capture_output=True,check=True).stdout.decode()
-            if not re.fullmatch(r'[A-Za-z0-9-]{3,32}',decrypted):
+            if not (1 <= len(decrypted.encode('utf-16-le'))//2 <= 64 and decrypted==decrypted.strip()) or re.search(r'[\x00-\x1f\x7f-\x9f\u202a-\u202e\u2066-\u2069]',decrypted):
                 raise ValueError('Invalid student ID format')
             rows.append([issue['number'],issue['user']['login'],decrypted,data['project'],data['score']])
         except (ValueError,KeyError,subprocess.CalledProcessError):

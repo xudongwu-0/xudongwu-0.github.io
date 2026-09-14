@@ -8,7 +8,7 @@
   <title>DASE7506 · MP1</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/arena.db0692859353.css">
-  <script type="module" src="assets/app.7a422f1a54e1.mjs"></script>
+  <script type="module" src="assets/app.3e2c2404c52c.mjs"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -29,7 +29,7 @@
         <form id="submission-form" class="panel">
           <input id="project" type="hidden" name="project" value="mp1">
           <div class="form-row" id="score-fields">
-            <div><label for="student-id">Student ID</label><input id="student-id" name="student_id" required maxlength="32" pattern="[A-Za-z0-9-]{3,32}" autocomplete="off" placeholder="Your student ID"></div>
+            <div><label for="student-id">Student ID</label><input id="student-id" name="student_id" required maxlength="64" autocomplete="off" placeholder="Student ID or [Baseline] GPT"></div>
             <div><label for="score">Score <span id="score-unit">BPB</span></label><input id="score" name="score" type="number" required min="0" step="any" placeholder="e.g. 2.10184"></div>
           </div>
           <div id="artifact-reference" hidden><label for="score-submission">Original score submission #</label><input id="score-submission" name="submission" type="number" min="1" step="1" placeholder="Issue number shown in the leaderboard"></div>
@@ -46,19 +46,20 @@
       <section id="leaderboard" aria-labelledby="leaderboard-title">
         <div class="section-title"><h2 id="leaderboard-title">Leaderboard</h2><button class="text-button" id="refresh" type="button">Refresh ↻</button></div>
         <div class="board-controls"><p class="caption">Best per student · Lower BPB is better</p><label class="check-label"><input id="history" type="checkbox">All submissions</label></div>
-        <div class="table-wrap"><table><caption class="sr-only">MP1 self-reported scores</caption><thead><tr><th scope="col">Rank</th><th scope="col">Student ID</th><th scope="col" id="score-heading">BPB ↓</th><th scope="col">Artifacts</th><th scope="col">Status</th><th scope="col">Review</th></tr></thead><tbody id="board-body"><tr><td colspan="6" class="empty">Loading submissions…</td></tr></tbody></table></div>
+        <div class="table-wrap"><table><caption class="sr-only">MP1 self-reported scores</caption><thead><tr><th scope="col">Rank</th><th scope="col">Student ID</th><th scope="col" id="score-heading">BPB ↓</th><th scope="col">Artifacts</th><th scope="col">Status</th><th scope="col">Peer Review Report</th></tr></thead><tbody id="board-body"><tr><td colspan="6" class="empty">Loading submissions…</td></tr></tbody></table></div>
         <div class="board-footer"><p class="caption" id="sync-status" role="status" aria-live="polite"></p><a href="https://github.com/xudongwu-0/xudongwu-0.github.io/issues?q=is%3Aissue+%22%5BDASE7506%5D%22" target="_blank" rel="noopener noreferrer">Submission records ↗</a></div>
       </section>
     </div>
   </main>
   <dialog id="challenge-dialog"><form id="challenge-form">
-    <div class="dialog-heading"><h2>Request review</h2><button type="button" id="close-dialog" class="text-button" aria-label="Close">×</button></div>
+    <div class="dialog-heading"><h2>Peer Review Report</h2><button type="button" id="close-dialog" class="text-button" aria-label="Close">×</button></div>
     <p id="challenge-target" class="caption"></p>
-    <label for="review-reason">Reason for review</label><textarea id="review-reason" required minlength="10" maxlength="2000" rows="4" placeholder="Explain what needs to be checked."></textarea>
-    <label for="reproduced-score">Reproduced score <span>Optional</span></label><input id="reproduced-score" type="number" step="any">
+    <label for="reproduced-score">Reproduced score <span>Required</span></label><input id="reproduced-score" type="number" required step="any">
+    <label for="review-reason">Report (Markdown) <span>Optional</span></label><textarea id="review-reason" maxlength="2000" rows="4" placeholder="Describe your findings, commands or observations."></textarea>
     <label for="evidence-url">Evidence link <span>Optional</span></label><input id="evidence-url" type="url" pattern="https://.*" maxlength="500" placeholder="https://github.com/you/reproduction">
-    <p class="caption handoff-note">Your GitHub account and request will be public. For a reproduction claim, use the same checkpoint and include commands, hashes and logs. Requests alone do not affect grades.</p>
-    <button type="submit" class="button full">Prepare review request ↗</button><div id="challenge-status" role="status" aria-live="polite"></div>
+    <p class="caption handoff-note">Use the same checkpoint and evaluator. Reports submitted through GitHub are public. Reports alone do not affect grades.</p>
+    <button type="submit" class="button full">Prepare Peer Review Report ↗</button>
+    <p class="caption handoff-note">You can also <a id="email-report" href="mailto:wu.xudong@connect.hku.hk">email your report to wu.xudong@connect.hku.hk</a>. Include the submission number and reproduced score.</p><div id="challenge-status" role="status" aria-live="polite"></div>
   </form></dialog>
   <noscript><p class="shell">Enable JavaScript to submit a result.</p></noscript>
 </body>
