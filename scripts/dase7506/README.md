@@ -1,6 +1,6 @@
 # DASE7506 website maintenance
 
-The public course page is `/courses/dase7506/`. MP1 is open for submission testing with full-test BPB (lower is better); MP2 and MP3 remain closed. The course page is English-only and has its own navigation and favicon, with no links to the personal homepage. Assignment handouts, datasets and checkpoints are not published on this page. The tentative MP1 deadline is 30 September 2026 (UTC+8).
+The public course page is `/courses/dase7506/`. MP1 is open for submission testing with full-test BPB (lower is better). The compact page shows the submission form, leaderboard and reproduction reports. MP2 and MP3 remain closed and are hidden from the form. The course page is English-only and has its own navigation and favicon, with no links to the personal homepage. Assignment handouts, datasets and checkpoints are not published on this page. The tentative MP1 deadline is 30 September 2026 (UTC+8).
 
 ## Storage and identity
 
@@ -79,13 +79,21 @@ so their authors cannot redirect rewards or erase penalties by editing JSON.
 ## Checks
 
 ```bash
-node --test scripts/dase7506/arena.test.mjs
+node scripts/dase7506/build-assets.mjs
+node --test scripts/dase7506/*.test.mjs
 node scripts/dase7506/sync.mjs
 ```
 
 The sync command uses optional `GITHUB_TOKEN` for API rate limits; never commit it.
 The workflow only processes JSON data and instructor labels, not issue-body shell
 expressions or code from forks. GitHub Issues / Actions must remain enabled.
+
+Run `build-assets.mjs` after changing browser code, project settings or CSS, and
+commit the generated `assets/` files together with `index.html`. Each module
+references fingerprinted dependencies, including the project configuration.
+This prevents a new English page from loading an old cached Chinese script or
+closed-project configuration. Asset tests check that the published graph matches
+the source. Older fingerprinted files remain available for cached HTML.
 
 Implementation references: [GitHub Pages static hosting](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages),
 [prefilled issue URLs](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue#creating-an-issue-from-a-url-query),

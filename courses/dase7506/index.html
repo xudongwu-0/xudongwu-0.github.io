@@ -3,55 +3,60 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Submit and reproduce DASE7506 mini-project results. MP1 submission testing is open.">
+  <meta name="description" content="DASE7506 MP1 submissions and leaderboard.">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>DASE7506 · Mini-project Arena</title>
+  <title>DASE7506 · MP1</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="arena.css">
-  <script type="module" src="app.mjs"></script>
+  <link rel="stylesheet" href="assets/arena.f03b344e2730.css">
+  <script type="module" src="assets/app.53bc7e14d70b.mjs"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <header class="masthead"><div class="shell nav">
-    <a class="brand" href="#main">DASE7506 <span>/ Mini-project Arena</span></a>
-    <nav aria-label="Course navigation"><a href="#leaderboard">Leaderboard</a><a href="#submit">Submit</a></nav>
-  </div></header>
+  <header class="shell masthead">
+    <a class="brand" href="#main">DASE7506 <span>/ MP1</span></a>
+    <nav aria-label="Course navigation"><a href="#submit">Submit</a><a href="#leaderboard">Leaderboard</a></nav>
+  </header>
   <main id="main" class="shell">
-    <section class="hero">
-      <div class="eyebrow">DASE7506 · ADVANCED MACHINE LEARNING METHODS</div>
-      <h1>Share your work.<br><span>Make it reproducible.</span></h1>
-      <p class="lead">Share your mini-project results and help reproduce your classmates' work.<br class="desktop"> Submit your student ID, score, code link and checkpoint link.</p>
-      <div class="actions"><a class="button" href="#submit">Submit a result <span>↗</span></a><a class="button secondary" href="#leaderboard">View leaderboard</a></div>
-      <div class="notice"><strong>MP1 submission testing is open</strong><p>Small Language Model Challenge · Full-test BPB, lower is better.<br>Tentative deadline: 30 September 2026 (UTC+8). MP2 and MP3 are not open.</p></div>
-      <div class="facts"><span>Encrypted student IDs</span><span>Public scores and artifact links</span><span>AI assistance allowed with disclosure</span></div>
-    </section>
-
-    <section id="leaderboard" aria-labelledby="leaderboard-title">
-      <div class="section-title"><div><span class="eyebrow">01 / COMPARE & REPRODUCE</span><h2 id="leaderboard-title">Public leaderboard</h2></div><button class="text-button" id="refresh" type="button">Refresh ↻</button></div>
-      <div class="board-controls"><div class="tabs" role="group" aria-label="Leaderboard project"><button type="button" data-project="mp1" aria-pressed="true">Mini-project 1</button><button type="button" data-project="mp2" aria-pressed="false">Mini-project 2</button><button type="button" data-project="mp3" aria-pressed="false">Mini-project 3</button></div><label class="check-label"><input id="history" type="checkbox">Show all submissions</label></div>
-      <p class="caption" id="board-note">Each student's best eligible self-reported score is shown. Results under review, invalidated or withdrawn are excluded from ranking.</p>
-      <div class="table-wrap"><table><caption class="sr-only">Student self-reported results</caption><thead><tr><th scope="col">Rank</th><th scope="col">Student</th><th scope="col" id="score-heading">BPB ↓</th><th scope="col">Artifacts</th><th scope="col">Status</th><th scope="col">Reproduce</th></tr></thead><tbody id="board-body"><tr><td colspan="6" class="empty">Loading submissions…</td></tr></tbody></table></div>
-      <div class="board-footer"><p class="caption" id="sync-status" role="status" aria-live="polite"></p><a href="https://github.com/xudongwu-0/xudongwu-0.github.io/issues?q=is%3Aissue+%22%5BDASE7506%5D%22" target="_blank" rel="noopener noreferrer">View submission records ↗</a></div>
-      <details class="review-history"><summary>Reproduction reports and instructor decisions</summary><div id="review-list"><p class="caption">No reproduction reports yet.</p></div><p class="caption">Submit evidence from the exact same checkpoint for instructor review. The instructor hears both parties before making a decision. Numerical tolerances and grading adjustments will be announced separately; a report alone does not trigger a penalty.</p></details>
-    </section>
-
-    <section id="submit" class="submit-section" aria-labelledby="submit-title">
-      <div class="submit-copy"><span class="eyebrow">02 / SHARE YOUR RESULT</span><h2 id="submit-title">Four fields.<br> Your improvement.</h2><p>Choose your project, then enter your student ID, score, code link and checkpoint link.</p><p>Include reproducible commands, checkpoint hashes, evaluation evidence, resource measurements and AI-use disclosure in your repository. Your report should analyze the baseline, comparisons and ablations.</p><p class="privacy-note">Your student ID is encrypted for the instructor. Your GitHub username, score and artifact links are public. Keep your student ID out of public files, URLs and comments.</p></div>
-      <form id="submission-form" class="form-panel">
-        <label for="project">Project</label><select id="project" name="project"><option value="mp1">MP1 · Small Language Model Challenge</option><option value="mp2">Mini-project 2 · Not open</option><option value="mp3">Mini-project 3 · Not open</option></select>
-        <div class="form-row"><div><label for="student-id">Student ID <span>Instructor only</span></label><input id="student-id" name="student_id" required maxlength="32" pattern="[A-Za-z0-9-]{3,32}" autocomplete="off" placeholder="Your student ID"><small>Do not enter your name.</small></div><div><label for="score">Self-reported score <span id="score-unit">BPB</span></label><input id="score" name="score" type="number" required min="0" step="any" placeholder="e.g. 2.10184"><small id="score-help">Full-test FP32 BPB; lower is better.</small></div></div>
-        <label for="code-url">Code link</label><input id="code-url" name="code_url" type="url" required maxlength="500" placeholder="https://github.com/you/project/tree/commit" pattern="https://.*"><small>Link to an immutable commit and include reproduction instructions.</small>
-        <label for="checkpoint-url">Checkpoint link</label><input id="checkpoint-url" name="checkpoint_url" type="url" required maxlength="500" placeholder="https://huggingface.co/you/model/resolve/…" pattern="https://.*"><small>Provide a downloadable bundle with all inference weights and assets.</small>
-        <label class="check-label consent"><input id="consent" type="checkbox" required>I agree to publish my score and artifact links. For assessed submissions, I follow the project protocol and disclose AI assistance.</label>
-        <button class="button full" type="submit" id="prepare-submit">Prepare GitHub submission ↗</button>
-        <p class="caption">Next, sign in to GitHub and click <strong>Create / Submit new issue</strong> to save your submission. Then return here and refresh the leaderboard. Use one GitHub account per student.</p>
-        <div id="submission-status" role="status" aria-live="polite"></div>
-      </form>
-    </section>
-    <section class="principles"><div><h3>Explain your method</h3><p>AI assistance is allowed. Understand your implementation and use comparisons and ablations to support your analysis.</p></div><div><h3>Make results reproducible</h3><p>Scores are self-reported. Share code, checkpoints and evaluation evidence so classmates can independently verify them.</p></div><div><h3>Improve within the budget</h3><p>Focus on model and training improvements. Follow the fixed benchmark and test-time resource limits in the project guide.</p></div></section>
+    <div class="heading">
+      <h1>Small Language Model Challenge</h1>
+      <p><span class="open-badge">Submissions open</span><span class="caption">Tentative deadline: 30 September 2026 (UTC+8)</span></p>
+    </div>
+    <div class="workspace">
+      <section id="submit" aria-labelledby="submit-title">
+        <h2 id="submit-title">Submit a result</h2>
+        <form id="submission-form" class="panel">
+          <input id="project" type="hidden" name="project" value="mp1">
+          <div class="form-row">
+            <div><label for="student-id">Student ID</label><input id="student-id" name="student_id" required maxlength="32" pattern="[A-Za-z0-9-]{3,32}" autocomplete="off" placeholder="Your student ID"></div>
+            <div><label for="score">Score <span id="score-unit">BPB</span></label><input id="score" name="score" type="number" required min="0" step="any" placeholder="e.g. 2.10184"></div>
+          </div>
+          <p id="score-help" class="caption">Full-test FP32 BPB; lower is better.</p>
+          <label for="code-url">Code link</label><input id="code-url" name="code_url" type="url" required maxlength="500" placeholder="https://github.com/you/project/tree/commit" pattern="https://.*">
+          <label for="checkpoint-url">Checkpoint link</label><input id="checkpoint-url" name="checkpoint_url" type="url" required maxlength="500" placeholder="https://example.org/checkpoint.pt" pattern="https://.*">
+          <p class="caption privacy-note">Student ID is encrypted for the instructor. Scores and links are public.</p>
+          <label class="check-label consent"><input id="consent" type="checkbox" required>I agree to publish my score and links.</label>
+          <button class="button full" type="submit" id="prepare-submit" disabled>Prepare submission ↗</button>
+          <p class="caption handoff-note">Confirm on GitHub to finish submitting.</p>
+          <div id="submission-status" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+      <section id="leaderboard" aria-labelledby="leaderboard-title">
+        <div class="section-title"><h2 id="leaderboard-title">Leaderboard</h2><button class="text-button" id="refresh" type="button">Refresh ↻</button></div>
+        <div class="board-controls"><p class="caption">Best per student · Lower BPB is better</p><label class="check-label"><input id="history" type="checkbox">All submissions</label></div>
+        <div class="table-wrap"><table><caption class="sr-only">MP1 self-reported scores</caption><thead><tr><th scope="col">Rank</th><th scope="col">Student</th><th scope="col" id="score-heading">BPB ↓</th><th scope="col">Artifacts</th><th scope="col">Status</th><th scope="col">Review</th></tr></thead><tbody id="board-body"><tr><td colspan="6" class="empty">Loading submissions…</td></tr></tbody></table></div>
+        <div class="board-footer"><p class="caption" id="sync-status" role="status" aria-live="polite"></p><a href="https://github.com/xudongwu-0/xudongwu-0.github.io/issues?q=is%3Aissue+%22%5BDASE7506%5D%22" target="_blank" rel="noopener noreferrer">Submission records ↗</a></div>
+        <details class="review-history"><summary>Reproduction reports</summary><div id="review-list"><p class="caption">No reports yet.</p></div></details>
+      </section>
+    </div>
   </main>
-  <footer class="shell footer"><span>DASE7506 · Advanced Machine Learning Methods</span><span>MP1 tentative deadline: 30 September 2026 (UTC+8)</span></footer>
-  <dialog id="challenge-dialog"><form id="challenge-form"><div class="dialog-heading"><h2>Request a reproduction review</h2><button type="button" id="close-dialog" class="text-button" aria-label="Close">×</button></div><p id="challenge-target"></p><label for="reproduced-score">Reproduced score</label><input id="reproduced-score" type="number" required step="any"><label for="evidence-url">Evidence link</label><input id="evidence-url" type="url" required pattern="https://.*" maxlength="500" placeholder="https://github.com/you/reproduction"><p class="caption">Include the same checkpoint's SHA256, environment, commands, logs and per-window differences. Keep student IDs out of public records.</p><button type="submit" class="button full">Prepare GitHub review request ↗</button><div id="challenge-status" role="status" aria-live="polite"></div></form></dialog>
-  <noscript><p class="shell">Enable JavaScript to use the encrypted submission form and leaderboard.</p></noscript>
+  <dialog id="challenge-dialog"><form id="challenge-form">
+    <div class="dialog-heading"><h2>Request review</h2><button type="button" id="close-dialog" class="text-button" aria-label="Close">×</button></div>
+    <p id="challenge-target" class="caption"></p>
+    <label for="reproduced-score">Reproduced score</label><input id="reproduced-score" type="number" required step="any">
+    <label for="evidence-url">Evidence link</label><input id="evidence-url" type="url" required pattern="https://.*" maxlength="500" placeholder="https://github.com/you/reproduction">
+    <p class="caption handoff-note">Use the same checkpoint. Include commands, hashes and logs.</p>
+    <button type="submit" class="button full">Prepare review request ↗</button><div id="challenge-status" role="status" aria-live="polite"></div>
+  </form></dialog>
+  <noscript><p class="shell">Enable JavaScript to submit a result.</p></noscript>
 </body>
 </html>

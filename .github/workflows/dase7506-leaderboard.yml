@@ -8,8 +8,7 @@ on:
     paths:
       - '.github/workflows/dase7506-leaderboard.yml'
       - 'scripts/dase7506/**'
-      - 'courses/dase7506/arena.mjs'
-      - 'courses/dase7506/projects.mjs'
+      - 'courses/dase7506/**'
   schedule:
     - cron: '17 */6 * * *'
 permissions:
@@ -28,7 +27,7 @@ jobs:
           ref: main
           fetch-depth: 1
       - name: Validate scoring and review rules
-        run: node --test scripts/dase7506/arena.test.mjs
+        run: node --test scripts/dase7506/*.test.mjs
       - name: Read submissions and instructor labels
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
