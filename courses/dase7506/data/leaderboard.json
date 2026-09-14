@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-14T09:03:22.767Z",
+  "generated_at": "2026-09-14T09:11:30.284Z",
   "submissions": [
     {
       "number": 1,
@@ -18,6 +18,22 @@
       "review_labels": [],
       "artifact_issue": 1,
       "artifact_status": "received"
+    },
+    {
+      "number": 2,
+      "author": "xudongwu-0",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/2",
+      "project": "mp1",
+      "score": 1.4,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-09-14T09:11:17Z",
+      "signature": "[\"mp1\",1.4,null,null,{\"algorithm\":\"RSA-OAEP-256\",\"key_id\":\"7506-2026-v1\",\"ciphertext\":\"J9cPbTjVx6HSqSWpko7vWkY7dBA9+45IHHsTKofNdROx9zYNJLSMG9Lan9GXFKh9gws41eSKH6UEMXesmluRg+lxKg0Ly5tji/Cd5LisFVfsreFnqKVLLSASk4GYDmxLpUGFyPeJ+ADMW3jLtZ3Gvi0FWob5Sz5i2Gxkk21htT8pnKHdvZeFJnX8Cck67xcwxUea+yyt6HhHkYhkaIOAeSg5gL5hXM19Q8N3HxPV1xP1RsLokxlm/BAaExEuV9+5QS75cDi2vnncocQ6B11B01et+YvGCqbG8VOEs9CaTduiPrMUm0yDBEKJChY1KrpDAtgAlpAt/Mqp6ATKArhsH4aTRjer67VfGNcECDqKQ5KvWKye12FQYvB2VEIvg3Rr8fwHTJKEu1c7yHEO2mbpnfZO50cj2KykOeBjOTSsXJcCirRAfZdI/PNBDTuSUnmkHbYizAgTWWABVu9OnH93lUfdawXHG2nX7yGChfolBrlMilzy35EOPHjB1BaKpoGk\"},null]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": null,
+      "artifact_status": "pending"
     }
   ],
   "challenges": [],
