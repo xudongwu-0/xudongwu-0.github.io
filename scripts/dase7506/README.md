@@ -129,17 +129,33 @@ submission stays invalid and recorded even if its author edits or closes it.
 
 ## Instructor review overview
 
-Open `/courses/dase7506/instructor.html` directly to see every submission's
-request count, distinct active reporters, flags and individual GitHub records.
+Open `/courses/dase7506/instructor.html` directly to see one entry per
+**project + exact Student ID + GitHub account** (account names ignore case).
+Each entry shows its **latest submission**, even if its score is worse, withdrawn,
+late or invalid; the latest score status remains visible. Creation time determines
+recency, with issue number breaking ties or handling missing timestamps. An edit
+to an older issue does not make it the latest submission. Earlier submissions
+remain available in expandable history and their reports accumulate in the entry.
+Legacy records without a resolved Student ID remain separate until resolved.
 The student page has no link to this overview and displays neither counts nor
 flags. This is a separate view, not an access-controlled backend: its source
 issues and snapshot can still be inspected through GitHub.
 
 “Total reports” includes duplicate, closed, rejected, late and self reports.
-“Active reporters” counts distinct GitHub accounts with pending or upheld
-reports, excluding self, closed, rejected, late and scoreless reports. **More than 3**
-active reporters means **4 or more** and sets a flag. Flags do not invalidate a
-score, remove it from ranking, apply an instructor label or change grades.
+“Active reporters” counts distinct GitHub accounts across **all submissions in
+the entry**, with pending or upheld reports, excluding self, closed, rejected,
+late and scoreless reports. Repeat reports by the same account on different
+submissions count once. **More than 3** active reporters means **4 or more** and
+sets a flag. If the **same exact Student ID is used by multiple GitHub accounts**,
+all related entries across projects are flagged, including entries with no reports.
+The flag column states each reason and lists conflicting accounts. The report
+selector includes the entry's entire history and retains each original target
+issue number. Re-submitting cannot reset an entry's accumulated report counts.
+
+These rules apply to both the online instructor page and the local HTML export.
+Raw submission records and the student leaderboard's best-score rule are unchanged.
+Flags do not invalidate a score, remove it from ranking, apply an instructor label
+or change grades.
 
 The **Peer Review Report** form requires the reproduced score. The Markdown
 report and evidence link are optional. Current submissions use

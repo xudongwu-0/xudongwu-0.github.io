@@ -1,4 +1,4 @@
-import {REPO,PROTOCOL,PROJECTS,safeURL,validStudentID,instructorRows} from './arena.mjs';
+import {REPO,PROTOCOL,PROJECTS,safeURL,validStudentID,instructorRows} from './arena.0886a85e5e9e.mjs';
 const $=id=>document.getElementById(id);
 let snapshot={submissions:[],review_requests:[]};
 let groupedRows=[];
