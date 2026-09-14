@@ -1,6 +1,6 @@
 # DASE7506 website maintenance
 
-The public course page is `/courses/dase7506/`. No course tasks, datasets, benchmark results, checkpoints or handouts are published. All projects are currently closed pending instructor decisions. Existing personal pages are preserved.
+The public course page is `/courses/dase7506/`. MP1 is open for submission testing with full-test BPB (lower is better); MP2 and MP3 remain closed. The course page is English-only and has its own navigation and favicon, with no links to the personal homepage. Assignment handouts, datasets and checkpoints are not published on this page. The tentative MP1 deadline is 30 September 2026 (UTC+8).
 
 ## Storage and identity
 
@@ -96,13 +96,13 @@ Implementation references: [GitHub Pages static hosting](https://docs.github.com
 
 Edit `courses/dase7506/projects.mjs`: set the project name, score unit, direction
 (`lower`), optional `min` / `max`, reproduction threshold and any reward / penalty.
-Set `open: true` only when the assignment and evaluation protocol are confirmed.
+MP1 currently has `open: true` for instructor submission testing. Set other projects to `open: true` only after instructor confirmation.
 The same configuration gates both the browser form and the trusted snapshot
 builder. Closed projects reject manually crafted GitHub submissions too.
 
 Publish the confirmed task instructions separately at that time. For a new course
 cohort or incompatible evaluation protocol, change `PROTOCOL` and archive the old
-leaderboard before accepting results; the current site contains no student records.
+leaderboard before accepting results; check for existing records before changing the protocol. A test submission can be withdrawn by closing its GitHub issue; it remains in history.
 
 Run the rule tests before pushing. Their synthetic score ranges and reward values
 exist only in the test process and are not published course policies.

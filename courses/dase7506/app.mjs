@@ -3,7 +3,7 @@ import {REPO, PROTOCOL, KEY_ID, PROJECTS, safeURL, validScore, makeIssueURL, bes
 const $ = id => document.getElementById(id);
 let snapshot = {submissions: [], challenges: [], adjustments: []};
 let project = 'mp1', challengeTarget = null;
-const STATUS = {'self-reported':'自报 · 未复核',verified:'已复核',review:'待核查',invalid:'已作废',withdrawn:'已撤回'};
+const STATUS = {'self-reported':'Self-reported',verified:'Verified',review:'Under review',invalid:'Invalidated',withdrawn:'Withdrawn'};
 function element(tag, text, className) {
   const node = document.createElement(tag);
   if (text !== undefined) node.textContent = text;
@@ -19,10 +19,10 @@ function link(text, url) {
 function render() {
   const history = $('history').checked;
   const rows = bestRows(snapshot.submissions, project, history);
-  $('score-heading').textContent = PROJECTS[project].open ? `${PROJECTS[project].unit} ${PROJECTS[project].lower ? '↓' : '↑'}` : '指标待公布';
+  $('score-heading').textContent = PROJECTS[project].open ? `${PROJECTS[project].unit} ${PROJECTS[project].lower ? '↓' : '↑'}` : 'Metric to be announced';
   $('board-body').replaceChildren();
   if (!rows.length) {
-    const td = element('td', PROJECTS[project].open ? '还没有学生提交，期待你的成果。' : '项目内容与评分指标待公布，暂未开放提交。', 'empty');
+    const td = element('td', PROJECTS[project].open ? 'No submissions yet. Share your first result.' : 'This project is not open for submissions yet.', 'empty');
     td.colSpan = 6; const tr = element('tr'); tr.append(td); $('board-body').append(tr);
   }
   let lastScore = null, rank = 0;
@@ -32,28 +32,28 @@ function render() {
     const tr = element('tr');
     const rankCell = element('td', history ? '—' : String(rank));
     const author = element('td'); author.append(link(row.author, `https://github.com/${encodeURIComponent(row.author)}`));
-    const score = element('td', Number(row.score).toFixed(4) + (PROJECTS[project].unit === '%' ? '%' : ''));
-    const materials = element('td'); materials.append(link('代码', row.code_url), link('权重', row.checkpoint_url), link(`#${row.number}`, row.url));
+    const score = element('td', Number(row.score).toFixed(PROJECTS[project].unit === 'BPB' ? 5 : 4) + (PROJECTS[project].unit === '%' ? '%' : ''));
+    const materials = element('td'); materials.append(link('Code', row.code_url), link('Checkpoint', row.checkpoint_url), link(`#${row.number}`, row.url));
     const status = element('td'); status.append(element('span', STATUS[row.status] || row.status, `badge ${row.status}`));
-    const reproduce = element('td'); const button = element('button', '申请核查', 'text-button');
+    const reproduce = element('td'); const button = element('button', 'Request review', 'text-button');
     button.type = 'button'; button.addEventListener('click', () => openChallenge(row)); reproduce.append(button);
     tr.append(rankCell, author, score, materials, status, reproduce); $('board-body').append(tr);
   });
   $('review-list').replaceChildren();
   const challenges = snapshot.challenges.filter(c => c.project === project);
-  if (!challenges.length) $('review-list').append(element('p', '该项目尚无复现申请。', 'caption'));
+  if (!challenges.length) $('review-list').append(element('p', 'No reproduction reports for this project yet.', 'caption'));
   for (const c of challenges) {
     const p = element('p');
-    p.append(link(`#${c.number}`, c.url), document.createTextNode(` ${c.author} 复现 #${c.submission}：${c.reproduced_score} ${PROJECTS[project].unit} · ${ {upheld:'教师确认成立',rejected:'教师驳回',pending:'等待教师裁定'}[c.status] || c.status} · `), link('证据', c.evidence_url));
+    p.append(link(`#${c.number}`, c.url), document.createTextNode(` ${c.author} reproduced #${c.submission}: ${c.reproduced_score} ${PROJECTS[project].unit} · ${ {upheld:'Upheld by instructor',rejected:'Rejected by instructor',pending:'Pending instructor review'}[c.status] || c.status} · `), link('Evidence', c.evidence_url));
     $('review-list').append(p);
   }
   for (const a of snapshot.adjustments.filter(a => a.project === project)) {
-    $('review-list').append(element('p', `${a.author}：复现奖励 +${a.reward}，核查扣分 ${a.penalty}（作业分；各项独立封顶）。`));
+    $('review-list').append(element('p', `${a.author}: reproduction reward +${a.reward}, review adjustment ${a.penalty} (project marks; each adjustment capped independently).`));
   }
 }
 async function refresh() {
   $('refresh').disabled = true;
-  $('sync-status').textContent = '正在同步 GitHub 提交记录…';
+  $('sync-status').textContent = 'Syncing GitHub submissions…';
   // Raw GitHub serves the Actions snapshot without sharing the unauthenticated REST rate limit.
   const raw = `https://raw.githubusercontent.com/${REPO}/main/courses/dase7506/data/leaderboard.json`;
   let result, fallback = false;
@@ -68,12 +68,12 @@ async function refresh() {
     try { result = await fetchSnapshot(raw); }
     catch { result = await fetchSnapshot('./data/leaderboard.json'); fallback = true; }
     snapshot = result; render();
-    const time = result.generated_at ? new Date(result.generated_at).toLocaleString('zh-CN') : '尚未同步';
-    $('sync-status').textContent = `${fallback ? '当前显示网站缓存，可能落后于最新提交。' : ''}快照更新：${time}。提交后通常需数分钟同步；原始记录立即可查。`;
+    const time = result.generated_at ? new Date(result.generated_at).toLocaleString('en-GB') : 'not synced yet';
+    $('sync-status').textContent = `${fallback ? 'Showing a cached snapshot; recent submissions may not appear yet. ' : ''}Snapshot updated: ${time}. New submissions may take a few minutes to appear; the GitHub record is available immediately.`;
   } catch {
-    $('sync-status').textContent = '暂时无法读取榜单。已提交记录仍保存在 GitHub，可用右侧链接查看。';
-    if (!$('board-body').children.length || !$('board-body').textContent.includes('代码')) {
-      const tr = element('tr'), td = element('td','无法读取榜单，请稍后重试。','empty'); td.colSpan=6; tr.append(td); $('board-body').replaceChildren(tr);
+    $('sync-status').textContent = 'The leaderboard is temporarily unavailable. Your submissions remain saved on GitHub; use View submission records.';
+    if (!$('board-body').children.length || !$('board-body').textContent.includes('Code')) {
+      const tr = element('tr'), td = element('td','Unable to load the leaderboard. Please try again.','empty'); td.colSpan=6; tr.append(td); $('board-body').replaceChildren(tr);
     }
   } finally { $('refresh').disabled = false; }
 }
@@ -88,21 +88,21 @@ $('history').addEventListener('change', render);
 $('refresh').addEventListener('click', refresh);
 function configureForm() {
   const config = PROJECTS[$('project').value];
-  $('score-unit').textContent = config.open ? config.unit : '指标待公布';
+  $('score-unit').textContent = config.open ? config.unit : 'Metric to be announced';
   for (const limit of ['min','max']) {
     if (config[limit] === null) $('score').removeAttribute(limit); else $('score')[limit] = String(config[limit]);
   }
-  $('score').value = ''; $('score').placeholder = config.open ? '填写评测分数' : '项目公布后填写';
-  $('score-help').textContent = config.open ? `指定 checkpoint 的 ${config.unit}，越${config.lower ? '低' : '高'}越好。` : '填写所提交 checkpoint 的评测分数。';
+  $('score').value = ''; $('score').placeholder = config.open ? 'Enter your evaluation score' : 'Available when this project opens';
+  $('score-help').textContent = config.open ? `The submitted checkpoint's ${config.unit}; ${config.lower ? 'lower' : 'higher'} is better.` : 'Enter the evaluation score for the submitted checkpoint.';
   for (const id of ['student-id','score','code-url','checkpoint-url','consent','prepare-submit']) $(id).disabled = !config.open;
-  $('prepare-submit').textContent = config.open ? '生成 GitHub 提交 ↗' : '项目待公布 · 暂未开放';
+  $('prepare-submit').textContent = config.open ? 'Prepare GitHub submission ↗' : 'Project not open yet';
   $('submission-status').replaceChildren();
 }
 $('project').addEventListener('change', configureForm);
 async function encryptStudentID(studentId) {
-  if (!window.isSecureContext || !crypto.subtle) throw new Error('请通过 HTTPS 打开此页面，才能加密学号。');
+  if (!window.isSecureContext || !crypto.subtle) throw new Error('Open this page over HTTPS to encrypt your student ID.');
   const response = await fetch('./data/student-id-public.pem', {cache:'no-cache'});
-  if (!response.ok) throw new Error('学号加密公钥暂时无法加载，请稍后重试。');
+  if (!response.ok) throw new Error('The student ID encryption key could not be loaded. Please try again.');
   const pem = await response.text();
   const binary = atob(pem.replace(/-----[^-]+-----|\s/g, ''));
   const key = await crypto.subtle.importKey('spki', Uint8Array.from(binary, c => c.charCodeAt(0)), {name:'RSA-OAEP',hash:'SHA-256'}, false, ['encrypt']);
@@ -110,9 +110,9 @@ async function encryptStudentID(studentId) {
   return {algorithm:'RSA-OAEP-256', key_id:KEY_ID, ciphertext:btoa(String.fromCharCode(...new Uint8Array(ciphertext)))};
 }
 function prepared(target, url, kind) {
-  const p = element('div', `${kind}已准备，尚未保存。请打开 GitHub，登录并确认创建 Issue。`, 'prepared');
+  const p = element('div', `${kind} prepared, but not saved yet. Open GitHub, sign in and confirm creation of the issue.`, 'prepared');
   // Generated issue URLs contain the encrypted payload and exceed the artifact URL limit.
-  const a = element('a', '在 GitHub 确认并保存 ↗');
+  const a = element('a', 'Confirm and save on GitHub ↗');
   a.href = url; a.target = '_blank'; a.rel = 'noopener noreferrer';
   p.append(element('br'), a);
   target.replaceChildren(p);
@@ -122,15 +122,15 @@ $('submission-form').addEventListener('submit', async event => {
   $('submission-status').replaceChildren();
   try {
     const p = $('project').value, score = Number($('score').value);
-    if (!PROJECTS[p].open) throw new Error('该项目尚未开放提交。');
+    if (!PROJECTS[p].open) throw new Error('This project is not open for submissions.');
     const code = safeURL($('code-url').value.trim()), checkpoint = safeURL($('checkpoint-url').value.trim());
-    if (!validScore(p,score) || !code || !checkpoint) throw new Error('请检查分数范围，并使用不含账号密码的 HTTPS 链接（最多 500 字符）。');
+    if (!validScore(p,score) || !code || !checkpoint) throw new Error('Check the score range and use HTTPS links without embedded credentials (maximum 500 characters).');
     const studentId = $('student-id').value.trim();
-    if (!/^[A-Za-z0-9-]{3,32}$/.test(studentId)) throw new Error('请填写 3–32 位学号，只使用英文字母、数字或连字符。');
+    if (!/^[A-Za-z0-9-]{3,32}$/.test(studentId)) throw new Error('Enter a student ID of 3–32 characters using letters, numbers or hyphens.');
     const encrypted = await encryptStudentID(studentId);
     const data = {schema:'dase7506/submission-v1',protocol:PROTOCOL,project:p,score,
       code_url:code,checkpoint_url:checkpoint,student_id:encrypted};
-    prepared($('submission-status'), makeIssueURL(data), '提交内容');
+    prepared($('submission-status'), makeIssueURL(data), 'Submission');
     $('student-id').value = '';
   } catch (error) { $('submission-status').append(element('p', error.message, 'error')); }
   finally { button.disabled = !PROJECTS[$('project').value].open; }
@@ -138,7 +138,7 @@ $('submission-form').addEventListener('submit', async event => {
 function openChallenge(row) {
   challengeTarget = row;
   $('challenge-form').reset(); $('challenge-status').replaceChildren();
-  $('challenge-target').textContent = `${row.project.toUpperCase()} · ${row.author} · #${row.number} · 自报 ${row.score} ${PROJECTS[row.project].unit}`;
+  $('challenge-target').textContent = `${row.project.toUpperCase()} · ${row.author} · #${row.number} · self-reported ${row.score} ${PROJECTS[row.project].unit}`;
   for (const limit of ['min','max']) {
     if (PROJECTS[row.project][limit] === null) $('reproduced-score').removeAttribute(limit);
     else $('reproduced-score')[limit] = String(PROJECTS[row.project][limit]);
@@ -150,12 +150,12 @@ $('challenge-form').addEventListener('submit', event => {
   event.preventDefault(); $('challenge-status').replaceChildren();
   try {
     const score = Number($('reproduced-score').value), evidence = safeURL($('evidence-url').value.trim());
-    if (!challengeTarget || !validScore(challengeTarget.project, score) || !evidence) throw new Error('请检查复现分数与 HTTPS 证据链接。');
+    if (!challengeTarget || !validScore(challengeTarget.project, score) || !evidence) throw new Error('Check the reproduced score and HTTPS evidence link.');
     const threshold = PROJECTS[challengeTarget.project].review_threshold;
-    if (typeof threshold === 'number' && Math.abs(score-challengeTarget.score) <= threshold) throw new Error(`差异未超过核查阈值：${threshold} ${PROJECTS[challengeTarget.project].unit}。一般问题可在原提交下讨论。`);
+    if (typeof threshold === 'number' && Math.abs(score-challengeTarget.score) <= threshold) throw new Error(`The difference does not exceed the review threshold of ${threshold} ${PROJECTS[challengeTarget.project].unit}. Discuss general questions on the original submission.`);
     const data = {schema:'dase7506/challenge-v1',protocol:PROTOCOL,project:challengeTarget.project,
       submission:challengeTarget.number,reproduced_score:score,evidence_url:evidence};
-    prepared($('challenge-status'), makeIssueURL(data), '核查申请');
+    prepared($('challenge-status'), makeIssueURL(data), 'Review request');
   } catch (error) { $('challenge-status').append(element('p', error.message, 'error')); }
 });
 configureForm();

@@ -1,5 +1,5 @@
 blank_issues_enabled: true
 contact_links:
-  - name: DASE7506 · 提交 mini-project 成绩
+  - name: DASE7506 · Submit a mini-project result
     url: https://xudongwu-0.github.io/courses/dase7506/#submit
-    about: 使用课程表单加密学号，提交分数、代码与 checkpoint 链接。
+    about: Use the course form to encrypt your student ID and submit your score, code and checkpoint links.
