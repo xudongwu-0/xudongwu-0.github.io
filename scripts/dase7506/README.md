@@ -1,13 +1,16 @@
 # DASE7506 website maintenance
 
-The public course page is `/courses/dase7506/`. MP1 is open for submission testing with full-test BPB (lower is better). The compact page shows the submission form, leaderboard and reproduction reports. MP2 and MP3 remain closed and are hidden from the form. The course page is English-only and has its own navigation and favicon, with no links to the personal homepage. Assignment handouts, datasets and checkpoints are not published on this page. The tentative MP1 deadline is 30 September 2026 (UTC+8).
+The public course page is `/courses/dase7506/`. MP1 is open for submission testing with full-test BPB (lower is better). The compact page shows the submission form, leaderboard and reproduction reports. MP2 and MP3 remain closed and are hidden from the form. The course page is English-only and has its own navigation and favicon, with no links to the personal homepage. Assignment handouts, datasets and checkpoints are not published on this page. The MP1 score deadline is the end of 30 September 2026 (UTC+8).
 
 ## Storage and identity
 
 The form creates a prefilled GitHub Issue. The student must log in to GitHub and
 confirm creation. Generating the link alone is **not** a successful submission.
-Scores, artifact URLs and GitHub usernames are public; student IDs are encrypted
-in the browser with RSA-OAEP / SHA256 using the course public key. No student ID
+Scores and GitHub usernames are public. The current form encrypts student IDs
+with RSA-OAEP / SHA256 and artifact links with AES-256-GCM, wrapping each AES key
+with the same RSA public key. Links are published together by the instructor.
+Legacy test issues already containing plaintext links remain public records.
+No student ID
 is stored in browser localStorage, logs or plaintext issue bodies by our code.
 Students must also avoid putting their IDs in public URLs, code or reports.
 
@@ -44,6 +47,63 @@ If Actions is disabled, enable it in the repository settings and run
 **Actions → DASE7506 leaderboard → Run workflow**. The GitHub Issue remains the
 source record even while a workflow or CDN update is delayed.
 
+## Score deadline, link collection and manual release
+
+Before 1 October 2026, 00:00 (UTC+8), a score submission needs only an encrypted
+student ID and BPB. Code and checkpoint links are optional. After that cutoff,
+new scores are excluded and edits cannot replace the recorded deadline score.
+If a score is first seen after the cutoff and its issue was edited after the
+cutoff, it requires instructor review of the deadline evidence.
+
+After the deadline the form requires both links and the original score issue
+number. The GitHub account must match that original submission. Links remain
+encrypted during collection. A “Links received” badge acknowledges the sealed
+payload; it does not establish that the files or score are valid. Students must
+preserve the method and checkpoint that produced their deadline score.
+
+After collecting the links, the instructor runs this command locally with the
+private key, outside the public repository, to inspect a private release preview:
+
+```bash
+node scripts/dase7506/release-links.mjs \
+  --key /private/path/submission-private.pem \
+  --output /private/path/7506-release-preview.json
+```
+
+The tool refreshes issue records, selects each account's best eligible score and
+requires two decryptable HTTPS links for every selected score. It refuses to
+release before the deadline or replace an existing release. Resolve missing
+links and reviewed/withdrawn entries before publishing. To open public review:
+
+```bash
+node scripts/dase7506/release-links.mjs \
+  --key /private/path/submission-private.pem --publish
+git add courses/dase7506/data/publication.json
+git commit -m 'Open MP1 seven-day public review'
+git push origin main
+```
+
+Run the publication command immediately before committing and pushing: the
+seven-day window starts at its recorded `published_at` time. This teacher action
+releases the links together; the leaderboard displays the review deadline.
+Only peer reports created within that seven-day window are eligible. Scores
+remain frozen, and the published links remain visible after the window closes.
+
+## Automated checking agent and score spot checks
+
+`.github/workflows/dase7506-artifact-checks.yml` runs the file-checking agent when
+links are released, and on manual dispatch. The agent downloads code at immutable
+GitHub commits and checkpoint files, checks Python syntax and expected interfaces,
+inspects checkpoint structure/protocol and records hashes and sizes. It selects
+a random sample for instructor reproduction and uploads `artifact-checks.json`
+under the workflow run's artifacts.
+
+The agent never executes submitted Python or unpickles checkpoint objects. Its
+output always distinguishes file inspection from numerical score reproduction
+(`score_reproduced: false`). Inaccessible or unrecognized files require instructor
+review; they do not automatically invalidate a score. Complete the selected score
+spot checks in an isolated evaluation environment before applying `7506:verified`.
+
 Malformed records are omitted from the board; the original issue remains for
 correction. Student results are self-reported unless the instructor verifies them.
 For an improved score, create a new issue instead of editing a reviewed result.
@@ -65,7 +125,8 @@ before applying the corresponding label:
 | `7506:rejected` | Reproduction issue | No penalty or reward |
 
 A pending report has no grading effect. An invalid submission **and** an upheld
-report with sufficient score difference are both required for an adjustment.
+report are both required for an adjustment. If a numeric difference threshold is
+configured, the report must exceed it; otherwise the instructor judges the evidence.
 The first upheld reporter and submission author receive the adjustments configured for that project. Each reward and
 penalty is capped independently per student/project. Repeated syncs and duplicate
 reports cannot multiply them. The board shows adjustments separately; apply them
@@ -82,6 +143,7 @@ so their authors cannot redirect rewards or erase penalties by editing JSON.
 ```bash
 node scripts/dase7506/build-assets.mjs
 node --test scripts/dase7506/*.test.mjs
+python3 -m unittest discover -s scripts/dase7506 -p test_artifact_agent.py -v
 node scripts/dase7506/sync.mjs
 ```
 

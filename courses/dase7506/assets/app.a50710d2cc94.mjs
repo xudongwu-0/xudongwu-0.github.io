@@ -1,4 +1,4 @@
-import {REPO, PROTOCOL, KEY_ID, PROJECTS, safeURL, validScore, makeIssueURL, bestRows, submissionPhase} from './arena.mjs';
+import {REPO, PROTOCOL, KEY_ID, PROJECTS, safeURL, validScore, makeIssueURL, bestRows, submissionPhase} from './arena.56adbdba2c71.mjs';
 
 const $ = id => document.getElementById(id);
 let snapshot = {submissions: [], challenges: [], adjustments: []};

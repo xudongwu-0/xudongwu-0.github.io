@@ -1,0 +1,35 @@
+name: DASE7506 artifact checking agent
+on:
+  workflow_dispatch:
+    inputs:
+      sample_count:
+        description: Number of submissions to select for instructor score reproduction
+        default: '1'
+        required: true
+  push:
+    branches: [main]
+    paths:
+      - 'courses/dase7506/data/publication.json'
+      - 'scripts/dase7506/check-artifacts.py'
+      - 'scripts/dase7506/test_artifact_agent.py'
+      - '.github/workflows/dase7506-artifact-checks.yml'
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Test the file-checking agent
+        run: python3 -m unittest discover -s scripts/dase7506 -p test_artifact_agent.py -v
+      - name: Inspect released code and checkpoint files
+        env:
+          SAMPLE_COUNT: ${{ inputs.sample_count || '1' }}
+        run: python3 scripts/dase7506/check-artifacts.py --publication courses/dase7506/data/publication.json --output artifact-checks.json --sample-count "$SAMPLE_COUNT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dase7506-artifact-checks
+          path: artifact-checks.json
