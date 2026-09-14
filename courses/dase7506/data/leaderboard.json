@@ -1,8 +1,23 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-11T09:42:12.779Z",
-  "submissions": [],
+  "generated_at": "2026-09-14T08:11:31.271Z",
+  "submissions": [
+    {
+      "number": 1,
+      "author": "xudongwu-0",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/1",
+      "project": "mp1",
+      "score": 1.4,
+      "code_url": "https://xudongwu-0.github.io/courses/dase7506/#main",
+      "checkpoint_url": "https://xudongwu-0.github.io/courses/dase7506/#main",
+      "status": "self-reported",
+      "created_at": "2026-09-14T08:11:20Z",
+      "signature": "[\"mp1\",1.4,\"https://xudongwu-0.github.io/courses/dase7506/#main\",\"https://xudongwu-0.github.io/courses/dase7506/#main\",{\"algorithm\":\"RSA-OAEP-256\",\"key_id\":\"7506-2026-v1\",\"ciphertext\":\"AZyBp4exBfWlix84mdajqs6k44Q5EuE18am0hLwB0eblh3T4ZbjGYZUntVqopJUwwwyiGfLDqnBUcUGjkByF4NV7p59m177dE2zgjXWb2V5cSiRSQQwiaPgTs9TnlZHL4cruPQDLdgkBemNpHvSpKxicq+yf/w38IpEm17WBjxfn5n/+T2WmZ7paJPv40+2CShkf3OKLrQbCgcfXnnpUZReadUsiWs/hC8Bw8btdiFgX23l8hZ8vgOux1duwiMpHf+yqiCUo4VtR5kNIzTvkjGF/Ban6JX0XsPW8/A6pnmTMJkl/D5N9hdiJLjM+SxLtt+GgtEG1rwApvy5TEXvCi5cxczy1yGA07dCyyBGrl7rTNy3/3Mp3HgPyrJi7tKOd3h9TjhCswKcHCfKNngv/wOGYUsa9cts1v/7CsUJsBxIYeQdsF9xRMmMDLkB+/6l1o/rAHQei3nmJAW3yeQMSaJiHPJzS3AijvX/TeNMPFezsgfpnoxmr7KjgktuB4VpV\"}]",
+      "edited_after_review": false,
+      "review_labels": []
+    }
+  ],
   "challenges": [],
   "adjustments": []
 }
