@@ -32,8 +32,9 @@ is no student roster, teacher key, server token or database in this repository.
 edits and review-label changes, plus manual runs and a six-hour recovery schedule.
 It validates structured JSON and commits `data/leaderboard.json` using the
 repository-scoped `GITHUB_TOKEN`. It never downloads or executes student code.
-The page reads that snapshot from raw.githubusercontent.com (with a deployed
-snapshot fallback), avoiding GitHub's shared anonymous REST API rate limit.
+The page first reads that snapshot from raw.githubusercontent.com. If that host
+is unavailable, it tries the GitHub Contents API, then a deployed snapshot.
+The primary path avoids GitHub's shared anonymous REST API rate limit.
 Issue creation is immediate; leaderboard refresh may take several minutes.
 
 Workflow commits made with `GITHUB_TOKEN` do not trigger a Pages rebuild. This is
