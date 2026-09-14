@@ -6,16 +6,17 @@ The public course page is `/courses/dase7506/`. MP1 is open for submission testi
 
 The form creates a prefilled GitHub Issue. The student must log in to GitHub and
 confirm creation. Generating the link alone is **not** a successful submission.
-Scores and GitHub usernames are public. The current form encrypts student IDs
-with RSA-OAEP / SHA256 and artifact links with AES-256-GCM, wrapping each AES key
-with the same RSA public key. Links are published together by the instructor.
+Student IDs and scores are displayed publicly. GitHub accounts remain the backend
+identity for submissions and review requests, and are visible in GitHub records.
+The current form encrypts artifact links with AES-256-GCM, wrapping each AES key
+with the course RSA public key. Links are published together by the instructor.
 Legacy test issues already containing plaintext links remain public records.
-No student ID
-is stored in browser localStorage, logs or plaintext issue bodies by our code.
-Students must also avoid putting their IDs in public URLs, code or reports.
+Student IDs are now written in plaintext issue payloads, with consent on the form.
+They are not retained in browser localStorage. GitHub usernames are not displayed
+in the student leaderboard's identity column.
 
 The private key is kept outside this repository by the instructor. Back it up
-privately; losing it prevents decryption of submitted student IDs. To export a
+privately; losing it prevents decryption of sealed links and legacy student IDs. To export a
 private roster (Python 3.10+ and OpenSSL, outside this repository):
 
 ```bash
@@ -24,10 +25,20 @@ python3 scripts/dase7506/decrypt-ids.py \
   --output /private/path/7506-identities.csv
 ```
 
-A GitHub account is the public leaderboard identity. Enforce one account per
-student by comparing the decrypted IDs with the course roster before grading.
+A GitHub account remains the identity used for deduplication and artifact ownership.
+Enforce one account per student by comparing submitted IDs with the course roster before grading.
 Possession of an account alone does not establish a student's enrolment. There
 is no student roster, teacher key, server token or database in this repository.
+
+To migrate legacy encrypted IDs after the instructor's decision to show IDs:
+
+```bash
+node scripts/dase7506/publish-student-ids.mjs --key /private/path/submission-private.pem
+node scripts/dase7506/sync.mjs
+```
+
+Commit the updated `data/student-identities.json` and snapshot. Each migrated
+ID is bound to its original ciphertext; the private key is never published.
 
 ## Automatic leaderboard
 
@@ -49,7 +60,7 @@ source record even while a workflow or CDN update is delayed.
 
 ## Score deadline, link collection and manual release
 
-Before 1 October 2026, 00:00 (UTC+8), a score submission needs only an encrypted
+Before 1 October 2026, 00:00 (UTC+8), a score submission needs only a public
 student ID and BPB. Code and checkpoint links are optional. After that cutoff,
 new scores are excluded and edits cannot replace the recorded deadline score.
 If a score is first seen after the cutoff and its issue was edited after the
@@ -86,7 +97,8 @@ git push origin main
 Run the publication command immediately before committing and pushing: the
 seven-day window starts at its recorded `published_at` time. This teacher action
 releases the links together; the leaderboard displays the review deadline.
-Only peer reports created within that seven-day window are eligible. Scores
+Only reproduction claims created within that seven-day window are eligible for
+the peer-reproduction reward. General review requests can be filed earlier. Scores
 remain frozen, and the published links remain visible after the window closes.
 
 ## Automated checking agent and score spot checks
@@ -110,6 +122,33 @@ For an improved score, create a new issue instead of editing a reviewed result.
 Closing an ordinary submission withdraws it; history still shows it. An invalid
 submission stays invalid and recorded even if its author edits or closes it.
 
+## Instructor review overview
+
+Open `/courses/dase7506/instructor.html` directly to see every submission's
+request count, distinct active reporters, flags and individual GitHub records.
+The student page has no link to this overview and displays neither counts nor
+flags. This is a separate view, not an access-controlled backend: its source
+issues and snapshot can still be inspected through GitHub.
+
+“Total requests” includes duplicate, closed, rejected, late and self requests.
+“Active reporters” counts distinct GitHub accounts with pending or upheld
+requests, excluding self, closed, rejected and late requests. **More than 3**
+active reporters means **4 or more** and sets a flag. Flags do not invalidate a
+score, remove it from ranking, apply an instructor label or change grades.
+
+The Request review form requires a reason; evidence and a reproduced score are
+optional. During the seven-day review, supplying both creates a reproduction
+claim eligible for instructor adjudication under the original reward rules.
+Other requests are inspection leads, not automatic reward claims. Requests and
+the requester's GitHub account are public; this is stated in the form.
+
+For a local instructor copy, including all request records:
+
+```bash
+node scripts/dase7506/review-summary.mjs --refresh \
+  --output /private/path/review-overview.html
+```
+
 ## Reproduction and adjudication
 
 The workflow creates these five instructor labels automatically. Students cannot
@@ -129,7 +168,7 @@ report are both required for an adjustment. If a numeric difference threshold is
 configured, the report must exceed it; otherwise the instructor judges the evidence.
 The first upheld reporter and submission author receive the adjustments configured for that project. Each reward and
 penalty is capped independently per student/project. Repeated syncs and duplicate
-reports cannot multiply them. The board shows adjustments separately; apply them
+reports cannot multiply them. The snapshot records adjustments separately; apply them
 to project marks with a final 0–100 clamp. A withdrawn result does not imply
 misconduct. If a decision is reversed, remove the corresponding instructor label.
 
@@ -152,7 +191,7 @@ The workflow only processes JSON data and instructor labels, not issue-body shel
 expressions or code from forks. GitHub Issues / Actions must remain enabled.
 
 Run `build-assets.mjs` after changing browser code, project settings or CSS, and
-commit the generated `assets/` files together with `index.html`. Each module
+commit the generated `assets/` files together with `index.html` and `instructor.html`. Each module
 references fingerprinted dependencies, including the project configuration.
 This prevents a new English page from loading an old cached Chinese script or
 closed-project configuration. Asset tests check that the published graph matches

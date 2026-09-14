@@ -1,11 +1,12 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-14T09:11:30.284Z",
+  "generated_at": "2026-09-14T09:22:11.003Z",
   "submissions": [
     {
       "number": 1,
       "author": "xudongwu-0",
+      "student_id": "3030140074",
       "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/1",
       "project": "mp1",
       "score": 1.4,
@@ -17,11 +18,15 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 1,
-      "artifact_status": "received"
+      "artifact_status": "received",
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
     },
     {
       "number": 2,
       "author": "xudongwu-0",
+      "student_id": "3030140074",
       "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/2",
       "project": "mp1",
       "score": 1.4,
@@ -33,7 +38,10 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": null,
-      "artifact_status": "pending"
+      "artifact_status": "pending",
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
     }
   ],
   "challenges": [],
@@ -46,5 +54,6 @@
     "mp1": "scores",
     "mp2": "closed",
     "mp3": "closed"
-  }
+  },
+  "review_requests": []
 }

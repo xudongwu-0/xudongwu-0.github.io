@@ -41,10 +41,13 @@ for page in range(1,10000):
             score=data.get('score')
             if type(score) not in [int,float] or not math.isfinite(score):
                 raise ValueError('Invalid numeric score')
-            ciphertext=base64.b64decode(data['student_id']['ciphertext'],validate=True)
-            decrypted=subprocess.run(['openssl','pkeyutl','-decrypt','-inkey',str(args.key),
-                '-pkeyopt','rsa_padding_mode:oaep','-pkeyopt','rsa_oaep_md:sha256',
-                '-pkeyopt','rsa_mgf1_md:sha256'],input=ciphertext,capture_output=True,check=True).stdout.decode()
+            if isinstance(data['student_id'],str):
+                decrypted=data['student_id']
+            else:
+                ciphertext=base64.b64decode(data['student_id']['ciphertext'],validate=True)
+                decrypted=subprocess.run(['openssl','pkeyutl','-decrypt','-inkey',str(args.key),
+                    '-pkeyopt','rsa_padding_mode:oaep','-pkeyopt','rsa_oaep_md:sha256',
+                    '-pkeyopt','rsa_mgf1_md:sha256'],input=ciphertext,capture_output=True,check=True).stdout.decode()
             if not re.fullmatch(r'[A-Za-z0-9-]{3,32}',decrypted):
                 raise ValueError('Invalid student ID format')
             rows.append([issue['number'],issue['user']['login'],decrypted,data['project'],data['score']])

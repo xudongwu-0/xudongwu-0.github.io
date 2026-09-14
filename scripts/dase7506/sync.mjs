@@ -31,7 +31,8 @@ for (let page=1;;page++) {
 const previous = fs.existsSync(out) ? JSON.parse(fs.readFileSync(out,'utf8')) : {};
 const publicationPath=new URL('courses/dase7506/data/publication.json',root);
 const publication=JSON.parse(fs.readFileSync(publicationPath,'utf8'));
-const snapshot = buildSnapshot(issues, previous, new Date().toISOString(), publication);
+const identities=JSON.parse(fs.readFileSync(new URL('courses/dase7506/data/student-identities.json',root),'utf8')).identities;
+const snapshot = buildSnapshot(issues, previous, new Date().toISOString(), publication,{identities});
 const stable = d => JSON.stringify({...d, generated_at:null});
 if (stable(snapshot) !== stable(previous) || !previous.generated_at) {
   fs.writeFileSync(out, JSON.stringify(snapshot,null,2)+'\n');

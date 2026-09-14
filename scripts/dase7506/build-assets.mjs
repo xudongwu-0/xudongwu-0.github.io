@@ -21,6 +21,7 @@ function replaceOnce(source,before,after){
 const projects=emit('projects','mjs',read('projects.mjs'));
 const arena=emit('arena','mjs',replaceOnce(read('arena.mjs'),"'./projects.mjs'",`'./${projects}'`));
 const app=emit('app','mjs',replaceOnce(read('app.mjs'),"'./arena.mjs'",`'./${arena}'`));
+const instructor=emit('instructor','mjs',replaceOnce(read('instructor.mjs'),"'./arena.mjs'",`'./${arena}'`));
 const css=emit('arena','css',read('arena.css'));
 let html=read('index.html');
 for(const [pattern,replacement] of [
@@ -31,5 +32,9 @@ for(const [pattern,replacement] of [
   html=html.replace(pattern,replacement);
 }
 fs.writeFileSync(path.join(root,'index.html'),html);
+let teacher=read('instructor.html');
+teacher=teacher.replace(/src="(?:assets\/)?instructor(?:\.[a-f0-9]{12})?\.mjs"/,`src="assets/${instructor}"`)
+  .replace(/href="(?:assets\/)?arena(?:\.[a-f0-9]{12})?\.css"/,`href="assets/${css}"`);
+fs.writeFileSync(path.join(root,'instructor.html'),teacher);
 // Keep earlier fingerprinted releases available for already cached HTML.
-console.log(JSON.stringify({app,arena,projects,css},null,2));
+console.log(JSON.stringify({app,instructor,arena,projects,css},null,2));

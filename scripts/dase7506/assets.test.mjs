@@ -29,4 +29,10 @@ test('published entry uses a complete fingerprinted module graph with current so
   for(const content of [html,app,arena,projects]) assert.ok(!/\p{Script=Han}/u.test(content));
   assert.ok(!/href="\/"/.test(html));
   assert.ok(!/Xudong Wu|personal website/i.test(html));
+  const teacherHTML=read('instructor.html'),teacherPath=teacherHTML.match(/src="(assets\/instructor\.[a-f0-9]{12}\.mjs)"/)[1];
+  assert.equal(read(teacherPath),read('instructor.mjs').replace("'./arena.mjs'",`'./${arenaName}'`));
+  assert.ok(teacherPath.includes(createHash('sha256').update(read(teacherPath)).digest('hex').slice(0,12)));
+  assert.ok(teacherHTML.includes(cssPath));
+  assert.ok(!html.includes('instructor.html'));
+  assert.ok(!app.includes('review_request_count') && !app.includes('review_flag'));
 });

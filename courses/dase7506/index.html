@@ -7,8 +7,8 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>DASE7506 · MP1</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/arena.49a2ba8535ba.css">
-  <script type="module" src="assets/app.a50710d2cc94.mjs"></script>
+  <link rel="stylesheet" href="assets/arena.db0692859353.css">
+  <script type="module" src="assets/app.f7056c857021.mjs"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -36,8 +36,8 @@
           <p id="score-help" class="caption">Full-test FP32 BPB; lower is better.</p>
           <label for="code-url">Code link <span class="link-requirement">Optional until the score deadline</span></label><input id="code-url" name="code_url" type="url" maxlength="500" placeholder="https://github.com/you/project/tree/commit" pattern="https://.*">
           <label for="checkpoint-url">Checkpoint link <span class="link-requirement">Optional until the score deadline</span></label><input id="checkpoint-url" name="checkpoint_url" type="url" maxlength="500" placeholder="https://example.org/checkpoint.pt" pattern="https://.*">
-          <p class="caption privacy-note">Student IDs and links are encrypted. Scores are public; links are released together by the instructor.</p>
-          <label class="check-label consent"><input id="consent" type="checkbox" required>I agree to score publication and the later release of my links.</label>
+          <p class="caption privacy-note">Student IDs and scores are public. Links are encrypted until the instructor releases them together.</p>
+          <label class="check-label consent"><input id="consent" type="checkbox" required>I agree to publication of my student ID and score, and the later release of my links.</label>
           <button class="button full" type="submit" id="prepare-submit" disabled>Prepare submission ↗</button>
           <p class="caption handoff-note">Confirm on GitHub to finish submitting.</p>
           <div id="submission-status" role="status" aria-live="polite"></div>
@@ -46,18 +46,18 @@
       <section id="leaderboard" aria-labelledby="leaderboard-title">
         <div class="section-title"><h2 id="leaderboard-title">Leaderboard</h2><button class="text-button" id="refresh" type="button">Refresh ↻</button></div>
         <div class="board-controls"><p class="caption">Best per student · Lower BPB is better</p><label class="check-label"><input id="history" type="checkbox">All submissions</label></div>
-        <div class="table-wrap"><table><caption class="sr-only">MP1 self-reported scores</caption><thead><tr><th scope="col">Rank</th><th scope="col">Student</th><th scope="col" id="score-heading">BPB ↓</th><th scope="col">Artifacts</th><th scope="col">Status</th><th scope="col">Review</th></tr></thead><tbody id="board-body"><tr><td colspan="6" class="empty">Loading submissions…</td></tr></tbody></table></div>
+        <div class="table-wrap"><table><caption class="sr-only">MP1 self-reported scores</caption><thead><tr><th scope="col">Rank</th><th scope="col">Student ID</th><th scope="col" id="score-heading">BPB ↓</th><th scope="col">Artifacts</th><th scope="col">Status</th><th scope="col">Review</th></tr></thead><tbody id="board-body"><tr><td colspan="6" class="empty">Loading submissions…</td></tr></tbody></table></div>
         <div class="board-footer"><p class="caption" id="sync-status" role="status" aria-live="polite"></p><a href="https://github.com/xudongwu-0/xudongwu-0.github.io/issues?q=is%3Aissue+%22%5BDASE7506%5D%22" target="_blank" rel="noopener noreferrer">Submission records ↗</a></div>
-        <details class="review-history"><summary>Reproduction reports</summary><div id="review-list"><p class="caption">No reports yet.</p></div></details>
       </section>
     </div>
   </main>
   <dialog id="challenge-dialog"><form id="challenge-form">
     <div class="dialog-heading"><h2>Request review</h2><button type="button" id="close-dialog" class="text-button" aria-label="Close">×</button></div>
     <p id="challenge-target" class="caption"></p>
-    <label for="reproduced-score">Reproduced score</label><input id="reproduced-score" type="number" required step="any">
-    <label for="evidence-url">Evidence link</label><input id="evidence-url" type="url" required pattern="https://.*" maxlength="500" placeholder="https://github.com/you/reproduction">
-    <p class="caption handoff-note">Use the same checkpoint. Include commands, hashes and logs.</p>
+    <label for="review-reason">Reason for review</label><textarea id="review-reason" required minlength="10" maxlength="2000" rows="4" placeholder="Explain what needs to be checked."></textarea>
+    <label for="reproduced-score">Reproduced score <span>Optional</span></label><input id="reproduced-score" type="number" step="any">
+    <label for="evidence-url">Evidence link <span>Optional</span></label><input id="evidence-url" type="url" pattern="https://.*" maxlength="500" placeholder="https://github.com/you/reproduction">
+    <p class="caption handoff-note">Your GitHub account and request will be public. For a reproduction claim, use the same checkpoint and include commands, hashes and logs. Requests alone do not affect grades.</p>
     <button type="submit" class="button full">Prepare review request ↗</button><div id="challenge-status" role="status" aria-live="polite"></div>
   </form></dialog>
   <noscript><p class="shell">Enable JavaScript to submit a result.</p></noscript>
