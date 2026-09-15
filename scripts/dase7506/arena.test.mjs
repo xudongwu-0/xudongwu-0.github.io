@@ -56,6 +56,20 @@ test('best-per-student ranking respects direction, history, review and withdrawa
   assert.deepEqual(bestRows(s.submissions,'mp1').map(x=>x.number),[6]);
   assert.equal(bestRows(s.submissions,'mp2',true).length,4);
 });
+test('one account can rank separate student IDs and named baselines without duplicate improvements',()=>{
+  const rows=[
+    {number:1,student_id:'3030140074',author:'teacher',score:1.4},
+    {number:2,student_id:'3030140074',author:'teacher',score:1.4},
+    {number:3,student_id:'3030140074',author:'Teacher',score:1.3},
+    {number:6,student_id:'[Baseline] GPT-128',author:'teacher',score:2.10126},
+    {number:7,student_id:'[Baseline] GPT-128',author:'teacher',score:2.2},
+    {number:8,student_id:'Model / v2 ✦',author:'teacher',score:1.6},
+    {number:9,student_id:'3030140074',author:'another-account',score:1.5},
+  ].map(row=>({project:'mp1',status:'self-reported',...row}));
+  assert.deepEqual(bestRows(rows,'mp1').map(row=>row.number),[3,9,8,6]);
+  assert.equal(bestRows(rows,'mp1',true).length,7);
+  assert.deepEqual(bestRows(rows,'mp2'),[]);
+});
 test('a student cannot put reviewed status in a JSON field; editing a verified payload requires review',()=>{
   const original=issue(1,claim({status:'verified'}));
   assert.equal(buildSnapshot([original]).submissions[0].status,'self-reported');

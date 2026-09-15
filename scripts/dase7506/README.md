@@ -17,8 +17,12 @@ in the student leaderboard's identity column.
 The Student ID field also accepts result labels such as `[Baseline] GPT-128`:
 1–64 characters, including spaces, punctuation and other visible Unicode symbols.
 Leading/trailing whitespace is trimmed by the form; control characters are rejected.
-Labels are displayed as text. The GitHub account still determines ownership and
-which submission supplies the best score; result labels do not create new accounts.
+Labels are displayed as text. Within each project, the leaderboard keeps the best
+eligible score for each exact Student ID and GitHub account pair (account names
+ignore case). One instructor account can therefore display several named baselines.
+Repeating the same ID with the same account updates that entry only when the score
+improves; all submissions remain in history. Unresolved legacy IDs retain account
+grouping until resolved. The GitHub account determines artifact ownership.
 
 The private key is kept outside this repository by the instructor. Back it up
 privately; losing it prevents decryption of sealed links and legacy student IDs. To export a
@@ -30,7 +34,7 @@ python3 scripts/dase7506/decrypt-ids.py \
   --output /private/path/7506-identities.csv
 ```
 
-A GitHub account remains the identity used for deduplication and artifact ownership.
+Student IDs and GitHub accounts together determine leaderboard entries.
 Enforce one account per student by comparing submitted IDs with the course roster before grading.
 Possession of an account alone does not establish a student's enrolment. There
 is no student roster, teacher key, server token or database in this repository.
@@ -86,7 +90,7 @@ node scripts/dase7506/release-links.mjs \
   --output /private/path/7506-release-preview.json
 ```
 
-The tool refreshes issue records, selects each account's best eligible score and
+The tool refreshes issue records, selects each Student ID/account pair's best eligible score and
 requires two decryptable HTTPS links for every selected score. It refuses to
 release before the deadline or replace an existing release. Resolve missing
 links and reviewed/withdrawn entries before publishing. To open public review:
