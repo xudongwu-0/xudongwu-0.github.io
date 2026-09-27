@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-27T18:15:56.897Z",
+  "generated_at": "2026-09-27T18:18:27.720Z",
   "submissions": [
     {
       "number": 1,
@@ -872,7 +872,7 @@
       "score": 1.493095,
       "code_url": null,
       "checkpoint_url": null,
-      "status": "self-reported",
+      "status": "withdrawn",
       "created_at": "2026-09-27T17:56:25Z",
       "signature": "[\"mp1\",1.493095,null,null,\"3036843599\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"BuHMz6BHYtdK0fn+QN6ezMyb7QxMYhUpJcra3dvxeBxQU35Gi8D9ZaB9mpSFOFuAw9MOirl1o7p1A+xJb6ANhSRnZaq77iup0l+MjdIEC8ePnAhhS+S3tzYE7/d/zE2Alt4Vk0KXB/TjqYoLxzr1mF2zMGD+0Qxb5kmLs0BjHlyza0V0z9e9O7K8nW5Rkzo3tPGGR76Oelx77PC27psv+ClmBw80jfHSELVwMYWOJOMGGGLv3zMHhauCfl9t5K3yvETs6iyJstXOWEsvzVwc3FxOufa0X5QWzofyylV6L2sHUJLZGW6b59TPTXdicjocDDJLXYiECzaW0f2I2RvafcQhWZ5v2tRK3vmBXn60BaiwmMoQBca9MLE9Odjfbf0wDBq37hmYOg2zqxOpeWoQWdmZuaQ1mEHhGphrhgUus8YmH5oFujfckw1B7W05H2MQm7NcJA28zNMT++85wcfYZn3NZXGiHHHSWkBvKEvUwSq7Pzhf2lpKQzLANetoSpUw\",\"iv\":\"x/OR952KiolxWQpK\",\"ciphertext\":\"J8gFWurq5yl81I8jWFfjCN/0ciy38G5m7ZCmdiOwrE5WUbZhTB53NmiEQuqCH50/L62giutq05qnFXwciRzuK2ji0meIPh0m4a1v++YvwT6vldn8P5mzCRNRqW4AijYdV8+tsyY6JQ5BJWQ7c1SBZ7Jqs0ygbIP/8l38M1eBfdpG47k9FH8Tm36YsGF/QlKVvk0FhipsEcSzhnxw15gcM3GP/4tV0oOFyCOw1+jwXqehSeS1TMwmaeCbOUzZdJ7RV/9ZbPW88VAh6+LgOx5zpU52Y0ky+zIc7F03eTdaD5c98bwhLMFMMiuAw8DFBT5kXHS0YGusi6DCeSC/0Ke2XuJ2GN4Y1g4H0DNRBLpAMk0edzobCiYhpZeYtUYZUybnjQ==\"}]",
       "edited_after_review": false,
