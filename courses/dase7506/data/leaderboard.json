@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-27T07:06:34.767Z",
+  "generated_at": "2026-09-27T07:16:15.184Z",
   "submissions": [
     {
       "number": 1,
@@ -439,6 +439,26 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "pending",
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 25,
+      "author": "lu-code-ac",
+      "student_id": "3036804397",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/25",
+      "project": "mp1",
+      "score": 1.5224891792321562,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-09-27T07:16:04Z",
+      "signature": "[\"mp1\",1.5224891792321562,null,null,\"3036804397\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"q1k5s9L/Sjm6KngxxisrDB5HHcNEZ1kbwkAsN9M6L53v/7gBTeg9gMFj7jMU+iaQla8JPDd4kCFRGtKkVFiiqKmzz4HXs5bbXgJPIBvIHQZljMcJ8YV4t1nWThQK0uuw0YGUiCbPZ5A5RH3KYDyDySZA6MddWO6/9qELbXiVgiFyeStqtGEFD9gFt6nU+DWmoj3uQ8CkVMpjgMGIWOkBw87W2L3oyRvOpYNG1iKWdQwjWbhO0VwFXJBPISvw64nv2UIF3SiPs8XM4dQbaGc8B4GlFE4yvmY8iN+pCulJWO5wMuIoFF7R8cyEpW2xzyxkGoDPdLB23+kuvyiIGUIoiPVf9tNwb1ilXmi6AP9rWwtYQc+xC48aSCXmztk6UnY9fUV1mLe+OXEYjTeZ50mbraHemWZjhHtDCjdM/bPOL3KuUv980pK1xXIXYcMwAeu6pEMqtROz6c99lVUHlsmsChodNuk+OUpPfVsdsXEuGFlENWHHfEgSuzefcI20JApo\",\"iv\":\"BFhnToZi1aPIGvGS\",\"ciphertext\":\"DZ66sAIpnFuqALaZanl7dyJLmWwPlsFRQ/T+pTHel85JCIVdq2PFdlqQIx+NdbqvuU4FZeFIxPo3rY1ix2DfepHVUT3x84vnPHuUbFRBdCJ4S/f8FDAsiVzMPUCObwTdRQL8KL8+Oa+yxYOF7Ynsfi7k+LyDGyx1+KhtEL8ocgQkZhi24hF2wjgRJJsEOZGdGJ/govgGyBMgaQiMLr5RfYCmrHcoKYCpZpD5RGAFnuaoqlk3C5ZrEfNpFYi5X41oA/ZlmGgHcL4ZZjJd/IDGTpnnXoEVXzqUHLHbG29BgOSY2DcjsShydZpPJNEU2ZOna7csna6rNheA3eRQFRUx2PyTfVIdDgURebvNPvl0crJbJeHYMiPKFDmpVYhXjujyS5d5LUubDbd7\"}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 25,
+      "artifact_status": "received",
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
