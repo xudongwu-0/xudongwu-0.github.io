@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-27T10:10:43.556Z",
+  "generated_at": "2026-09-27T10:15:45.932Z",
   "submissions": [
     {
       "number": 1,
@@ -578,6 +578,26 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 31,
+      "artifact_status": "received",
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 32,
+      "author": "kikihejiay-hub",
+      "student_id": "3036705993",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/32",
+      "project": "mp1",
+      "score": 1.5874,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-09-27T10:15:37Z",
+      "signature": "[\"mp1\",1.5874,null,null,\"3036705993\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"GpUngWgHkMc6z1p9LW8lmMcY+cdklC8swz40dTvxEJji7jCsTxN9Sqlc6ItSB0FBAo+I/NRpdGxBXjxAjGxI1E/hKyfIjq4JaxSxBlfUZ98VwaaC35mlFpXTKuXUyB41x0wHngiXZnMZwfQi08Soy29AAx/qHdmuhA0osgOGNhfBxVZ6aJj0WMVf9IVktm3WbmQ2UZFk2rlK1GQf8VZrfTSvNBPLw1SLacLbFx+9Zin8mdcYG/lECbvYqni45+2+1XyD4qgErU8iR04J/P3KoPv16V1q0wOfZ5WXzauIOcOxsnnJkHNBCypnEeNPLJ/dve6KGUqv2/gvTiZU+ROpYZIsylpp8BSNIM+6RWIYkykpWIZUUXPWHQBD4wLWwj9QISpHnhTOcYfcZBZ+TLvq0prZVJsuhO0IunmqCUDPCT/czQLXJiish5D6m/Xrt2l31ODJoh+4M8sNtRP32OLtsso5ePrkp5wiJ88rqOlWEG3D8d2WUcx+cglP+ryZRctT\",\"iv\":\"59uZ5Ch+ZICcBVbS\",\"ciphertext\":\"DPYfBpENUOSW9bUAvi03gjBOZCjn2dMz9fwUGfOBebCpUjHwcnql+02cWmnWcfJ0lTdSXaZlqddX6jzHlKOZTjG2n7H2uQbxaqsfBMMZVBPQ2U3sV61610EhVuzUYYhBkFiBPh36FCTLIAJ8tbSZ/zDPqriXcQaWi0TeQ0SIi6vTc6mPELX9bjUxA1Xz70mi5d82iMEZsyTUnc1Lu7/79tvORwZqY2BLMyCzfqXOiPURu7EHnnxrotD4ybzwUgKMlKrxcmL51L2hYH2UykyW/Bz3GwnROhTkdf7OwuvNduhVDzsA3z+GCCECbtmGWYx/VQp/ymxGZdIcHVAc\"}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 32,
       "artifact_status": "received",
       "review_request_total": 0,
       "review_request_count": 0,
