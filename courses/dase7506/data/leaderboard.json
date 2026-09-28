@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-28T11:07:35.033Z",
+  "generated_at": "2026-09-28T12:17:51.968Z",
   "submissions": [
     {
       "number": 1,
@@ -1279,6 +1279,26 @@
       "review_labels": [],
       "artifact_issue": 66,
       "artifact_status": "received",
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 67,
+      "author": "Coconut-LI",
+      "student_id": "3036706612",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/67",
+      "project": "mp1",
+      "score": 1.8618470315099107,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-09-28T12:17:38Z",
+      "signature": "[\"mp1\",1.8618470315099107,null,null,\"3036706612\",null]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": null,
+      "artifact_status": "pending",
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
