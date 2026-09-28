@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-28T14:43:22.132Z",
+  "generated_at": "2026-09-28T15:03:21.899Z",
   "submissions": [
     {
       "number": 1,
@@ -1438,6 +1438,26 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 74,
+      "artifact_status": "received",
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 75,
+      "author": "dhx040204",
+      "student_id": "3036805195",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/75",
+      "project": "mp1",
+      "score": 1.8911,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-09-28T15:03:09Z",
+      "signature": "[\"mp1\",1.8911,null,null,\"3036805195\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"EMauf3x1myr+jSKLgphmj6++gK58siBWvfdmYSJO9p1oWtATDGHV4SkvFQUgHq4uLOl8QVeQp2hXjOTW+Tg9LYTGJEftqvCIK2I83ejUrric0JzFk4HYgZAIlI5XubWoiHRljEjqm9qa6qhIiRvRQ6uhJxlCvrrmD8bXygv9nMY+rSxc4MS/lcdZoexXzqTUMByFjrZavVt/yIofZs/Oih7ecwXV+FAUtdtBKPGmO7pqb1Nq6cLgJUv+K9CSKFEhdORhWq66d1m6a0nXvZl37yNmmTQ3n36cihg3C2dldCQWmIYUTA14PYnBMqe6cBZNGBMLHz+TuH8z++pu2PBJocmm7+XMRTFjkOEwrTpbYwGXVtPXJxinqZwg0EVSyzB4a27hRjbF+PYz4DZSx0PtLeZVuDW4eOiCPZji3haCfUGnzVWOwz3nyKbobQSesu69vhvAuEb/V1mWYu9MhDn80pxap6wdgchWil9jP9j/xIkhDf/oa6T95OH8YnkuCrkx\",\"iv\":\"RE4REZS5l+4nJ2lw\",\"ciphertext\":\"xtDk9r5xytBqagVyNefdssOAYQqK3G8nkS58PRNp5e7yvDZOAAcFCZSAXjga4u+o0QEtEjyi0NXhCrXFRMEERWdBBcJIy2xs8kfuBU0lVppn1HlPVFqB8KcRnQynCo6djgqr1MsPkzGfj+iqhm8kEQsKHu4GKduI3yqi3IS/Ux0Cyf9lVnKpO+TbPsDAKXw+XzFkhPknueLLhT4Bzarv5C76Wo6VTj39R43+avRIatOJHQRORSew0byrZOCOAAbTVZv/Q6dlxn6ZwVITl8B04e61UWh5Nbrk82KE49nQHVyEXerWGR8ASbI8SZKkqAiP3Yt2ygZV\"}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 75,
       "artifact_status": "received",
       "review_request_total": 0,
       "review_request_count": 0,
