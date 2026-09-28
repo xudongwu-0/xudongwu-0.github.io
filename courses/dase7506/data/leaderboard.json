@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-28T13:34:56.793Z",
+  "generated_at": "2026-09-28T14:43:22.132Z",
   "submissions": [
     {
       "number": 1,
@@ -1418,6 +1418,26 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 73,
+      "artifact_status": "received",
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 74,
+      "author": "felix-xingcheng",
+      "student_id": "3036800967",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/74",
+      "project": "mp1",
+      "score": 1.57921,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-09-28T14:43:11Z",
+      "signature": "[\"mp1\",1.57921,null,null,\"3036800967\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"l+VHaxBoXNxBTk+Nbi+2buJwd5cE6c0pyu6qm4Bn6+26c7Xhxx9TpX6maw+FUF8kV6d/IMJTTtAaH5cutumGLU5tpISRyMBYaYlX3e5DqOCV1cyTjUT1Rkjiqs6eZmQ9UcMEQJji9xzBCflFxacxV5SNYT0czb/UlUOxa6M52KKBCCEiB4L42AMBUhL64xV/JyPhp/PBfhZP7FhbQFUaR0vEN5XJ5eZTK2IDxPXkBJUvnstHOpf27+mHOwbipDYra58LUVnOPTQIN1iFECA0DLnr5PTdNXnUo6XPB2+v86W04lGLnAwp5IQcFZDSccp8JvuFK+bgioreOz/BFpvOKU75K1Rzoj+EKtTAXownj3CQDjZvJFLXyipqlwaRzWYWKWGlHkhFkAjmbLDPFWid4Oga+lheAh+dhejfxvQ4jAEZsMHHW8cXGLjqZRj/ICAlfT1onljbHijMpeApP3KFpPRcQIaNV6bnVExaMpdTuvyAYjBx9zLre3hkJ6Z+Kqfr\",\"iv\":\"pNL0rPbm7UgoDS5B\",\"ciphertext\":\"zALb/n/DUJEM9MU+jURCmejNJc4kdPWSLwedpxgMCzLB3ItBpXeOzHFrK72swScjmR9etP2I4d2PVbg8lM1fnN2+DHXCJy5MwEljl/FDe3L/Rn2GKFhhwqIklC3XU5K1AtqGlixCfYwonYdwaqF01meK2IKA7TmAAGIFnLgkDdx/RBJVDQpmzyNom3zHD5on3nKDZ9ZUBLD3Vi4+3IAN77yBnuskDSu1yHfrGcaAjntX9Ljd7xzrzY5utU0pjjg31i633P1eNTrqUPyLDnLWFgxAGjV1WOWW9KiD01aW+KEgnwKbK+I0j+kHS7jCFxql4T5WNwebWtHwjwmvzT2gXwblBgW6M77iRzCZnSgR4KyI5kYZkMfDI6/tp5e/Ed8hrtpfwr80WD4Tmm4fWzz/SQVdypIlztG2d0Et8jguZlIiBn9J2qjDF72aimQISBbWK9BbXStB77h7VsvIAHRIiCIa+lg9\"}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 74,
       "artifact_status": "received",
       "review_request_total": 0,
       "review_request_count": 0,
