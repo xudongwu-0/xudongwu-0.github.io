@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-29T20:23:38.756Z",
+  "generated_at": "2026-09-29T20:36:54.571Z",
   "submissions": [
     {
       "number": 1,
@@ -3478,6 +3478,26 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 176,
+      "artifact_status": "received",
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 177,
+      "author": "DavidZeng1111",
+      "student_id": "3036748103",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/177",
+      "project": "mp1",
+      "score": 1.76549,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-09-29T20:36:42Z",
+      "signature": "[\"mp1\",1.76549,null,null,\"3036748103\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"W1IFw0c1fkcBnefhWG1VTt6sb/FYCuOAL4c6Z9sff5257h269I1QXO1nKsfcconyYbali/etQVP1Kg8xBnqQQosrfPvEjXNSSMpKl26KEhKfRYDb7XOI0/LsVEfdio2YaPYC57cnrN4sM6dzuxRwDIwZ4PrCGrQsonwd/KNDcMzea6ARRS4UDSTE30cwKI7tzI/wl+dmruVrFQLd0Nn4mjCtIp8G2GE83qPjPvaY0TZziUCmCt0BbAT8OSNzhgqU4HbLWiVTWD23UwFT6TBuimDsp/LsaLz3rIcZn5FwAYEhG1V8tWJWABiYsz+eY6CEJMdAaM+o+DO+mNZ9sGJsShGoyb855qjvs06IZBdNP7l6M8pscMYs2Ia6BEbgp/5qR01oD+6/0v7vZXGEkvdyxynYYrF96DVW+ktK7hKnlt5+fRThH71ld5+4L/ZtC3aCcsbaTWA8YMRaQdCVHwyFfmj3Ce5ubYqe/OrCJyC74LC6/OfzdQv1Cf1PzP75C75Y\",\"iv\":\"zL9qjAPxavQ91LcH\",\"ciphertext\":\"zlQr6jR53S24CMLDme+EdGqiCEg0N7KrybTUfJS7Y7sJ9PNEF+FlM9tiFjXq83UrkS+yknGkbpjR209nFjovP47LnzStSuOyRmNh8Z6sB+LHGN7hhkhScaYh8LNLigQzIluM4eRzMZiMcty4W/r0TBItFK+ID8Yrp7eL6xtN9ECmhDILcdoNAxnswcRbF7G95UfFKwWEztx0sKRVzqjmUMi9/KeAs/6huGFVn5Uya1tG7lDiPdP88rerHeyFB9l1jr9ajIu4kM/N8xWLDsPMbb7IV7eLEW0/9U56gcQ=\"}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 177,
       "artifact_status": "received",
       "review_request_total": 0,
       "review_request_count": 0,
