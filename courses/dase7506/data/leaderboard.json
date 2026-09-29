@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-29T07:46:27.623Z",
+  "generated_at": "2026-09-29T08:13:47.729Z",
   "submissions": [
     {
       "number": 1,
@@ -2079,6 +2079,26 @@
       "review_labels": [],
       "artifact_issue": 106,
       "artifact_status": "received",
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 107,
+      "author": "zss019",
+      "student_id": "3036837930",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/107",
+      "project": "mp1",
+      "score": 1.48544,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-09-29T08:13:36Z",
+      "signature": "[\"mp1\",1.48544,null,null,\"3036837930\",null]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": null,
+      "artifact_status": "pending",
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
