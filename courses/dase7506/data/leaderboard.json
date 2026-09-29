@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-29T13:22:23.320Z",
+  "generated_at": "2026-09-29T13:25:50.282Z",
   "submissions": [
     {
       "number": 1,
@@ -2478,6 +2478,26 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 126,
+      "artifact_status": "received",
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 127,
+      "author": "huangxuanqiZora",
+      "student_id": "3036797374",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/127",
+      "project": "mp1",
+      "score": 1.5139,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-09-29T13:25:39Z",
+      "signature": "[\"mp1\",1.5139,null,null,\"3036797374\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"rRjI7Dc0l3JEboixKu+yJwuDPobBEOO3f9iiQOStgFkxwDVo8/7gKtfb3xnbZuiC8zvJbFBvzvvKtDu/+yN9raFSPra9DLHu53G0HR+qYPNxXJqau9jpG4bVZFvR6pOmYu2UaA7OxXZkSXqilPm3Q5CcN0EJiHFo9JJFKLHI+ezXwb75eMsFwPlgG/1jSXaU4Tuy0Xg5a84O/rqPSMSHTvHjOmppeoRp8vhWlTMl1kmROjZfGT4atP/Oq5Ffi0KI2oqjpVf73WnDQLkXkGsme2NntXNMNmqVQCXtYCnL9HwRXUr55YGPv+2el+KVx61OM2bJVweH26RXJLIBht9c8TjRkYWT0dpsOhFXXsf8Iwx9VHMR7z/PyAmIj8sRXSbFpA4McQQm7Y74SJdliCBWcRe1tUPFwPBeD9BkxbRBzFmgjJSbFN9uT/mdgE8i27U0NhLee1mkDIKEvAuqvltUi67HbirX5cd70tA9BNVsnSkNOVCnofAuvQGNDssELhfX\",\"iv\":\"7ciYXiiSdiDal5hI\",\"ciphertext\":\"5uoriVRZ4wLkpTH++uNDy3EGr1nSNQJ7OhvhpGVGwZdTtc5VtY8AH1BH1CYmZWgOzrr8RSQv+Rqwr8iZlkW5nRcZe+zZWTxHfFb+QR7Kmd8vEV6jvzgFt0VmzeszF96dTfgpqDXo9svuc2HFoUjHaZx6bHs+VCc4GJupWccb/qNbDOeRMFpTJFtZgx5Z0v2QF7ub+E+7NZe0J1wJiNwtgHB9b9bndjCI81AkvvBU3PRSMBadG/FJ4fCqxzLNONefpHR2FBz28nDSagg+D6P+g1ZzRV3d7CuN0y8Yp2VPLPOTV6tuMGIydPprZSDiu9+oWFk0KL4f0A==\"}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 127,
       "artifact_status": "received",
       "review_request_total": 0,
       "review_request_count": 0,
