@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-29T04:10:14.354Z",
+  "generated_at": "2026-09-29T04:12:27.840Z",
   "submissions": [
     {
       "number": 1,
@@ -1818,6 +1818,26 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 93,
+      "artifact_status": "received",
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 94,
+      "author": "cygygyg",
+      "student_id": "3036808630",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/94",
+      "project": "mp1",
+      "score": 1.55596,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-09-29T04:12:18Z",
+      "signature": "[\"mp1\",1.55596,null,null,\"3036808630\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"yekK1sMIz+/LkG7ExoscFqTsvWQz+0o5nhRojzAQVvQ1gQ+W2BlYesoTX0H6J8X1jqQqm21l/G9VAs51kcTG8jCQZ4WEDuh17Anco0xLN0zma+CMeJMOiM/S8cA5LzWrbCQ3JUetVexjIpVxl0+9bg8b50615eFGJuengzC29CNLWzU+KJCuDOTR5ro7AA3I21+Sjq/thN3arBriCJErK4R8ih4+jtS28ScVNzxJ5sAm9B1fFV2NXnjXWIaI34/sGhwiiCZQ9PiRVnMSHbm8UmnEYsAxtozxIIYj/Jpw0xnboffq6rR22kL7M7fwOHAIQms/80ZZbxOztK4PFHgQcogXbLBPsv5JVqVkIRoiFDXFk6bANpgRBUweibOBG7+B3PPBPyJ94ewC7G/E86XmAZkiWGw+VqIxflKrrRzBXZUMTdQudX3o9tnd0FSyVdLAVBZm7YuFoJhEdI5k11e21hQptQQH/MWDpkpg6icr/M8eurxxjqoAEJUn6AvzC3kz\",\"iv\":\"ImA29yfa5uNMllEH\",\"ciphertext\":\"S/LXlD/gJmxv8L1+tVgN2zT2m1Ez2ocFZfrGCZyorspwbBgGXMWomU60EnMLdVbPu0tg6IC3Gje1lQADitYb1MfghyTawPNmb8gVJTxATXFea+OIDKEcfUOKcp+87s/t6uXuFHY3VyrbyLRD0AiwRjNJjHnIiHDl/AeYgO+RLQEn4SWxwFGZNEebTTLxp8HD3xxNVVolFUwnvFcgFoUYAowiz20tRAJYQ2DLVA2/qyL0zecb9JnPU8XZp9NfV3uUM0H8on4Wa5ROzdE3eGXbr+Esk+GAef0=\"}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 94,
       "artifact_status": "received",
       "review_request_total": 0,
       "review_request_count": 0,
