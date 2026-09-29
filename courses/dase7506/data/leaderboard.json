@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-29T06:35:16.475Z",
+  "generated_at": "2026-09-29T06:42:30.385Z",
   "submissions": [
     {
       "number": 1,
@@ -1998,6 +1998,26 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 102,
+      "artifact_status": "received",
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 103,
+      "author": "haonanwu869-rgb",
+      "student_id": "3036843288",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/103",
+      "project": "mp1",
+      "score": 1.52468,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-09-29T06:42:21Z",
+      "signature": "[\"mp1\",1.52468,null,null,\"3036843288\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"GTPwp2cItyvRTZvDFwsrcpHQfco4QmDSkkVFvPUCzuLC2wnDjtfkn0XqXZLnH5Jcys6q5tDkBUd51u/o745cdm63C+XPCLBLaASLCJlNaWlEgaTt0sTTxP4BW7f8GrkrETj4hWcgaWgplcWgVQYihrGkQYAOSGBQzwO0RNOy4Qq16RxG4ZVSNSI4uQnqT0Yjj8E+hoJEfJVKfvkZCRoaSOfsMyu79/M4/PXoZZfaSoltB6ZcDN8XI4fe4dC6DcBi9ro7R13IVGMaCKD/rDYLTHfY4JitMOWS2o5589esC+jJ1owEXKmGVKVmZsdD7/GTQV7NWg8Snq1eQmIgjKnsVaqJrh0bmZK5x310a2NK+GjTCopTNMGEnmep9nsBdy0Y05qi+zwY8JYSUpWXlFRECSPU+Ub1Mw5FFYdMi2dJICuSgXUGRfDfGHF0DSRQleU3TsT8NN67/zzLBg8HhNcrWc4H14qMeGtUiLdbNEpVIRUWi9yQ1x6mSBz1Z03gIH90\",\"iv\":\"kNd5LeLHfQJXWb/x\",\"ciphertext\":\"JfR1kDeCx4pbasZuP0GDaYkDIlThewQBb85xtpdbIEQvSxnWh5rOu02A6N6BIcAmvHZ841Kw6ee+P6x8tV1hT3O/S3PnQ9ST/STotL6pMR5WgNSA9BgeOnEXNMNDo1r0Ku2FL9MJ2f3XBs0n7QAsDhdiM2B1nwbdaVc8kH1SPlE2jhtUtzxfymx6oGsvhuMjm3JWNDstkzi564UzfL8f7Z/mc3dhmnp/9n/darOCXnUZTaY69QyERL7uEgyw18yXZAl1FNIs/uDAE26smXrJz6YExGgccCpNo247KfE4vaemT5pX67e5y2ozUjK7ewHCPiGtnqpBqE2367/h64elk6rsljc8wY2PBkIm\"}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 103,
       "artifact_status": "received",
       "review_request_total": 0,
       "review_request_count": 0,
