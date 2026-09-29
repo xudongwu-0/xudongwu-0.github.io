@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-29T13:14:50.682Z",
+  "generated_at": "2026-09-29T13:22:23.320Z",
   "submissions": [
     {
       "number": 1,
@@ -2459,6 +2459,26 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "pending",
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 126,
+      "author": "geoayzheng",
+      "student_id": "3036801242",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/126",
+      "project": "mp1",
+      "score": 1.50632,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-09-29T13:22:08Z",
+      "signature": "[\"mp1\",1.50632,null,null,\"3036801242\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"PkERhNDmiNRUJJvW3SEM/MFQdwPXgKZkLCNaKmMRbyYB0HRaIIs+88Rto3hZUumuA9j+9ufeAxh/VP/rLEXU0Jq8sU+Qe7vKqBKkBPnfiXKSTB7BvCPtpDRud2OL1YZmuBvRf+y6kPu8i7dVe0611BCbTD/Qf9xLapKQun1lJcA7t/YTaNtC2PAATqVWyBmcdPFmOobZ8TdlA8nR9ykWqilNbEpxZ+w3wED6qAsd2RbCDVUuDp4pq8+EQzz7EmaGhqmmKMzSTpP1uDiXGM3uIHQyi7MzS2tdXC5wz6WPfdzR3hwqHMi4C/UsFhK33gzy+/gQ4/FMSTq+Qmtzyv9ckZlhn8EkQefUNHFfG/MUebeOsWbvymqz1e/TreWZymxWxg2q24KVHd2BxA+s+j0smAbD0skqOZ+xjUOFTib+acjT4PmOKoZtALTfAIv2k8swaa3KZ9JcCB2/u6+q9/VpcwB7prggEfdYrtOdQSzjPg1On1rxCNAKYUAcuwOr9T2k\",\"iv\":\"2YFSQgzfc6iAzigd\",\"ciphertext\":\"j/2qQQTsvPkjIPgdnKL2X/6kGnhrtTEHaZvLK60yNa8L/+S0iwgsIkp8mivsqMTpByElKsDDEgjvF6bIMCN7NcCQKrCzGkUBqyeysu1yzSQhQaRmO1RE6IdcYzjIjANmzkSI9gN+k3wQBUzJyKgKq0iCDE3ktjFA7TXdzfc8fd1xO2A5Vb50AsCm6vfROlvvpz1FfodaLAmMM6RgLjheia8G637TZFc4rXh/uictlmI26U+2/vj4B9xwmrv4\"}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 126,
+      "artifact_status": "received",
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
