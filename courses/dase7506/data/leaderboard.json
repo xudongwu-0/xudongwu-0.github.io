@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-29T15:50:50.786Z",
+  "generated_at": "2026-09-29T15:55:52.035Z",
   "submissions": [
     {
       "number": 1,
@@ -3115,6 +3115,26 @@
       "status": "self-reported",
       "created_at": "2026-09-29T15:50:42Z",
       "signature": "[\"mp1\",1.5741006374050912,null,null,\"3036780527\",null]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": null,
+      "artifact_status": "pending",
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 159,
+      "author": "Hongjiang-LIU",
+      "student_id": "3036707941",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/159",
+      "project": "mp1",
+      "score": 1.48479,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-09-29T15:55:36Z",
+      "signature": "[\"mp1\",1.48479,null,null,\"3036707941\",null]",
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": null,
