@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-29T14:19:34.809Z",
+  "generated_at": "2026-09-29T14:24:27.671Z",
   "submissions": [
     {
       "number": 1,
@@ -2692,7 +2692,7 @@
       "score": 1.4165949185167201,
       "code_url": null,
       "checkpoint_url": null,
-      "status": "self-reported",
+      "status": "withdrawn",
       "created_at": "2026-09-29T14:07:55Z",
       "signature": "[\"mp1\",1.4165949185167201,null,null,\"3035947946\",null]",
       "edited_after_review": false,
