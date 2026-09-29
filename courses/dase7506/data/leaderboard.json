@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-29T06:42:30.385Z",
+  "generated_at": "2026-09-29T07:11:13.864Z",
   "submissions": [
     {
       "number": 1,
@@ -2018,6 +2018,26 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 103,
+      "artifact_status": "received",
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 104,
+      "author": "KokoNAa",
+      "student_id": "3036802595",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/104",
+      "project": "mp1",
+      "score": 1.4426896653708432,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-09-29T07:11:01Z",
+      "signature": "[\"mp1\",1.4426896653708432,null,null,\"3036802595\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"LJXmbKUx5T0N8uDNhLwTTNIMV1M1NyxhgjSlmcIc2H2j0CQ54x1N8nSknZh9LX/SA7a/at6jE+Wk5AS9hqKwfz1pCPPwT082Dx1MmhR2ebB7EntSxEclkPiOuQA4o53xz5N0y8Cvx+tILKJ2sGXapvWYoM7hEPeUKsis+0GOJr6b1rzmzW8dBuMBbPWOhjMldmk/AckGkcHfl6sT5sr2PFqs4KBxN9/eX0RVsvNK/bIg2Gyp9Rr/GhXbUjMoyFtH0icGbiPS2rT9eUMQngrMP98LG4XZSgOqN4smD3xP6VFxCyIWvV5JE0Khm6rFmHEl2cj52Gf6epcqNilRwQkh1z7o4JZc58EoU//8fmZZP+kh3aq8hyWO/H8D6G2xXMSOi4evOJ/tXFlBg6hgLuROlI4bHoCd+UK95+A8gH4cdpRhqChS1modgXgGYaAbKhKj5kx7zjDVUq0ueh26bcT/y+OoQ/L3R8Cs+ymtW2sfzRVGbKrzjDxpLuaPhrwyHISD\",\"iv\":\"EsqErgm+rSCYDSY9\",\"ciphertext\":\"TCre1qJE2KE8Zm9J/Ye7dxnYwsWt30NRQXEPWReJiljeLs/KEdc66ntjYxT7DzLncLGCPaiXy61ODSTlI8nRvB/nowNB9jWEvQLeTm+LJbDPye29+qU7+fku3ELzaveqW57kLSg2oEzIAMysrj3WqzaZRf3A7HpwKRfgWC9Yy9PoBF0DIVEpIeQPI1MeMl0pdo6QoNFvrEfVPvWfqBDNEMRAvZhcXaOJOpj+o8lPc+SmWCaIfJHJ+cB+KmeQTZnyX+xb2zKm1+k=\"}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 104,
       "artifact_status": "received",
       "review_request_total": 0,
       "review_request_count": 0,
