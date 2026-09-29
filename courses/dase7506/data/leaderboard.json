@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-29T16:00:32.614Z",
+  "generated_at": "2026-09-29T16:06:51.860Z",
   "submissions": [
     {
       "number": 1,
@@ -3318,6 +3318,26 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 168,
+      "artifact_status": "received",
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 169,
+      "author": "bob0612",
+      "student_id": "3036797441",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/169",
+      "project": "mp1",
+      "score": 1.5501346122,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-09-29T16:06:39Z",
+      "signature": "[\"mp1\",1.5501346122,null,null,\"3036797441\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"QpZ2KSlDOmKHLeAuW/boaW1WzDThGeODOHlyJbKxKPDVw3GlWWGEqh5WV5bL7cLV4bfcuvPOBNY4OAEfl2dZFgekXMr3O1RkcacaQhZjU94nmyf0dtVybg/ERyLNTvaOKc7tf7H0OeWEETmTNOj6R/FGOcnf1uYapgus4c2e0qvq310BL0Bj+/tEPg/JGjpBEzoj9fZZhBhqsAFyx0KYEh3NXvT0cdSwcz4h0SCaCx6xBE7uW4SpX5ArkNIagg+fmo5cJGsTRQNSb2xHV5yhbKafKnFrOLao4uPaCajsu7Son8M29GF6Y02UWSwA9qvwORvS40uJaYr/7zW6w4LftAEbVjICXPwMs62G3/v0BRW7RN9p8xyXCyFjfNvM+qqD+2JedXe9E2Xe36gjbQdXycTazPnE9e1+PM95qRmWg+sTkmo/YYOf5YhBIP0N4a5Qn8u4e1BGwPe2nbmlr6uxmJMnqMrs7zPxezJMR4DwRbyJFT0MgmDOKRJ4P2FDxDb6\",\"iv\":\"I+tVwWmH/eKR+qmX\",\"ciphertext\":\"ybohd+HJx+lMa/X+zP1JDzbyxZCsXcRjsc61KU21r//nFxWMh3HbKmRP9efw4zkW/jvGanRtqEVNVh2EgLw703GbSxJpNNQHFCXXAexiFgRlOdb5HHjZLmFSz/ZZNkw391yKaRsCqMqMfwnX1fYFpE8nXKBeNdJciIHIQhihRjmibqN1OK+TCJqyL/K6N7S+GcNWQ1uK6lrkTHD3ltphaAp50dPlNFIbbVEaft6wTxx8LNthObrK5BN+ONUCn9ulCbC22v1IO0xpZNj5o9g5Desakfpi4xRqxQMwfsnB5Lu2l/RBqlsrdqRWpV6anhutnh+g8+mBK8nhdxN8UpuK9Om/iolRuMSkQ6CZcNOM8VzFQZAMst2m3fdEDNATo/7zHKUBOI+NQBdCIKXsKGCtfp+7TznShn4Atw8M7ioOJhYwRv0rgHtsjDbE/lRGAj1XlStTCmkJ407ZSQeqsItJxCWnvBh76kVfh/5gD4R8wOs=\"}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 169,
       "artifact_status": "received",
       "review_request_total": 0,
       "review_request_count": 0,
