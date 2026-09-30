@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-30T07:02:13.956Z",
+  "generated_at": "2026-09-30T07:59:03.112Z",
   "submissions": [
     {
       "number": 1,
@@ -3559,6 +3559,26 @@
       "review_labels": [],
       "artifact_issue": 180,
       "artifact_status": "received",
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 181,
+      "author": "W-YUBO",
+      "student_id": "3036837332",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/181",
+      "project": "mp1",
+      "score": 1.5830226,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-09-30T07:58:52Z",
+      "signature": "[\"mp1\",1.5830226,null,null,\"3036837332\",null]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": null,
+      "artifact_status": "pending",
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
