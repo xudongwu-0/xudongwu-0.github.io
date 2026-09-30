@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-09-30T11:10:01.395Z",
+  "generated_at": "2026-09-30T11:11:53.261Z",
   "submissions": [
     {
       "number": 1,
@@ -2959,26 +2959,6 @@
       "review_labels": [],
       "artifact_issue": 150,
       "artifact_status": "received",
-      "review_request_total": 0,
-      "review_request_count": 0,
-      "review_flag": false
-    },
-    {
-      "number": 151,
-      "author": "Selectoup",
-      "student_id": "3036708701",
-      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/151",
-      "project": "mp1",
-      "score": 1.51676,
-      "code_url": null,
-      "checkpoint_url": null,
-      "status": "self-reported",
-      "created_at": "2026-09-29T15:37:53Z",
-      "signature": "[\"mp1\",1.51676,null,null,\"3036708701\",null]",
-      "edited_after_review": false,
-      "review_labels": [],
-      "artifact_issue": null,
-      "artifact_status": "pending",
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
