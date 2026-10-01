@@ -21,7 +21,7 @@ Labels are displayed as text. Within each project, the leaderboard keeps the bes
 eligible score for each exact Student ID and GitHub account pair (account names
 ignore case). One instructor account can therefore display several named baselines.
 Repeating the same ID with the same account updates that entry only when the score
-improves; all submissions remain in history. Unresolved legacy IDs retain account
+improves; tied scores show the submission with more available artifact links. All submissions remain in history. Unresolved legacy IDs retain account
 grouping until resolved. The GitHub account determines artifact ownership.
 
 The private key is kept outside this repository by the instructor. Back it up

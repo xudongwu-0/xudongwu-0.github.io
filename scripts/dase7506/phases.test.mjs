@@ -148,3 +148,13 @@ test('instructor can record a malformed existing issue while retaining the origi
  publication.projects.mp1.entries[0].author='someone-else';
  assert.equal(buildSnapshot([malformed],{},released,publication).submissions.length,0);
 });
+test('equal scores show the submission with both released links',()=>{
+ const records=[issue(1,score({student_id:'student-1'})),issue(2,score({student_id:'student-1',artifacts:seal()}))];
+ const beforeRelease=buildSnapshot(records,{},before);
+ assert.equal(bestRows(beforeRelease.submissions,'mp1')[0].number,1);
+ const release=prepareRelease(beforeRelease,records,privateKey,'mp1',released,{allSubmissions:true,allowIncomplete:true});
+ const afterRelease=buildSnapshot(records,beforeRelease,released,{projects:{mp1:release}});
+ assert.equal(bestRows(afterRelease.submissions,'mp1')[0].number,2);
+ assert.equal(bestRows(afterRelease.submissions,'mp1')[0].score,2.1);
+ assert.equal(bestRows(afterRelease.submissions,'mp1')[0].checkpoint_url,checkpoint);
+});

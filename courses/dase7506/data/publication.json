@@ -297,9 +297,10 @@
           "submission": 44,
           "author": "CSPeterZz",
           "score": 1.47779,
-          "code_url": "https://github.com/CSPeterZz/DASE7506_MP1",
+          "code_url": "https://github.com/CSPeterZz/DASE7506_MP1/tree/main",
           "checkpoint_url": "https://github.com/CSPeterZz/DASE7506_MP1/blob/Checkpoint/runs/ablation-L6-xsa-s17/best_ema_checkpoint.pt",
-          "artifact_issue": 44
+          "artifact_issue": 44,
+          "link_source": "Student-provided corrected code URL recorded by instructor"
         },
         {
           "submission": 47,
