@@ -521,9 +521,11 @@
           "submission": 78,
           "author": "SamTyson0506",
           "score": 1.55415,
-          "code_url": null,
-          "checkpoint_url": null,
-          "artifact_issue": null
+          "code_url": "https://github.com/SamTyson0506/7506Mini-project1/tree/766df65e42cddf1b87a5130af658f14eac7c4c84/code",
+          "checkpoint_url": "https://github.com/SamTyson0506/7506Mini-project1/blob/766df65e42cddf1b87a5130af658f14eac7c4c84/code/runs/student-deep-16000/checkpoint.pt",
+          "artifact_issue": null,
+          "instructor_links_updated_at": "2026-10-01T16:33:36.871295Z",
+          "link_source": "Student-provided details recorded by the instructor"
         },
         {
           "submission": 80,
@@ -1217,9 +1219,11 @@
           "submission": 175,
           "author": "Gu123456-gu",
           "score": 1.71183,
-          "code_url": null,
-          "checkpoint_url": null,
-          "artifact_issue": null
+          "code_url": "https://github.com/Gu123456-gu/dase7506-project1",
+          "checkpoint_url": "https://github.com/Gu123456-gu/dase7506-project1/blob/main/checkpoint.pt",
+          "artifact_issue": null,
+          "instructor_links_updated_at": "2026-10-01T16:33:36.871295Z",
+          "link_source": "Student-provided details recorded by the instructor"
         },
         {
           "submission": 176,
@@ -1476,8 +1480,43 @@
           "code_url": "https://github.com/Deadline-s/DASE7506_project1/tree/89b6b4d173740b239aedb057b5ad37863680b09e",
           "checkpoint_url": "https://github.com/Deadline-s/DASE7506_project1/releases/download/mp1/checkpoint.pt",
           "artifact_issue": 227
+        },
+        {
+          "submission": 214,
+          "student_id": "3036843458",
+          "author": "Yuc-hub",
+          "score": 1.72883,
+          "code_url": "https://github.com/Yuc-hub/Small-Language-Model",
+          "checkpoint_url": "https://github.com/Yuc-hub/Small-Language-Model/blob/main/runs/student/checkpoint.pt",
+          "artifact_issue": 214,
+          "instructor_accepted": true,
+          "instructor_recorded_score": true,
+          "recorded_at": "2026-10-01T16:33:36.871295Z",
+          "source": "Instructor-recorded student-provided submission details; source issue JSON is malformed"
         }
       ]
+    }
+  },
+  "link_checks": {
+    "https://drive.google.com/drive/folders/1aPlmhwu1Avvxs0suTUPie4Yv_5JZRLL8?usp=drive_link": {
+      "status": "unavailable",
+      "reason": "Sign-in required",
+      "checked_at": "2026-10-01T16:32:39.299376+00:00"
+    },
+    "https://github.com/liwanyue123/dase7506-mp1/releases/download/v1.0/checkpoint.pt": {
+      "status": "unavailable",
+      "reason": "HTTP 404",
+      "checked_at": "2026-10-01T16:32:39.301947+00:00"
+    },
+    "https://github.com/liwanyue123/dase7506-mp1/tree/41bfe16f44a423d0ac9ae173efd4c07e315eb7b9": {
+      "status": "unavailable",
+      "reason": "HTTP 404",
+      "checked_at": "2026-10-01T16:32:39.302933+00:00"
+    },
+    "https://github.com/random5121/mini1/blob/main/student_v14_candidate.py": {
+      "status": "unavailable",
+      "reason": "HTTP 404",
+      "checked_at": "2026-10-01T16:32:39.304011+00:00"
     }
   }
 }

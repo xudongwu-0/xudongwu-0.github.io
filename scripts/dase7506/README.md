@@ -256,3 +256,19 @@ leaderboard before accepting results; check for existing records before changing
 
 Run the rule tests before pushing. Their synthetic score ranges and reward values
 exist only in the test process and are not published course policies.
+
+## Public link warnings and instructor-entered results
+
+`publication.json` may contain `link_checks`, indexed by the exact artifact URL.
+An entry with `status: "unavailable"`, a reason and a check timestamp displays
+**Unable to open** beside that link. Browser-confirmed access and automated-request
+rate limits do not produce this warning. Replacing the URL removes the old warning.
+
+The instructor can supplement a published entry with student-provided links
+without changing its score or restarting the public review window. To record an
+existing malformed issue, the trusted publication entry must match its issue number
+and actual GitHub author and include `student_id`, `score`, both links,
+`instructor_accepted: true` and `instructor_recorded_score: true`. This explicit
+instructor entry supports leaderboard and peer review while retaining the source
+issue and account. It remains **Self-reported**, not Verified. A student cannot
+accept a late score by including these fields in an issue payload.

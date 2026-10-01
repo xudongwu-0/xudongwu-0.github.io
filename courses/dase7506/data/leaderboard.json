@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-01T16:09:01.046Z",
+  "generated_at": "2026-10-01T16:34:32.920Z",
   "submissions": [
     {
       "number": 1,
@@ -19,6 +19,10 @@
       "review_labels": [],
       "artifact_issue": 1,
       "artifact_status": "received",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -39,6 +43,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "pending",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -59,6 +67,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "pending",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 1,
       "review_request_count": 0,
       "review_flag": false
@@ -79,6 +91,10 @@
       "review_labels": [],
       "artifact_issue": 5,
       "artifact_status": "received",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -99,6 +115,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -119,6 +139,10 @@
       "review_labels": [],
       "artifact_issue": 7,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -139,6 +163,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -159,6 +187,10 @@
       "review_labels": [],
       "artifact_issue": 10,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -179,6 +211,10 @@
       "review_labels": [],
       "artifact_issue": 11,
       "artifact_status": "partial",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -199,6 +235,10 @@
       "review_labels": [],
       "artifact_issue": 12,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -219,6 +259,10 @@
       "review_labels": [],
       "artifact_issue": 13,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -239,6 +283,10 @@
       "review_labels": [],
       "artifact_issue": 14,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -259,6 +307,10 @@
       "review_labels": [],
       "artifact_issue": 15,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -279,6 +331,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "pending",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -299,6 +355,10 @@
       "review_labels": [],
       "artifact_issue": 17,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -319,6 +379,10 @@
       "review_labels": [],
       "artifact_issue": 18,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -339,6 +403,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -359,6 +427,10 @@
       "review_labels": [],
       "artifact_issue": 20,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -379,6 +451,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -399,6 +475,10 @@
       "review_labels": [],
       "artifact_issue": 22,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -419,6 +499,10 @@
       "review_labels": [],
       "artifact_issue": 23,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -439,6 +523,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -459,6 +547,10 @@
       "review_labels": [],
       "artifact_issue": 25,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -479,6 +571,10 @@
       "review_labels": [],
       "artifact_issue": 26,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -499,6 +595,10 @@
       "review_labels": [],
       "artifact_issue": 27,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -519,6 +619,10 @@
       "review_labels": [],
       "artifact_issue": 28,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -539,6 +643,10 @@
       "review_labels": [],
       "artifact_issue": 29,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -559,6 +667,10 @@
       "review_labels": [],
       "artifact_issue": 30,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -579,6 +691,10 @@
       "review_labels": [],
       "artifact_issue": 31,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -599,6 +715,10 @@
       "review_labels": [],
       "artifact_issue": 32,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -619,6 +739,10 @@
       "review_labels": [],
       "artifact_issue": 33,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -639,6 +763,18 @@
       "review_labels": [],
       "artifact_issue": 34,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": {
+          "status": "unavailable",
+          "reason": "HTTP 404",
+          "checked_at": "2026-10-01T16:32:39.302933+00:00"
+        },
+        "checkpoint": {
+          "status": "unavailable",
+          "reason": "HTTP 404",
+          "checked_at": "2026-10-01T16:32:39.301947+00:00"
+        }
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -659,6 +795,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -679,6 +819,10 @@
       "review_labels": [],
       "artifact_issue": 36,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -699,6 +843,10 @@
       "review_labels": [],
       "artifact_issue": 37,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -719,6 +867,10 @@
       "review_labels": [],
       "artifact_issue": 38,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -739,6 +891,10 @@
       "review_labels": [],
       "artifact_issue": 39,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -759,6 +915,10 @@
       "review_labels": [],
       "artifact_issue": 40,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -779,6 +939,10 @@
       "review_labels": [],
       "artifact_issue": 41,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -799,6 +963,10 @@
       "review_labels": [],
       "artifact_issue": 42,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -819,6 +987,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -839,6 +1011,10 @@
       "review_labels": [],
       "artifact_issue": 44,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -859,6 +1035,10 @@
       "review_labels": [],
       "artifact_issue": 45,
       "artifact_status": "received",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -879,6 +1059,10 @@
       "review_labels": [],
       "artifact_issue": 46,
       "artifact_status": "received",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -899,6 +1083,10 @@
       "review_labels": [],
       "artifact_issue": 47,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -919,6 +1107,10 @@
       "review_labels": [],
       "artifact_issue": 48,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -939,6 +1131,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "pending",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -959,6 +1155,10 @@
       "review_labels": [],
       "artifact_issue": 50,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -979,6 +1179,10 @@
       "review_labels": [],
       "artifact_issue": 51,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -999,6 +1203,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1019,6 +1227,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "pending",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1039,6 +1251,10 @@
       "review_labels": [],
       "artifact_issue": 54,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1059,6 +1275,10 @@
       "review_labels": [],
       "artifact_issue": 55,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1079,6 +1299,10 @@
       "review_labels": [],
       "artifact_issue": 56,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1099,6 +1323,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1119,6 +1347,10 @@
       "review_labels": [],
       "artifact_issue": 58,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1139,6 +1371,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1159,6 +1395,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "pending",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1179,6 +1419,10 @@
       "review_labels": [],
       "artifact_issue": 61,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1199,6 +1443,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1219,6 +1467,10 @@
       "review_labels": [],
       "artifact_issue": 63,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1239,6 +1491,10 @@
       "review_labels": [],
       "artifact_issue": 64,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1259,6 +1515,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1279,6 +1539,10 @@
       "review_labels": [],
       "artifact_issue": 66,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1299,6 +1563,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1319,6 +1587,10 @@
       "review_labels": [],
       "artifact_issue": 68,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1339,6 +1611,10 @@
       "review_labels": [],
       "artifact_issue": 219,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1359,6 +1635,10 @@
       "review_labels": [],
       "artifact_issue": 70,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1379,6 +1659,10 @@
       "review_labels": [],
       "artifact_issue": 220,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1399,6 +1683,10 @@
       "review_labels": [],
       "artifact_issue": 72,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1419,6 +1707,10 @@
       "review_labels": [],
       "artifact_issue": 73,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1439,6 +1731,10 @@
       "review_labels": [],
       "artifact_issue": 74,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1459,6 +1755,10 @@
       "review_labels": [],
       "artifact_issue": 75,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1479,6 +1779,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "pending",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1499,6 +1803,10 @@
       "review_labels": [],
       "artifact_issue": 216,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1510,15 +1818,19 @@
       "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/78",
       "project": "mp1",
       "score": 1.55415,
-      "code_url": null,
-      "checkpoint_url": null,
+      "code_url": "https://github.com/SamTyson0506/7506Mini-project1/tree/766df65e42cddf1b87a5130af658f14eac7c4c84/code",
+      "checkpoint_url": "https://github.com/SamTyson0506/7506Mini-project1/blob/766df65e42cddf1b87a5130af658f14eac7c4c84/code/runs/student-deep-16000/checkpoint.pt",
       "status": "self-reported",
       "created_at": "2026-09-28T15:10:54Z",
       "signature": "[\"mp1\",1.55415,null,null,\"3036707587\",null]",
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": null,
-      "artifact_status": "missing",
+      "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1539,6 +1851,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "pending",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1559,6 +1875,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1579,6 +1899,10 @@
       "review_labels": [],
       "artifact_issue": 81,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1599,6 +1923,10 @@
       "review_labels": [],
       "artifact_issue": 82,
       "artifact_status": "partial",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1619,6 +1947,10 @@
       "review_labels": [],
       "artifact_issue": 83,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1639,6 +1971,10 @@
       "review_labels": [],
       "artifact_issue": 84,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1659,6 +1995,10 @@
       "review_labels": [],
       "artifact_issue": 85,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1679,6 +2019,10 @@
       "review_labels": [],
       "artifact_issue": 86,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1699,6 +2043,10 @@
       "review_labels": [],
       "artifact_issue": 87,
       "artifact_status": "received",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1719,6 +2067,10 @@
       "review_labels": [],
       "artifact_issue": 88,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1739,6 +2091,10 @@
       "review_labels": [],
       "artifact_issue": 89,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1759,6 +2115,10 @@
       "review_labels": [],
       "artifact_issue": 223,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1779,6 +2139,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1799,6 +2163,10 @@
       "review_labels": [],
       "artifact_issue": 92,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1819,6 +2187,10 @@
       "review_labels": [],
       "artifact_issue": 93,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1839,6 +2211,10 @@
       "review_labels": [],
       "artifact_issue": 94,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1859,6 +2235,10 @@
       "review_labels": [],
       "artifact_issue": 215,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1879,6 +2259,10 @@
       "review_labels": [],
       "artifact_issue": 96,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1899,6 +2283,10 @@
       "review_labels": [],
       "artifact_issue": 97,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1919,6 +2307,10 @@
       "review_labels": [],
       "artifact_issue": 98,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1939,6 +2331,10 @@
       "review_labels": [],
       "artifact_issue": 99,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1959,6 +2355,10 @@
       "review_labels": [],
       "artifact_issue": 100,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1979,6 +2379,10 @@
       "review_labels": [],
       "artifact_issue": 101,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -1999,6 +2403,10 @@
       "review_labels": [],
       "artifact_issue": 102,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2019,6 +2427,10 @@
       "review_labels": [],
       "artifact_issue": 103,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2039,6 +2451,10 @@
       "review_labels": [],
       "artifact_issue": 104,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2059,6 +2475,10 @@
       "review_labels": [],
       "artifact_issue": 105,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2079,6 +2499,10 @@
       "review_labels": [],
       "artifact_issue": 106,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2099,6 +2523,10 @@
       "review_labels": [],
       "artifact_issue": 224,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2119,6 +2547,10 @@
       "review_labels": [],
       "artifact_issue": 108,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2139,6 +2571,10 @@
       "review_labels": [],
       "artifact_issue": 222,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2159,6 +2595,10 @@
       "review_labels": [],
       "artifact_issue": 110,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2179,6 +2619,10 @@
       "review_labels": [],
       "artifact_issue": 111,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2199,6 +2643,10 @@
       "review_labels": [],
       "artifact_issue": 112,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2219,6 +2667,10 @@
       "review_labels": [],
       "artifact_issue": 113,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2239,6 +2691,10 @@
       "review_labels": [],
       "artifact_issue": 114,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2259,6 +2715,10 @@
       "review_labels": [],
       "artifact_issue": 115,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2279,6 +2739,10 @@
       "review_labels": [],
       "artifact_issue": 116,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2299,6 +2763,10 @@
       "review_labels": [],
       "artifact_issue": 117,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2319,6 +2787,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2339,6 +2811,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2359,6 +2835,10 @@
       "review_labels": [],
       "artifact_issue": 120,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2379,6 +2859,10 @@
       "review_labels": [],
       "artifact_issue": 121,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2399,6 +2883,10 @@
       "review_labels": [],
       "artifact_issue": 122,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2419,6 +2907,10 @@
       "review_labels": [],
       "artifact_issue": 123,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2439,6 +2931,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "pending",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2459,6 +2955,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "pending",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2479,6 +2979,10 @@
       "review_labels": [],
       "artifact_issue": 126,
       "artifact_status": "partial",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2499,6 +3003,10 @@
       "review_labels": [],
       "artifact_issue": 127,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2519,6 +3027,10 @@
       "review_labels": [],
       "artifact_issue": 128,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2539,6 +3051,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "pending",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2559,6 +3075,10 @@
       "review_labels": [],
       "artifact_issue": 130,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2579,6 +3099,10 @@
       "review_labels": [],
       "artifact_issue": 131,
       "artifact_status": "received",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2599,6 +3123,10 @@
       "review_labels": [],
       "artifact_issue": 225,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2619,6 +3147,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2639,6 +3171,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2659,6 +3195,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2679,6 +3219,10 @@
       "review_labels": [],
       "artifact_issue": 136,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2699,6 +3243,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "pending",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2719,6 +3267,10 @@
       "review_labels": [],
       "artifact_issue": 138,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2739,6 +3291,10 @@
       "review_labels": [],
       "artifact_issue": 204,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2759,6 +3315,14 @@
       "review_labels": [],
       "artifact_issue": 140,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": {
+          "status": "unavailable",
+          "reason": "Sign-in required",
+          "checked_at": "2026-10-01T16:32:39.299376+00:00"
+        }
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2779,6 +3343,10 @@
       "review_labels": [],
       "artifact_issue": 141,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2799,6 +3367,10 @@
       "review_labels": [],
       "artifact_issue": 142,
       "artifact_status": "partial",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2819,6 +3391,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2839,6 +3415,10 @@
       "review_labels": [],
       "artifact_issue": 144,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2859,6 +3439,10 @@
       "review_labels": [],
       "artifact_issue": 145,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2879,6 +3463,10 @@
       "review_labels": [],
       "artifact_issue": 146,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2899,6 +3487,10 @@
       "review_labels": [],
       "artifact_issue": 147,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2919,6 +3511,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "pending",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2939,6 +3535,10 @@
       "review_labels": [],
       "artifact_issue": 149,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2959,6 +3559,10 @@
       "review_labels": [],
       "artifact_issue": 150,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2979,6 +3583,10 @@
       "review_labels": [],
       "artifact_issue": 152,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -2999,6 +3607,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3019,6 +3631,10 @@
       "review_labels": [],
       "artifact_issue": 154,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3039,6 +3655,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3059,6 +3679,10 @@
       "review_labels": [],
       "artifact_issue": 156,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3079,6 +3703,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3099,6 +3727,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3119,6 +3751,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3139,6 +3775,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3159,6 +3799,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3179,6 +3823,10 @@
       "review_labels": [],
       "artifact_issue": 162,
       "artifact_status": "partial",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3199,6 +3847,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3219,6 +3871,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "pending",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3239,6 +3895,14 @@
       "review_labels": [],
       "artifact_issue": 165,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": {
+          "status": "unavailable",
+          "reason": "HTTP 404",
+          "checked_at": "2026-10-01T16:32:39.304011+00:00"
+        },
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3259,6 +3923,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3279,6 +3947,10 @@
       "review_labels": [],
       "artifact_issue": 167,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3299,6 +3971,14 @@
       "review_labels": [],
       "artifact_issue": 168,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": {
+          "status": "unavailable",
+          "reason": "HTTP 404",
+          "checked_at": "2026-10-01T16:32:39.304011+00:00"
+        },
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3319,6 +3999,10 @@
       "review_labels": [],
       "artifact_issue": 169,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3339,6 +4023,10 @@
       "review_labels": [],
       "artifact_issue": 170,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3359,6 +4047,10 @@
       "review_labels": [],
       "artifact_issue": 171,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3379,6 +4071,10 @@
       "review_labels": [],
       "artifact_issue": 172,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3399,6 +4095,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3419,6 +4119,10 @@
       "review_labels": [],
       "artifact_issue": 213,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3430,15 +4134,19 @@
       "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/175",
       "project": "mp1",
       "score": 1.71183,
-      "code_url": null,
-      "checkpoint_url": null,
+      "code_url": "https://github.com/Gu123456-gu/dase7506-project1",
+      "checkpoint_url": "https://github.com/Gu123456-gu/dase7506-project1/blob/main/checkpoint.pt",
       "status": "self-reported",
       "created_at": "2026-09-29T18:44:46Z",
       "signature": "[\"mp1\",1.71183,null,null,\"3036708256\",null]",
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": null,
-      "artifact_status": "missing",
+      "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3459,6 +4167,10 @@
       "review_labels": [],
       "artifact_issue": 176,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3479,6 +4191,10 @@
       "review_labels": [],
       "artifact_issue": 177,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3499,6 +4215,10 @@
       "review_labels": [],
       "artifact_issue": 178,
       "artifact_status": "partial",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3519,6 +4239,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3539,6 +4263,10 @@
       "review_labels": [],
       "artifact_issue": 180,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3559,6 +4287,10 @@
       "review_labels": [],
       "artifact_issue": 212,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3579,6 +4311,10 @@
       "review_labels": [],
       "artifact_issue": 182,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3599,6 +4335,10 @@
       "review_labels": [],
       "artifact_issue": 183,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3619,6 +4359,10 @@
       "review_labels": [],
       "artifact_issue": 185,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3639,6 +4383,10 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "missing",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3659,6 +4407,10 @@
       "review_labels": [],
       "artifact_issue": 187,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3679,6 +4431,10 @@
       "review_labels": [],
       "artifact_issue": 188,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3699,6 +4455,10 @@
       "review_labels": [],
       "artifact_issue": 189,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3719,6 +4479,10 @@
       "review_labels": [],
       "artifact_issue": 190,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3739,6 +4503,10 @@
       "review_labels": [],
       "artifact_issue": 191,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3759,6 +4527,10 @@
       "review_labels": [],
       "artifact_issue": 192,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3779,6 +4551,10 @@
       "review_labels": [],
       "artifact_issue": 193,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3799,6 +4575,10 @@
       "review_labels": [],
       "artifact_issue": 194,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3819,6 +4599,10 @@
       "review_labels": [],
       "artifact_issue": 195,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3839,6 +4623,10 @@
       "review_labels": [],
       "artifact_issue": 196,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3859,6 +4647,10 @@
       "review_labels": [],
       "artifact_issue": 197,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3879,6 +4671,10 @@
       "review_labels": [],
       "artifact_issue": 198,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3899,6 +4695,10 @@
       "review_labels": [],
       "artifact_issue": 199,
       "artifact_status": "received",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3919,6 +4719,10 @@
       "review_labels": [],
       "artifact_issue": 200,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3939,6 +4743,10 @@
       "review_labels": [],
       "artifact_issue": 201,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3959,6 +4767,10 @@
       "review_labels": [],
       "artifact_issue": 202,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3979,6 +4791,10 @@
       "review_labels": [],
       "artifact_issue": 203,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -3999,6 +4815,10 @@
       "review_labels": [],
       "artifact_issue": 205,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -4019,6 +4839,10 @@
       "review_labels": [],
       "artifact_issue": 206,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -4039,6 +4863,10 @@
       "review_labels": [],
       "artifact_issue": 207,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -4059,6 +4887,10 @@
       "review_labels": [],
       "artifact_issue": 208,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -4079,6 +4911,10 @@
       "review_labels": [],
       "artifact_issue": 209,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
@@ -4099,6 +4935,35 @@
       "review_labels": [],
       "artifact_issue": 227,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 214,
+      "author": "Yuc-hub",
+      "student_id": "3036843458",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/214",
+      "project": "mp1",
+      "score": 1.72883,
+      "code_url": "https://github.com/Yuc-hub/Small-Language-Model",
+      "checkpoint_url": "https://github.com/Yuc-hub/Small-Language-Model/blob/main/runs/student/checkpoint.pt",
+      "status": "self-reported",
+      "created_at": "2026-09-30T17:44:43Z",
+      "signature": "[\"mp1\",1.72883,\"https://github.com/Yuc-hub/Small-Language-Model\",\"https://github.com/Yuc-hub/Small-Language-Model/blob/main/runs/student/checkpoint.pt\",\"3036843458\",null]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "instructor_entered": true,
+      "artifact_issue": null,
+      "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false

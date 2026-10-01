@@ -106,3 +106,45 @@ test('incomplete release still refuses tampered encrypted links',()=>{
  const prior=buildSnapshot(records,{},before);
  assert.throws(()=>prepareRelease(prior,records,privateKey,'mp1',released,{allSubmissions:true,allowIncomplete:true}),/Cannot safely release/);
 });
+test('only a matching instructor publication entry accepts a manually recorded result after the deadline',()=>{
+ const record=issue(10,score({student_id:'manual-student',code_url:code,checkpoint_url:checkpoint,instructor_accepted:true}),{created_at:after,updated_at:after,user:{login:'instructor',type:'User'}});
+ const entry={submission:10,student_id:'manual-student',author:'instructor',score:2.1,code_url:code,checkpoint_url:checkpoint,instructor_accepted:true};
+ const pub=accepted=>({projects:{mp1:{published_at:released,entries:[accepted]}}});
+ assert.equal(buildSnapshot([record],{},released).submissions[0].status,'late');
+ const accepted=buildSnapshot([record],{},released,pub(entry)).submissions[0];
+ assert.equal(accepted.status,'self-reported');
+ assert.equal(accepted.instructor_entered,true);
+ assert.equal(accepted.code_url,code);
+ for(const extra of [{author:'other'},{score:0.1},{student_id:'other'},{instructor_accepted:false}]) {
+   assert.equal(buildSnapshot([record],{},released,pub({...entry,...extra})).submissions[0].status,'late');
+ }
+});
+test('public link warnings apply to exact URLs without affecting eligibility or reporting',()=>{
+ const record=issue(1,score({student_id:'student',artifacts:seal()}));
+ const prior=buildSnapshot([record],{},before);
+ const release=prepareRelease(prior,[record],privateKey,'mp1',released);
+ const warning={status:'unavailable',reason:'HTTP 404',checked_at:released};
+ const publication={projects:{mp1:release},link_checks:{[code]:warning}};
+ const board=buildSnapshot([record],prior,released,publication);
+ assert.equal(board.submissions[0].status,'self-reported');
+ assert.equal(bestRows(board.submissions,'mp1').length,1);
+ assert.deepEqual(board.submissions[0].artifact_access.code,warning);
+ assert.equal(board.submissions[0].artifact_access.checkpoint,null);
+ release.entries[0].code_url='https://example.org/replacement';
+ assert.equal(buildSnapshot([record],prior,released,publication).submissions[0].artifact_access.code,null);
+});
+test('instructor can record a malformed existing issue while retaining the original student account',()=>{
+ const malformed={...issue(12,{}, {user:{login:'actual-student',type:'User'},created_at:after,updated_at:after}),body:'```json\n{"broken": true missing comma}\n```'};
+ const entry={submission:12,student_id:'student-12',author:'actual-student',score:1.72883,code_url:code,checkpoint_url:checkpoint,instructor_accepted:true,instructor_recorded_score:true};
+ const publication={projects:{mp1:{published_at:released,entries:[entry]}}};
+ assert.equal(buildSnapshot([malformed],{},released).submissions.length,0);
+ const board=buildSnapshot([malformed],{},released,publication);
+ assert.equal(board.submissions[0].author,'actual-student');
+ assert.equal(board.submissions[0].score,1.72883);
+ assert.equal(board.submissions[0].status,'self-reported');
+ assert.equal(bestRows(board.submissions,'mp1').length,1);
+ const rerun=buildSnapshot([malformed],board,released,publication);
+ assert.equal(rerun.submissions[0].status,'self-reported');
+ publication.projects.mp1.entries[0].author='someone-else';
+ assert.equal(buildSnapshot([malformed],{},released,publication).submissions.length,0);
+});
