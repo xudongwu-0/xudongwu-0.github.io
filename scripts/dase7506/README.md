@@ -1,6 +1,6 @@
 # DASE7506 website maintenance
 
-The public course page is `/courses/dase7506/`. MP1 is open for submission testing with full-test BPB (lower is better). The compact page shows the submission form, leaderboard and reproduction reports. MP2 and MP3 remain closed and are hidden from the form. The course page is English-only and has its own navigation and favicon, with no links to the personal homepage. Assignment handouts, datasets and checkpoints are not published on this page. The MP1 score deadline is the end of 30 September 2026 (UTC+8).
+The public course page is `/courses/dase7506/`. MP1 scores are frozen after the 30 September deadline. The public page shows a full-width leaderboard, released Code and Checkpoint links, and Peer Review Reports; the score/link submission form has been removed. MP2 and MP3 remain closed and are hidden from the form. The course page is English-only and has its own navigation and favicon, with no links to the personal homepage. Assignment handouts, datasets and checkpoints are not published on this page. The MP1 score deadline is the end of 30 September 2026 (UTC+8).
 
 ## Storage and identity
 
@@ -102,6 +102,13 @@ git add courses/dase7506/data/publication.json
 git commit -m 'Open MP1 seven-day public review'
 git push origin main
 ```
+
+For an instructor-authorized release of all active submission history, including
+records with absent links, add `--all-submissions --allow-incomplete`. Existing
+Code and Checkpoint URLs are published independently; absent URLs display “Not
+provided”. Withdrawn and invalidated submissions are excluded. Frozen scores,
+review status and best-per-student ranking are preserved. Invalid URLs or
+undecryptable payloads still stop publication.
 
 Run the publication command immediately before committing and pushing: the
 seven-day window starts at its recorded `published_at` time. This teacher action

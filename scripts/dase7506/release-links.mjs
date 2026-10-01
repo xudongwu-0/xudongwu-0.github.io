@@ -16,13 +16,16 @@ export function decryptLinks(sealed,key) {
   if(data.schema!=='dase7506/artifact-links-v1') throw new Error('Invalid artifact payload.');
   return data;
 }
-export function prepareRelease(snapshot,issues,key,project='mp1',now=new Date().toISOString()) {
+export function prepareRelease(snapshot,issues,key,project='mp1',now=new Date().toISOString(),options={}) {
   const config=PROJECTS[project];
   if(!config?.open || !config.score_deadline) throw new Error('Unknown or closed project.');
   if(+new Date(now)<Date.parse(config.score_deadline)) throw new Error('Score deadline has not passed.');
   if(snapshot.publication?.projects?.[project]) throw new Error('Links have already been released.');
   const byNumber=new Map(issues.map(parseIssue).filter(Boolean).map(p=>[p.number,p]));
-  const rows=bestRows(snapshot.submissions,project), entries=[], missing=[];
+  const rows=options.allSubmissions
+    ? snapshot.submissions.filter(row=>row.project===project && ['self-reported','verified','review'].includes(row.status))
+    : bestRows(snapshot.submissions,project);
+  const entries=[], missing=[];
   if(!rows.length) throw new Error('No eligible score submissions to publish.');
   for(const row of rows) {
     const source=byNumber.get(row.artifact_issue||row.number);
@@ -32,15 +35,23 @@ export function prepareRelease(snapshot,issues,key,project='mp1',now=new Date().
       if(source.data.artifacts) links=decryptLinks(source.data.artifacts,key);
       else links={project,code_url:source.data.code_url,checkpoint_url:source.data.checkpoint_url};
       if(links.project!==project || (links.submission!=null && links.submission!==row.number)) throw new Error('Artifact reference mismatch.');
-      if(!safeURL(links.code_url)||!safeURL(links.checkpoint_url)) throw new Error('Both valid HTTPS links are required.');
-      entries.push({submission:row.number,author:row.author,score:row.score,code_url:links.code_url,checkpoint_url:links.checkpoint_url,artifact_issue:source.number});
-    } catch { missing.push(row.number); }
+      const code=safeURL(links.code_url), checkpoint=safeURL(links.checkpoint_url);
+      if((links.code_url && !code)||(links.checkpoint_url && !checkpoint)) throw new Error('Invalid HTTPS artifact URL.');
+      if(!code||!checkpoint) {
+        missing.push(row.number);
+        if(!options.allowIncomplete) continue;
+      }
+      entries.push({submission:row.number,author:row.author,score:row.score,code_url:code||null,checkpoint_url:checkpoint||null,artifact_issue:row.artifact_issue?source.number:null});
+    } catch(error) {
+      if(options.allowIncomplete) throw new Error(`Cannot safely release score issue #${row.number}: ${error.message}`);
+      missing.push(row.number);
+    }
   }
-  if(missing.length) throw new Error(`Complete, decryptable links are still required for score issues: ${missing.join(', ')}`);
+  if(missing.length && !options.allowIncomplete) throw new Error(`Complete, decryptable links are still required for score issues: ${missing.join(', ')}`);
   return {published_at:new Date(now).toISOString(),review_ends_at:new Date(+new Date(now)+(config.review_days||7)*86400000).toISOString(),entries};
 }
 async function main() {
-  const {values}=parseArgs({options:{key:{type:'string'},output:{type:'string'},publish:{type:'boolean'},project:{type:'string',default:'mp1'}}});
+  const {values}=parseArgs({options:{key:{type:'string'},output:{type:'string'},publish:{type:'boolean'},project:{type:'string',default:'mp1'},'all-submissions':{type:'boolean'},'allow-incomplete':{type:'boolean'}}});
   if(!values.key) throw new Error('Provide --key with the instructor private PEM file outside the public repository.');
   const keyPath=fs.realpathSync(values.key);
   if(keyPath.startsWith(root)) throw new Error('The private key must be outside the public repository.');
@@ -56,8 +67,9 @@ async function main() {
     const batch=await r.json();issues.push(...batch);if(batch.length<100)break;
   }
   const now=new Date().toISOString();
-  const current=buildSnapshot(issues,snapshot,now,publication);
-  const release=prepareRelease(current,issues,fs.readFileSync(keyPath),values.project,now);
+  const identities=JSON.parse(fs.readFileSync(path.join(root,'courses/dase7506/data/student-identities.json'),'utf8')).identities;
+  const current=buildSnapshot(issues,snapshot,now,publication,{identities});
+  const release=prepareRelease(current,issues,fs.readFileSync(keyPath),values.project,now,{allSubmissions:values['all-submissions'],allowIncomplete:values['allow-incomplete']});
   if(values.publish) {
     publication.projects[values.project]=release;
     fs.writeFileSync(file,JSON.stringify(publication,null,2)+'\n');

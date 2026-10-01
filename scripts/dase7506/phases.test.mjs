@@ -80,3 +80,29 @@ test('peer reports are accepted only during the published seven-day review',()=>
  assert.equal(buildSnapshot([original,peer(released)],prior,released,publication).challenges.length,1);
  assert.equal(buildSnapshot([original,peer(release.review_ends_at)],prior,release.review_ends_at,publication).challenges.length,0);
 });
+test('instructor can release historical and partial links without changing scores or ranking',()=>{
+ const records=[issue(1,score({student_id:'student-1',artifacts:seal()})),
+   issue(2,score({student_id:'student-1',score:2.2,artifacts:seal({checkpoint_url:null})})),
+   issue(3,score({student_id:'baseline',score:2.5})),
+   issue(4,score({student_id:'withdrawn',artifacts:seal()}),{state:'closed'})];
+ const prior=buildSnapshot(records,{},before);
+ const release=prepareRelease(prior,records,privateKey,'mp1',released,{allSubmissions:true,allowIncomplete:true});
+ assert.deepEqual(release.entries.map(e=>e.submission),[1,2,3]);
+ assert.equal(release.entries[1].code_url,code);
+ assert.equal(release.entries[1].checkpoint_url,null);
+ assert.equal(release.entries[2].code_url,null);
+ const next=buildSnapshot(records,prior,released,{projects:{mp1:release}});
+ assert.deepEqual(next.submissions.map(r=>[r.number,r.score,r.status]),prior.submissions.map(r=>[r.number,r.score,r.status]));
+ assert.deepEqual(bestRows(next.submissions,'mp1').map(r=>r.number),bestRows(prior.submissions,'mp1').map(r=>r.number));
+ assert.equal(next.submissions[1].artifact_status,'partial');
+ assert.equal(next.submissions[2].artifact_status,'missing');
+ assert.equal(next.submissions[3].code_url,null);
+});
+test('incomplete release still refuses tampered encrypted links',()=>{
+ const envelope=seal();
+ const bytes=Buffer.from(envelope.ciphertext,'base64');bytes[0]^=1;
+ envelope.ciphertext=bytes.toString('base64');
+ const records=[issue(1,score({artifacts:envelope}))];
+ const prior=buildSnapshot(records,{},before);
+ assert.throws(()=>prepareRelease(prior,records,privateKey,'mp1',released,{allSubmissions:true,allowIncomplete:true}),/Cannot safely release/);
+});
