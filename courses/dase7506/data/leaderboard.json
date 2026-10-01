@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-01T08:50:32.882Z",
+  "generated_at": "2026-10-01T09:08:49.448Z",
   "submissions": [
     {
       "number": 1,
@@ -2097,8 +2097,8 @@
       "signature": "[\"mp1\",1.48544,null,null,\"3036837930\",null]",
       "edited_after_review": false,
       "review_labels": [],
-      "artifact_issue": null,
-      "artifact_status": "pending",
+      "artifact_issue": 224,
+      "artifact_status": "received",
       "review_request_total": 0,
       "review_request_count": 0,
       "review_flag": false
