@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-01T16:40:04.227Z",
+  "generated_at": "2026-10-02T06:48:25.887Z",
   "submissions": [
     {
       "number": 1,
@@ -311,8 +311,8 @@
         "code": null,
         "checkpoint": null
       },
-      "review_request_total": 0,
-      "review_request_count": 0,
+      "review_request_total": 1,
+      "review_request_count": 1,
       "review_flag": false
     },
     {
@@ -4969,7 +4969,19 @@
       "review_flag": false
     }
   ],
-  "challenges": [],
+  "challenges": [
+    {
+      "number": 228,
+      "author": "floatingwang55-source",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/228",
+      "submission": 15,
+      "project": "mp1",
+      "reproduced_score": 1.51072,
+      "evidence_url": null,
+      "created_at": "2026-10-02T06:48:16Z",
+      "status": "pending"
+    }
+  ],
   "adjustments": [],
   "publication": {
     "schema": "dase7506/publication-v1",
@@ -4997,6 +5009,18 @@
       "reproduced_score": 1.8,
       "created_at": "2026-09-14T09:49:39Z",
       "status": "self-request"
+    },
+    {
+      "number": 228,
+      "submission": 15,
+      "project": "mp1",
+      "author": "floatingwang55-source",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/228",
+      "reason": "## Reproduction\n\nCommand (the reviewed bundle's own documented submission):\n`python evaluate.py --checkpoint runs/student_final/checkpoint_best.pt --device cpu --precision fp32 --split test`\n\nReproduced **test BPB 1.5107237** — not the reported 1.33714. The registered\nvalue matches no artifact in the bundle (grepping the entire package for\n\"1.33714\" returns nothing; closest recorded value is 1.3374667).\n\nThe only model in the bundle that scores ~1.337 is\n`runs/student_my/checkpoint.pt`, which reproduces **1.3374668**. That model is\n**not an eligible submission**, for two independent reasons:\n\n1. **It is non-causal.** Its `GlobalMemoryTokens` module applies softmax over\n   the *time* axis (`student_work/student_my.py:235`), so every position's\n   representation mixes in future tokens. Probed with the trained checkpoint:\n   flipping only the last input token of a window changes the predictions at\n   1771/2040 (87%) of earlier positions (max |Δ| = 2.33 nats). This violates\n   \"a prediction at position t may use only the observed prefix through t\".\n   The authors' own `code/tests/test_causality.py` encodes this: \"The buggy\n   GlobalMemoryTokens is expected to FAIL this test\". Running the same\n   weights through a causal GMT collapses the score to 2.299 BPB, and the\n   causally-retrained variant (`student_my_casual`) reaches only 1.506 —\n   i.e. the 1.337 figure comes entirely from future-token leakage.\n2. **It breaches the 5× CPU-time budget.** 42.12 s vs the same-machine\n   baseline 8.39 s = 5.02× (admitted in their own report);\n\n## Conclusion\n\nThe reported 1.33714 BPB is not backed by any rules-compliant artifact. The rules-compliant predictor in the same bundle (`student_final`) scores 1.51072, which I reproduce to 7 decimal places. I recommend the registered score be corrected to 1.511 or the submission be invalidated.",
+      "evidence_url": null,
+      "reproduced_score": 1.51072,
+      "created_at": "2026-10-02T06:48:16Z",
+      "status": "pending"
     }
   ],
   "snapshot_version": 2
