@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-03T04:26:35.982Z",
+  "generated_at": "2026-10-03T14:03:56.594Z",
   "submissions": [
     {
       "number": 1,
@@ -311,8 +311,8 @@
         "code": null,
         "checkpoint": null
       },
-      "review_request_total": 1,
-      "review_request_count": 1,
+      "review_request_total": 2,
+      "review_request_count": 2,
       "review_flag": false
     },
     {
@@ -4991,6 +4991,17 @@
       "evidence_url": "https://github.com/wuyimingai2004-cloud/DASE7506-Peer-Review-Report-103",
       "created_at": "2026-10-03T04:26:26Z",
       "status": "pending"
+    },
+    {
+      "number": 230,
+      "author": "liwanyue123",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/230",
+      "submission": 15,
+      "project": "mp1",
+      "reproduced_score": 1.3371435339,
+      "evidence_url": null,
+      "created_at": "2026-10-03T14:03:45Z",
+      "status": "pending"
     }
   ],
   "adjustments": [],
@@ -5043,6 +5054,18 @@
       "evidence_url": "https://github.com/wuyimingai2004-cloud/DASE7506-Peer-Review-Report-103",
       "reproduced_score": 1.52468,
       "created_at": "2026-10-03T04:26:26Z",
+      "status": "pending"
+    },
+    {
+      "number": 230,
+      "submission": 15,
+      "project": "mp1",
+      "author": "liwanyue123",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/230",
+      "reason": "# Peer Review Report — MP1 (Student ID 3036705979)\n\n**Reviewed submission:** leaderboard entry, Test BPB = 1.33714\n**Code:** https://github.com/vectorBH6/HKU_DASE7506_MP1 (commit `03f387c`, branch `master`)\n**Checkpoint:** `code/runs/student_my/checkpoint_best.pt`\n**Reproduced score:** 1.3371435339 BPB (identical to reported)\n**Verdict:** Score reproduces, but the predictor violates the causality rule. The reported BPB is not a valid result.\n\n## 1. Reproduction\n\nCommand (run from `code/`):\n\n    PYTHONPATH=student_work python evaluate.py \\\n      --checkpoint runs/student_my/checkpoint_best.pt \\\n      --device cpu --precision fp32 --split test --output peer-test.json\n\nEnvironment: Linux x86_64, Intel Core Ultra 9 275HX, PyTorch 2.7.1+cpu, Python 3.13.\n\n| Field | Value |\n|---|---|\n| bpb | 1.3371435339165754 |\n| checkpoint_sha256 | 683a7ae82b6e9befa7e30ee29dc1329598aaae70c5cdf35cb1009268a770dbb2 |\n| implementation_sha256 (`student_my.py`) | a3f12217afe7f94821a9da3b5a24920403a30f0d110fcd23b25ae36c525a1901 |\n| evaluator_sha256 | 128bcb2dab0be0d427505bddb4671e3ab3a8f78e114be79a689c0f9029af133d |\n| tokenizer_sha256 | 020d1bc6aa4449c4f352b2e03d0e0fb4f39287f15297705e421b1fa7d817262e |\n\nThe number is numerically reproducible with the unchanged evaluator.\n\n## 2. Rule violation: future-token leakage\n\nCode README §3: \"A prediction at position t may use only the observed prefix through t.\"\n\n`student_my.py`, class `GlobalMemoryTokens.forward` (enabled by `n_global_tokens: 12` in the checkpoint config):\n\n    attn = F.softmax(attn_logits, dim=1)          # softmax over the TIME axis (all 256 positions)\n    mixed_tokens = torch.matmul(attn.transpose(1, 2), x) + self.tokens.expand(B, -1, -1)\n    summary = torch.matmul(attn, mixed_tokens)    # window-wide summary\n    return x + gate * summary                     # added back to every position\n\nThe softmax normalizes over the whole window, and the window-wide summary is added back to every position. Each prediction therefore depends on t",
+      "evidence_url": null,
+      "reproduced_score": 1.3371435339,
+      "created_at": "2026-10-03T14:03:45Z",
       "status": "pending"
     }
   ],
