@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-03T02:34:47.506Z",
+  "generated_at": "2026-10-03T04:26:35.982Z",
   "submissions": [
     {
       "number": 1,
@@ -2431,8 +2431,8 @@
         "code": null,
         "checkpoint": null
       },
-      "review_request_total": 0,
-      "review_request_count": 0,
+      "review_request_total": 1,
+      "review_request_count": 1,
       "review_flag": false
     },
     {
@@ -4980,6 +4980,17 @@
       "evidence_url": null,
       "created_at": "2026-10-02T06:48:16Z",
       "status": "pending"
+    },
+    {
+      "number": 229,
+      "author": "wuyimingai2004-cloud",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/229",
+      "submission": 103,
+      "project": "mp1",
+      "reproduced_score": 1.52468,
+      "evidence_url": "https://github.com/wuyimingai2004-cloud/DASE7506-Peer-Review-Report-103",
+      "created_at": "2026-10-03T04:26:26Z",
+      "status": "pending"
     }
   ],
   "adjustments": [],
@@ -5020,6 +5031,18 @@
       "evidence_url": null,
       "reproduced_score": 1.51072,
       "created_at": "2026-10-02T06:48:16Z",
+      "status": "pending"
+    },
+    {
+      "number": 229,
+      "submission": 103,
+      "project": "mp1",
+      "author": "wuyimingai2004-cloud",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/229",
+      "reason": "Successfully reproduced the published checkpoint using the unchanged course evaluator on the full test split (CPU FP32, 3 threads). Reproduced BPB: 1.5246770572498693; reported BPB: 1.5246771721994694. The absolute difference is approximately 1.15e-7. Two local runs produced identical scores, and the checkpoint SHA256 matches the published hash.",
+      "evidence_url": "https://github.com/wuyimingai2004-cloud/DASE7506-Peer-Review-Report-103",
+      "reproduced_score": 1.52468,
+      "created_at": "2026-10-03T04:26:26Z",
       "status": "pending"
     }
   ],
