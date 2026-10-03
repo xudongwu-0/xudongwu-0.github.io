@@ -272,3 +272,9 @@ and actual GitHub author and include `student_id`, `score`, both links,
 instructor entry supports leaderboard and peer review while retaining the source
 issue and account. It remains **Self-reported**, not Verified. A student cannot
 accept a late score by including these fields in an issue payload.
+
+The instructor may mark a score issue in `publication.json` under
+`superseded_submissions.mp1` when a student identifies a later result as final.
+The earlier score remains visible in the All submissions history but is omitted
+from the default ranking; the later self-reported score is not verified by this
+change.

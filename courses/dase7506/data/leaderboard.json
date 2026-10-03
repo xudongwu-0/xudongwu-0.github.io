@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-02T06:48:25.887Z",
+  "generated_at": "2026-10-03T02:34:47.506Z",
   "submissions": [
     {
       "number": 1,
@@ -203,14 +203,14 @@
       "project": "mp1",
       "score": 1.9483795405744737,
       "code_url": "https://github.com/songdaicheng666-dot/HKU_lecture_miniproject_Daicheng.-Song/tree/main",
-      "checkpoint_url": null,
+      "checkpoint_url": "https://github.com/songdaicheng666-dot/HKU_lecture_miniproject_Daicheng.-Song/blob/main/MP1_student_starter/results/rope6-final/checkpoint.pt",
       "status": "self-reported",
       "created_at": "2026-09-23T17:16:29Z",
       "signature": "[\"mp1\",1.9483795405744737,null,null,\"3036747927\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"j6xVbmusrsONyXyWlCf0FWv+vWjA1ycO7E9YOCCT/g4ESrYqeduo8dZFS9cq2jaGjATs+E2YDFIkvAnFY10I2A7B6fJYmrhqQI+JmmdXBk6ALuv/WPoFo3zl4v2c9SyLjmKZ+dUF3uN4JMoLjjEXsDoGXNnLI2w3d+000ebcbqqi2FyqjFxEydbACjMhNkW8iSiNrMhsGf8GSwHkR3gCQE3K8nzFxFDgfKbCOGGPUv/xPqy7+jOy7ZXuPuA0RqRZRrDCCobgqHtYeFoaTb5SLyDHgL6B4oZHkpQiuv9hsSg/NorcdYMgLMGf3MrkrmKLOMUmNPnT96WiTBEq6+tscjpWnskqZ2Nq9PFjdkQqSCx8JKaeewI7LFnB4xlUbprlgSqqv66B2obBJRT3UvxfoaQmR3eUh9yn0j+7NdnaSaWepoiSWln83jorbdG0xbhghomJPJU1i0RR46SunoQiR0bz0l5lVygFzCVwRyonbby2FlsO48wh6ZPRGdElm24S\",\"iv\":\"EAPgOQe6CBhByW0u\",\"ciphertext\":\"KMmC8qp4LkglmRbm52jimu78ELu9t6gPmMsAKgac1edc/sg7JNPahWREHdihkOrytN8b0xU0tlRzwT9xcuHsR9w7MGZJTs1g9Ape0itpWxm2QZzAgVJKKBFprwxYIaC/fRAT021ETN0H8uEgLFxBp75QR36MwYMT1LrgPcmsEboaX5pQa6L+HAeRn6Cmq1c5Tj8OweKLAfkVVCc2atMpkf+WcmLIRoN1vvazmX9ZxW+c/4QDK6bDEtrkJAOiU/9CGj0a1rTpgsObK1WzmCfZzoWbMxA=\"}]",
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 11,
-      "artifact_status": "partial",
+      "artifact_status": "published",
       "artifact_access": {
         "code": null,
         "checkpoint": null
@@ -466,7 +466,7 @@
       "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/22",
       "project": "mp1",
       "score": 1.5082599771,
-      "code_url": "https://github.com/michaelleeoo/DASE7506-MP1/tree/4337cf678e13fdbdc55073f856195aba44303840",
+      "code_url": "https://github.com/michaelleeoo/DASE7506-MP1/tree/f1b60519fc301782387c910a0d1a4272c6dfd744",
       "checkpoint_url": "https://github.com/michaelleeoo/DASE7506-MP1/releases/download/mp1-checkpoint/checkpoint.pt",
       "status": "self-reported",
       "created_at": "2026-09-27T06:26:27Z",
@@ -2780,7 +2780,7 @@
       "score": 1.57749,
       "code_url": null,
       "checkpoint_url": null,
-      "status": "self-reported",
+      "status": "superseded",
       "created_at": "2026-09-29T10:31:44Z",
       "signature": "[\"mp1\",1.57749,null,null,\"3036706521\",null]",
       "edited_after_review": false,
@@ -2971,14 +2971,14 @@
       "project": "mp1",
       "score": 1.50632,
       "code_url": "https://github.com/geoayzheng/MP1_Small-Language-Model-Challenge",
-      "checkpoint_url": null,
+      "checkpoint_url": "https://github.com/geoayzheng/MP1_Small-Language-Model-Challenge/blob/main/runs/s_both48/checkpoint_avg.pt",
       "status": "self-reported",
       "created_at": "2026-09-29T13:22:08Z",
       "signature": "[\"mp1\",1.50632,null,null,\"3036801242\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"PkERhNDmiNRUJJvW3SEM/MFQdwPXgKZkLCNaKmMRbyYB0HRaIIs+88Rto3hZUumuA9j+9ufeAxh/VP/rLEXU0Jq8sU+Qe7vKqBKkBPnfiXKSTB7BvCPtpDRud2OL1YZmuBvRf+y6kPu8i7dVe0611BCbTD/Qf9xLapKQun1lJcA7t/YTaNtC2PAATqVWyBmcdPFmOobZ8TdlA8nR9ykWqilNbEpxZ+w3wED6qAsd2RbCDVUuDp4pq8+EQzz7EmaGhqmmKMzSTpP1uDiXGM3uIHQyi7MzS2tdXC5wz6WPfdzR3hwqHMi4C/UsFhK33gzy+/gQ4/FMSTq+Qmtzyv9ckZlhn8EkQefUNHFfG/MUebeOsWbvymqz1e/TreWZymxWxg2q24KVHd2BxA+s+j0smAbD0skqOZ+xjUOFTib+acjT4PmOKoZtALTfAIv2k8swaa3KZ9JcCB2/u6+q9/VpcwB7prggEfdYrtOdQSzjPg1On1rxCNAKYUAcuwOr9T2k\",\"iv\":\"2YFSQgzfc6iAzigd\",\"ciphertext\":\"j/2qQQTsvPkjIPgdnKL2X/6kGnhrtTEHaZvLK60yNa8L/+S0iwgsIkp8mivsqMTpByElKsDDEgjvF6bIMCN7NcCQKrCzGkUBqyeysu1yzSQhQaRmO1RE6IdcYzjIjANmzkSI9gN+k3wQBUzJyKgKq0iCDE3ktjFA7TXdzfc8fd1xO2A5Vb50AsCm6vfROlvvpz1FfodaLAmMM6RgLjheia8G637TZFc4rXh/uictlmI26U+2/vj4B9xwmrv4\"}]",
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 126,
-      "artifact_status": "partial",
+      "artifact_status": "published",
       "artifact_access": {
         "code": null,
         "checkpoint": null

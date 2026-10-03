@@ -158,3 +158,15 @@ test('equal scores show the submission with both released links',()=>{
  assert.equal(bestRows(afterRelease.submissions,'mp1')[0].score,2.1);
  assert.equal(bestRows(afterRelease.submissions,'mp1')[0].checkpoint_url,checkpoint);
 });
+test('instructor can mark an older score superseded while preserving its history',()=>{
+ const old=issue(1,score({student_id:'student-1',score:1.57749}));
+ const current=issue(2,score({student_id:'student-1',score:1.577497,artifacts:seal()}));
+ const beforeRelease=buildSnapshot([old,current],{},before);
+ const release=prepareRelease(beforeRelease,[old,current],privateKey,'mp1',released,{allSubmissions:true,allowIncomplete:true});
+ const publication={projects:{mp1:release},superseded_submissions:{mp1:[1]}};
+ const board=buildSnapshot([old,current],beforeRelease,released,publication);
+ assert.equal(board.submissions.find(r=>r.number===1).status,'superseded');
+ assert.deepEqual(bestRows(board.submissions,'mp1').map(r=>r.number),[2]);
+ assert.deepEqual(bestRows(board.submissions,'mp1',true).map(r=>r.number),[1,2]);
+ assert.equal(board.submissions.find(r=>r.number===1).score,1.57749);
+});
