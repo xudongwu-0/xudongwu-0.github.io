@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-05T03:34:54.749Z",
+  "generated_at": "2026-10-05T03:48:30.533Z",
   "submissions": [
     {
       "number": 1,
@@ -3223,8 +3223,8 @@
         "code": null,
         "checkpoint": null
       },
-      "review_request_total": 0,
-      "review_request_count": 0,
+      "review_request_total": 1,
+      "review_request_count": 1,
       "review_flag": false
     },
     {
@@ -5013,6 +5013,17 @@
       "evidence_url": "https://github.com/2wu2/dase7506-mp1/tree/master/peer_review/vectorBH6_HKU_DASE7506_MP1",
       "created_at": "2026-10-05T03:34:42Z",
       "status": "pending"
+    },
+    {
+      "number": 232,
+      "author": "2wu2",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/232",
+      "submission": 136,
+      "project": "mp1",
+      "reproduced_score": 1.35949,
+      "evidence_url": "https://github.com/2wu2/dase7506-mp1/tree/master/peer_review/Wenqi-Ge_DASE_7506_2026",
+      "created_at": "2026-10-05T03:48:20Z",
+      "status": "pending"
     }
   ],
   "adjustments": [],
@@ -5089,6 +5100,18 @@
       "evidence_url": "https://github.com/2wu2/dase7506-mp1/tree/master/peer_review/vectorBH6_HKU_DASE7506_MP1",
       "reproduced_score": 1.5107,
       "created_at": "2026-10-05T03:34:42Z",
+      "status": "pending"
+    },
+    {
+      "number": 232,
+      "submission": 136,
+      "project": "mp1",
+      "author": "2wu2",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/232",
+      "reason": "Scoring time over limit (hardware-relative, but the gap is large)\nHis machine: 17.6s vs baseline 3.81s = 4.62× (barely passes)\nMy machine: 61.4–68.1s vs baseline 8.66s = 7.1×–7.9× (clearly over the limit; upper bound 43.3s)\nThe n-gram component of his hybrid model scales very differently across CPUs",
+      "evidence_url": "https://github.com/2wu2/dase7506-mp1/tree/master/peer_review/Wenqi-Ge_DASE_7506_2026",
+      "reproduced_score": 1.35949,
+      "created_at": "2026-10-05T03:48:20Z",
       "status": "pending"
     }
   ],
