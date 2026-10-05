@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-05T03:48:30.533Z",
+  "generated_at": "2026-10-05T10:13:37.892Z",
   "submissions": [
     {
       "number": 1,
@@ -943,8 +943,8 @@
         "code": null,
         "checkpoint": null
       },
-      "review_request_total": 0,
-      "review_request_count": 0,
+      "review_request_total": 1,
+      "review_request_count": 1,
       "review_flag": false
     },
     {
@@ -5024,6 +5024,17 @@
       "evidence_url": "https://github.com/2wu2/dase7506-mp1/tree/master/peer_review/Wenqi-Ge_DASE_7506_2026",
       "created_at": "2026-10-05T03:48:20Z",
       "status": "pending"
+    },
+    {
+      "number": 233,
+      "author": "haonanwu869-rgb",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/233",
+      "submission": 41,
+      "project": "mp1",
+      "reproduced_score": 1.40351,
+      "evidence_url": "https://github.com/haonanwu869-rgb/DASE7506-Peer-Review-Report-SLM-v1",
+      "created_at": "2026-10-05T10:13:27Z",
+      "status": "pending"
     }
   ],
   "adjustments": [],
@@ -5112,6 +5123,18 @@
       "evidence_url": "https://github.com/2wu2/dase7506-mp1/tree/master/peer_review/Wenqi-Ge_DASE_7506_2026",
       "reproduced_score": 1.35949,
       "created_at": "2026-10-05T03:48:20Z",
+      "status": "pending"
+    },
+    {
+      "number": 233,
+      "submission": 41,
+      "project": "mp1",
+      "author": "haonanwu869-rgb",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/233",
+      "reason": "Successfully reproduced the frozen checkpoint with the standard evaluator (CPU FP32, 4 threads).\n- Reported test BPB: 1.40351\n- Reproduced test BPB: 1.40351\n- Difference: ~2.5e-7, consistent with cross-platform FP32 rounding\n- Two local runs produced identical scores\n- Checkpoint, evaluator and tokenizer all verified via SHA256",
+      "evidence_url": "https://github.com/haonanwu869-rgb/DASE7506-Peer-Review-Report-SLM-v1",
+      "reproduced_score": 1.40351,
+      "created_at": "2026-10-05T10:13:27Z",
       "status": "pending"
     }
   ],
