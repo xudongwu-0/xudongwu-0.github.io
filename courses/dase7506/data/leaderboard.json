@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-07T03:52:15.430Z",
+  "generated_at": "2026-10-07T03:58:57.087Z",
   "submissions": [
     {
       "number": 1,
@@ -1279,8 +1279,8 @@
         "code": null,
         "checkpoint": null
       },
-      "review_request_total": 0,
-      "review_request_count": 0,
+      "review_request_total": 1,
+      "review_request_count": 1,
       "review_flag": false
     },
     {
@@ -5046,6 +5046,17 @@
       "evidence_url": null,
       "created_at": "2026-10-07T03:52:04Z",
       "status": "pending"
+    },
+    {
+      "number": 235,
+      "author": "WANGZIQI0898",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/235",
+      "submission": 55,
+      "project": "mp1",
+      "reproduced_score": 1.571348,
+      "evidence_url": null,
+      "created_at": "2026-10-07T03:58:43Z",
+      "status": "pending"
     }
   ],
   "adjustments": [],
@@ -5158,6 +5169,18 @@
       "evidence_url": null,
       "reproduced_score": 1.5107236531,
       "created_at": "2026-10-07T03:52:04Z",
+      "status": "pending"
+    },
+    {
+      "number": 235,
+      "submission": 55,
+      "project": "mp1",
+      "author": "WANGZIQI0898",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/235",
+      "reason": "Reproduced on Windows CPU with PyTorch 2.7.1 (FP32). Score matches the self-reported value within 0.01. No issues found.",
+      "evidence_url": null,
+      "reproduced_score": 1.571348,
+      "created_at": "2026-10-07T03:58:43Z",
       "status": "pending"
     }
   ],
