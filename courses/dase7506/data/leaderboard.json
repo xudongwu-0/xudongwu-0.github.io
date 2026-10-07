@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-07T03:58:57.087Z",
+  "generated_at": "2026-10-07T08:12:40.386Z",
   "submissions": [
     {
       "number": 1,
@@ -311,8 +311,8 @@
         "code": null,
         "checkpoint": null
       },
-      "review_request_total": 4,
-      "review_request_count": 4,
+      "review_request_total": 5,
+      "review_request_count": 5,
       "review_flag": true
     },
     {
@@ -5057,6 +5057,17 @@
       "evidence_url": null,
       "created_at": "2026-10-07T03:58:43Z",
       "status": "pending"
+    },
+    {
+      "number": 236,
+      "author": "zwkcyy",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/236",
+      "submission": 15,
+      "project": "mp1",
+      "reproduced_score": 1.337144,
+      "evidence_url": null,
+      "created_at": "2026-10-07T08:12:27Z",
+      "status": "pending"
     }
   ],
   "adjustments": [],
@@ -5181,6 +5192,18 @@
       "evidence_url": null,
       "reproduced_score": 1.571348,
       "created_at": "2026-10-07T03:58:43Z",
+      "status": "pending"
+    },
+    {
+      "number": 236,
+      "submission": 15,
+      "project": "mp1",
+      "author": "zwkcyy",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/236",
+      "reason": "# Peer Review Reproduction — Student 3036705979\n\n**Reported score:** 1.33714 test BPB\n**Code link provided:** `https://github.com/vectorBH6/HKU_DASE7506_MP1/tree/master`\n**Checkpoint link provided:** `https://github.com/vectorBH6/HKU_DASE7506_MP1/blob/master/code/runs/student_my/checkpoint_best.pt`\n\n## 1. Version reviewed\n\n- The code and checkpoint links point to the `master` branch, not to a fixed commit.\n- At review time (2026-10-07), the head of `master` was `03f387c` (\"fix causal\"), with commit date 2026-09-29 23:31:58 +08:00. This is also the last commit before the 2026-09-30 23:59 (UTC+8) deadline. No commits were made after the deadline, so the branch head and the pre-deadline commit are the same. Dates are Git commit timestamps.\n- All results below refer to commit `03f387c`.\n\n## 2. Reproduction environment and commands\n\n- Windows 11, Python 3.12.13, torch 2.7.1, CPU only. Repository cloned fresh with `core.autocrlf=false`, so the working tree is byte-identical to the Git blobs.\n- `evaluate.py`, `common.py`, all files in `data/`, `tests/test_contract.py`, `requirements.txt`, `model.py` and `student.py` at `03f387c` are byte-identical (SHA-256) to the official starter. The evaluator and data are unmodified.\n- Evaluation command, run from `code/`:\n  ```\n  python evaluate.py --checkpoint <ckpt> --device cpu --precision fp32 --threads 4 --split test --output <out>.json\n  ```\n- **Deviation:** the implementation files (`student_my.py`, `student_final.py`) are located in `code/student_work/`. Without extra configuration, `evaluate.py` fails with `ModuleNotFoundError: No module named 'student_my'` (likewise for `student_final`). Following the repository's own `code/student_work/命令指导.md` (line 8), we set `PYTHONPATH=code/student_work;code`. No files were modified and no packages were installed.\n- Resource measurement: the official baseline checkpoint (`runs/baseline/checkpoint.pt`, test BPB 2.10126) and the candidate are run alternately with `measure.py --compare <ckp",
+      "evidence_url": null,
+      "reproduced_score": 1.337144,
+      "created_at": "2026-10-07T08:12:27Z",
       "status": "pending"
     }
   ],
