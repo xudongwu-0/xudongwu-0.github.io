@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-05T10:13:37.892Z",
+  "generated_at": "2026-10-07T03:52:15.430Z",
   "submissions": [
     {
       "number": 1,
@@ -311,9 +311,9 @@
         "code": null,
         "checkpoint": null
       },
-      "review_request_total": 3,
-      "review_request_count": 3,
-      "review_flag": false
+      "review_request_total": 4,
+      "review_request_count": 4,
+      "review_flag": true
     },
     {
       "number": 16,
@@ -5035,6 +5035,17 @@
       "evidence_url": "https://github.com/haonanwu869-rgb/DASE7506-Peer-Review-Report-SLM-v1",
       "created_at": "2026-10-05T10:13:27Z",
       "status": "pending"
+    },
+    {
+      "number": 234,
+      "author": "Oldmonk-Ji",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/234",
+      "submission": 15,
+      "project": "mp1",
+      "reproduced_score": 1.5107236531,
+      "evidence_url": null,
+      "created_at": "2026-10-07T03:52:04Z",
+      "status": "pending"
     }
   ],
   "adjustments": [],
@@ -5135,6 +5146,18 @@
       "evidence_url": "https://github.com/haonanwu869-rgb/DASE7506-Peer-Review-Report-SLM-v1",
       "reproduced_score": 1.40351,
       "created_at": "2026-10-05T10:13:27Z",
+      "status": "pending"
+    },
+    {
+      "number": 234,
+      "submission": 15,
+      "project": "mp1",
+      "author": "Oldmonk-Ji",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/234",
+      "reason": "Submission #15: the linked checkpoint reproduces 1.337143625688677 BPB, but violates the causal benchmark contract.\n\nCode commit: 03f387c1a542074268d2a3a94984bff081da4497.\nCheckpoint: code/runs/student_my/checkpoint_best.pt.\nSHA256: 683a7ae82b6e9befa7e30ee29dc1329598aaae70c5cdf35cb1009268a770dbb2.\nEnvironment: Windows, i7-11800H, Python 3.12.14, PyTorch 2.7.1+cu126; CPU FP32, 4 threads. Unchanged evaluator/common.py; complete test: 428405 targets, 1292013 bytes.\n\nThe checkpoint enables n_global_tokens=12. student_work/student_my.py:235-241 softmaxes over TIME, aggregates all input positions into mixed_tokens, and adds the resulting window-wide summary to every position. Thus a prediction at t depends on future input tokens.\n\nIndependent trained-weight probe: keeping positions 0..127 fixed while changing only positions 128..255 changes earlier log probabilities by up to 7.6403055 nats (mean absolute change 0.0547906). Evaluating the identical prefix alone versus inside the full window differs by up to 9.4566383 nats. This is substantial future leakage, not numerical noise.\n\nThe README acknowledges the old non-causal model. Its different student_final checkpoint independently reproduces 1.5107236531 BPB; this must not replace the linked checkpoint's reproduction score.\n\nSecond sequential CPU timing run: submitted model 60.1317s, baseline before/after 10.3294s/10.5477s = 5.82x/5.70x, exceeding 5x. First run fluctuated (5.43x/4.44x); official controlled timing should adjudicate. Causality alone establishes ineligibility. Static training-code inspection found training-split sampling and validation-based selection; intent cannot be inferred from this technical violation.",
+      "evidence_url": null,
+      "reproduced_score": 1.5107236531,
+      "created_at": "2026-10-07T03:52:04Z",
       "status": "pending"
     }
   ],
