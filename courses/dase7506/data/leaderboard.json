@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-07T08:12:40.386Z",
+  "generated_at": "2026-10-08T18:38:24.300Z",
   "submissions": [
     {
       "number": 1,
@@ -5081,7 +5081,7 @@
     }
   },
   "phases": {
-    "mp1": "review",
+    "mp1": "complete",
     "mp2": "closed",
     "mp3": "closed"
   },
