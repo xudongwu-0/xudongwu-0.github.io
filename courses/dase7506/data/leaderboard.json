@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-09T07:33:30.824Z",
+  "generated_at": "2026-10-09T08:43:27.300Z",
   "submissions": [
     {
       "number": 1,
@@ -3224,7 +3224,7 @@
         "checkpoint": null
       },
       "review_request_total": 1,
-      "review_request_count": 1,
+      "review_request_count": 0,
       "review_flag": false
     },
     {
@@ -5156,7 +5156,7 @@
       "evidence_url": "https://github.com/2wu2/dase7506-mp1/tree/master/peer_review/Wenqi-Ge_DASE_7506_2026",
       "reproduced_score": 1.35949,
       "created_at": "2026-10-05T03:48:20Z",
-      "status": "pending"
+      "status": "closed"
     },
     {
       "number": 233,
