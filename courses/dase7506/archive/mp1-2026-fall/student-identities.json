@@ -1,0 +1,13 @@
+{
+  "schema": "dase7506/student-identities-v1",
+  "identities": {
+    "1": {
+      "student_id": "3030140074",
+      "source_ciphertext": "AZyBp4exBfWlix84mdajqs6k44Q5EuE18am0hLwB0eblh3T4ZbjGYZUntVqopJUwwwyiGfLDqnBUcUGjkByF4NV7p59m177dE2zgjXWb2V5cSiRSQQwiaPgTs9TnlZHL4cruPQDLdgkBemNpHvSpKxicq+yf/w38IpEm17WBjxfn5n/+T2WmZ7paJPv40+2CShkf3OKLrQbCgcfXnnpUZReadUsiWs/hC8Bw8btdiFgX23l8hZ8vgOux1duwiMpHf+yqiCUo4VtR5kNIzTvkjGF/Ban6JX0XsPW8/A6pnmTMJkl/D5N9hdiJLjM+SxLtt+GgtEG1rwApvy5TEXvCi5cxczy1yGA07dCyyBGrl7rTNy3/3Mp3HgPyrJi7tKOd3h9TjhCswKcHCfKNngv/wOGYUsa9cts1v/7CsUJsBxIYeQdsF9xRMmMDLkB+/6l1o/rAHQei3nmJAW3yeQMSaJiHPJzS3AijvX/TeNMPFezsgfpnoxmr7KjgktuB4VpV"
+    },
+    "2": {
+      "student_id": "3030140074",
+      "source_ciphertext": "J9cPbTjVx6HSqSWpko7vWkY7dBA9+45IHHsTKofNdROx9zYNJLSMG9Lan9GXFKh9gws41eSKH6UEMXesmluRg+lxKg0Ly5tji/Cd5LisFVfsreFnqKVLLSASk4GYDmxLpUGFyPeJ+ADMW3jLtZ3Gvi0FWob5Sz5i2Gxkk21htT8pnKHdvZeFJnX8Cck67xcwxUea+yyt6HhHkYhkaIOAeSg5gL5hXM19Q8N3HxPV1xP1RsLokxlm/BAaExEuV9+5QS75cDi2vnncocQ6B11B01et+YvGCqbG8VOEs9CaTduiPrMUm0yDBEKJChY1KrpDAtgAlpAt/Mqp6ATKArhsH4aTRjer67VfGNcECDqKQ5KvWKye12FQYvB2VEIvg3Rr8fwHTJKEu1c7yHEO2mbpnfZO50cj2KykOeBjOTSsXJcCirRAfZdI/PNBDTuSUnmkHbYizAgTWWABVu9OnH93lUfdawXHG2nX7yGChfolBrlMilzy35EOPHjB1BaKpoGk"
+    }
+  }
+}

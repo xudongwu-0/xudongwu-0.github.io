@@ -49,7 +49,7 @@ function render() {
     materials.append(artifactLinks);
     const status = element('td'); status.append(element('span', STATUS[row.status] || row.status, `badge ${row.status}`));
     const reproduce = element('td'); const button = element('button', 'Peer Review Report', 'text-button');
-    button.type = 'button'; button.disabled = ['closed','complete'].includes(submissionPhase(row.project,snapshot.publication)); button.addEventListener('click', () => openChallenge(row)); reproduce.append(button);
+    button.type = 'button'; button.disabled = true; button.addEventListener('click', () => openChallenge(row)); reproduce.append(button);
     tr.append(rankCell, author, score, materials, status, reproduce); $('board-body').append(tr);
   });
 }
@@ -57,8 +57,8 @@ async function refresh() {
   $('refresh').disabled = true;
   $('sync-status').textContent = 'Refreshing…';
   // Raw GitHub serves the Actions snapshot without sharing the unauthenticated REST rate limit.
-  const raw = `https://raw.githubusercontent.com/${REPO}/main/courses/dase7506/data/leaderboard.json?v=${Date.now()}`;
-  const api = `https://api.github.com/repos/${REPO}/contents/courses/dase7506/data/leaderboard.json?ref=main`;
+  const raw = `https://raw.githubusercontent.com/${REPO}/main/courses/dase7506/archive/mp1-2026-fall/leaderboard.json?v=${Date.now()}`;
+  const api = `https://api.github.com/repos/${REPO}/contents/courses/dase7506/archive/mp1-2026-fall/leaderboard.json?ref=main`;
   let result, fallback = false;
   try {
     const fetchSnapshot = async (url, headers={}) => {
@@ -71,11 +71,11 @@ async function refresh() {
     try { result = await fetchSnapshot(raw); }
     catch {
       try { result = await fetchSnapshot(api, {Accept:'application/vnd.github.raw+json'}); }
-      catch { result = await fetchSnapshot('./data/leaderboard.json'); fallback = true; }
+      catch { result = await fetchSnapshot('./archive/mp1-2026-fall/leaderboard.json'); fallback = true; }
     }
     snapshot = result; render(); configureReview();
     const time = result.generated_at ? new Date(result.generated_at).toLocaleString('en-GB') : 'not synced yet';
-    $('sync-status').textContent = `${fallback ? 'Cached · ' : ''}Updated: ${time}. Scores are frozen. Links are public for peer review.`;
+    $('sync-status').textContent = `${fallback ? 'Cached · ' : ''}Updated: ${time}. MP1 archive · Scores and links are fixed.`;
   } catch {
     $('sync-status').textContent = 'Leaderboard unavailable. See submission records.';
     if (!$('board-body').children.length || !$('board-body').textContent.includes('Code')) {
@@ -93,13 +93,10 @@ for (const button of document.querySelectorAll('[data-project]')) {
 $('history').addEventListener('change', render);
 $('refresh').addEventListener('click', refresh);
 function configureReview() {
-  const phase=submissionPhase(project,snapshot.publication);
-  $('phase-badge').textContent={scores:'Scores frozen',artifacts:'Scores frozen',review:'7-day public review',complete:'Review closed',closed:'Closed'}[phase];
-  $('phase-note').textContent=phase==='review'
-    ? `Code and checkpoint links are public. Peer-review deadline: ${new Date(snapshot.publication.projects[project].review_ends_at).toLocaleString('en-GB',{timeZone:'Asia/Shanghai'})} (UTC+8).`
-    : phase==='complete' ? 'The public review period has ended. Code and checkpoint links remain available.'
-    : 'Scores are frozen. Submitted links are being prepared for public review.';
+  $('phase-badge').textContent='Archived';
+  $('phase-note').textContent='Final scores, links and review records are archived. Submissions and peer review are closed.';
 }
+
 function prepared(target, url, kind) {
   const p = element('div', `${kind} ready. Confirm on GitHub to save.`, 'prepared');
   // Generated issue URLs contain the encrypted payload and exceed the artifact URL limit.

@@ -10,11 +10,11 @@ const issue = (number,data=claim(),options={}) => ({number,user:{login:'student-
 const challenge = (submission,overrides={}) => ({schema:'dase7506/challenge-v1',protocol:PROTOCOL,
   project:'mp2',submission,reproduced_score:60,evidence_url:'https://example.org/reproduction',...overrides});
 
-test('MP1 accepts BPB submissions and ranks lower scores first; other projects stay closed',()=>{
+test('MP1 retains historical BPB rules, MP2 accepts accuracy, and MP3 stays closed',()=>{
   assert.equal(PROJECTS.mp1.unit,'BPB');
   assert.ok(validateSubmission(claim({project:'mp1',score:2.10184})));
   assert.ok(!validateSubmission(claim({project:'mp1',score:-1})));
-  assert.ok(!validateSubmission(claim({project:'mp2'})));
+  assert.ok(validateSubmission(claim({project:'mp2'})));
   assert.ok(!validateSubmission(claim({project:'mp3'})));
   const snapshot=buildSnapshot([
     issue(1,claim({project:'mp1',score:2.10184})),
@@ -29,7 +29,7 @@ test('unreleased projects reject submissions; enable synthetic metrics only insi
   assert.ok(!validateSubmission(claim()));
   assert.equal(buildSnapshot([issue(1)]).submissions.length,0);
   for (const [id,p] of Object.entries(PROJECTS)) Object.assign(p,config[id],{
-    open:true,min:0,max:id==='mp1'?10:100,unit:'points',lower:id==='mp1',review_threshold:id==='mp1'?0.01:1,reward:5,penalty:-10});
+    score_deadline:null,open:true,min:0,max:id==='mp1'?10:100,unit:'points',lower:id==='mp1',review_threshold:id==='mp1'?0.01:1,reward:5,penalty:-10});
 });
 
 test('submission accepts public student IDs and legacy encryption but rejects malformed input',()=>{

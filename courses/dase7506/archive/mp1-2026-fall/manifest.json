@@ -1,0 +1,13 @@
+{
+  "schema": "dase7506/archive-v1",
+  "project": "mp1",
+  "archived_at": "2026-10-12T08:48:11.546041+00:00",
+  "source_commit": "228921a609e17301d38bec0c3b68f63b40b4012a",
+  "files": {
+    "leaderboard.json": "8ea7ef2f899a80277628e55434187444755151e9496cf6c6dce335803870d74a",
+    "publication.json": "2ac07e9c039bbd6baae07d7633cdf3f6e9ba5b3f294b4c4e9c4a7e7992b10e47",
+    "student-identities.json": "d59f494d627aac27bafdc589b3a59bac7b091d8b8bf73787a6ee08d4f4a92069",
+    "projects.mjs": "127dafd8d78df69625fbcb102edb8336b974fcf592a7240414143b4201b40407"
+  },
+  "note": "Fixed MP1 scores, artifacts and review records. Automatic MP2 synchronization must preserve these records."
+}

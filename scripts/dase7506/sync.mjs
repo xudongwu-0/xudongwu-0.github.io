@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import {REPO, buildSnapshot} from '../../courses/dase7506/arena.mjs';
+import {loadArchive, preserveArchivedProject} from './archive.mjs';
 
 const root = new URL('../../', import.meta.url);
 const out = new URL('courses/dase7506/data/leaderboard.json', root);
@@ -32,7 +33,7 @@ const previous = fs.existsSync(out) ? JSON.parse(fs.readFileSync(out,'utf8')) : 
 const publicationPath=new URL('courses/dase7506/data/publication.json',root);
 const publication=JSON.parse(fs.readFileSync(publicationPath,'utf8'));
 const identities=JSON.parse(fs.readFileSync(new URL('courses/dase7506/data/student-identities.json',root),'utf8')).identities;
-const snapshot = buildSnapshot(issues, previous, new Date().toISOString(), publication,{identities});
+const snapshot = preserveArchivedProject(buildSnapshot(issues, previous, new Date().toISOString(), publication,{identities}), loadArchive());
 const stable = d => JSON.stringify({...d, generated_at:null});
 if (stable(snapshot) !== stable(previous) || !previous.generated_at) {
   fs.writeFileSync(out, JSON.stringify(snapshot,null,2)+'\n');

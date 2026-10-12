@@ -36,3 +36,18 @@ test('published entry uses a complete fingerprinted module graph with current so
   assert.ok(!html.includes('instructor.html'));
   assert.ok(!app.includes('review_request_count') && !app.includes('review_flag'));
 });
+
+test('MP2 serves the current fingerprinted graph, score form and English student interface',async()=>{
+  const html=read('mp2/index.html');
+  const moduleName=html.match(/src="\.\.\/(assets\/mp2\.[a-f0-9]{12}\.mjs)"/)[1];
+  const source=read(moduleName);
+  const arenaName=source.match(/from '\.\/(arena\.[a-f0-9]{12}\.mjs)'/)[1];
+  assert.equal(source,read('mp2.mjs').replace("'./arena.mjs'",`'./${arenaName}'`));
+  assert.ok(moduleName.includes(createHash('sha256').update(source).digest('hex').slice(0,12)));
+  assert.ok(html.includes('id="submission-form"') && html.includes('31 October 2026, 23:59'));
+  assert.ok(!/\p{Script=Han}/u.test(html+source));
+  assert.ok(!/instructor\.html|href="\/"|review_request_count|review_flag/.test(html+source));
+  assert.ok(source.includes("fetch('../data/student-id-public.pem'"));
+  assert.ok(read('app.mjs').includes('archive/mp1-2026-fall/leaderboard.json'));
+  assert.ok(!read('app.mjs').includes('courses/dase7506/data/leaderboard.json'));
+});

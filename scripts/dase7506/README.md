@@ -1,6 +1,10 @@
 # DASE7506 website maintenance
 
-The public course page is `/courses/dase7506/`. MP1 scores are frozen after the 30 September deadline. The public page shows a full-width leaderboard, released Code and Checkpoint links, and Peer Review Reports; the score/link submission form has been removed. MP2 and MP3 remain closed and are hidden from the form. The course page is English-only and has its own navigation and favicon, with no links to the personal homepage. Assignment handouts, datasets and checkpoints are not published on this page. The MP1 score deadline is the end of 30 September 2026 (UTC+8).
+MP1 is archived at `/courses/dase7506/`. Its page reads only the fixed snapshot in `courses/dase7506/archive/mp1-2026-fall/`; submissions and review are closed. The archive includes scores, artifact links, review records, publication and identity metadata with SHA-256 checksums. The sync job verifies these checksums and copies MP1 records unchanged into the shared snapshot; issue edits, new reports and MP2 updates cannot change archived MP1 results. Do not rewrite archive files or MP1 publication entries.
+
+MP2 is open at `/courses/dase7506/mp2/`, using self-reported full-test accuracy (percentage; higher is better). Its deadline is **31 October 2026, 23:59 Beijing time (UTC+8)**. The cutoff is implemented as `2026-11-01T00:00:00+08:00`. Early score-only entries are allowed; the final entry must include code and checkpoint/configuration links before the deadline. After cutoff, new scores are marked late, score edits are ignored and the form accepts only artifact supplements for an existing issue. The instructor opens a seven-day peer review by releasing MP2 links manually. Use `release-links.mjs --project mp2` with the existing private key, first with `--output` for a private preview, then with `--publish` after inspection. MP3 remains closed.
+
+Both student pages are English-only, with no links to the personal homepage. MP2 materials are maintained in [DASE7506-MP2](https://github.com/xudongwu-0/DASE7506-MP2); no reference method is supplied. After changing browser sources, run `node scripts/dase7506/build-assets.mjs` and `node --test scripts/dase7506/*.test.mjs` before publishing.
 
 ## Storage and identity
 

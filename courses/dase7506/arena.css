@@ -86,3 +86,7 @@ textarea{display:block;width:100%;resize:vertical;min-height:100px;padding:9px 1
 
 .artifact-links{display:flex;flex-wrap:wrap;gap:6px 14px}.artifact-links a{margin-right:0}
 .artifact-item{display:inline-flex;align-items:center;gap:6px}.artifact-unavailable{font-size:10px;color:#a12d2d;background:#f8eaea;border-radius:3px;padding:2px 5px}
+
+[hidden]{display:none!important}
+.mp2-workspace{grid-template-columns:minmax(260px,320px) minmax(0,1fr)}
+@media(max-width:900px){.mp2-workspace{grid-template-columns:minmax(0,1fr)}}
