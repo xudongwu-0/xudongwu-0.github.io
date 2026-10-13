@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-12T08:57:25.626Z",
+  "generated_at": "2026-10-13T07:18:11.636Z",
   "submissions": [
     {
       "number": 1,
@@ -4960,6 +4960,30 @@
       "instructor_entered": true,
       "artifact_issue": null,
       "artifact_status": "published",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 237,
+      "author": "xudongwu-0",
+      "student_id": "test",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/237",
+      "project": "mp2",
+      "score": 0,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-10-13T07:17:59Z",
+      "signature": "[\"mp2\",0,null,null,\"test\",null]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": null,
+      "artifact_status": "pending",
       "artifact_access": {
         "code": null,
         "checkpoint": null
