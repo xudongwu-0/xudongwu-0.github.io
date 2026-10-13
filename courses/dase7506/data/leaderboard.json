@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-13T07:18:11.636Z",
+  "generated_at": "2026-10-13T07:26:56.308Z",
   "submissions": [
     {
       "number": 1,
@@ -4984,6 +4984,30 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "pending",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 238,
+      "author": "xudongwu-0",
+      "student_id": "test",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/238",
+      "project": "mp2",
+      "score": 1,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-10-13T07:26:44Z",
+      "signature": "[\"mp2\",1,null,null,\"test\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"iY3IhG5i2AqzJapPcMeSP8yXyWV9XWlTzcJG2rZQuY07tw04FNP1NNt2/nHSX/4SqxSoQekui6+qYSPT7l26igTlRDACwThu1p7a1Das9Fq73Rx1sp6q7bLCVoIssTLy3oGtGmPT+9DRrgyfVBMZRgaXsglqNiI9V+os3QTUaRaLN3MFjCr4b01FoC6qjxTxn5leQ2VBxnP1HWDitYVMuHp/u66DYHeN4dyH1b5ZBRTXuc6wrb1Qbs87/tzPJLFFpcDBeMYxNSm12Yj+b+mUy9RzkU+EVczuD0T/L/cXVggQkEB0YNl/po76pu/MEVA+dHrgyP3KdRaYA/+Z+rmhmWK2AY5j14yF3kfqiHIZ9TRd1U9hL2T7W/krhjf1G6zsaoGK6pCvIOhLUSHq+LoTSw4DjYgogNFP6XpnEWGi9XOASyPJ+3D1iveP7OE1wLvBRPM6SkjjNx1nHJ3ySmDX92DXzYe4JW4ZDCyBXiZCGh+nA8tDg6mib8WGFw1k0F2s\",\"iv\":\"7YicJYsNVANjQRQl\",\"ciphertext\":\"6kDj/WbERHdsWLN7Vwr4iIppV86Lhnny4Msmhv1RW4bDSjs17AnJi/UQI7w11coCN1qm4uIy0pGA5WC2rSST3h2+920uD3vSZ7IZvZdspdOb8xeHWG5eKB27NL9rT80ZEln/pNe75+7wWjEbF/xMLon41Ce2nQ6dgJvzlvAmQhxX+n4OruXvTy7k0oiHSjC992Ou2MldHl3b56+QQDkTzz61Shfx/+DsaPQu5svE8h9en8dXDVR/iEUcAQdwz2IiLQLk6FCskCK+auxhtGR6F3umJhrFbS8MFnXYINj7aQ==\"}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 238,
+      "artifact_status": "received",
       "artifact_access": {
         "code": null,
         "checkpoint": null
