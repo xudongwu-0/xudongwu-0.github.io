@@ -2,6 +2,7 @@ import {REPO, PROTOCOL, KEY_ID, REPORT_EMAIL, PROJECTS, safeURL, validScore, val
 
 const $ = id => document.getElementById(id);
 let snapshot = {submissions: [], challenges: [], adjustments: []};
+let refreshing = false, hasSnapshot = false;
 let project = 'mp2', challengeTarget = null;
 const STATUS = {'self-reported':'Self-reported',verified:'Verified',review:'Under review',invalid:'Invalidated',withdrawn:'Withdrawn',superseded:'Superseded',late:'Late score','links-missing':'Links missing'};
 function element(tag, text, className) {
@@ -58,6 +59,8 @@ function render() {
   });
 }
 async function refresh() {
+  if (refreshing) return;
+  refreshing = true;
   $('refresh').disabled = true;
   $('sync-status').textContent = 'Refreshing…';
   // Raw GitHub serves the Actions snapshot without sharing the unauthenticated REST rate limit.
@@ -77,15 +80,17 @@ async function refresh() {
       try { result = await fetchSnapshot(api, {Accept:'application/vnd.github.raw+json'}); }
       catch { result = await fetchSnapshot('../data/leaderboard.json'); fallback = true; }
     }
-    snapshot = result; render(); configureForm();
+    snapshot = result; hasSnapshot = true; render(); configureForm();
     const time = result.generated_at ? new Date(result.generated_at).toLocaleString('en-GB') : 'not synced yet';
-    $('sync-status').textContent = `${fallback ? 'Cached · ' : ''}Updated: ${time}. Allow a few minutes for new submissions to appear.`;
+    $('sync-status').textContent = `${fallback ? 'Cached · ' : ''}Updated: ${time}. Auto-refresh every 30 seconds. Allow a few minutes for new submissions to appear.`;
   } catch {
-    $('sync-status').textContent = 'Leaderboard unavailable. See submission records.';
-    if (!$('board-body').children.length || !$('board-body').textContent.includes('Code')) {
+    $('sync-status').textContent = hasSnapshot
+      ? 'Refresh failed. Showing the last loaded results; retrying automatically.'
+      : 'Leaderboard unavailable. Retrying automatically. See submission records.';
+    if (!hasSnapshot) {
       const tr = element('tr'), td = element('td','Unable to load the leaderboard. Please try again.','empty'); td.colSpan=6; tr.append(td); $('board-body').replaceChildren(tr);
     }
-  } finally { $('refresh').disabled = false; }
+  } finally { refreshing = false; $('refresh').disabled = false; }
 }
 for (const button of document.querySelectorAll('[data-project]')) {
   button.addEventListener('click', () => {
@@ -212,4 +217,12 @@ $('email-report').addEventListener('click', event => {
 configureForm();
 refresh();
 
-setInterval(()=>{configureForm();render();},30000);
+function refreshVisiblePage() {
+  if (document.hidden) return;
+  configureForm();
+  refresh();
+}
+setInterval(refreshVisiblePage,30000);
+document.addEventListener('visibilitychange',refreshVisiblePage);
+window.addEventListener('focus',refreshVisiblePage);
+window.addEventListener('online',refreshVisiblePage);
