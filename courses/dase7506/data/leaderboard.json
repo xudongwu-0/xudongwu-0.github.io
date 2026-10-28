@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-28T09:08:15.222Z",
+  "generated_at": "2026-10-28T10:16:27.939Z",
   "submissions": [
     {
       "number": 1,
@@ -6039,6 +6039,30 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 281,
+      "artifact_status": "received",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 282,
+      "author": "KokoNAa",
+      "student_id": "3036802595",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/282",
+      "project": "mp2",
+      "score": 83.3,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-10-28T10:16:14Z",
+      "signature": "[\"mp2\",83.3,null,null,\"3036802595\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"b3KlgX8ALE6ackGjoh0nR8qOmaDKLfpupQP/uDD4SgHKcB/6am4I0i2ZeupxXxzmHbz7lwIRfFlpwAlHbc43ANlSwnst1oPdmyuLaiSoURbDHsuc6n9siWFeYUKKm2eZZxzl8YAHANozl79T5poYmBSvCKKMjUk2DGMQTtO2cOEHp3zIgElAaDRMH6oUvqPXo/GCN2YX5I5NhnoqWhzy1RtkfWLpENeogshhT5dJlnO2LgbR+tVRjBL2TPQIresKDSEf/KsVWlXQhLomEVT+e3YfeCu2zi3/a4dR9iol0EOQkgpeAmd5Jc2JEBZ8gRaMqZZ4iLVMpEX7a1u3R9g84gMLFJOzxZmWV7+LhON0Ztt5kvl5YVB9JOkU9s75J5sXjyJtUXLbWNIun6vbO5FnFRgfvmUIwyCWfjwXr8jvCBNcn5MjnZALUxEQfn+oJoVnzAxxpvo2z8uIlaJ3uY1qQnveQUtdUgA2Z5az7sGAegpW8HYAJUXIychFSudh3CzE\",\"iv\":\"zW7ad9OSV/XnzfLO\",\"ciphertext\":\"smUgF9n9wE8d55ClaWLKw/JnSiQzxM2xj7S283i4Kvn2Mm7tFS45xwfFlIxGXp/A/etNP7BpGbPR6458VOCnNeptiKuzTWfSCm1f/oMfl9voJkl3NzEFO8/erDRH5NzwiA+oeks8l/T/Yp2s1D6Pq3jLbLdKs/Mn3xtgLVjdBWRQdLiDPta7EkBv51oHzgCzdru3M1k4zgy48B2FL34dOf6/cQZ/FLyR8BN/8qGhEz1uPddnRdeHR/W+Uvfw21V4iycEP8yHqP7yyw8w\"}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 282,
       "artifact_status": "received",
       "artifact_access": {
         "code": null,
