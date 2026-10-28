@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-28T11:41:23.102Z",
+  "generated_at": "2026-10-28T12:23:03.090Z",
   "submissions": [
     {
       "number": 1,
@@ -6111,6 +6111,30 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 284,
+      "artifact_status": "received",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 285,
+      "author": "CaspianW",
+      "student_id": "3036863317",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/285",
+      "project": "mp2",
+      "score": 84.7966,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-10-28T12:22:48Z",
+      "signature": "[\"mp2\",84.7966,null,null,\"3036863317\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"F8Z127+lswXACzHmK+1TJLg8eeql4xH133oToyXKvKVnLOB+sf1CsGrZw5YOLKbt4ThElBgEd1PKA96Ggap4y9GigG2nH8BR6hBVV1Ib2hojWaN6hsZ62rcwzhjomMOKSfwo39+c+5fvDy9RakMtM7iXsKRrykWI5JLOoFmNWEFNl1fcZYMrZMW3RhsqHDozgwlC43p096XzIVVKpOQnWQw42PeVyiM3jxCuSGGWeVx5h4HM0eVjcP/Kw3dPdxOaYtjAfFOhrlVXjrxxte6CVXRe4Rt/Q6pQyuZnFy2wpj89BhMq0pqDyW+bcj4QwEAA93oMxp6tEk8YCt2CP8w5lx7ZILs5ulyBq5lfcVlbwqql8/OpRBZ8pHXpAM4uxAm9QlcxSXlCKJ6uLPW3hSy9DlHmqJNnqdGgiUk03qpVeTmRCwF0//QvrFreVWRekvKxvi1i9x1XlYalutGKnkSLUx5atcyZaK64giXHHTtS016leTgAWMx+1vGF5SF4XK8S\",\"iv\":\"sYc9Sh1UjpOBLw2l\",\"ciphertext\":\"IPNHjjCCUKhU94KLFEotjSEyLPDYTck9GXYDkCId0moHwKKmTNg4ULxbKFawkUlfNEtaNBWIX4GMC4JRIhRtZIenY37KTi/pT2i084bb+LLAuAXhr4wL/oGCV6gVtrD72lhyQbQTx/ItnGa1fRAC3PWyvhyIJ4fQUm9hsD+eDjMG1ZV1VCvNGXmLIJfEeLxsIgW9ozmj5FsjhirZsgFOSp3CWb3ZJ/3rEWBR4XYvPxBLvCTRpoG/THXcPXeqt64XfZTdH5bdKlQYwghz1vrpe6vuUQvZBSoRmYYxMH8QcIn7O6pivgY4pIbavxXE2BQE3Yu/cigejcsMaXNWNs77Upj9cRhXQOGsrOMz4ZbDhQ==\"}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 285,
       "artifact_status": "received",
       "artifact_access": {
         "code": null,
