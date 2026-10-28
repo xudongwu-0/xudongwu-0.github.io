@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-28T07:43:41.350Z",
+  "generated_at": "2026-10-28T08:44:45.938Z",
   "submissions": [
     {
       "number": 1,
@@ -5967,6 +5967,30 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 278,
+      "artifact_status": "received",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 279,
+      "author": "Steeella03",
+      "student_id": "3036709224",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/279",
+      "project": "mp2",
+      "score": 82.22698072805139,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-10-28T08:44:33Z",
+      "signature": "[\"mp2\",82.22698072805139,null,null,\"3036709224\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"R4+kdGyPnl4A9K165Evpm/HTQGPBqHXrVVseGEOiK28Ilv3e3gLRUm9frBwGFrw4JMWyr7POB5thd9Aw/oNABQDldINNsPVv2Yn9yuzifj/OHcHoH08dg08IXtw6NI1dFlE8hvx9DqkJXz8JsLvKoRH0gGSsOtlRiY9imVZPLOX+XD6xvfoD770trD2+QBr5rVK1zOO9suf4f6/CDUlIpP8rmkyDc8/LzzBfubERC1uGi4ZMR3gvL5W0z7/fgSozJB7cp4HAg6s/K2ILKbhk3d+OhAxkfjo0zahMM4v1J2yUuzdhcENu+3aPZVuQjPPafl+IIxMvjd1fNNcg8vkjcG3uURs8J2IEq8t+NBqL423AgQkhvDFjuJ6eP6C+Y4jjUK5IIqwUHcz6Ie6sYWnoEHREhQ7K6H/W3XrrZsn1Y+vj9KKpG4aU8p6fbDazNnAqbbFiHRqyXmnmptt44NZeQpAP71d7lEyNGt5gaxT8T0XybWDjuus6XmICoSnIK2ZF\",\"iv\":\"ZrUxJrWMo8ctUsLg\",\"ciphertext\":\"QCYQVyIHDg8q/dVB0dRlWcXi4dGf6AQtczMekc+g1811eTlqJFiHUpodSIKIGMApspoADA+lSU6SPSGycb3i0zx170Uvl/QyxKzXpbOaOfMLZ+lrfm49qiSaJMWeLfAd7V732ccWN/YcxSedDnaErXoxGwRuwZPkLIslHpLoNTINWOuqWY9ZXMYvll9r+uxceuD4iMOkQUHQfprcHlsvmQWBViaqkEgA/UKLMnI0ckQGgKsl4oyWslTf7DByGDVy5TK/Ws+1xBy6wgXPDcpJPOI87yY+GF2eSmApclt0zaMPXlueZWLQyRnHAfyE84C8V5z0JQVQfeW+7zv0NHRpzoS6Lo0w/tA30Ur7G+kcNmjvLfqSWMUBns0YNgesV/rBCTY4fQKTbohDV8vuhCuD3wMAGwFPZo8Ay6TW6UHFrys=\"}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 279,
       "artifact_status": "received",
       "artifact_access": {
         "code": null,
