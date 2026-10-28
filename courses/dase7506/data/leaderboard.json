@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-28T10:16:27.939Z",
+  "generated_at": "2026-10-28T10:30:15.484Z",
   "submissions": [
     {
       "number": 1,
@@ -6063,6 +6063,30 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 282,
+      "artifact_status": "received",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 283,
+      "author": "McKrispy",
+      "student_id": "3036837966",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/283",
+      "project": "mp2",
+      "score": 80.0857,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-10-28T10:30:02Z",
+      "signature": "[\"mp2\",80.0857,null,null,\"3036837966\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"a8DHt6X+UtA2AnADsvYat2oduugJ79Xtb/slLxTcGrKtgIggaM8wiubecf/oMbN5LyYpwbMRr4tZ1wGi2uyCTYJ6EQoEdUc2s9gcGNrVZXDXMsK7CA7dGqqSf+nH6WnVg3rC+uOdgDWxaZbLcgAcOAEtpkxJt+MfC7Wz/sOwu83LaLtZSxzlSDj2BtUxvIJkNrQni9Tle7mQrp0zWE7bEyyiUffdCbmBNJESGSIr8/eL0DLZZUQnENbwCjCkBbhwr3XEuyUOk20kBOchW2G/X2W4DCjhSa8cpmwkU7BdDbSwWxQqQeWTPHCSr9bsG6Pr7B+OExbkDk5+RsTEGw1r4wLPZSWBiYCy6yKLpZevUqVqcmpS44PDNoESWc0hL2brZbpzy8JNevKOEZMaA1MnXbWM+I4YXIio7Q85eMEoA2PZ00P1AWfqJMS7Hxow9Hxu00vPaUH8tYbm32aCs+Bq2vgJCQZARr3t9UOXZHYEIklv1GSOJNCWzWiEHk0FqEOV\",\"iv\":\"lIW1Sew36DlGreAh\",\"ciphertext\":\"Sccur2/2n9UeKJnHjz7vYE5+MKrmCvQzLlwD4UaXwSg3A+voueaf/L1ctlZDBeVv5fmf5wuty8estbjOY7EePvqs0iieFsYn7f6i9RCZkB+4VIf3QbRyamTGepPthcOlwPPVHaO6OMeUehlmGeOpqnyOaBbVeCC/mvZGQsfbzIw+pBD9TppOQ+U+te6/x2JAldV6lpN18tpSs9+swYUl5bi4m//WH5bOjJV/Amjw13ptEf8=\"}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 283,
       "artifact_status": "received",
       "artifact_access": {
         "code": null,
