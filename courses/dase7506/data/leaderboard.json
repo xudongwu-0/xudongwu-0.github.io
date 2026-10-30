@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-30T10:28:58.884Z",
+  "generated_at": "2026-10-30T12:49:55.296Z",
   "submissions": [
     {
       "number": 1,
@@ -6952,6 +6952,30 @@
       "review_labels": [],
       "artifact_issue": null,
       "artifact_status": "pending",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 321,
+      "author": "huchangyang2003",
+      "student_id": "3036808719",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/321",
+      "project": "mp2",
+      "score": 84.1542,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-10-30T12:49:41Z",
+      "signature": "[\"mp2\",84.1542,null,null,\"3036808719\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"N+v+5FwEZ4pBmZKcJ0S6kJGfpUwaDdlkV3LPjyF5qYNWWp1oklUBUa2OcHpWStHbG1eJrSc5wrlhtV82MawOU5n+7FX0yjQtHHXL4aF9FsgfUzKndQJ65zrl++0UjIKvS2Gk51YXsk6hNMBsePgkFHMXBVcOWlb3hML/ie0q675y+6lxglnEGZUB9eqM8o6yDsTnXFCMSin9FPWwno8iQHsm3dXrhvevkBxeGdTzS7v4qlr0PfLzwPPgs126MiCUghnxtev8ILiUs7DHhxPK/IZP0ujGTUoohErOuM/67HTI7ThRvA/t5CKtKBf4x56dZHRDjcGzwbODM4hKduzMC4pbq9oDInDh7L2ZZmiA0A0ssojkK0DkXV0EGxz6LQ75PtDD6RHhOFrUNYJpDwxMBRtKMGreCpzf3vZ9S/bUUBut0VYCjCL6VMcTkPHRmB/ZV8tyPlI1ByQ1RH8i2A4Bh2N4Haq3O4EvjiGBxOiqxBz+b1HnO+ToHbEiaayfayaf\",\"iv\":\"7G+gt7VxvE5RMg1J\",\"ciphertext\":\"B1zE9ftdtMpG7PkP3/5wzPKofhKRkdiRCDjCR0wrqTa97GfNbd15MaNy8mYenlf/ULjD6fC8qAKQPTNz9qJ0Z7KL4vzg2UfmuHhTxbTf1PYPYG7lpHLnkdgZiBMABwWiZF/xig5NWbFHWXqY3CUE/U71IWGAALtdnvPtSwFibsi2ThBA1GQU36YgwzZazrs3gsjDMcXn1R7ClcBSrErH06zCG0Gpxeu/nvq5r8Zop384EImKYSt2ekMYUHdtS6Uyh9GJ7jbflcTll/P0gRK1gTwI6JwGFHFd6ldLoRDEI1z5L+ZmgdAo2BLO6H/XQYSsxC/Pn9HxHEHRMRTRgdVbBGxGuAJgv6XOc7Im2PrVURtCuyq4wwpctddZx9a67sE27PR7Z54moUGoSoSJexIEKap7DLmuj7sQvSLpQKMhyPT83EmP\"}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 321,
+      "artifact_status": "received",
       "artifact_access": {
         "code": null,
         "checkpoint": null
