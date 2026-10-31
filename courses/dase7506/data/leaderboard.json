@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-31T13:03:24.928Z",
+  "generated_at": "2026-10-31T13:06:22.518Z",
   "submissions": [
     {
       "number": 1,
@@ -7983,6 +7983,30 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 363,
+      "artifact_status": "received",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 364,
+      "author": "ottomcwong0-debug",
+      "student_id": "3036490110",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/364",
+      "project": "mp2",
+      "score": 80.0856,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "self-reported",
+      "created_at": "2026-10-31T13:06:11Z",
+      "signature": "[\"mp2\",80.0856,null,null,\"3036490110\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"lpT6rnVUeMLShuj4CeXR+RzAg5T/MuuZGqJBPSVHBiVp/d4blWBF5QegNRFTimUd+GL0toQxZBuLu8qGX+MV/ZVH7hzLYv+sb/hv0kIy7nqPFLcP1Uflts/AVczeBWAWogJHloI7XiGqWkabpukbjuzkTfuK4iritmXDh79+ojkHYVvseWhYAf3s8SQEfYjMYhFI9rfOGVZXrXNyZMx6+Wq3ZG3h56YRav2LoFz0ftZiQHrA7TMmFllGx0noKLIt28oIFQDoYC2kxgYysnFvhF4u1HNBV5kcBTLLLZccpGuix4nt7xOeIVZDhHAMdvGZFT+dKVsxyDehk6H1WY1ktL0tsGUAdYsgMjz3J+0NkUcXMKbBeUPqilkVTcfyucwGZdX+JfqHcLZatlV5jnM05LvK+ZObbXlYJBgVMViouWZamz2ABCnSrt3IBStWSVwG1TwmNy45o90yk7YCHo4PIqainhywAwKyVrqTM0UBqEv2AiuaJEopIZjDsXiQqZjM\",\"iv\":\"/N+5cS+mvhS8KySQ\",\"ciphertext\":\"jNCg5YcUq1JbQw170Ehm81S4R4fMXOOlARAfphLxzVCsx2pMN+8LSHIZcORmTrCBC0neUQ4Fo42S/DHZsSJRVkO80Rq7Et2wmVUVv+OiJSxUyy+v5LosXnOzO3HtHjqTIPsIaWUgyFPp3mjJjUhmC+8rDvgt1gAgDw1PKFWz01zrU8Ab20YlA+PTVX9KKj98FYDZNeRNnsdMwRbXfGBIr1p8euxyNZdwJxrDa2PuJR7aKjzcB7O3kytYRg==\"}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 364,
       "artifact_status": "received",
       "artifact_access": {
         "code": null,
