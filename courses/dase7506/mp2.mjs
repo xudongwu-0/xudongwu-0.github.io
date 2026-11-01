@@ -76,11 +76,24 @@ async function refresh() {
       if (d.schema !== 'dase7506/board-v1' || d.snapshot_version!==2 || d.protocol !== PROTOCOL || !Array.isArray(d.submissions) || !Array.isArray(d.challenges) || !Array.isArray(d.adjustments)) throw new Error('Invalid or outdated snapshot');
       return d;
     };
-    try { result = await fetchSnapshot(raw); }
-    catch {
-      try { result = await fetchSnapshot(api, {Accept:'application/vnd.github.raw+json'}); }
-      catch { result = await fetchSnapshot('../data/leaderboard.json'); fallback = true; }
+    if (!hasSnapshot) {
+      // A newly deployed Pages snapshot can be newer than GitHub's raw CDN.
+      const sources=await Promise.allSettled([fetchSnapshot(raw),fetchSnapshot('../data/leaderboard.json')]);
+      const candidates=sources.flatMap((source,index)=>source.status==='fulfilled'?[{data:source.value,index}]:[]);
+      candidates.sort((a,b)=>(Date.parse(b.data.generated_at)||0)-(Date.parse(a.data.generated_at)||0));
+      if (candidates.length) {
+        result=candidates[0].data;
+        fallback=candidates[0].index===1 && sources[0].status==='rejected';
+      } else result=await fetchSnapshot(api,{Accept:'application/vnd.github.raw+json'});
+    } else {
+      try { result = await fetchSnapshot(raw); }
+      catch {
+        try { result = await fetchSnapshot(api, {Accept:'application/vnd.github.raw+json'}); }
+        catch { result = await fetchSnapshot('../data/leaderboard.json'); fallback = true; }
+      }
     }
+    // Never let a stale cache roll back a release or a result already displayed.
+    if (hasSnapshot && Date.parse(result.generated_at)<Date.parse(snapshot.generated_at)) result=snapshot;
     snapshot = result; hasSnapshot = true; render(); configureForm();
     const time = result.generated_at ? new Date(result.generated_at).toLocaleString('en-GB') : 'not synced yet';
     $('sync-status').textContent = `${fallback ? 'Cached · ' : ''}Updated: ${time}. Auto-refresh every 30 seconds. Allow a few minutes for new submissions to appear.`;
