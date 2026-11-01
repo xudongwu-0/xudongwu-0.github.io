@@ -8,12 +8,22 @@ export function validStudentID(value) {
   return typeof value==='string' && value.length>=1 && value.length<=64 && value===value.trim()
     && !/[\u0000-\u001f\u007f-\u009f\u202a-\u202e\u2066-\u2069]/u.test(value);
 }
+export function reviewEndTime(project, release) {
+  const start=Date.parse(release?.published_at);
+  if (!Number.isFinite(start)) return NaN;
+  if (release.review_ends_at != null) {
+    const end=Date.parse(release.review_ends_at);
+    if (!Number.isFinite(end) || end<=start) throw new Error('Invalid instructor review deadline.');
+    return end;
+  }
+  return start+(PROJECTS[project]?.review_days||7)*86400000;
+}
 export function submissionPhase(project, publication={}, now=Date.now()) {
   const config=PROJECTS[project], release=publication.projects?.[project];
   if (!config?.open) return 'closed';
   if (!config.score_deadline || +new Date(now)<Date.parse(config.score_deadline)) return 'scores';
   if (!release || Date.parse(release.published_at)>+new Date(now)) return 'artifacts';
-  return +new Date(now)<Date.parse(release.published_at)+(config.review_days||7)*86400000 ? 'review' : 'complete';
+  return +new Date(now)<reviewEndTime(project,release) ? 'review' : 'complete';
 }
 export function validSealedArtifacts(d) {
   return d && d.algorithm==='RSA-OAEP-256+AES-256-GCM' && d.key_id===KEY_ID
@@ -259,7 +269,7 @@ export function buildSnapshot(issues, previous={}, now=new Date().toISOString(),
     const parsed=parseIssue(issue);
     if (!parsed || !validateChallenge(parsed.data) || !PROJECTS[parsed.data.project].score_deadline) return true;
     const release=publication.projects?.[parsed.data.project];
-    const start=Date.parse(release?.published_at), end=start+(PROJECTS[parsed.data.project].review_days||7)*86400000;
+    const start=Date.parse(release?.published_at), end=reviewEndTime(parsed.data.project,release);
     return Number.isFinite(start) && Date.parse(parsed.created_at)>=start && Date.parse(parsed.created_at)<end;
   });
   const result=buildBaseSnapshot(effective,previous,now);
@@ -319,7 +329,7 @@ export function buildSnapshot(issues, previous={}, now=new Date().toISOString(),
   for(const [id,release] of Object.entries(publication.projects||{})) {
     if(Date.parse(release.published_at)<=instant) result.publication.projects[id]={
       published_at:release.published_at,
-      review_ends_at:new Date(Date.parse(release.published_at)+(PROJECTS[id]?.review_days||7)*86400000).toISOString()
+      review_ends_at:new Date(reviewEndTime(id,release)).toISOString()
     };
   }
   result.phases=Object.fromEntries(Object.keys(PROJECTS).map(id=>[id,submissionPhase(id,publication,instant)]));
@@ -331,7 +341,7 @@ export function buildSnapshot(issues, previous={}, now=new Date().toISOString(),
     if(!target || target.project!==(challenge?.project??p.data.project)) return null;
     const self=p.author.toLowerCase()===target.author.toLowerCase();
     const release=publication.projects?.[target.project];
-    const end=release ? Date.parse(release.published_at)+(PROJECTS[target.project].review_days||7)*86400000 : Infinity;
+    const end=release ? reviewEndTime(target.project,release) : Infinity;
     const status=self?'self-request':Date.parse(p.created_at)>=end?'late':p.labels.includes('7506:rejected')?'rejected':p.closed?'closed':!validScore(target.project,challenge?.reproduced_score??p.data.reproduced_score)?'score-missing':challenge?.status||'pending';
     return {number:p.number,submission:target.number,project:target.project,author:p.author,url:p.url,
       reason:p.data.reason||'',evidence_url:challenge?.evidence_url||p.data.evidence_url||null,

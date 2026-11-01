@@ -6,6 +6,8 @@ MP2 is open at `/courses/dase7506/mp2/`, using self-reported full-test accuracy 
 
 Both student pages are English-only, with no links to the personal homepage. MP2 materials are maintained in [DASE7506-MP2](https://github.com/xudongwu-0/DASE7506-MP2); no reference method is supplied. After changing browser sources, run `node scripts/dase7506/build-assets.mjs` and `node --test scripts/dase7506/*.test.mjs` before publishing.
 
+MP2 links were released on **1 November 2026**. Peer review closes at **8 November 2026, 24:00 Beijing time**, stored as `2026-11-09T00:00:00+08:00`. The instructor-controlled `publication.projects.mp2.review_ends_at` is respected by the page, report validation and report statistics; older releases without an explicit end retain the seven-day default. During review, the score/link form is hidden and the leaderboard occupies the full width. Missing artifact links are shown explicitly. Numerical scores remain self-reported until reproduced.
+
 ## Storage and identity
 
 The form creates a prefilled GitHub Issue. The student must log in to GitHub and

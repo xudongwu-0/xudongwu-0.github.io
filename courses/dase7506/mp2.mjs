@@ -48,7 +48,8 @@ function render() {
       artifactLinks.append(item);
     }
     if(!row.code_url && !row.checkpoint_url) {
-      artifactLinks.replaceChildren(element('span',row.artifact_status==='received'?'Links received':'Links pending','caption'));
+      const released=['review','complete'].includes(submissionPhase(project,snapshot.publication));
+      artifactLinks.replaceChildren(element('span',released?'No links provided':row.artifact_status==='received'?'Links received':'Links pending','caption'));
     }
     materials.append(artifactLinks, link(`#${row.number}`,row.url));
 
@@ -104,6 +105,8 @@ $('refresh').addEventListener('click', refresh);
 function configureForm() {
   const id=project, config=PROJECTS[id];
   const phase=submissionPhase(id,snapshot.publication), scores=phase==='scores', artifacts=phase==='artifacts';
+  $('submit').hidden=!scores && !artifacts;
+  $('workspace').classList.toggle('mp2-workspace',scores || artifacts);
   $('phase-badge').textContent={scores:'Score submissions open',artifacts:'Links required',review:'7-day public review',complete:'Review closed',closed:'Submissions closed'}[phase];
   $('phase-note').textContent=scores
     ? 'Submit your final score, code and checkpoint links by 31 October, 23:59 (UTC+8). Early entries may contain a score only. Links are sealed until the instructor opens the 7-day review.'

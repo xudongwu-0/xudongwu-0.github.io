@@ -1499,6 +1499,1139 @@
           "source": "Instructor-recorded student-provided submission details; source issue JSON is malformed"
         }
       ]
+    },
+    "mp2": {
+      "published_at": "2026-11-01T04:42:52.971Z",
+      "review_ends_at": "2026-11-09T00:00:00+08:00",
+      "entries": [
+        {
+          "submission": 237,
+          "author": "xudongwu-0",
+          "score": 0,
+          "code_url": null,
+          "checkpoint_url": null,
+          "artifact_issue": null
+        },
+        {
+          "submission": 238,
+          "author": "xudongwu-0",
+          "score": 1,
+          "code_url": "https://xudongwu-0.github.io/courses/dase7506/mp2/",
+          "checkpoint_url": "https://xudongwu-0.github.io/courses/dase7506/mp2/",
+          "artifact_issue": 238
+        },
+        {
+          "submission": 240,
+          "author": "Dylan0528",
+          "score": 84.3831,
+          "code_url": "https://github.com/Dylan0528/DASE7506-Project2/tree/submission-v1",
+          "checkpoint_url": "https://github.com/Dylan0528/DASE7506-Project2/tree/submission-v1/code/runs/model_bundle",
+          "artifact_issue": 240
+        },
+        {
+          "submission": 241,
+          "author": "vectorBH6",
+          "score": 80.728,
+          "code_url": "https://github.com/vectorBH6/DASE7506-MP2/tree/2026-10-21",
+          "checkpoint_url": "https://github.com/vectorBH6/DASE7506-MP2/tree/2026-10-21/code/solution/runs/ensemble_v1/checkpoint",
+          "artifact_issue": 241
+        },
+        {
+          "submission": 242,
+          "author": "CARDINAL-02",
+          "score": 83.72591006423983,
+          "code_url": "https://github.com/CARDINAL-02/DASE7506-MP2-Submission/tree/7018785f947ca081cc46fceddf93aad2fa926ac4",
+          "checkpoint_url": "https://github.com/CARDINAL-02/DASE7506-MP2-Submission/releases/download/v4-linear-final/MP2-checkpoint.zip",
+          "artifact_issue": 242
+        },
+        {
+          "submission": 243,
+          "author": "cheneryang0616-bot",
+          "score": 79.65738758029978,
+          "code_url": "https://github.com/cheneryang0616-bot/dase7506-mp2/tree/mp2-final-20261022",
+          "checkpoint_url": "https://github.com/cheneryang0616-bot/dase7506-mp2/releases/download/mp2-final-20261022/model_bundle.zip",
+          "artifact_issue": 243
+        },
+        {
+          "submission": 245,
+          "author": "gy13687638535-design",
+          "score": 80.94218415417559,
+          "code_url": "https://github.com/gy13687638535-design/dase7506-mp2/tree/f6d2ba367dcd11bfbb2aebfa67379d4ca1e09c16",
+          "checkpoint_url": "https://github.com/gy13687638535-design/dase7506-mp2/tree/f6d2ba367dcd11bfbb2aebfa67379d4ca1e09c16/code/runs/model_bundle",
+          "artifact_issue": 245
+        },
+        {
+          "submission": 246,
+          "author": "3426298310-del",
+          "score": 83.72591006423983,
+          "code_url": "https://github.com/3426298310-del/DASE7506-MP2/tree/v1.0",
+          "checkpoint_url": "https://github.com/3426298310-del/DASE7506-MP2/tree/v1.0/code/runs/checkpoint",
+          "artifact_issue": 246
+        },
+        {
+          "submission": 247,
+          "author": "Devin-Lo1",
+          "score": 85.4389721627409,
+          "code_url": "https://github.com/Devin-Lo1/dase-7506-mp2/tree/3cbf4d3cd8a6451a88212919d3423795f32b9d7a",
+          "checkpoint_url": "https://github.com/Devin-Lo1/dase-7506-mp2/releases/download/mp2-best-v1/mp2-best-checkpoint-20261024.zip",
+          "artifact_issue": 247
+        },
+        {
+          "submission": 248,
+          "author": "wnailinx",
+          "score": 83.2976,
+          "code_url": "https://github.com/wnailinx/MiniProject2",
+          "checkpoint_url": "https://github.com/wnailinx/MiniProject2/releases/download/ckpt/pointwise-ridge-100.npz",
+          "artifact_issue": 248
+        },
+        {
+          "submission": 249,
+          "author": "friedfish819",
+          "score": 83.2976,
+          "code_url": "https://github.com/friedfish819/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/friedfish819/DASE7506-MP2/tree/main/runs/model_bundle",
+          "artifact_issue": 249
+        },
+        {
+          "submission": 250,
+          "author": "vectorBH6",
+          "score": 84.15,
+          "code_url": "https://github.com/vectorBH6/DASE7506-MP2/tree/2026-10-24",
+          "checkpoint_url": "https://github.com/vectorBH6/DASE7506-MP2/tree/2026-10-24/code/solution/runs/handcrafted_extended_v2/models/lexical/checkpoint",
+          "artifact_issue": 250
+        },
+        {
+          "submission": 251,
+          "author": "vectorBH6",
+          "score": 84.1541,
+          "code_url": "https://github.com/vectorBH6/DASE7506-MP2/tree/2026-10-24",
+          "checkpoint_url": "https://github.com/vectorBH6/DASE7506-MP2/tree/2026-10-24/code/solution/runs/handcrafted_extended_v2/models/lexical/checkpoint",
+          "artifact_issue": 251
+        },
+        {
+          "submission": 252,
+          "author": "5aIit",
+          "score": 84.58244111349036,
+          "code_url": "https://github.com/5aIit/DASE7506-MP2-3036746155/tree/release-1.0",
+          "checkpoint_url": "https://github.com/5aIit/DASE7506-MP2-3036746155/releases/download/release-1.0/DASE7506-MP2-Release-1.0-checkpoint.zip",
+          "artifact_issue": 252
+        },
+        {
+          "submission": 254,
+          "author": "CSPeterZz",
+          "score": 80.3,
+          "code_url": "https://github.com/CSPeterZz/DASE7506_MP2/tree/main",
+          "checkpoint_url": "https://github.com/CSPeterZz/DASE7506_MP2/tree/main/code/final_model",
+          "artifact_issue": 254
+        },
+        {
+          "submission": 255,
+          "author": "huangxv133",
+          "score": 76.23126338329764,
+          "code_url": "https://github.com/huangxv133/dase7506-mp2",
+          "checkpoint_url": "https://github.com/huangxv133/dase7506-mp2/blob/main/ranker.npz",
+          "artifact_issue": 255
+        },
+        {
+          "submission": 256,
+          "author": "325200wang",
+          "score": 84.79657387580299,
+          "code_url": "https://github.com/325200wang/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/325200wang/DASE7506-MP2/releases/tag/v1",
+          "artifact_issue": 256
+        },
+        {
+          "submission": 257,
+          "author": "ig1a",
+          "score": 81.15631691648822,
+          "code_url": "https://github.com/ig1a/dase7506-mp2-3036780955/tree/4617f454c2e7a51497e8b5f9ef60cf51feb14ddb",
+          "checkpoint_url": "https://raw.githubusercontent.com/ig1a/dase7506-mp2-3036780955/4617f454c2e7a51497e8b5f9ef60cf51feb14ddb/checkpoint.npz",
+          "artifact_issue": 257
+        },
+        {
+          "submission": 258,
+          "author": "XINZHEWANG-HKU",
+          "score": 82.87,
+          "code_url": "https://github.com/XINZHEWANG-HKU/7140-mp2",
+          "checkpoint_url": "https://github.com/XINZHEWANG-HKU/7140-mp2/blob/main/runs/best/model.npz",
+          "artifact_issue": 258
+        },
+        {
+          "submission": 259,
+          "author": "XINZHEWANG-HKU",
+          "score": 82.8694,
+          "code_url": "https://github.com/XINZHEWANG-HKU/7140-mp2",
+          "checkpoint_url": "https://github.com/XINZHEWANG-HKU/7140-mp2/blob/main/runs/best/model.npz",
+          "artifact_issue": 259
+        },
+        {
+          "submission": 260,
+          "author": "star4599",
+          "score": 84.36830835117773,
+          "code_url": "https://github.com/star4599/DASE7506-MP2-He_Jiaxin",
+          "checkpoint_url": "https://github.com/star4599/DASE7506-MP2-He_Jiaxin/tree/main/code/output",
+          "artifact_issue": 260
+        },
+        {
+          "submission": 261,
+          "author": "haonanwu869-rgb",
+          "score": 81.5846,
+          "code_url": "https://github.com/haonanwu869-rgb/DASE7506-MP2/tree/v1.1",
+          "checkpoint_url": "https://github.com/haonanwu869-rgb/DASE7506-MP2/releases/download/v1.1/model_checkpoint.zip",
+          "artifact_issue": 261
+        },
+        {
+          "submission": 262,
+          "author": "songdaicheng666-dot",
+          "score": 82.441113,
+          "code_url": "https://github.com/songdaicheng666-dot/DASE7506-MP2-submission",
+          "checkpoint_url": "https://github.com/songdaicheng666-dot/DASE7506-MP2-submission/blob/main/code/checkpoints/deepsets_answer.pt",
+          "artifact_issue": 262
+        },
+        {
+          "submission": 263,
+          "author": "byao128",
+          "score": 81.5845824411135,
+          "code_url": "https://github.com/byao128/dase7506-mp2-g3/tree/62c79f91157eb818fc1885364364a026c69ad0ff",
+          "checkpoint_url": "https://github.com/byao128/dase7506-mp2-g3/tree/62c79f91157eb818fc1885364364a026c69ad0ff/artifacts/group-tree-v1/bundle",
+          "artifact_issue": 263
+        },
+        {
+          "submission": 264,
+          "author": "michaelleeoo",
+          "score": 84.5824411134904,
+          "code_url": "https://github.com/michaelleeoo/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/michaelleeoo/DASE7506-MP2/tree/main/code/model_bundle_stack",
+          "artifact_issue": 264
+        },
+        {
+          "submission": 265,
+          "author": "zjsyxzjsyx",
+          "score": 83.5117773019272,
+          "code_url": "https://github.com/zjsyxzjsyx/DASE7506-MP2/tree/mp2-submission",
+          "checkpoint_url": "https://github.com/zjsyxzjsyx/DASE7506-MP2/tree/b3a1d38a708cf6e0570ad755bc5f12ca83297a27/code/runs/model_bundle",
+          "artifact_issue": 265
+        },
+        {
+          "submission": 266,
+          "author": "zjsyxzjsyx",
+          "score": 83.5117773019272,
+          "code_url": "https://github.com/zjsyxzjsyx/DASE7506-MP2/tree/mp2-submission",
+          "checkpoint_url": "https://github.com/zjsyxzjsyx/DASE7506-MP2/tree/b3a1d38a708cf6e0570ad755bc5f12ca83297a27/code/runs/model_bundle",
+          "artifact_issue": 266
+        },
+        {
+          "submission": 267,
+          "author": "W-YUBO",
+          "score": 81.58,
+          "code_url": "https://github.com/W-YUBO/DASE7506-MP2-submission",
+          "checkpoint_url": "https://github.com/W-YUBO/DASE7506-MP2-submission/blob/main/runs/model_bundle_v10/scorer.npz",
+          "artifact_issue": 267
+        },
+        {
+          "submission": 268,
+          "author": "liwanyue123",
+          "score": 84.58244111349036,
+          "code_url": "https://github.com/liwanyue123/DASE7506-MP2-wayne/tree/3b3b66bc8426c496deb028fd0976a5feb06568cd",
+          "checkpoint_url": "https://github.com/liwanyue123/DASE7506-MP2-wayne/tree/3b3b66bc8426c496deb028fd0976a5feb06568cd/code/artifacts/final",
+          "artifact_issue": 268
+        },
+        {
+          "submission": 269,
+          "author": "Ma-Yingyue",
+          "score": 81.37044967880085,
+          "code_url": "https://github.com/Ma-Yingyue/MP2-submission/commits/main/",
+          "checkpoint_url": "https://github.com/Ma-Yingyue/MP2-submission/tree/a139a16f674b5f26032d4e11b4ded4553ed53b21/runs/final/model_bundle",
+          "artifact_issue": 269
+        },
+        {
+          "submission": 270,
+          "author": "Eillot1031",
+          "score": 84.5824,
+          "code_url": "https://github.com/Eillot1031/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/Eillot1031/DASE7506-MP2/tree/main/code/checkpoints/candidate85",
+          "artifact_issue": 270
+        },
+        {
+          "submission": 271,
+          "author": "Near0324",
+          "score": 84.1541,
+          "code_url": "https://github.com/Near0324/DASE7506_Miniproject2/tree/main/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/Near0324/DASE7506_Miniproject2/releases/tag/v1.0",
+          "artifact_issue": 271
+        },
+        {
+          "submission": 272,
+          "author": "wuyimingai2004-cloud",
+          "score": 81.7987,
+          "code_url": "https://github.com/wuyimingai2004-cloud/DASE7506_MP2",
+          "checkpoint_url": "https://github.com/wuyimingai2004-cloud/DASE7506_MP2/tree/v1.0.0/checkpoints/tabm_mob",
+          "artifact_issue": 272
+        },
+        {
+          "submission": 273,
+          "author": "Oldmonk-Ji",
+          "score": 82.3683,
+          "code_url": "https://github.com/Oldmonk-Ji/MP2_submission/tree/round257-submission-3036801840",
+          "checkpoint_url": "https://github.com/Oldmonk-Ji/MP2_submission/tree/round257-submission-3036801840/experiments/round257/bundle",
+          "artifact_issue": 273
+        },
+        {
+          "submission": 274,
+          "author": "Oldmonk-Ji",
+          "score": 84.3683,
+          "code_url": "https://github.com/Oldmonk-Ji/MP2_submission/tree/round257-submission-3036801840",
+          "checkpoint_url": "https://github.com/Oldmonk-Ji/MP2_submission/tree/round257-submission-3036801840/experiments/round257/bundle",
+          "artifact_issue": 274
+        },
+        {
+          "submission": 275,
+          "author": "2wu2",
+          "score": 84.3683,
+          "code_url": "https://github.com/2wu2/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/2wu2/DASE7506-MP2/tree/main/code/runs/evidence_v4/model_bundle",
+          "artifact_issue": 275
+        },
+        {
+          "submission": 276,
+          "author": "jiucaihehe",
+          "score": 83.94004282655246,
+          "code_url": "https://github.com/jiucaihehe/DASE7506-MP2/tree/590532406a947c8c9d7eaf775887a8a069ec64d4",
+          "checkpoint_url": "https://raw.githubusercontent.com/jiucaihehe/DASE7506-MP2/590532406a947c8c9d7eaf775887a8a069ec64d4/output/checkpoint/context_candidate.zip",
+          "artifact_issue": 276
+        },
+        {
+          "submission": 277,
+          "author": "xuvictor-Liu",
+          "score": 84.3683,
+          "code_url": "https://github.com/xuvictor-Liu/DASE7506-MP2-project",
+          "checkpoint_url": "https://github.com/xuvictor-Liu/DASE7506-MP2-project/blob/main/code/runs_v2/final_bundle/model.pkl",
+          "artifact_issue": 277
+        },
+        {
+          "submission": 278,
+          "author": "WANGZIQI0898",
+          "score": 81.3704,
+          "code_url": "https://github.com/WANGZIQI0898/DASE7506-MP2/tree/mp2-v2-submit",
+          "checkpoint_url": "https://github.com/WANGZIQI0898/DASE7506-MP2/tree/main/code/runs/verifier_v2",
+          "artifact_issue": 278
+        },
+        {
+          "submission": 279,
+          "author": "Steeella03",
+          "score": 82.22698072805139,
+          "code_url": "https://github.com/Steeella03/dase7506-mp2/tree/3000f18f1f3b42d743237b1c00eb3bdda3de1add",
+          "checkpoint_url": "https://github.com/Steeella03/dase7506-mp2/tree/3000f18f1f3b42d743237b1c00eb3bdda3de1add/code/artifacts/final",
+          "artifact_issue": 279
+        },
+        {
+          "submission": 280,
+          "author": "pyrofluxarch",
+          "score": 84.1542,
+          "code_url": "https://github.com/pyrofluxarch/Dase7506_Assignment02.git",
+          "checkpoint_url": "https://drive.google.com/drive/folders/1c_OSNls9CksWFi-xCc_uebhE7IDnS_ez?usp=drive_link",
+          "artifact_issue": 280
+        },
+        {
+          "submission": 281,
+          "author": "pyrofluxarch",
+          "score": 84.1542,
+          "code_url": "https://github.com/pyrofluxarch/Dase7506_Assignment02.git",
+          "checkpoint_url": "https://drive.google.com/drive/folders/1c_OSNls9CksWFi-xCc_uebhE7IDnS_ez?usp=drive_link",
+          "artifact_issue": 281
+        },
+        {
+          "submission": 282,
+          "author": "KokoNAa",
+          "score": 83.3,
+          "code_url": "https://github.com/KokoNAa/7506_m2.git",
+          "checkpoint_url": "https://huggingface.co/Fengqinfeng/7506_mp2",
+          "artifact_issue": 282
+        },
+        {
+          "submission": 283,
+          "author": "McKrispy",
+          "score": 80.0857,
+          "code_url": "https://github.com/McKrispy/MathReasoning-Optimization",
+          "checkpoint_url": null,
+          "artifact_issue": 283
+        },
+        {
+          "submission": 284,
+          "author": "CinephileZ",
+          "score": 84.36830835117773,
+          "code_url": "https://github.com/CinephileZ/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/CinephileZ/DASE7506-MP2/tree/main/code/final_checkpoint/model_bundle_v2",
+          "artifact_issue": 284
+        },
+        {
+          "submission": 285,
+          "author": "CaspianW",
+          "score": 84.7966,
+          "code_url": "https://github.com/CaspianW/dase7506-mp2",
+          "checkpoint_url": "https://github.com/CaspianW/dase7506-mp2/releases/download/mp2-final-v2.1/local-arithmetic-v2-checkpoint.zip",
+          "artifact_issue": 285
+        },
+        {
+          "submission": 286,
+          "author": "Lyan9145",
+          "score": 82.6552,
+          "code_url": "https://github.com/Lyan9145/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/Lyan9145/DASE7506-MP2/tree/main/code/checkpoint",
+          "artifact_issue": 286
+        },
+        {
+          "submission": 287,
+          "author": "didongtai",
+          "score": 83.94,
+          "code_url": "https://github.com/didongtai/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/didongtai/DASE7506-MP2/blob/4878f711f24adeb8fbbe6b35c06cfb1623b709cc/code/checkpoint/model.npz",
+          "artifact_issue": 287
+        },
+        {
+          "submission": 288,
+          "author": "CharAznableKKK",
+          "score": 82.22698072805139,
+          "code_url": "https://github.com/CharAznableKKK/dase7506-mp2/tree/23abc4ff988e26763df9bc4503506c35cbc0f1d7",
+          "checkpoint_url": "https://github.com/CharAznableKKK/dase7506-mp2/tree/23abc4ff988e26763df9bc4503506c35cbc0f1d7/assets/final",
+          "artifact_issue": 288
+        },
+        {
+          "submission": 289,
+          "author": "Coconut-LI",
+          "score": 79,
+          "code_url": "https://github.com/Coconut-LI/dase7506_mini_project2/tree/b80b9b5ce1d5c306d8e62d4a399e787c0c8d16e1",
+          "checkpoint_url": "https://github.com/Coconut-LI/dase7506_mini_project2/blob/b80b9b5ce1d5c306d8e62d4a399e787c0c8d16e1/runs/set_feat_attention_dropout03/model.pt",
+          "artifact_issue": 289
+        },
+        {
+          "submission": 290,
+          "author": "echomisty",
+          "score": 81.7987,
+          "code_url": "https://github.com/echomisty/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/echomisty/DASE7506-MP2/tree/main/code/checkpoint/final",
+          "artifact_issue": 290
+        },
+        {
+          "submission": 291,
+          "author": "echomisty",
+          "score": 81.7989,
+          "code_url": "https://github.com/echomisty/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/echomisty/DASE7506-MP2/tree/main/code/checkpoint/final",
+          "artifact_issue": 291
+        },
+        {
+          "submission": 292,
+          "author": "echomisty",
+          "score": 81.7989,
+          "code_url": "https://github.com/echomisty/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/echomisty/DASE7506-MP2/tree/main/code/checkpoint/final",
+          "artifact_issue": 292
+        },
+        {
+          "submission": 293,
+          "author": "michaelleeoo",
+          "score": 84.58244111349036,
+          "code_url": "https://github.com/michaelleeoo/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/michaelleeoo/DASE7506-MP2/releases/download/Model/model_bundle_stack.zip",
+          "artifact_issue": 293
+        },
+        {
+          "submission": 294,
+          "author": "liuqichang0305",
+          "score": 74.51820128479658,
+          "code_url": "https://github.com/liuqichang0305/dase7506-mp2-solution/tree/419e1158ba2f83b8c08796429e635f1bf8ab2977",
+          "checkpoint_url": "https://github.com/liuqichang0305/dase7506-mp2-solution/tree/419e1158ba2f83b8c08796429e635f1bf8ab2977/artifacts/final_bundle",
+          "artifact_issue": 294
+        },
+        {
+          "submission": 295,
+          "author": "yuyue2317",
+          "score": 80.72805139186295,
+          "code_url": "https://github.com/yuyue2317/DASE7506-MP2/tree/fe639f8b56e43cbdf579f06f25326ab7422ecfca",
+          "checkpoint_url": "https://github.com/yuyue2317/DASE7506-MP2/tree/fe639f8b56e43cbdf579f06f25326ab7422ecfca/code/runs/relative",
+          "artifact_issue": 295
+        },
+        {
+          "submission": 296,
+          "author": "SamTyson0506",
+          "score": 80.0857,
+          "code_url": "https://github.com/SamTyson0506/Miniproject2/tree/cfdeaab3b4016e40d0431e14b07f45509a4aabd8/code",
+          "checkpoint_url": "https://github.com/SamTyson0506/Miniproject2/blob/cfdeaab3b4016e40d0431e14b07f45509a4aabd8/code/runs/v2-local/model.npz",
+          "artifact_issue": 296
+        },
+        {
+          "submission": 297,
+          "author": "Wanli06",
+          "score": 81.3,
+          "code_url": "https://github.com/Wanli06/HOU_MEIQI_7506_2/releases/tag/v1.0",
+          "checkpoint_url": "https://github.com/Wanli06/HOU_MEIQI_7506_2/releases/download/v1.0/DASE7506_MP2_submission.zip",
+          "artifact_issue": 297
+        },
+        {
+          "submission": 298,
+          "author": "qhYu172",
+          "score": 85.01070663811564,
+          "code_url": "https://github.com/qhYu172/DASE7506-MP1/tree/d7490cbd54710cd712dca7bc126921b7542d7062",
+          "checkpoint_url": "https://github.com/qhYu172/DASE7506-MP1/tree/d7490cbd54710cd712dca7bc126921b7542d7062/code/runs/experiment_v11",
+          "artifact_issue": 298
+        },
+        {
+          "submission": 299,
+          "author": "bob0612",
+          "score": 82.44,
+          "code_url": "https://github.com/bob0612/Advanced-ML/tree/cc6997fe211b9a31526f0add422318824110ca37/MP2",
+          "checkpoint_url": "https://github.com/bob0612/Advanced-ML/tree/cc6997fe211b9a31526f0add422318824110ca37/MP2/code/checkpoint/model_bundle",
+          "artifact_issue": 299
+        },
+        {
+          "submission": 300,
+          "author": "911zyx",
+          "score": 82.6552,
+          "code_url": "https://github.com/911zyx/dase7506-mp2/tree/01512c52ac24436242399703a797081ce9ddb890",
+          "checkpoint_url": "https://github.com/911zyx/dase7506-mp2/tree/01512c52ac24436242399703a797081ce9ddb890/code/runs/model_bundle",
+          "artifact_issue": 300
+        },
+        {
+          "submission": 301,
+          "author": "911zyx",
+          "score": 82.6552,
+          "code_url": "https://github.com/911zyx/dase7506-mp2/tree/01512c52ac24436242399703a797081ce9ddb890",
+          "checkpoint_url": "https://github.com/911zyx/dase7506-mp2/tree/01512c52ac24436242399703a797081ce9ddb890/code/runs/model_bundle",
+          "artifact_issue": 301
+        },
+        {
+          "submission": 302,
+          "author": "Daisy0322",
+          "score": 83.7259,
+          "code_url": "https://github.com/Daisy0322/DASE7506-MP2-3036706296/tree/mp2-final-3036706296",
+          "checkpoint_url": "https://github.com/Daisy0322/DASE7506-MP2-3036706296/tree/mp2-final-3036706296/code/checkpoint/model_bundle",
+          "artifact_issue": 302
+        },
+        {
+          "submission": 304,
+          "author": "luoqiu746-stack",
+          "score": 84.1542,
+          "code_url": "https://github.com/luoqiu746-stack/DASE7506-MP2-main/tree/f63c53d5086f4b413c8a02f09a152dc9ac8eff8f",
+          "checkpoint_url": "https://github.com/luoqiu746-stack/DASE7506-MP2-main/releases/download/mp2-e44-v1/MP2_E44_Checkpoint.zip",
+          "artifact_issue": 304
+        },
+        {
+          "submission": 305,
+          "author": "Daisy0322",
+          "score": 80.7259100642398,
+          "code_url": "https://github.com/Daisy0322/DASE7506-MP2-3036706296/tree/mp2-final-3036706296",
+          "checkpoint_url": "https://github.com/Daisy0322/DASE7506-MP2-3036706296/tree/mp2-final-3036706296/code/checkpoint/model_bundle",
+          "artifact_issue": 305
+        },
+        {
+          "submission": 306,
+          "author": "leixingyue-hash",
+          "score": 83.2976,
+          "code_url": "https://github.com/leixingyue-hash/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/leixingyue-hash/DASE7506-MP2/tree/main/code/runs/point_tree_mix",
+          "artifact_issue": 306
+        },
+        {
+          "submission": 307,
+          "author": "Daisy0322",
+          "score": 83.72591006423983,
+          "code_url": "https://github.com/Daisy0322/DASE7506-MP2-3036706296/tree/mp2-final-3036706296",
+          "checkpoint_url": "https://github.com/Daisy0322/DASE7506-MP2-3036706296/tree/mp2-final-3036706296/code/checkpoint/model_bundle",
+          "artifact_issue": 307
+        },
+        {
+          "submission": 308,
+          "author": "dhx040204",
+          "score": 79.3233,
+          "code_url": "https://github.com/dhx040204/mp2-Dhx",
+          "checkpoint_url": "https://github.com/dhx040204/mp2-Dhx/blob/main/runs/validation-score.json",
+          "artifact_issue": 308
+        },
+        {
+          "submission": 309,
+          "author": "nowayell",
+          "score": 81.79871520342613,
+          "code_url": "https://github.com/nowayell/DASE7506-MP2_Nong-Weiyue/tree/403507a5f50a0992219b03cb4aed3f454c213c66",
+          "checkpoint_url": "https://github.com/nowayell/DASE7506-MP2_Nong-Weiyue/tree/403507a5f50a0992219b03cb4aed3f454c213c66/code/runs/E3",
+          "artifact_issue": 309
+        },
+        {
+          "submission": 310,
+          "author": "binghuaren96",
+          "score": 82.86937901498929,
+          "code_url": "https://github.com/binghuaren96/Dase7506_MP2/tree/3b3e773edc1cabb58bc58ddb82b90f4427f121bf",
+          "checkpoint_url": "https://github.com/binghuaren96/Dase7506_MP2/tree/3b3e773edc1cabb58bc58ddb82b90f4427f121bf/artifacts/final",
+          "artifact_issue": 310
+        },
+        {
+          "submission": 311,
+          "author": "yechengyuan011201-max",
+          "score": 81.3704,
+          "code_url": "https://github.com/yechengyuan011201-max/DASE7506-MP2-Code",
+          "checkpoint_url": "https://github.com/yechengyuan011201-max/DASE7506-MP2-Checkpoint",
+          "artifact_issue": 311
+        },
+        {
+          "submission": 312,
+          "author": "Wanli06",
+          "score": 83.3,
+          "code_url": "https://github.com/Wanli06/HOU_MEIQI_7506_2",
+          "checkpoint_url": "https://github.com/Wanli06/HOU_MEIQI_7506_2/tree/main/code/checkpoints/final_v5",
+          "artifact_issue": 312
+        },
+        {
+          "submission": 313,
+          "author": "Wanli06",
+          "score": 83.2,
+          "code_url": "https://github.com/Wanli06/HOU_MEIQI_7506_2",
+          "checkpoint_url": "https://github.com/Wanli06/HOU_MEIQI_7506_2/tree/main/code/checkpoints/final_v5",
+          "artifact_issue": 313
+        },
+        {
+          "submission": 314,
+          "author": "Wanli06",
+          "score": 83.2,
+          "code_url": "https://github.com/Wanli06/HOU_MEIQI_7506_2",
+          "checkpoint_url": "https://github.com/Wanli06/HOU_MEIQI_7506_2/tree/main/code/checkpoints/final_v5",
+          "artifact_issue": 314
+        },
+        {
+          "submission": 315,
+          "author": "Wanli06",
+          "score": 83.2,
+          "code_url": "https://github.com/Wanli06/HOU_MEIQI_7506_2",
+          "checkpoint_url": "https://github.com/Wanli06/HOU_MEIQI_7506_2/tree/main/code/checkpoints/final_v5",
+          "artifact_issue": 315
+        },
+        {
+          "submission": 316,
+          "author": "cygygyg",
+          "score": 84.3683,
+          "code_url": "https://github.com/cygygyg/DASE7506-MP2-3036808630",
+          "checkpoint_url": "https://github.com/cygygyg/DASE7506-MP2-3036808630/tree/main/code/runs/final_bundle",
+          "artifact_issue": 316
+        },
+        {
+          "submission": 317,
+          "author": "XINZHEWANG-HKU",
+          "score": 82.8694,
+          "code_url": "https://github.com/XINZHEWANG-HKU/7140-mp2",
+          "checkpoint_url": "https://github.com/XINZHEWANG-HKU/7140-mp2/blob/main/runs/best/model.npz",
+          "artifact_issue": 317
+        },
+        {
+          "submission": 318,
+          "author": "jeffrey032420-wq",
+          "score": 84.58244111349036,
+          "code_url": "https://github.com/jeffrey032420-wq/dase7506-mp2-3036798641/tree/ff0c4fc4c382ac45f39013393bd42c8238eb4552",
+          "checkpoint_url": "https://github.com/jeffrey032420-wq/dase7506-mp2-3036798641/tree/ff0c4fc4c382ac45f39013393bd42c8238eb4552/code/checkpoint",
+          "artifact_issue": 318
+        },
+        {
+          "submission": 319,
+          "author": "kikihejiay-hub",
+          "score": 81.5846,
+          "code_url": "https://github.com/kikihejiay-hub/DASE7506_MP2",
+          "checkpoint_url": "https://github.com/kikihejiay-hub/DASE7506_MP2",
+          "artifact_issue": 319
+        },
+        {
+          "submission": 320,
+          "author": "geoayzheng",
+          "score": 83.2976,
+          "code_url": null,
+          "checkpoint_url": null,
+          "artifact_issue": null
+        },
+        {
+          "submission": 322,
+          "author": "HBrEwba",
+          "score": 79.4433,
+          "code_url": "https://github.com/HBrEwba/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/HBrEwba/DASE7506-MP2/tree/main/code/runs/model_bundle",
+          "artifact_issue": 322
+        },
+        {
+          "submission": 323,
+          "author": "zz0119",
+          "score": 83.5118,
+          "code_url": "https://github.com/zz0119/DASE7506-MP2/tree/3ef6f78c3b8f93a5066310abf6671f4d814ed185",
+          "checkpoint_url": "https://github.com/zz0119/DASE7506-MP2/raw/3ef6f78c3b8f93a5066310abf6671f4d814ed185/model_bundle.zip",
+          "artifact_issue": 323
+        },
+        {
+          "submission": 324,
+          "author": "Yuc-hub",
+          "score": 84.36830835117773,
+          "code_url": "https://github.com/Yuc-hub/Reasoning-Verifier.git",
+          "checkpoint_url": "https://github.com/Yuc-hub/Reasoning-Verifier/blob/main/code/checkpoints/role_aware_process/model.npz",
+          "artifact_issue": 324
+        },
+        {
+          "submission": 325,
+          "author": "CARDINAL-02",
+          "score": 84.36830835117773,
+          "code_url": "https://github.com/CARDINAL-02/DASE7506-MP2-Submission/tree/541061922cb70f97d1b708d19ac955f4ca3ed305",
+          "checkpoint_url": "https://raw.githubusercontent.com/CARDINAL-02/DASE7506-MP2-Submission/541061922cb70f97d1b708d19ac955f4ca3ed305/artifacts/MP2-checkpoint-v5.zip",
+          "artifact_issue": 325
+        },
+        {
+          "submission": 326,
+          "author": "zyy3267858711-ship-it",
+          "score": 81.79871520342613,
+          "code_url": "https://github.com/zyy3267858711-ship-it/DASE7506-MP2-3036779970/tree/main",
+          "checkpoint_url": "https://github.com/zyy3267858711-ship-it/DASE7506-MP2-3036779970/tree/main/DASE7506-MP2-main/code/runs/v3_model",
+          "artifact_issue": 326
+        },
+        {
+          "submission": 327,
+          "author": "Anchmy",
+          "score": 84.36830835117773,
+          "code_url": "https://github.com/Anchmy/dase7506-mp2-group-relative-verifier",
+          "checkpoint_url": "https://github.com/Anchmy/dase7506-mp2-group-relative-verifier/tree/main/code/model_bundle",
+          "artifact_issue": 327
+        },
+        {
+          "submission": 328,
+          "author": "mo2130",
+          "score": 83.2976,
+          "code_url": "https://github.com/mo2130/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/mo2130/DASE7506-MP2/blob/main/code/runs/model_bundle/probe.npz",
+          "artifact_issue": 328
+        },
+        {
+          "submission": 329,
+          "author": "JINWEI-1031",
+          "score": 83.2976,
+          "code_url": "https://github.com/JINWEI-1031/mp2-dase7506",
+          "checkpoint_url": "https://github.com/JINWEI-1031/mp2-dase7506/releases/tag/submitted",
+          "artifact_issue": 329
+        },
+        {
+          "submission": 330,
+          "author": "laier029",
+          "score": 82.22698072805139,
+          "code_url": "https://github.com/laier029/DASE7506-MP2/tree/v1.0-model-z",
+          "checkpoint_url": "https://github.com/laier029/DASE7506-MP2/raw/v1.0-model-z/release/model-z-checkpoint-v1.0.zip",
+          "artifact_issue": 330
+        },
+        {
+          "submission": 331,
+          "author": "wasd-3215",
+          "score": 82.013,
+          "code_url": "https://github.com/wasd-3215/MP2",
+          "checkpoint_url": "https://github.com/wasd-3215/MP2/tree/master/arith_relation_audit_20261018/portable/pipelines/V",
+          "artifact_issue": 331
+        },
+        {
+          "submission": 332,
+          "author": "wasd-3215",
+          "score": 82.013,
+          "code_url": "https://github.com/wasd-3215/MP2",
+          "checkpoint_url": "https://github.com/wasd-3215/MP2/tree/master/arith_relation_audit_20261018/portable/pipelines/V",
+          "artifact_issue": 332
+        },
+        {
+          "submission": 333,
+          "author": "Jazmynthebest",
+          "score": 84.79657387580299,
+          "code_url": "https://github.com/Jazmynthebest/DASE7506-MP2-3036708725/tree/24165f59081a90f323a7579465f5d19118471a3a",
+          "checkpoint_url": "https://github.com/Jazmynthebest/DASE7506-MP2-3036708725/tree/24165f59081a90f323a7579465f5d19118471a3a/code/checkpoints/condition_blend",
+          "artifact_issue": 333
+        },
+        {
+          "submission": 334,
+          "author": "felix-xingcheng",
+          "score": 82.8694,
+          "code_url": "https://github.com/felix-xingcheng/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/felix-xingcheng/DASE7506-MP2/tree/main/code/checkpoints/selector_v2",
+          "artifact_issue": 334
+        },
+        {
+          "submission": 335,
+          "author": "felix-xingcheng",
+          "score": 82.8694,
+          "code_url": "https://github.com/felix-xingcheng/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/felix-xingcheng/DASE7506-MP2/tree/main/code/checkpoints/selector_v2",
+          "artifact_issue": 335
+        },
+        {
+          "submission": 336,
+          "author": "naming-is-painful",
+          "score": 82.8694,
+          "code_url": "https://github.com/naming-is-painful/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/naming-is-painful/DASE7506-MP2/tree/main/runs/model_bundle",
+          "artifact_issue": 336
+        },
+        {
+          "submission": 337,
+          "author": "lu-code-ac",
+          "score": 79.65738758029978,
+          "code_url": "https://github.com/lu-code-ac/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/lu-code-ac/DASE7506-MP2/tree/main/code/runs/model_bundle",
+          "artifact_issue": 337
+        },
+        {
+          "submission": 338,
+          "author": "lelel-viola",
+          "score": 83.08351177730192,
+          "code_url": "https://github.com/lelel-viola/7506_XI_YOURAN_miniproject2/tree/500ab98afc7f06a191ecfc4cb5e8f0b34f83755d",
+          "checkpoint_url": "https://github.com/lelel-viola/7506_XI_YOURAN_miniproject2/tree/500ab98afc7f06a191ecfc4cb5e8f0b34f83755d/code/runs/final",
+          "artifact_issue": 338
+        },
+        {
+          "submission": 339,
+          "author": "geoayzheng",
+          "score": 83.2976,
+          "code_url": "https://github.com/geoayzheng/MP2_Selecting-Reliable-LLM-Reasoning",
+          "checkpoint_url": "https://github.com/geoayzheng/MP2_Selecting-Reliable-LLM-Reasoning/tree/main/code/checkpoint",
+          "artifact_issue": 339
+        },
+        {
+          "submission": 340,
+          "author": "yumu16643-fable",
+          "score": 81.37044967880085,
+          "code_url": "https://github.com/yumu16643-fable/dase7506-mp2-reliable-reasoning/tree/2d21226250850fa383316be5942bc88864574914",
+          "checkpoint_url": "https://github.com/yumu16643-fable/dase7506-mp2-reliable-reasoning/tree/2d21226250850fa383316be5942bc88864574914/code/runs/model_bundle",
+          "artifact_issue": 340
+        },
+        {
+          "submission": 341,
+          "author": "LrisMa",
+          "score": 83.7259,
+          "code_url": "https://github.com/LrisMa/DASE7506-MP2-submission",
+          "checkpoint_url": "https://raw.githubusercontent.com/LrisMa/DASE7506-MP2-submission/9d6179a2906fe392a7cc91f4e4b40c055d0b77fb/code/runs/peer-test/peer-bottom.npz",
+          "artifact_issue": 341
+        },
+        {
+          "submission": 342,
+          "author": "LrisMa",
+          "score": 83.7259,
+          "code_url": "https://github.com/LrisMa/DASE7506-MP2-submission",
+          "checkpoint_url": "https://raw.githubusercontent.com/LrisMa/DASE7506-MP2-submission/9d6179a2906fe392a7cc91f4e4b40c055d0b77fb/code/runs/peer-test/peer-bottom.npz",
+          "artifact_issue": 342
+        },
+        {
+          "submission": 343,
+          "author": "Chhuannn",
+          "score": 78.8009,
+          "code_url": "https://github.com/Chhuannn/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/Chhuannn/DASE7506-MP2/blob/main/DASE7506-MP2-Final/code/runs/embedding_model.npz",
+          "artifact_issue": 343
+        },
+        {
+          "submission": 344,
+          "author": "LRhS0006",
+          "score": 82.44111349036403,
+          "code_url": "https://github.com/LRhS0006/DASE7506_MP2/tree/v1.0",
+          "checkpoint_url": "https://github.com/LRhS0006/DASE7506_MP2/releases/download/v1.0/checkpoint.zip",
+          "artifact_issue": 344
+        },
+        {
+          "submission": 345,
+          "author": "HaoningMa",
+          "score": 82.8694,
+          "code_url": "https://github.com/HaoningMa/Mini-Project-2",
+          "checkpoint_url": "https://github.com/HaoningMa/Mini-Project-2/releases/tag/mp2-v3",
+          "artifact_issue": 345
+        },
+        {
+          "submission": 346,
+          "author": "Aurora-Mi",
+          "score": 84.5824,
+          "code_url": "https://github.com/Aurora-Mi/7506_MP2/tree/main/code",
+          "checkpoint_url": "https://github.com/Aurora-Mi/7506_MP2/blob/main/code/runs/sota_84/checkpoint.pt",
+          "artifact_issue": 346
+        },
+        {
+          "submission": 347,
+          "author": "Selectoup",
+          "score": 84.1542,
+          "code_url": "https://github.com/Selectoup/dase7506-mp2",
+          "checkpoint_url": "https://raw.githubusercontent.com/Selectoup/dase7506-mp2/main/code/model.npz",
+          "artifact_issue": 347
+        },
+        {
+          "submission": 348,
+          "author": "miceputil",
+          "score": 83.2976,
+          "code_url": "https://github.com/miceputil/DASE7506-MP2-3036707044",
+          "checkpoint_url": "https://github.com/miceputil/DASE7506-MP2-3036707044/tree/master/code/runs/model_bundle",
+          "artifact_issue": 348
+        },
+        {
+          "submission": 349,
+          "author": "AlexJiangQ",
+          "score": 82.8694,
+          "code_url": "https://github.com/AlexJiangQ/DASE7506-MP2-3035952305",
+          "checkpoint_url": "https://github.com/AlexJiangQ/DASE7506-MP2-3035952305/tree/main/submission_assets/checkpoint",
+          "artifact_issue": 349
+        },
+        {
+          "submission": 350,
+          "author": "Violet8211004",
+          "score": 80.513918,
+          "code_url": "https://github.com/Violet8211004/7506-MP2.git",
+          "checkpoint_url": "https://github.com/Violet8211004/7506-MP2/tree/365190e74582b112a128ff7e2198b4e022ac5d1b/runs/model_bundle_blend_mlp",
+          "artifact_issue": 350
+        },
+        {
+          "submission": 351,
+          "author": "Violet8211004",
+          "score": 80.513918,
+          "code_url": "https://github.com/Violet8211004/7506-MP2.git",
+          "checkpoint_url": "https://github.com/Violet8211004/7506-MP2/tree/365190e74582b112a128ff7e2198b4e022ac5d1b/runs/model_bundle_blend_mlp",
+          "artifact_issue": 351
+        },
+        {
+          "submission": 352,
+          "author": "Wenqi-Ge",
+          "score": 86.0813704496788,
+          "code_url": "https://github.com/Wenqi-Ge/DASE7506-MP2/tree/54abbb793ddb6bd2142aa8b5cf56c5a0b0681b88",
+          "checkpoint_url": "https://github.com/Wenqi-Ge/DASE7506-MP2/tree/54abbb793ddb6bd2142aa8b5cf56c5a0b0681b88/code/artifacts/v73/checkpoint",
+          "artifact_issue": 352
+        },
+        {
+          "submission": 353,
+          "author": "Henrystation",
+          "score": 84.58244111349036,
+          "code_url": "https://github.com/Henrystation/dase7506-mp2/tree/v8-final-20261031",
+          "checkpoint_url": "https://github.com/Henrystation/dase7506-mp2/releases/download/v8-final-20261031/MP2_V8_checkpoint_20261031.zip",
+          "artifact_issue": 353
+        },
+        {
+          "submission": 354,
+          "author": "Lmy0415",
+          "score": 83.5117773019272,
+          "code_url": "https://github.com/Lmy0415/DASE7506-MP2-3035947946",
+          "checkpoint_url": "https://github.com/Lmy0415/DASE7506-MP2-3035947946/tree/5b1b3801dd7dc12d65ed8044e64d4896a58994d9/solution_v11/runs/final_bundle",
+          "artifact_issue": 354
+        },
+        {
+          "submission": 355,
+          "author": "huangxuanqiZora",
+          "score": 84.154175588865,
+          "code_url": "https://github.com/huangxuanqiZora/dase7506-mp2",
+          "checkpoint_url": "https://github.com/huangxuanqiZora/dase7506-mp2/tree/main/code/runs/model_bundle",
+          "artifact_issue": 355
+        },
+        {
+          "submission": 356,
+          "author": "yutong021",
+          "score": 86.5096,
+          "code_url": "https://github.com/yutong021/dase7506-mp2/tree/5db414f8ba504c5b855735da1272808115b06b42",
+          "checkpoint_url": "https://github.com/yutong021/dase7506-mp2/tree/5db414f8ba504c5b855735da1272808115b06b42/model_bundle",
+          "artifact_issue": 356
+        },
+        {
+          "submission": 357,
+          "author": "yumu16643-fable",
+          "score": 82.44111349036403,
+          "code_url": "https://github.com/yumu16643-fable/dase7506-mp2-reliable-reasoning/tree/dfd16bc5c8fa58aedd88613c514181a1c6e97822",
+          "checkpoint_url": "https://github.com/yumu16643-fable/dase7506-mp2-reliable-reasoning/tree/dfd16bc5c8fa58aedd88613c514181a1c6e97822/code/runs/model_bundle_arithmetic",
+          "artifact_issue": 357
+        },
+        {
+          "submission": 358,
+          "author": "random5121",
+          "score": 81.7987,
+          "code_url": "https://github.com/random5121/mini2/tree/main/code",
+          "checkpoint_url": "https://github.com/random5121/mini2/tree/main/code/runs/save",
+          "artifact_issue": 358
+        },
+        {
+          "submission": 359,
+          "author": "HerbertLee1026",
+          "score": 84.79657387580299,
+          "code_url": "https://github.com/HerbertLee1026/DASE7506-MP2-final/tree/651a51f455a43e861ae947c469f3aace0f0a215e",
+          "checkpoint_url": "https://github.com/HerbertLee1026/DASE7506-MP2-final/tree/651a51f455a43e861ae947c469f3aace0f0a215e/code/runs/local-arithmetic-v11/selected/",
+          "artifact_issue": 359
+        },
+        {
+          "submission": 360,
+          "author": "Gu123456-gu",
+          "score": 82.8693,
+          "code_url": "https://github.com/Gu123456-gu/DASE7506-MP2-solution",
+          "checkpoint_url": "https://github.com/Gu123456-gu/DASE7506-MP2-solution/blob/main/hybrid_valid_model.npz",
+          "artifact_issue": 360
+        },
+        {
+          "submission": 361,
+          "author": "Fanmili-5",
+          "score": 85.4389721627409,
+          "code_url": "https://github.com/Fanmili-5/dase7506-mp2/tree/7eee8f269cb37949d9e1f098f3c4c38c7848a75f",
+          "checkpoint_url": "https://github.com/Fanmili-5/dase7506-mp2/releases/download/mp2-85.4390/MP2_checkpoint_85_4390_20261031.zip",
+          "artifact_issue": 361
+        },
+        {
+          "submission": 362,
+          "author": "abccase",
+          "score": 84.58244111349036,
+          "code_url": "https://github.com/abccase/DASE7506_MP2",
+          "checkpoint_url": "https://github.com/abccase/DASE7506_MP2/tree/main/release/verifier-v35/model_bundle",
+          "artifact_issue": 362
+        },
+        {
+          "submission": 363,
+          "author": "w0wrange",
+          "score": 84.3683,
+          "code_url": "https://github.com/w0wrange/DASE7506_MP2",
+          "checkpoint_url": "https://github.com/w0wrange/DASE7506_MP2/tree/80d5ea858a85ceaf5fc416a93aa1601c3b6251dd/checkpoint",
+          "artifact_issue": 363
+        },
+        {
+          "submission": 364,
+          "author": "ottomcwong0-debug",
+          "score": 80.0856,
+          "code_url": "https://github.com/ottomcwong0-debug/Assignment-2-DASE7506.git",
+          "checkpoint_url": null,
+          "artifact_issue": 364
+        },
+        {
+          "submission": 365,
+          "author": "Tianyi-325",
+          "score": 85.86723768736617,
+          "code_url": "https://github.com/Tianyi-325/DASE7506-MP2-main",
+          "checkpoint_url": "https://github.com/Tianyi-325/DASE7506-MP2-main/tree/main/checkpoints/grec",
+          "artifact_issue": 365
+        },
+        {
+          "submission": 366,
+          "author": "Tianyi-325",
+          "score": 85.86723768736617,
+          "code_url": "https://github.com/Tianyi-325/DASE7506-MP2-main",
+          "checkpoint_url": "https://github.com/Tianyi-325/DASE7506-MP2-main/tree/main/checkpoints/grec",
+          "artifact_issue": 366
+        },
+        {
+          "submission": 367,
+          "author": "astr-yuan",
+          "score": 84.7966,
+          "code_url": "https://github.com/astr-yuan/DASE7506-MP2-Submission/tree/v2-final",
+          "checkpoint_url": "https://github.com/astr-yuan/DASE7506-MP2-Submission/releases/download/v2-final/MP2_v2_checkpoint.zip",
+          "artifact_issue": 367
+        },
+        {
+          "submission": 368,
+          "author": "Bosco-lab",
+          "score": 84.582441,
+          "code_url": "https://github.com/Bosco-lab/DASE7506_MP2",
+          "checkpoint_url": "https://github.com/Bosco-lab/DASE7506_MP2/tree/fc37ef364df4e693863db1b570d533b32dca2230/code/artifacts/model_bundle",
+          "artifact_issue": 368
+        },
+        {
+          "submission": 370,
+          "author": "qutcal-alt",
+          "score": 84.1542,
+          "code_url": "https://github.com/qutcal-alt/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/qutcal-alt/DASE7506-MP2/tree/main/code/runs/model_bundle",
+          "artifact_issue": 370
+        },
+        {
+          "submission": 371,
+          "author": "qutcal-alt",
+          "score": 84.1542,
+          "code_url": "https://github.com/qutcal-alt/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/qutcal-alt/DASE7506-MP2/tree/main/code/runs/model_bundle",
+          "artifact_issue": 371
+        },
+        {
+          "submission": 372,
+          "author": "Hongjiang-LIU",
+          "score": 85.01070663811564,
+          "code_url": "https://github.com/Hongjiang-LIU/DASE7506-MP2-LIU-Hongjiang",
+          "checkpoint_url": "https://github.com/Hongjiang-LIU/DASE7506-MP2-LIU-Hongjiang/releases/download/v82-frozen/MP2-v82-checkpoint.zip",
+          "artifact_issue": 372
+        },
+        {
+          "submission": 373,
+          "author": "Bosco-lab",
+          "score": 84.582441,
+          "code_url": "https://github.com/Bosco-lab/DASE7506_MP2",
+          "checkpoint_url": "https://github.com/Bosco-lab/DASE7506_MP2/tree/fc37ef364df4e693863db1b570d533b32dca2230/code/artifacts/model_bundle",
+          "artifact_issue": 373
+        },
+        {
+          "submission": 374,
+          "author": "duxinyu0319",
+          "score": 81.5846,
+          "code_url": "https://github.com/duxinyu0319/DASE7506-MP2/tree/v1.0",
+          "checkpoint_url": "https://github.com/duxinyu0319/DASE7506-MP2/releases/download/v1.0/checkpoint.zip",
+          "artifact_issue": 374
+        },
+        {
+          "submission": 375,
+          "author": "DavidZeng1111",
+          "score": 83.0835,
+          "code_url": "https://github.com/DavidZeng1111/HW2-DASE7506/releases/tag/v1",
+          "checkpoint_url": "https://github.com/DavidZeng1111/HW2-DASE7506/releases/download/v1/model.npz",
+          "artifact_issue": 375
+        },
+        {
+          "submission": 376,
+          "author": "eaiee4525",
+          "score": 82.86937901498929,
+          "code_url": "https://github.com/eaiee4525/dase7506-mp2",
+          "checkpoint_url": "https://github.com/eaiee4525/dase7506-mp2/releases/download/v1.0.0/phase14_checkpoint_v1.zip",
+          "artifact_issue": 376
+        },
+        {
+          "submission": 377,
+          "author": "XFY666",
+          "score": 83.94004282655246,
+          "code_url": "https://github.com/XFY666/dase7506-mp2/tree/4c2a7fc2a220747805f34f709cb2e241961f2bcc",
+          "checkpoint_url": "https://github.com/XFY666/dase7506-mp2/tree/4c2a7fc2a220747805f34f709cb2e241961f2bcc/code/runs/optimized_bundle",
+          "artifact_issue": 377
+        },
+        {
+          "submission": 378,
+          "author": "ZOEPH123456789",
+          "score": 81.5845824411135,
+          "code_url": "https://github.com/ZOEPH123456789/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/ZOEPH123456789/DASE7506-MP2/tree/main/checkpoints/C",
+          "artifact_issue": 378
+        },
+        {
+          "submission": 379,
+          "author": "Deadline-s",
+          "score": 83.94,
+          "code_url": "https://github.com/Deadline-s/DASE7506_project2/tree/2b7f3b1c101ac9636f81a7e108fde4f82ea6b001",
+          "checkpoint_url": "https://raw.githubusercontent.com/Deadline-s/DASE7506_project2/2b7f3b1c101ac9636f81a7e108fde4f82ea6b001/code/artifacts/model.pkl",
+          "artifact_issue": 379
+        },
+        {
+          "submission": 380,
+          "author": "huchangyang2003",
+          "score": 85.0107,
+          "code_url": "https://github.com/huchangyang2003/DASE7506-MP2-Selecting-Reliable-LLM-Reasoning/tree/frozen-v3",
+          "checkpoint_url": "https://github.com/huchangyang2003/DASE7506-MP2-Selecting-Reliable-LLM-Reasoning/tree/frozen-v3/checkpoint",
+          "artifact_issue": 380
+        },
+        {
+          "submission": 381,
+          "author": "zss019",
+          "score": 82.8694,
+          "code_url": "https://github.com/zss019/DASE7506-Project-2/tree/main/code",
+          "checkpoint_url": "https://github.com/zss019/DASE7506-Project-2/tree/main/checkpoint",
+          "artifact_issue": 381,
+          "instructor_link_update": true,
+          "instructor_note": "Updated code/checkpoint URLs supplied by the student and accepted by the instructor on 1 November 2026; original score retained."
+        },
+        {
+          "submission": 382,
+          "author": "xudongwu-0",
+          "student_id": "3036780242",
+          "score": 83.0835,
+          "code_url": "https://github.com/ZYM666-web/DASE7506-MP2",
+          "checkpoint_url": "https://github.com/ZYM666-web/DASE7506-MP2/tree/main/final",
+          "artifact_issue": 382,
+          "instructor_accepted": true,
+          "instructor_recorded_score": true,
+          "original_student_account": "ZYM666-web",
+          "instructor_note": "Self-reported score and links recorded from the student email at the explicit request of the instructor on 1 November 2026; numerical reproduction pending."
+        }
+      ]
     }
   },
   "link_checks": {
