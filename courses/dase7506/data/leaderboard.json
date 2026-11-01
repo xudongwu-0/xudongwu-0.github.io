@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-10-31T18:22:33.752Z",
+  "generated_at": "2026-11-01T04:42:15.801Z",
   "submissions": [
     {
       "number": 1,
@@ -8415,6 +8415,30 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 381,
+      "artifact_status": "received",
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 382,
+      "author": "xudongwu-0",
+      "student_id": "3036780242",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/382",
+      "project": "mp2",
+      "score": 83.0835,
+      "code_url": null,
+      "checkpoint_url": null,
+      "status": "late",
+      "created_at": "2026-11-01T04:42:02Z",
+      "signature": "[\"mp2\",83.0835,\"https://github.com/ZYM666-web/DASE7506-MP2\",\"https://github.com/ZYM666-web/DASE7506-MP2/tree/main/final\",\"3036780242\",null]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 382,
       "artifact_status": "received",
       "artifact_access": {
         "code": null,
