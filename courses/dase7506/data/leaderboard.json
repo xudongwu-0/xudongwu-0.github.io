@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-11-02T08:03:37.113Z",
+  "generated_at": "2026-11-02T09:01:45.113Z",
   "submissions": [
     {
       "number": 1,
@@ -7820,8 +7820,8 @@
         "code": null,
         "checkpoint": null
       },
-      "review_request_total": 0,
-      "review_request_count": 0,
+      "review_request_total": 1,
+      "review_request_count": 1,
       "review_flag": false
     },
     {
@@ -8560,6 +8560,17 @@
       "evidence_url": "https://github.com/liuqichang0305/dase7506-mp2-solution/blob/93ea59caa27c2160e1cad50c18ed9cd6f69ed603/peer_review/submission_240/REPRODUCTION_REPORT.md",
       "created_at": "2026-11-02T08:03:20Z",
       "status": "pending"
+    },
+    {
+      "number": 384,
+      "author": "HBrEwba",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/384",
+      "submission": 356,
+      "project": "mp2",
+      "reproduced_score": 86.50963597430408,
+      "evidence_url": null,
+      "created_at": "2026-11-02T09:01:30Z",
+      "status": "pending"
     }
   ],
   "adjustments": [],
@@ -8712,6 +8723,18 @@
       "evidence_url": "https://github.com/liuqichang0305/dase7506-mp2-solution/blob/93ea59caa27c2160e1cad50c18ed9cd6f69ed603/peer_review/submission_240/REPRODUCTION_REPORT.md",
       "reproduced_score": 84.36830835117773,
       "created_at": "2026-11-02T08:03:20Z",
+      "status": "pending"
+    },
+    {
+      "number": 384,
+      "submission": 356,
+      "project": "mp2",
+      "author": "HBrEwba",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/384",
+      "reason": "Reproduced at commit 5db414f8ba504c5b855735da1272808115b06b42 without retraining. Installed pinned requirements in Python 3.13.5 venv; ran code/evaluate.py --split test with OMP/OPENBLAS/MKL threads=4. Official scorer JSON accuracy=86.50963597430408 (404/467), matches claimed 86.5096. Score file: reproduced/test-score.json. No install failures; used packaged model_bundle and bundled data/scorer.",
+      "evidence_url": null,
+      "reproduced_score": 86.50963597430408,
+      "created_at": "2026-11-02T09:01:30Z",
       "status": "pending"
     }
   ],
