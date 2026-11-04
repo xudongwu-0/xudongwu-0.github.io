@@ -2630,6 +2630,18 @@
           "instructor_recorded_score": true,
           "original_student_account": "ZYM666-web",
           "instructor_note": "Self-reported score and links recorded from the student email at the explicit request of the instructor on 1 November 2026; numerical reproduction pending."
+        },
+        {
+          "submission": 385,
+          "author": "xudongwu-0",
+          "student_id": "3036897306",
+          "score": 83.0835,
+          "code_url": "https://github.com/YUShinH/MP2-DASE7506",
+          "checkpoint_url": null,
+          "instructor_accepted": true,
+          "late_submission": true,
+          "original_student_account": "YUShinH",
+          "instructor_note": "Late submission recorded on 4 November 2026 at the explicit request of the instructor. Self-reported accuracy; code link provided, checkpoint link not provided. Any grading penalty is decided separately."
         }
       ]
     }

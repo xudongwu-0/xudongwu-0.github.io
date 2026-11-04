@@ -54,6 +54,11 @@ function render() {
     materials.append(artifactLinks, link(`#${row.number}`,row.url));
 
     const status = element('td'); status.append(element('span', STATUS[row.status] || row.status, `badge ${row.status}`));
+    if(row.late_submission) {
+      const late=element('span','Late submission','badge late');
+      late.title='Recorded after the score deadline. Any grading penalty is determined separately by the instructor.';
+      status.append(element('br'),late);
+    }
     const reproduce = element('td'); const button = element('button', 'Peer Review Report', 'text-button');
     button.type = 'button'; button.disabled = submissionPhase(row.project,snapshot.publication)!=='review'; button.addEventListener('click', () => openChallenge(row)); reproduce.append(button);
     tr.append(rankCell, author, score, materials, status, reproduce); $('board-body').append(tr);

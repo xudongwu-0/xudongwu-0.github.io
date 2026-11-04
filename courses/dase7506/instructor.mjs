@@ -21,7 +21,7 @@ function render(){
   for(const value of [validStudentID(row.student_id)?row.student_id:'ID pending',row.author,row.project.toUpperCase(),`${Number(row.score).toFixed(5)} ${PROJECTS[row.project].unit}`,row.review_request_total,row.review_request_count])tr.append(el('td',value));
   const flag=el('td',row.review_flag?`FLAG — ${row.review_flag_reasons.join('; ')}`:'—','instructor-flag');
   if(row.review_accounts.length>1)flag.append(el('small',`Accounts: ${row.review_accounts.join(', ')}`));
-  tr.append(flag,el('td',row.status));
+  tr.append(flag,el('td',row.status+(row.late_submission?' · Late submission':'')));
   $('instructor-board').append(tr);
  }
  if(!visible.length){const tr=el('tr'),td=el('td','No matching entries.','empty');td.colSpan=9;tr.append(td);$('instructor-board').append(tr);}

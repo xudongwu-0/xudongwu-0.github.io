@@ -8,6 +8,8 @@ Both student pages are English-only, with no links to the personal homepage. MP2
 
 MP2 links were released on **1 November 2026**. Peer review closes at **8 November 2026, 24:00 Beijing time**, stored as `2026-11-09T00:00:00+08:00`. The instructor-controlled `publication.projects.mp2.review_ends_at` is respected by the page, report validation and report statistics; older releases without an explicit end retain the seven-day default. During review, the score/link form is hidden and the leaderboard occupies the full width. Missing artifact links are shown explicitly. Numerical scores remain self-reported until reproduced.
 
+For a late result explicitly accepted by the instructor, add a matching publication entry with `instructor_accepted: true` and `late_submission: true`. The student page and instructor view display **Late submission**, while retaining the reported benchmark score. This marker does not apply a grading deduction automatically; the instructor decides any penalty separately. Missing checkpoint links remain marked as not provided.
+
 ## Storage and identity
 
 The form creates a prefilled GitHub Issue. The student must log in to GitHub and

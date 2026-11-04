@@ -290,7 +290,10 @@ export function buildSnapshot(issues, previous={}, now=new Date().toISOString(),
     const release=publication.projects?.[row.project];
     const accepted=release?.entries?.find(e=>e.instructor_accepted===true && e.submission===row.number
       && e.student_id===row.student_id && e.author.toLowerCase()===row.author.toLowerCase() && e.score===row.score);
-    if(accepted) row.instructor_entered=true;
+    if(accepted) {
+      row.instructor_entered=true;
+      if(accepted.late_submission===true) row.late_submission=true;
+    }
     if(publication.superseded_submissions?.[row.project]?.includes(row.number)
       && ['self-reported','verified'].includes(row.status)) row.status='superseded';
     if(Date.parse(row.created_at)>=deadline && !accepted) row.status='late';
