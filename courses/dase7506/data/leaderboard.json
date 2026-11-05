@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-11-04T07:14:16.851Z",
+  "generated_at": "2026-11-05T11:47:47.812Z",
   "submissions": [
     {
       "number": 1,
@@ -8465,7 +8465,7 @@
       "review_labels": [],
       "instructor_entered": true,
       "late_submission": true,
-      "artifact_issue": null,
+      "artifact_issue": 385,
       "artifact_status": "partial",
       "artifact_access": {
         "code": null,
