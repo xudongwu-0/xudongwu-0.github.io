@@ -47,6 +47,7 @@ test('score-file validation requires complete public test identity and consisten
   assert.ok(validateMP3Score(score()));
   for(const change of [{split:'validation'},{n:120},{correct:121},{accuracy:99},
     {manifest_sha256:'f'.repeat(64)},{references_sha256:'f'.repeat(64)},{scorer_sha256:'f'.repeat(64)},
+    {executor_sha256:'f'.repeat(64)},
     {bank_sha256:'f'.repeat(64)},{predictions_sha256:'bad'},{per_question:score().per_question.slice(1)}]) {
     assert.ok(!validateMP3Score(score(change)));
   }

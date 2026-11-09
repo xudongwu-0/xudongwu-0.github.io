@@ -24,6 +24,10 @@ MP3 links are collected privately for reproduction unless a separate review rele
 The existing `decryptLinks` export in `release-links.mjs` supports private inspection
 of an MP3 envelope, including a null checkpoint URL for the no-adapter routes.
 Do not use the batch publication command for MP3: no deadline or link-release process is configured.
+Reproduce MP3 using the exact public starter and its predictor/scorer commands,
+not the historical private experiment SDK or legacy grading runners. Score
+metadata pins both the scorer and executor hashes; the public executor reports
+parser recursion failures as bounded invalid-SQL feedback.
 Legacy test issues already containing plaintext links remain public records.
 Student IDs are now written in plaintext issue payloads, with consent on the form.
 They are not retained in browser localStorage. GitHub usernames are not displayed

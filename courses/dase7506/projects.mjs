@@ -6,7 +6,8 @@ export const MP3_EVALUATION = Object.freeze({
   manifest_sha256:'bf7a517249ebe31b9cad8cbf5d6598fde98316d89f9aa1172cae3ad83289a6bc',
   bank_sha256:'598b1a072a47cdcf7308dc5646ae2bffd356390ab8df533510b69f2c884d712c',
   references_sha256:'8be5f2746ee324d6b4b880dd84a2f8de56fa540af08e93842c0476adec581506',
-  scorer_sha256:'d8d84c98577238669cf30b45f1f82051dcb774b76ddf1b41228e3a02d7532cb0',
+  scorer_sha256:'87870af26173fbe6d8994e4de179fb272ef1fadf7dcaafc2e7b4c814c61ec95b',
+  executor_sha256:'4ecc3839728d68bd83f0d2a52cdd8392fd76dbaec3e54a19422118dee587b471',
 });
 export const MP3_LORA_BASE = Object.freeze({
   repository:'Qwen/Qwen3-0.6B',
