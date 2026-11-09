@@ -10,12 +10,13 @@ const issue = (number,data=claim(),options={}) => ({number,user:{login:'student-
 const challenge = (submission,overrides={}) => ({schema:'dase7506/challenge-v1',protocol:PROTOCOL,
   project:'mp2',submission,reproduced_score:60,evidence_url:'https://example.org/reproduction',...overrides});
 
-test('MP1 retains historical BPB rules, MP2 accepts accuracy, and MP3 stays closed',()=>{
+test('MP1 retains BPB rules, MP2 accepts accuracy, and MP3 requires evaluation metadata',()=>{
   assert.equal(PROJECTS.mp1.unit,'BPB');
   assert.ok(validateSubmission(claim({project:'mp1',score:2.10184})));
   assert.ok(!validateSubmission(claim({project:'mp1',score:-1})));
   assert.ok(validateSubmission(claim({project:'mp2'})));
   assert.ok(!validateSubmission(claim({project:'mp3'})));
+  assert.equal(PROJECTS.mp3.open,true);
   const snapshot=buildSnapshot([
     issue(1,claim({project:'mp1',score:2.10184})),
     issue(2,claim({project:'mp1',score:1.59516}),{user:{login:'student-b',type:'User'}}),

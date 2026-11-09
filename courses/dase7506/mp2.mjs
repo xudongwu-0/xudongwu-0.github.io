@@ -1,4 +1,4 @@
-import {REPO, PROTOCOL, KEY_ID, REPORT_EMAIL, PROJECTS, safeURL, validScore, validStudentID, makeIssueURL, peerReviewEmailURL, bestRows, submissionPhase} from './arena.mjs';
+import {REPO, PROTOCOL, REPORT_EMAIL, PROJECTS, safeURL, validScore, validStudentID, makeIssueURL, peerReviewEmailURL, bestRows, submissionPhase, encryptArtifactLinks} from './arena.mjs';
 
 const $ = id => document.getElementById(id);
 let snapshot = {submissions: [], challenges: [], adjustments: []};
@@ -144,26 +144,6 @@ function configureForm() {
   $('prepare-submit').textContent=scores?'Prepare score submission ↗':artifacts?'Prepare link submission ↗':'Submission period closed';
 }
 
-let publicKeyPromise;
-function loadPublicKey() {
-  if(!publicKeyPromise) publicKeyPromise=(async()=>{
-    if (!window.isSecureContext || !crypto.subtle) throw new Error('Open this page over HTTPS to encrypt your submission.');
-    const response=await fetch('../data/student-id-public.pem',{cache:'no-cache'});
-    if(!response.ok) throw new Error('The encryption key could not be loaded. Please try again.');
-    const pem=await response.text(), binary=atob(pem.replace(/-----[^-]+-----|\s/g,''));
-    return crypto.subtle.importKey('spki',Uint8Array.from(binary,c=>c.charCodeAt(0)),{name:'RSA-OAEP',hash:'SHA-256'},false,['encrypt']);
-  })().catch(error=>{publicKeyPromise=null;throw error;});
-  return publicKeyPromise;
-}
-const base64=bytes=>btoa(String.fromCharCode(...new Uint8Array(bytes)));
-async function encryptArtifactLinks(code,checkpoint,project,submission=null) {
-  const key=await crypto.subtle.generateKey({name:'AES-GCM',length:256},true,['encrypt']);
-  const iv=crypto.getRandomValues(new Uint8Array(12));
-  const text=JSON.stringify({schema:'dase7506/artifact-links-v1',project,submission,code_url:code,checkpoint_url:checkpoint});
-  const ciphertext=await crypto.subtle.encrypt({name:'AES-GCM',iv},key,new TextEncoder().encode(text));
-  const wrapped=await crypto.subtle.encrypt({name:'RSA-OAEP'},await loadPublicKey(),await crypto.subtle.exportKey('raw',key));
-  return {algorithm:'RSA-OAEP-256+AES-256-GCM',key_id:KEY_ID,wrapped_key:base64(wrapped),iv:base64(iv),ciphertext:base64(ciphertext)};
-}
 function prepared(target, url, kind) {
   const p = element('div', `${kind} ready. Confirm on GitHub to save.`, 'prepared');
   // Generated issue URLs contain the encrypted payload and exceed the artifact URL limit.

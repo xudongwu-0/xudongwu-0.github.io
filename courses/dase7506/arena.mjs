@@ -1,7 +1,7 @@
 // Shared validation for the browser and the trusted snapshot builder. No dependencies.
 export const REPO = 'xudongwu-0/xudongwu-0.github.io';
-import {PROTOCOL, PROJECTS} from './projects.mjs';
-export {PROTOCOL, PROJECTS};
+import {PROTOCOL, PROJECTS, MP3_EVALUATION, MP3_LORA_BASE} from './projects.mjs';
+export {PROTOCOL, PROJECTS, MP3_EVALUATION, MP3_LORA_BASE};
 export const KEY_ID = '7506-2026-v1';
 export const REPORT_EMAIL = 'wu.xudong@connect.hku.hk';
 export function validStudentID(value) {
@@ -32,6 +32,23 @@ export function validSealedArtifacts(d) {
     && typeof d.ciphertext==='string' && d.ciphertext.length>=24 && d.ciphertext.length<=4096
     && /^[A-Za-z0-9+/]+={0,2}$/.test(d.ciphertext);
 }
+let artifactPublicKeyPromise;
+export async function encryptArtifactLinks(code, checkpoint, project, submission=null) {
+  if(!globalThis.isSecureContext || !crypto.subtle) throw new Error('Open this page over HTTPS to encrypt your submission.');
+  if(!artifactPublicKeyPromise) artifactPublicKeyPromise=(async()=>{
+    const response=await fetch('../data/student-id-public.pem',{cache:'no-cache'});
+    if(!response.ok) throw new Error('The encryption key could not be loaded. Please try again.');
+    const pem=await response.text(), binary=atob(pem.replace(/-----[^-]+-----|\s/g,''));
+    return crypto.subtle.importKey('spki',Uint8Array.from(binary,c=>c.charCodeAt(0)),{name:'RSA-OAEP',hash:'SHA-256'},false,['encrypt']);
+  })().catch(error=>{artifactPublicKeyPromise=null;throw error;});
+  const key=await crypto.subtle.generateKey({name:'AES-GCM',length:256},true,['encrypt']);
+  const iv=crypto.getRandomValues(new Uint8Array(12));
+  const text=JSON.stringify({schema:'dase7506/artifact-links-v1',project,submission,code_url:code,checkpoint_url:checkpoint});
+  const ciphertext=await crypto.subtle.encrypt({name:'AES-GCM',iv},key,new TextEncoder().encode(text));
+  const wrapped=await crypto.subtle.encrypt({name:'RSA-OAEP'},await artifactPublicKeyPromise,await crypto.subtle.exportKey('raw',key));
+  const base64=bytes=>btoa(String.fromCharCode(...new Uint8Array(bytes)));
+  return {algorithm:'RSA-OAEP-256+AES-256-GCM',key_id:KEY_ID,wrapped_key:base64(wrapped),iv:base64(iv),ciphertext:base64(ciphertext)};
+}
 export function validateArtifacts(d) {
   return d && d.schema==='dase7506/artifacts-v1' && d.protocol===PROTOCOL
     && Object.hasOwn(PROJECTS,d.project) && PROJECTS[d.project].open
@@ -52,11 +69,52 @@ export function validScore(project, score) {
 export function validateSubmission(d) {
   return d && d.schema === 'dase7506/submission-v1' && d.protocol === PROTOCOL
     && validScore(d.project, d.score) && PROJECTS[d.project].open
+    && (d.project!=='mp3' || validateMP3Details(d))
     && (d.code_url == null || d.code_url === '' || !!safeURL(d.code_url))
     && (d.checkpoint_url == null || d.checkpoint_url === '' || !!safeURL(d.checkpoint_url))
     && (d.artifacts == null || validSealedArtifacts(d.artifacts))
     && (validStudentID(d.student_id) || (d.student_id?.key_id === KEY_ID && d.student_id?.algorithm === 'RSA-OAEP-256'
     && typeof d.student_id?.ciphertext === 'string' && /^[A-Za-z0-9+/]{512}$/.test(d.student_id.ciphertext)));
+}
+export function validSHA256(value) {
+  return typeof value==='string' && /^[a-f0-9]{64}$/.test(value);
+}
+function validMP3Counts(d) {
+  return d.n===240 && Number.isSafeInteger(d.correct) && d.correct>=0 && d.correct<=240
+    && typeof d.accuracy==='number' && Math.abs(d.accuracy-100*d.correct/d.n)<1e-10;
+}
+export function validateMP3Score(d) {
+  if(!d || d.split!=='test' || !validMP3Counts(d)
+    || !Object.entries(MP3_EVALUATION).every(([key,value])=>d[key]===value)
+    || !validSHA256(d.predictions_sha256) || !Array.isArray(d.per_question)
+    || d.per_question.length!==240 || new Set(d.per_question.map(row=>row?.id)).size!==240) return false;
+  return d.per_question.every(row=>row && typeof row.id==='string' && row.id.length>0
+    && Number.isSafeInteger(row.tool_calls) && row.tool_calls>=0 && row.tool_calls<=8
+    && Array.isArray(row.cases) && row.cases.length===3
+    && row.cases.every(item=>item && typeof item.passed==='boolean')
+    && row.passed===row.cases.every(item=>item.passed))
+    && d.per_question.filter(row=>row.passed).length===d.correct;
+}
+function validateMP3Details(d) {
+  if(!validStudentID(d.student_id) || !validMP3Counts({...d,accuracy:d.score})
+    || !validSHA256(d.source_sha256) || !validSHA256(d.score_sha256)
+    || !validSHA256(d.predictions_sha256) || !validSealedArtifacts(d.artifacts)) return false;
+  const fields=['schema','protocol','project','student_id','score','correct','n',
+    'source_sha256','score_sha256','predictions_sha256','benchmark','model','artifacts'];
+  if(Object.keys(d).length!==fields.length || !fields.every(key=>Object.hasOwn(d,key))) return false;
+  if(!d.benchmark || Object.keys(d.benchmark).length!==Object.keys(MP3_EVALUATION).length
+    || !Object.entries(MP3_EVALUATION).every(([key,value])=>d.benchmark[key]===value)) return false;
+  const model=d.model;
+  if(!model || !['none','public','lora'].includes(model.kind)) return false;
+  if(model.kind==='none') return Object.keys(model).length===1;
+  if(typeof model.repository!=='string' || !/^\w(?:[\w.-]*\w)?\/\w(?:[\w.-]*\w)?$/.test(model.repository)
+    || /--|\.\./.test(model.repository) || model.repository.split('/').some(part=>part.length>96)
+    || typeof model.revision!=='string' || !/^[a-f0-9]{40}$/.test(model.revision)
+    || !Number.isSafeInteger(model.parameters) || model.parameters<1 || model.parameters>1000000000) return false;
+  if(model.kind==='public') return Object.keys(model).length===4;
+  return Object.keys(model).length===5 && model.repository===MP3_LORA_BASE.repository
+    && model.revision===MP3_LORA_BASE.revision && model.parameters>MP3_LORA_BASE.parameters
+    && validSHA256(model.adapter_sha256);
 }
 export function validateChallenge(d) {
   if(validatePeerReviewReport(d)) return true;
@@ -112,7 +170,9 @@ export function makeIssueURL(data) {
     ? `[DASE7506] ${data.project.toUpperCase()} · ${data.score} ${PROJECTS[data.project].unit}`
     : artifacts ? `[DASE7506 artifacts] #${data.submission}` : `[DASE7506 Peer Review Report] #${data.submission}`;
   const intro = submission
-    ? 'Self-reported score. The leaderboard displays student IDs and scores. Artifact links are sealed for the instructor until release. GitHub records retain the submitting account.\n\nKeep the JSON unchanged. Submit improvements as new issues before the score deadline.'
+    ? (data.project==='mp3'
+      ? 'Self-reported public test result, subject to instructor reproduction and compliance checks. Student IDs, scores, model declarations and artifact hashes are public. Artifact URLs are encrypted for the instructor. GitHub retains the submitting account.\n\nKeep the JSON unchanged. Submit improvements as new issues before the score deadline.'
+      : 'Self-reported score. The leaderboard displays student IDs and scores. Artifact links are sealed for the instructor until release. GitHub records retain the submitting account.\n\nKeep the JSON unchanged. Submit improvements as new issues before the score deadline.')
     : artifacts ? 'Sealed code and checkpoint links for an existing score submission. The instructor will publish links together for a seven-day review. Keep the JSON unchanged.'
     : 'Peer review report, pending instructor review. Your GitHub account and report are public. Use the same checkpoint and evaluator. Reports alone do not affect grades.';
   const body = `${intro}\n\n\`\`\`json\n${JSON.stringify(data, null, 2)}\n\`\`\``;
@@ -127,7 +187,10 @@ function buildBaseSnapshot(issues, previous = {}, now = new Date().toISOString()
   const submissions = parsed.filter(p => validateSubmission(p.data)).map(p => {
     const d = p.data;
     // Bind reviewed status to the exact submitted payload. Edits need another review.
-    const signature = JSON.stringify([d.project, d.score, d.code_url, d.checkpoint_url, d.student_id, d.artifacts || null]);
+    const parts=[d.project, d.score, d.code_url, d.checkpoint_url, d.student_id, d.artifacts || null];
+    if(d.project==='mp3') parts.push({correct:d.correct,n:d.n,source_sha256:d.source_sha256,
+      score_sha256:d.score_sha256,predictions_sha256:d.predictions_sha256,benchmark:d.benchmark,model:d.model});
+    const signature = JSON.stringify(parts);
     const prior = old.get(p.number);
     // An author cannot erase an adjudicated submission by editing its body.
     if (prior?.status === 'invalid' && p.labels.includes('7506:invalid')) return prior;
@@ -141,6 +204,10 @@ function buildBaseSnapshot(issues, previous = {}, now = new Date().toISOString()
       : p.closed ? 'withdrawn' : p.labels.includes('7506:verified') ? 'verified' : 'self-reported';
     return {number: p.number, author: p.author, student_id:validStudentID(d.student_id)?d.student_id:null, url: p.url, project: d.project,
       score: d.score, code_url: d.code_url, checkpoint_url: d.checkpoint_url,
+      ...(d.project==='mp3'?{correct:d.correct,n:d.n,model_kind:d.model.kind,
+        source_sha256:d.source_sha256,score_sha256:d.score_sha256,
+        predictions_sha256:d.predictions_sha256,benchmark:d.benchmark,model:d.model,
+        code_url:null,checkpoint_url:null,artifact_status:'received'}:{}),
       status, created_at: p.created_at, signature, edited_after_review: editedAfterReview,
       review_labels: p.labels.filter(l => l.startsWith('7506:')).sort()};
   });
@@ -261,9 +328,10 @@ export function buildSnapshot(issues, previous={}, now=new Date().toISOString(),
     const prior=old.get(issue.number), parsed=parseIssue(issue);
     if (!prior || !PROJECTS[prior.project]?.score_deadline || instant<Date.parse(PROJECTS[prior.project].score_deadline)) return issue;
     if (!prior.signature) return issue;
-    const [project,score,code_url,checkpoint_url,student_id,artifacts]=JSON.parse(prior.signature);
+    const [project,score,code_url,checkpoint_url,student_id,artifacts,details]=JSON.parse(prior.signature);
     if (parsed && validateSubmission(parsed.data) && parsed.data.score!==score) lateEdits.add(issue.number);
-    const frozen={schema:'dase7506/submission-v1',protocol:PROTOCOL,project,score,code_url,checkpoint_url,student_id,artifacts};
+    const frozen={schema:'dase7506/submission-v1',protocol:PROTOCOL,project,score,student_id,
+      ...(project==='mp3'?details:{code_url,checkpoint_url}),artifacts};
     return {...issue,body:'```json\n'+JSON.stringify(frozen)+'\n```'};
   }).filter(issue=>{
     const parsed=parseIssue(issue);

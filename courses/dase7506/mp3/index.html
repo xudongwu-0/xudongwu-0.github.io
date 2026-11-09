@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="DASE7506 MP3 SQL Repair Agent: starter code, public evaluation, score submissions and leaderboard.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>DASE7506 · MP3 SQL Repair Agent</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/arena.296ce415066a.css">
+  <script type="module" src="../assets/mp3.b2092397d36c.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="shell masthead">
+    <a class="brand" href="#main">DASE7506 <span>/ MP3</span></a>
+    <nav aria-label="Project navigation"><a href="PROJECT.md">Project brief (.md)</a><a href="downloads/MP3_SQL_student_package.zip">Starter ZIP</a><a href="#leaderboard">Leaderboard</a></nav>
+  </header>
+  <main id="main" class="shell">
+    <div class="heading">
+      <h1>SQL Repair Agent</h1>
+      <p class="caption">Repair SQL using database feedback. Build a reliable perceive-plan-act loop, not just a one-shot answer generator.</p>
+      <p><span class="open-badge" id="phase-badge">Score submissions open</span><span class="caption">Individual · 10% of the course · Deadline announced separately</span></p>
+      <p class="caption">Start entirely on CPU with shared fixed LLM hints. <strong>Harness optimization</strong> and optional <strong>weight optimization</strong> are allowed. Deploy no extra live LLM, or one LLM with at most 1B actual parameters. Course-task LLM training is <strong>Qwen3-0.6B LoRA only</strong>; submit adapters, not full weights.</p>
+      <p class="caption">Ranked grading: top 35% A, next 50% B, final 15% C. Equal scores share a rank; boundary ties receive the higher band. See the project brief for eligibility, limits and rounding.</p>
+      <p class="verification-notice">The full evaluation set and scorer are included. Evaluate all 240 test tasks locally, then report your result here. Scores are self-reported and subject to instructor reproduction and compliance checks. This static website does not execute submissions.</p>
+      <p class="caption"><a href="PROJECT.md">Read the complete specification</a> · <a href="downloads/MP3_SQL_student_package.zip">Download starter code and public data</a> · <a href="downloads/MP3_SQL_student_package.zip.sha256">SHA-256 checksum</a></p>
+      <p class="caption" id="phase-note" role="status"></p>
+    </div>
+    <div id="workspace" class="workspace mp2-workspace">
+      <section id="submit" aria-labelledby="submit-title">
+        <h2 id="submit-title">Submit your test result</h2>
+        <form id="submission-form" class="panel">
+          <label for="student-id">Student ID <span>Required; displayed publicly</span></label>
+          <input id="student-id" type="text" maxlength="64" required autocomplete="off">
+          <label for="score-file">Official test-score JSON <span>Generated locally by the supplied scorer; read in your browser</span></label>
+          <input id="score-file" type="file" accept=".json,application/json" required>
+          <p class="caption" id="score-status" role="status">Evaluate the full test split, then select outputs/test-score.json.</p>
+          <label for="score">Reported accuracy <span>Computed from the score file, not editable here</span></label>
+          <input id="score" type="text" readonly placeholder="— / 240">
+          <label for="code-url">Source export ZIP link <span>Immutable HTTPS download</span></label>
+          <input id="code-url" type="url" pattern="https://.*" maxlength="500" required placeholder="https://.../submission.zip">
+          <label for="source-sha">Source ZIP SHA-256 <span>64 hexadecimal characters</span></label>
+          <input id="source-sha" type="text" pattern="[a-fA-F0-9]{64}" minlength="64" maxlength="64" required spellcheck="false">
+          <label for="model-kind">Live model route</label>
+          <select id="model-kind">
+            <option value="none">No extra live LLM (CPU route)</option>
+            <option value="public">One untrained public LLM, at most 1B</option>
+            <option value="lora">Qwen3-0.6B with my LoRA adapter</option>
+          </select>
+          <fieldset id="model-fields" hidden disabled>
+            <legend>Model declaration</legend>
+            <label for="model-repo">Public model repository</label>
+            <input id="model-repo" type="text" maxlength="192" required placeholder="organization/model">
+            <label for="model-revision">Immutable revision <span>40-character commit hash</span></label>
+            <input id="model-revision" type="text" pattern="[a-fA-F0-9]{40}" minlength="40" maxlength="40" required spellcheck="false">
+            <label for="model-parameters">Actual parameters <span>Include embeddings and unmerged LoRA</span></label>
+            <input id="model-parameters" type="number" min="1" max="1000000000" step="1" required>
+          </fieldset>
+          <fieldset id="adapter-fields" hidden disabled>
+            <legend>Your LoRA adapter</legend>
+            <p class="caption">A separate ZIP containing only adapter_model.safetensors and adapter_config.json. No base or merged weights.</p>
+            <label for="adapter-url">Adapter ZIP link</label>
+            <input id="adapter-url" type="url" pattern="https://.*" maxlength="500" required placeholder="https://.../adapter.zip">
+            <label for="adapter-sha">Adapter ZIP SHA-256</label>
+            <input id="adapter-sha" type="text" pattern="[a-fA-F0-9]{64}" minlength="64" maxlength="64" required spellcheck="false">
+          </fieldset>
+          <p class="caption privacy-note">Your ID, score, model declaration and artifact hashes are public. Download URLs are encrypted for the instructor. GitHub retains your account. Include your report, configuration, predictions, complete score JSON and reproduction commands in the source ZIP.</p>
+          <label class="check-label consent"><input id="consent" type="checkbox" required>I confirm this is my individual work and I accept the published rules and privacy notice.</label>
+          <button id="prepare-submit" type="submit" class="button full">Prepare score submission ↗</button>
+          <p class="caption handoff-note">Next click <strong>Submit on GitHub</strong> and create the issue. Preparing a link alone does not save your submission. Improvements need a new issue and immutable artifacts.</p>
+          <div id="submission-status" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+      <section id="leaderboard" aria-labelledby="leaderboard-title">
+        <div class="section-title"><h2 id="leaderboard-title">Leaderboard</h2><button class="text-button" id="refresh" type="button">Refresh ↻</button></div>
+        <div class="board-controls"><p class="caption">Best eligible reported result per student · Higher accuracy is better</p><label class="check-label"><input id="history" type="checkbox">All submissions</label></div>
+        <div class="table-wrap"><table><caption class="sr-only">MP3 public test results, with verification status</caption><thead><tr><th scope="col">Rank</th><th scope="col">Student ID</th><th scope="col">Correct</th><th scope="col">Accuracy ↑</th><th scope="col">Route</th><th scope="col">Record</th></tr></thead><tbody id="board-body"><tr><td colspan="6" class="empty">Loading reported results…</td></tr></tbody></table></div>
+        <p class="caption">Self-reported does not mean independently verified. Final grades use the instructor-confirmed eligible ranking. After creating an issue, allow a few minutes for synchronization.</p>
+        <div class="board-footer"><p class="caption" id="sync-status" role="status" aria-live="polite"></p><a href="https://github.com/xudongwu-0/xudongwu-0.github.io/issues?q=is%3Aissue+%22DASE7506%22+%22MP3%22" target="_blank" rel="noopener noreferrer">Submission records ↗</a></div>
+      </section>
+    </div>
+  </main>
+  <noscript><p class="shell">Enable JavaScript to read your score JSON, encrypt artifact links, prepare score submissions and view the leaderboard. The project brief and starter download work without JavaScript.</p></noscript>
+</body>
+</html>

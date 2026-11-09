@@ -47,7 +47,27 @@ test('MP2 serves the current fingerprinted graph, score form and English student
   assert.ok(html.includes('id="submission-form"') && html.includes('31 October 2026, 23:59'));
   assert.ok(!/\p{Script=Han}/u.test(html+source));
   assert.ok(!/instructor\.html|href="\/"|review_request_count|review_flag/.test(html+source));
-  assert.ok(source.includes("fetch('../data/student-id-public.pem'"));
+  assert.ok(read('arena.mjs').includes("fetch('../data/student-id-public.pem'"));
   assert.ok(read('app.mjs').includes('archive/mp1-2026-fall/leaderboard.json'));
   assert.ok(!read('app.mjs').includes('courses/dase7506/data/leaderboard.json'));
+});
+
+test('MP3 publishes public self-evaluation, a score form and the current fingerprinted graph',()=>{
+  const html=read('mp3/index.html');
+  const moduleName=html.match(/src="\.\.\/(assets\/mp3\.[a-f0-9]{12}\.mjs)"/)[1];
+  const source=read(moduleName);
+  const arenaName=source.match(/from '\.\/(arena\.[a-f0-9]{12}\.mjs)'/)[1];
+  assert.equal(source,read('mp3.mjs').replace("'./arena.mjs'",`'./${arenaName}'`));
+  assert.ok(moduleName.includes(createHash('sha256').update(source).digest('hex').slice(0,12)));
+  assert.ok(!/\p{Script=Han}/u.test(html+source));
+  assert.ok(html.includes('id="submission-form"') && html.includes('id="score-file"'));
+  assert.ok(html.includes('id="score"') && !html.includes('id="request-body"'));
+  assert.ok(html.includes('self-reported') && html.includes('240 test tasks'));
+  assert.ok(!/instructor-only|prepare evaluation request|submit an evaluation request|hidden-test answers are not/i.test(html+source+read('mp3/PROJECT.md')));
+  for(const name of ['PROJECT.md','downloads/MP3_SQL_student_package.zip','downloads/MP3_SQL_student_package.zip.sha256']) assert.ok(fs.existsSync(new URL(`mp3/${name}`,root)),name);
+  const zip=fs.readFileSync(new URL('mp3/downloads/MP3_SQL_student_package.zip',root));
+  assert.equal(read('mp3/downloads/MP3_SQL_student_package.zip.sha256'),
+    `${createHash('sha256').update(zip).digest('hex')}  MP3_SQL_student_package.zip\n`);
+  assert.deepEqual(fs.readdirSync(new URL('mp3/',root)).filter(name=>name.endsWith('.md')),['PROJECT.md']);
+  assert.ok(!/instructor\/private|internal[-_]results|teacher[-_](?:reference|checkpoint)/i.test(html+source+read('mp3/PROJECT.md')));
 });
