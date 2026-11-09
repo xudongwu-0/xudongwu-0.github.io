@@ -63,6 +63,14 @@ test('MP3 publishes public self-evaluation, a score form and the current fingerp
   assert.ok(html.includes('id="submission-form"') && html.includes('id="score-file"'));
   assert.ok(html.includes('id="score"') && !html.includes('id="request-body"'));
   assert.ok(html.includes('self-reported') && html.includes('240 test tasks'));
+  assert.ok(html.includes('If you train an LLM, use <strong>Qwen3-0.6B LoRA only</strong>; submit adapters, not full or merged model weights.'));
+  assert.ok(read('mp3/PROJECT.md').includes('if you train an LLM, use **LoRA on `Qwen/Qwen3-0.6B` only**'));
+  assert.ok(!/deploy no extra live llm|no additional live llm, or|one llm with at most/i.test(html+read('mp3/PROJECT.md')));
+  assert.ok(!/id="model-(?:kind|fields|repo|revision|parameters)"|<th[^>]*>Route<\/th>/.test(html));
+  assert.ok(html.includes('One leaderboard') && html.includes('id="challenge-dialog"'));
+  assert.ok(html.includes('30 November 2026, 23:59 (UTC+8)') && html.includes('7 December 2026, 23:59 (UTC+8)'));
+  assert.ok(html.includes('id="reproduced-score"') && html.includes('id="email-report"'));
+  assert.ok(read('mp3/PROJECT.md').includes('All approaches compete on one leaderboard'));
   assert.ok(!/instructor-only|prepare evaluation request|submit an evaluation request|hidden-test answers are not/i.test(html+source+read('mp3/PROJECT.md')));
   for(const name of ['PROJECT.md','downloads/MP3_SQL_student_package.zip','downloads/MP3_SQL_student_package.zip.sha256']) assert.ok(fs.existsSync(new URL(`mp3/${name}`,root)),name);
   const zip=fs.readFileSync(new URL('mp3/downloads/MP3_SQL_student_package.zip',root));

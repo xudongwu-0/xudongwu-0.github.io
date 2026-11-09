@@ -4,7 +4,7 @@
 
 Project page and submissions: <https://xudongwu-0.github.io/courses/dase7506/mp3/>
 
-The deadline will be announced separately through the course. This document is the complete student specification; the starter archive contains no separate guide.
+**Submission deadline: 30 November 2026, 23:59 Beijing time (UTC+8). Peer review: 1–7 December 2026, closing 7 December at 23:59 (UTC+8).** This document is the complete student specification; the starter archive contains no separate guide.
 
 ## 1. Your task
 
@@ -91,10 +91,10 @@ Only the provided tools may access benchmark databases. Do not bypass the tool b
 
 **Harness optimization is allowed:** improve your own controller, tool descriptions/wrappers, prompts, tool-call decisions, context, memory/retrieval, SQL editing and final-answer selection. Preserve the underlying tool semantics and budgets. You may train non-LLM components on the training split.
 
-**Weight optimization is optional:** you may deploy no additional live LLM, or **one LLM with at most 1,000,000,000 actual parameters**, including embeddings and any unmerged adapter. A live model is not required for this project. No GPU is provided.
+**Weight optimization is optional:** if you train an LLM, use **LoRA on `Qwen/Qwen3-0.6B` only**; submit adapters, not full or merged model weights. No GPU is provided.
 
-- An untrained public model up to this limit may be used for inference, with its exact repository and immutable revision declared.
-- **The only permitted course-task LLM training is LoRA on `Qwen/Qwen3-0.6B`**, revision `c1899de289a04d12100db370d81485cdf75e47ca`. This is Qwen3, **not** a model named "Qwen3.5-0.6B".
+- An unchanged public model with at most 1,000,000,000 actual parameters may be used for inference, with its exact repository and immutable revision declared. Count embeddings and any unmerged adapter toward this limit.
+- For LoRA training, use base revision `c1899de289a04d12100db370d81485cdf75e47ca` of `Qwen/Qwen3-0.6B`.
 - Train only LoRA A/B matrices. Do not train or submit embeddings, `lm_head`, biases, `modules_to_save`, full-model checkpoints, merged checkpoints or other adapter types. There is no prescribed LoRA rank.
 - For a trained model, submit only `adapter_model.safetensors` and `adapter_config.json`, plus your loading configuration, training configuration/logs and data-provenance record. The original base model/tokenizer must remain unchanged.
 - Provide a loading implementation. The instructor loads **your submitted adapter**, not a course reference adapter. Use local, safetensors-only loading with `trust_remote_code=False`; custom remote model code and pickle checkpoints are not accepted.
@@ -117,17 +117,27 @@ Do not upload base weights. Provision the declared public base before running; e
 1. Evaluate your exported agent on **all 240 test tasks** with the supplied predictor/scorer. Keep `outputs/test.json` and the complete `outputs/test-score.json`. The correct count must require all three instances per task.
 2. Prepare an immutable HTTPS ZIP containing your source export, configuration, dependency list, report, reproduction commands and both output files. Do not include the dataset, base weights, `.venv` or caches. Keep the export within the limit above.
 3. Record the source ZIP SHA-256. For LoRA, provide a separate HTTPS ZIP containing exactly the two adapter files, and record its SHA-256. Your report/training records belong in the source export.
-4. On the project page select `outputs/test-score.json`, then enter your student ID, source ZIP link/hash and model declaration. Add the adapter link/hash only for LoRA. The page checks the score file's split, benchmark identity and counts; this is **not** proof that the submitted program reproduced the score.
+4. On the project page select `outputs/test-score.json`, then enter your student ID and source ZIP link/hash. Add the optional adapter link/hash only if you trained LoRA. Describe any model's exact repository, immutable revision, actual parameter count and loading instructions in your report; no model-route selection is required. The page checks the score file's split, benchmark identity and counts; this is **not** proof that the submitted program reproduced the score.
 5. Click **Prepare score submission**, then **Submit on GitHub**, and actually create the issue. Preparing a link alone does not save a submission. Use the same GitHub account and student ID for updates; submit improvements as new issues with new immutable artifacts.
 6. Scores enter the leaderboard as **self-reported**, subject to instructor reproduction, spot checks and compliance review. They do not require a prior instructor evaluation request. Only the instructor can mark a result verified or invalidate it. The website itself does not run code or models.
 
-Student IDs, model declarations, artifact hashes and reported scores are public; GitHub also retains the submitting account. Artifact URLs are encrypted for the instructor before the GitHub handoff. Keep the artifacts accessible to the instructor until grading finishes. Do not put credentials in any URL.
+Submit the final score and all required artifact links **before the submission deadline**. New scores after the cutoff are late; post-deadline edits cannot replace the frozen score or original source/adapter submission.
+
+Student IDs, artifact hashes and reported scores are public; GitHub also retains the submitting account. Artifact URLs are encrypted before the GitHub handoff. The instructor publishes the submitted source and optional adapter links for peer review after the deadline. Keep them accessible until grading finishes. Remove credentials, private data and unrelated files before submitting; do not put credentials in any URL.
 
 Your report must cover the agent loop, context/memory/retrieval choices, **at least two controlled ablations**, validation and test results, runtime/tool/model cost, failure cases, **prompt-injection risks** from untrusted questions/tool/retrieval content and your safeguards, external assistance, data provenance and exact reproduction instructions. Include training records if you train. These are eligibility requirements, not additional weighted score components.
 
+### Seven-day peer review
+
+During **1–7 December**, use the released artifacts to reproduce other students' results with the exact official package and evaluator. Verify the source/adapter hashes, follow the submitted commands and evaluate all 240 test tasks on all three instances per task.
+
+Use the leaderboard's **Peer Review Report** button to provide the reproduced accuracy; a Markdown explanation and evidence link are optional. Create the prepared GitHub issue to save the report, or use the provided email-report link. Include the target submission number, environment and reproduction commands. Do not review your own submission.
+
+Scores are frozen during review; review is not an extra tuning/submission period. Reports must be submitted by **7 December 2026, 23:59 (UTC+8)**. Reports alone do not change scores or grades: the instructor checks discrepancies and determines eligibility before the final ranking.
+
 ## 7. Ranking and grades
 
-Among eligible individual submissions, each student is represented by their best reproducible test accuracy. The live board includes self-reported scores; final grades use the instructor-confirmed eligible ranking. The **top 35% receive A, the next 50% B, and the final 15% C**.
+**All approaches compete on one leaderboard; there are no separate model or training tracks.** Among eligible individual submissions, each student is represented by their best reproducible test accuracy submitted before the deadline. The live board includes self-reported scores; final grades use the instructor-confirmed eligible ranking after peer review. The **top 35% receive A, the next 50% B, and the final 15% C**.
 
 Ranking uses the exact number of correct test tasks, not rounded display values. Equal scores share a competition rank (1, 1, 3). For `N` eligible students, the A boundary is `ceil(0.35N)` and the A-or-B boundary is `ceil(0.85N)`; a tie crossing a boundary receives the higher band, so percentages can vary slightly. Missing, invalid, non-reproducible or non-compliant submissions are not valid ranked entries and are handled under course assessment rules.
 

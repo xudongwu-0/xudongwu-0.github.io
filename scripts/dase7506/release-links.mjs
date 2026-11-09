@@ -4,7 +4,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {parseArgs} from 'node:util';
 import {privateDecrypt,createDecipheriv,constants} from 'node:crypto';
-import {REPO,KEY_ID,PROJECTS,safeURL,parseIssue,bestRows,buildSnapshot} from '../../courses/dase7506/arena.mjs';
+import {REPO,KEY_ID,PROJECTS,safeURL,parseIssue,bestRows,buildSnapshot,reviewEndTime} from '../../courses/dase7506/arena.mjs';
 const root=fileURLToPath(new URL('../../',import.meta.url));
 export function decryptLinks(sealed,key) {
   if(sealed?.key_id!==KEY_ID || sealed.algorithm!=='RSA-OAEP-256+AES-256-GCM') throw new Error('Invalid sealed artifact envelope.');
@@ -32,12 +32,16 @@ export function prepareRelease(snapshot,issues,key,project='mp1',now=new Date().
     try {
       if(!source || source.author.toLowerCase()!==row.author.toLowerCase() || source.data.project!==project) throw new Error('Missing matching author.');
       let links;
-      if(source.data.artifacts) links=decryptLinks(source.data.artifacts,key);
+      if(source.data.artifacts) {
+        const sealed=project==='mp3' && source.number===row.number ? JSON.parse(row.signature)[5] : source.data.artifacts;
+        links=decryptLinks(sealed,key);
+      }
       else links={project,code_url:source.data.code_url,checkpoint_url:source.data.checkpoint_url};
       if(links.project!==project || (links.submission!=null && links.submission!==row.number)) throw new Error('Artifact reference mismatch.');
       const code=safeURL(links.code_url), checkpoint=safeURL(links.checkpoint_url);
       if((links.code_url && !code)||(links.checkpoint_url && !checkpoint)) throw new Error('Invalid HTTPS artifact URL.');
-      if(!code||!checkpoint) {
+      const adapterRequired=project==='mp3' && (row.model?.kind==='lora' || !!row.model?.adapter_sha256);
+      if(!code || (!checkpoint && (project!=='mp3' || adapterRequired))) {
         missing.push(row.number);
         if(!options.allowIncomplete) continue;
       }
@@ -48,7 +52,8 @@ export function prepareRelease(snapshot,issues,key,project='mp1',now=new Date().
     }
   }
   if(missing.length && !options.allowIncomplete) throw new Error(`Complete, decryptable links are still required for score issues: ${missing.join(', ')}`);
-  return {published_at:new Date(now).toISOString(),review_ends_at:new Date(+new Date(now)+(config.review_days||7)*86400000).toISOString(),entries};
+  const published_at=new Date(now).toISOString();
+  return {published_at,review_ends_at:new Date(reviewEndTime(project,{published_at})).toISOString(),entries};
 }
 async function main() {
   const {values}=parseArgs({options:{key:{type:'string'},output:{type:'string'},publish:{type:'boolean'},project:{type:'string',default:'mp1'},'all-submissions':{type:'boolean'},'allow-incomplete':{type:'boolean'}}});
@@ -73,7 +78,7 @@ async function main() {
   if(values.publish) {
     publication.projects[values.project]=release;
     fs.writeFileSync(file,JSON.stringify(publication,null,2)+'\n');
-    console.log(`Prepared public release of ${release.entries.length} entries. Commit and push publication.json to start the announced seven-day review.`);
+    console.log(`Prepared public release of ${release.entries.length} entries. Commit and push publication.json. Peer review ends at ${release.review_ends_at}.`);
   } else {
     if(!values.output) throw new Error('Use --output /private/path/preview.json, or --publish to prepare the public release.');
     const out=path.resolve(values.output);if(out.startsWith(root))throw new Error('Private previews must be outside the public repository.');

@@ -17,5 +17,5 @@ export const MP3_LORA_BASE = Object.freeze({
 export const PROJECTS = {
   mp1: {name:'Small Language Model Challenge', unit:'BPB', lower:true, open:true, min:0, max:null, review_threshold:null, review_request_flag_above:3, reward:0, penalty:0, score_deadline:'2026-10-01T00:00:00+08:00', review_days:7},
   mp2: {name:'Selecting Reliable LLM Reasoning', unit:'%', lower:false, open:true, min:0, max:100, review_threshold:null, review_request_flag_above:3, reward:0, penalty:0, score_deadline:'2026-11-01T00:00:00+08:00', review_days:7},
-  mp3: {name:'SQL Repair Agent', unit:'%', lower:false, open:true, min:0, max:100, review_threshold:null, review_request_flag_above:3, reward:0, penalty:0, score_deadline:null, review_days:7},
+  mp3: {name:'SQL Repair Agent', unit:'%', lower:false, open:true, min:0, max:100, review_threshold:null, review_request_flag_above:3, reward:0, penalty:0, score_deadline:'2026-12-01T00:00:00+08:00', review_days:7, review_deadline:'2026-12-08T00:00:00+08:00'},
 };

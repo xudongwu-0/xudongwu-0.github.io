@@ -4,7 +4,9 @@ MP1 is archived at `/courses/dase7506/`. Its page reads only the fixed snapshot 
 
 MP2 is open at `/courses/dase7506/mp2/`, using self-reported full-test accuracy (percentage; higher is better). Its deadline is **31 October 2026, 23:59 Beijing time (UTC+8)**. The cutoff is implemented as `2026-11-01T00:00:00+08:00`. Early score-only entries are allowed; the final entry must include code and checkpoint/configuration links before the deadline. After cutoff, new scores are marked late, score edits are ignored and the form accepts only artifact supplements for an existing issue. The instructor opens a seven-day peer review by releasing MP2 links manually. Use `release-links.mjs --project mp2` with the existing private key, first with `--output` for a private preview, then with `--publish` after inspection.
 
-MP3 is open at `/courses/dase7506/mp3/`: SQL Repair Agent, with a CPU-first starter and **public, full local test evaluation**. The only student specification is `mp3/PROJECT.md` (the same content is `README.md` in the starter ZIP). Students select the complete score JSON from the pinned public scorer; the form validates all 240 tasks, three cases per task, score identities and counts, then prepares a self-reported score issue. No prior instructor-evaluation request is needed. The source ZIP must include code, configuration, report, predictions, complete score JSON and reproduction commands. Source and optional LoRA ZIP URLs use the existing hybrid encryption; no-model entries need no adapter URL. Model declarations and artifact hashes are public and bound to review signatures. Editing them invalidates earlier reviewed status. The deadline is deliberately unset until the course announces it. Scores are provisional until reproduced/compliance-checked; use existing `7506:verified`, `7506:review` and `7506:invalid` labels after inspection. The website checks formats, not score authenticity, model contents or resource consumption.
+MP3 is open at `/courses/dase7506/mp3/`: SQL Repair Agent, with a CPU-first starter and **public, full local test evaluation**. The only student specification is `mp3/PROJECT.md` (the same content is `README.md` in the starter ZIP). Students select the complete score JSON from the pinned public scorer; the form validates all 240 tasks, three cases per task, score identities and counts, then prepares a self-reported score issue. No prior instructor-evaluation request is needed. The source ZIP must include code, configuration, report, predictions, complete score JSON and reproduction commands. There is no model-route selector or ranking split; all methods share one leaderboard. Model details belong in the report. Source and optional LoRA ZIP URLs use the existing hybrid encryption; adapter links/hashes are needed only when submitting trained LoRA. Artifact hashes and sealed links are bound to review signatures. Editing them invalidates earlier reviewed status. Scores are provisional until reproduced/compliance-checked; use existing `7506:verified`, `7506:review` and `7506:invalid` labels after inspection. The website checks formats, not score authenticity, model contents or resource consumption.
+
+MP3 submissions close **30 November 2026, 23:59 Beijing time (UTC+8)**, implemented as `2026-12-01T00:00:00+08:00`. Its fixed peer-review window is **1-7 December**, ending at `2026-12-08T00:00:00+08:00`. Scores and original submission payloads freeze at the cutoff. The submission form then hides and the board expands, with source/optional-adapter links and **Peer Review Report** buttons following the existing course interface. Reports can be prepared as GitHub issues or email; the instructor adjudicates them. A delayed link release does not restart or extend the fixed window.
 
 All student pages are English-only, with no links to the personal homepage. MP2 materials are maintained in [DASE7506-MP2](https://github.com/xudongwu-0/DASE7506-MP2); no reference method is supplied. MP3 publishes no instructor optimization methods, trained adapters or internal optimization results. After changing browser sources, run `node scripts/dase7506/build-assets.mjs` and `node --test scripts/dase7506/*.test.mjs` before publishing.
 
@@ -19,11 +21,17 @@ confirm creation. Generating the link alone is **not** a successful submission.
 Student IDs and scores are displayed publicly. GitHub accounts remain the backend
 identity for submissions and review requests, and are visible in GitHub records.
 The current form encrypts artifact links with AES-256-GCM, wrapping each AES key
-with the course RSA public key. MP1/MP2 links are published together by the instructor.
-MP3 links are collected privately for reproduction unless a separate review release is announced.
-The existing `decryptLinks` export in `release-links.mjs` supports private inspection
-of an MP3 envelope, including a null checkpoint URL for the no-adapter routes.
-Do not use the batch publication command for MP3: no deadline or link-release process is configured.
+with the course RSA public key. Links are published together by the instructor.
+At the MP3 cutoff, use `release-links.mjs --project mp3 --all-submissions` with
+the existing private key: first `--output /private/path/mp3-preview.json`, then
+`--publish` after inspecting the private preview. Commit and push only
+`courses/dase7506/data/publication.json`, never the preview or key. Release
+promptly on 1 December so students have the full announced review window.
+The batch command accepts source-only MP3 entries; it requires an adapter URL
+only when an adapter hash was declared. For original MP3 artifacts it decrypts
+the deadline-frozen envelope, not a later edit. Links stay hidden on the board
+until publication, without incorrectly removing eligible results while the
+teacher release is pending. The fixed report window is enforced independently.
 Reproduce MP3 using the exact public starter and its predictor/scorer commands,
 not the historical private experiment SDK or legacy grading runners. Score
 metadata pins both the scorer and executor hashes; the public executor reports

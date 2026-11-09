@@ -1,4 +1,4 @@
-import {REPO, PROTOCOL, REPORT_EMAIL, PROJECTS, safeURL, validScore, validStudentID, makeIssueURL, peerReviewEmailURL, bestRows, submissionPhase, encryptArtifactLinks} from './arena.mjs';
+import {REPO, PROTOCOL, REPORT_EMAIL, PROJECTS, safeURL, validScore, validStudentID, makeIssueURL, createPeerReviewReport, peerReviewEmailURL, bestRows, submissionPhase, encryptArtifactLinks} from './arena.mjs';
 
 const $ = id => document.getElementById(id);
 let snapshot = {submissions: [], challenges: [], adjustments: []};
@@ -191,17 +191,11 @@ function openChallenge(row) {
 }
 $('close-dialog').addEventListener('click', () => $('challenge-dialog').close());
 function peerReportData() {
-    const phase=challengeTarget && submissionPhase(challengeTarget.project,snapshot.publication);
-    if(!challengeTarget || phase!=='review') throw new Error('Peer review reports are closed.');
-    const reason=$('review-reason').value.trim(),rawScore=$('reproduced-score').value.trim(),rawEvidence=$('evidence-url').value.trim();
-    const score=rawScore?Number(rawScore):null,evidence=rawEvidence?safeURL(rawEvidence):null;
-    if(!rawScore || !validScore(challengeTarget.project,score)) throw new Error('Enter your reproduced score.');
-    if(reason.length>2000) throw new Error('Keep the optional report within 2,000 characters.');
-    if(rawEvidence && !evidence) throw new Error('Check the optional HTTPS evidence link.');
-    const threshold = PROJECTS[challengeTarget.project].review_threshold;
-    if (phase==='review' && typeof threshold === 'number' && Math.abs(score-challengeTarget.score) <= threshold) throw new Error(`The difference does not exceed the review threshold of ${threshold} ${PROJECTS[challengeTarget.project].unit}. Discuss general questions on the original submission.`);
-    return {schema:'dase7506/peer-review-v1',protocol:PROTOCOL,project:challengeTarget.project,
-      submission:challengeTarget.number,reason,reproduced_score:score,evidence_url:evidence};
+  const rawScore=$('reproduced-score').value.trim();
+  return createPeerReviewReport(challengeTarget,snapshot.publication,{
+    reproduced_score:rawScore?Number(rawScore):null,
+    reason:$('review-reason').value,evidence_url:$('evidence-url').value,
+  });
 }
 $('challenge-form').addEventListener('submit', event => {
   event.preventDefault(); $('challenge-status').replaceChildren();

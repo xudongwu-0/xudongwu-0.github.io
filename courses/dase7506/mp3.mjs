@@ -1,9 +1,8 @@
-import {REPO, PROTOCOL, PROJECTS, MP3_EVALUATION, MP3_LORA_BASE, safeURL, validStudentID, validateSubmission, validateMP3Score, makeIssueURL, bestRows, encryptArtifactLinks} from './arena.mjs';
+import {REPO, PROTOCOL, REPORT_EMAIL, MP3_EVALUATION, safeURL, validStudentID, validateSubmission, validateMP3Score, makeIssueURL, createPeerReviewReport, peerReviewEmailURL, bestRows, submissionPhase, encryptArtifactLinks} from './arena.mjs';
 
 const $=id=>document.getElementById(id);
-const ROUTES={none:'CPU / fixed hints',public:'Public LLM',lora:'LoRA'};
-const STATUS={'self-reported':'Self-reported',verified:'Verified',review:'Review required',invalid:'Invalidated',withdrawn:'Withdrawn',late:'Late submission'};
-let snapshot={submissions:[]}, refreshing=false, hasSnapshot=false, scoreReport=null, scoreHash=null, loadedScoreFile=null, formVersion=0;
+const STATUS={'self-reported':'Self-reported',verified:'Verified',review:'Review required',invalid:'Invalidated',withdrawn:'Withdrawn',late:'Late submission',superseded:'Superseded','links-missing':'Links missing'};
+let snapshot={submissions:[]}, refreshing=false, hasSnapshot=false, scoreReport=null, scoreHash=null, loadedScoreFile=null, formVersion=0, challengeTarget=null;
 function element(tag,text,className) {
   const node=document.createElement(tag);
   if(text!==undefined) node.textContent=text;
@@ -17,44 +16,70 @@ function issueLink(row) {
   link.target='_blank'; link.rel='noopener noreferrer';
   return link;
 }
+function artifactLink(label,url) {
+  const link=element('a',label), safe=safeURL(url);
+  if(safe) link.href=safe;
+  link.target='_blank'; link.rel='noopener noreferrer';
+  return link;
+}
+function prepared(target,url,kind) {
+  const ready=element('div',`${kind} prepared, not submitted. Create the GitHub issue to save it.`,'prepared');
+  const link=element('a','Submit on GitHub ↗');
+  link.href=url; link.target='_blank'; link.rel='noopener noreferrer';
+  ready.append(element('br'),link); target.replaceChildren(ready);
+}
 function empty(body,columns,text) {
   const row=element('tr'), cell=element('td',text,'empty');
   cell.colSpan=columns; row.append(cell); body.append(row);
 }
 function submissionsOpen() {
-  const deadline=PROJECTS.mp3.score_deadline;
-  return PROJECTS.mp3.open && (!deadline || Date.now()<Date.parse(deadline));
+  return submissionPhase('mp3',snapshot.publication)==='scores';
 }
 function configureForm() {
-  const kind=$('model-kind').value, live=kind!=='none', lora=kind==='lora';
-  $('model-fields').hidden=!live; $('model-fields').disabled=!live;
-  $('adapter-fields').hidden=!lora; $('adapter-fields').disabled=!lora;
-  $('model-repo').readOnly=lora; $('model-revision').readOnly=lora;
-  if(lora) {
-    $('model-repo').value=MP3_LORA_BASE.repository;
-    $('model-revision').value=MP3_LORA_BASE.revision;
-    $('model-parameters').min=String(MP3_LORA_BASE.parameters+1);
-  } else $('model-parameters').min='1';
-  const open=submissionsOpen();
+  const phase=submissionPhase('mp3',snapshot.publication), open=phase==='scores';
+  $('submit').hidden=!open;
+  $('workspace').classList.toggle('mp2-workspace',open);
   $('prepare-submit').disabled=!open;
-  $('phase-badge').textContent=open?'Score submissions open':'Score submissions closed';
-  $('phase-note').textContent=PROJECTS.mp3.score_deadline
-    ? `Score issues must be created before ${new Date(PROJECTS.mp3.score_deadline).toLocaleString('en-GB',{timeZone:'Asia/Shanghai'})} (UTC+8).`
-    : 'No deadline has been configured yet. Follow the separate course announcement.';
+  $('phase-badge').textContent={scores:'Score submissions open',review:'7-day peer review',complete:'Review closed',closed:'Submissions closed'}[phase];
+  $('phase-note').textContent=open
+    ? 'Submit your final score, source and optional LoRA adapter by 30 November, 23:59 (UTC+8). Artifact links are sealed until the instructor releases them for peer review.'
+    : phase==='review' ? 'Scores are frozen. Reproduce released submissions and submit a Peer Review Report by 7 December, 23:59 (UTC+8).'
+    : 'Submissions and peer review are closed. Results remain subject to instructor verification.';
 }
 function render() {
   const history=$('history').checked, rows=bestRows(snapshot.submissions,'mp3',history);
+  const phase=submissionPhase('mp3',snapshot.publication), released=['review','complete'].includes(phase);
   $('board-body').replaceChildren();
   if(!rows.length) empty($('board-body'),6,'No eligible results yet. Evaluate locally and submit your test-score JSON.');
   let rank=0, previous=null;
   for(const [index,row] of rows.entries()) {
     if(row.score!==previous) rank=index+1;
     previous=row.score;
-    const tr=element('tr'), record=element('td');
-    record.append(issueLink(row),element('br'),element('span',STATUS[row.status]||row.status,'caption'));
-    tr.append(element('td',history?'—':String(rank)),element('td',row.student_id),
-      element('td',`${row.correct} / ${row.n}`),element('td',`${row.score.toFixed(2)}%`),
-      element('td',ROUTES[row.model_kind]||row.model_kind),record);
+    const tr=element('tr'), materials=element('td'), accuracy=element('td',`${row.score.toFixed(2)}%`);
+    accuracy.append(element('br'),element('span',`${row.correct} / ${row.n}`,'caption'));
+    const links=element('div',undefined,'artifact-links');
+    for(const [label,url,kind] of [['Source',row.code_url,'code'],['LoRA',row.checkpoint_url,'checkpoint']]) {
+      if(!released || !url) continue;
+      const item=element('span',undefined,'artifact-item'), link=artifactLink(label,url);
+      link.title=label==='Source'?row.source_sha256:row.model?.adapter_sha256||'Submitted LoRA adapter';
+      item.append(link);
+      const access=row.artifact_access?.[kind];
+      if(access?.status==='unavailable') {
+        const warning=element('span','Unable to open','artifact-unavailable');
+        warning.title=access.reason || 'Unavailable at the last check.';
+        item.append(warning);
+      }
+      links.append(item);
+    }
+    if(!links.childElementCount) links.append(element('span',released
+      ? 'Awaiting artifact release' : row.artifact_status==='received'?'Links received':'Links pending','caption'));
+    materials.append(links,issueLink(row));
+    const status=element('td');
+    status.append(element('span',STATUS[row.status]||row.status,`badge ${row.status}`));
+    const review=element('td'), button=element('button','Peer Review Report','text-button');
+    button.type='button'; button.disabled=phase!=='review' || !row.code_url;
+    button.addEventListener('click',()=>openChallenge(row)); review.append(button);
+    tr.append(element('td',history?'—':String(rank)),element('td',row.student_id),accuracy,materials,status,review);
     $('board-body').append(tr);
   }
 }
@@ -89,7 +114,6 @@ async function refresh() {
     }
   } finally {refreshing=false; $('refresh').disabled=false; configureForm();}
 }
-$('model-kind').addEventListener('change',configureForm);
 $('history').addEventListener('change',render);
 $('refresh').addEventListener('click',refresh);
 $('submission-form').addEventListener('input',()=>{
@@ -105,29 +129,49 @@ $('submission-form').addEventListener('submit',async event=>{
     const student_id=$('student-id').value.trim(), code=safeURL($('code-url').value.trim());
     if(!validStudentID(student_id)) throw new Error('Enter a student ID of 1–64 visible characters.');
     if(!code) throw new Error('Provide an HTTPS source ZIP link without credentials.');
-    const kind=$('model-kind').value;
-    let model={kind}, adapter=null;
-    if(kind!=='none') model={kind,repository:$('model-repo').value.trim(),
-      revision:$('model-revision').value.trim().toLowerCase(),parameters:Number($('model-parameters').value)};
-    if(kind==='lora') {
-      adapter=safeURL($('adapter-url').value.trim());
-      if(!adapter) throw new Error('Provide an HTTPS adapter ZIP link without credentials.');
-      model.adapter_sha256=$('adapter-sha').value.trim().toLowerCase();
-    }
+    const rawAdapter=$('adapter-url').value.trim(), adapterHash=$('adapter-sha').value.trim().toLowerCase();
+    const adapter=rawAdapter?safeURL(rawAdapter):null;
+    if(rawAdapter && !adapter) throw new Error('Provide an HTTPS adapter ZIP link without credentials.');
+    if(Boolean(adapter)!==Boolean(adapterHash)) throw new Error('Provide both the optional LoRA adapter link and its SHA-256, or leave both empty.');
+    const model={kind:'report',adapter_sha256:adapterHash||null};
     const data={schema:'dase7506/submission-v1',protocol:PROTOCOL,project:'mp3',student_id,
       score:scoreReport.accuracy,correct:scoreReport.correct,n:scoreReport.n,score_sha256:scoreHash,
       predictions_sha256:scoreReport.predictions_sha256,
       source_sha256:$('source-sha').value.trim().toLowerCase(),benchmark:{...MP3_EVALUATION},model};
     data.artifacts=await encryptArtifactLinks(code,adapter,'mp3');
     if(version!==formVersion) throw new Error('The form changed while preparing. Check your fields and prepare again.');
-    if(!validateSubmission(data)) throw new Error('Check artifact hashes, the fixed benchmark, model revision and actual parameter count. Only the pinned Qwen3-0.6B base may use LoRA.');
-    const ready=element('div','Score submission prepared, not submitted. Create the GitHub issue to save it.','prepared');
-    const link=element('a','Submit on GitHub ↗');
-    link.href=makeIssueURL(data); link.target='_blank'; link.rel='noopener noreferrer';
-    ready.append(element('br'),link); $('submission-status').append(ready);
+    if(!submissionsOpen()) throw new Error('Score submissions closed while preparing. The GitHub issue must be created before the deadline.');
+    if(!validateSubmission(data)) throw new Error('Check the source/adapter SHA-256 values and the official test-score JSON. Describe your method and model, if any, in the report.');
+    prepared($('submission-status'),makeIssueURL(data),'Score submission');
     $('code-url').value=''; $('adapter-url').value='';
   } catch(error) {$('submission-status').append(element('p',error.message,'error'));}
   finally {configureForm();}
+});
+function openChallenge(row) {
+  challengeTarget=row;
+  $('challenge-form').reset(); $('challenge-status').replaceChildren();
+  $('email-report').href=`mailto:${REPORT_EMAIL}`;
+  $('challenge-target').textContent=`MP3 · ${row.student_id} · #${row.number} · reported ${row.score.toFixed(2)}%`;
+  $('challenge-dialog').showModal();
+}
+function peerReportData() {
+  const score=$('reproduced-score').value.trim();
+  return createPeerReviewReport(challengeTarget,snapshot.publication,{
+    reproduced_score:score?Number(score):null,
+    reason:$('review-reason').value,evidence_url:$('evidence-url').value,
+  });
+}
+$('close-dialog').addEventListener('click',()=>$('challenge-dialog').close());
+$('challenge-form').addEventListener('submit',event=>{
+  event.preventDefault(); $('challenge-status').replaceChildren();
+  try {prepared($('challenge-status'),makeIssueURL(peerReportData()),'Peer Review Report');}
+  catch(error) {$('challenge-status').append(element('p',error.message,'error'));}
+});
+$('email-report').addEventListener('click',event=>{
+  $('challenge-status').replaceChildren();
+  if(!$('challenge-form').reportValidity()){event.preventDefault();return;}
+  try {$('email-report').href=peerReviewEmailURL(peerReportData());}
+  catch(error) {event.preventDefault();$('challenge-status').append(element('p',error.message,'error'));}
 });
 $('score-file').addEventListener('change',async()=>{
   scoreReport=null; scoreHash=null; loadedScoreFile=null; $('score').value='';
@@ -150,5 +194,11 @@ $('score-file').addEventListener('change',async()=>{
 });
 configureForm();
 refresh();
-setInterval(()=>{if(!document.hidden){configureForm();refresh();}},30000);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden) refresh();});
+function refreshVisiblePage() {
+  if(document.hidden) return;
+  configureForm(); render(); refresh();
+}
+setInterval(refreshVisiblePage,30000);
+document.addEventListener('visibilitychange',refreshVisiblePage);
+window.addEventListener('focus',refreshVisiblePage);
+window.addEventListener('online',refreshVisiblePage);

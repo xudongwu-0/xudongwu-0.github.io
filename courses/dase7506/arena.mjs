@@ -8,11 +8,15 @@ export function validStudentID(value) {
   return typeof value==='string' && value.length>=1 && value.length<=64 && value===value.trim()
     && !/[\u0000-\u001f\u007f-\u009f\u202a-\u202e\u2066-\u2069]/u.test(value);
 }
+export function reviewStartTime(project, release) {
+  return Date.parse(PROJECTS[project]?.review_deadline ? PROJECTS[project].score_deadline : release?.published_at);
+}
 export function reviewEndTime(project, release) {
-  const start=Date.parse(release?.published_at);
+  const start=reviewStartTime(project,release);
   if (!Number.isFinite(start)) return NaN;
-  if (release.review_ends_at != null) {
-    const end=Date.parse(release.review_ends_at);
+  const deadline=PROJECTS[project]?.review_deadline ?? release?.review_ends_at;
+  if (deadline != null) {
+    const end=Date.parse(deadline);
     if (!Number.isFinite(end) || end<=start) throw new Error('Invalid instructor review deadline.');
     return end;
   }
@@ -22,6 +26,7 @@ export function submissionPhase(project, publication={}, now=Date.now()) {
   const config=PROJECTS[project], release=publication.projects?.[project];
   if (!config?.open) return 'closed';
   if (!config.score_deadline || +new Date(now)<Date.parse(config.score_deadline)) return 'scores';
+  if (config.review_deadline) return +new Date(now)<reviewEndTime(project,release) ? 'review' : 'complete';
   if (!release || Date.parse(release.published_at)>+new Date(now)) return 'artifacts';
   return +new Date(now)<reviewEndTime(project,release) ? 'review' : 'complete';
 }
@@ -105,6 +110,8 @@ function validateMP3Details(d) {
   if(!d.benchmark || Object.keys(d.benchmark).length!==Object.keys(MP3_EVALUATION).length
     || !Object.entries(MP3_EVALUATION).every(([key,value])=>d.benchmark[key]===value)) return false;
   const model=d.model;
+  if(model?.kind==='report') return Object.keys(model).length===2
+    && Object.hasOwn(model,'adapter_sha256') && (model.adapter_sha256===null || validSHA256(model.adapter_sha256));
   if(!model || !['none','public','lora'].includes(model.kind)) return false;
   if(model.kind==='none') return Object.keys(model).length===1;
   if(typeof model.repository!=='string' || !/^\w(?:[\w.-]*\w)?\/\w(?:[\w.-]*\w)?$/.test(model.repository)
@@ -128,6 +135,22 @@ export function validatePeerReviewReport(d) {
     && validScore(d.project,d.reproduced_score) && PROJECTS[d.project].open
     && (d.reason==null || (typeof d.reason==='string' && d.reason.length<=2000))
     && (d.evidence_url==null || d.evidence_url==='' || !!safeURL(d.evidence_url));
+}
+export function createPeerReviewReport(target, publication, input, now=Date.now()) {
+  if(!target || submissionPhase(target.project,publication,now)!=='review') throw new Error('Peer review reports are closed.');
+  if(!validScore(target.project,input.reproduced_score)) throw new Error('Enter your reproduced score.');
+  const reason=(input.reason??'').trim(), rawEvidence=(input.evidence_url??'').trim();
+  const evidence=rawEvidence?safeURL(rawEvidence):null;
+  if(reason.length>2000) throw new Error('Keep the optional report within 2,000 characters.');
+  if(rawEvidence && !evidence) throw new Error('Check the optional HTTPS evidence link.');
+  const threshold=PROJECTS[target.project].review_threshold;
+  if(typeof threshold==='number' && Math.abs(input.reproduced_score-target.score)<=threshold) {
+    throw new Error(`The difference does not exceed the review threshold of ${threshold} ${PROJECTS[target.project].unit}. Discuss general questions on the original submission.`);
+  }
+  const data={schema:'dase7506/peer-review-v1',protocol:PROTOCOL,project:target.project,
+    submission:target.number,reason,reproduced_score:input.reproduced_score,evidence_url:evidence};
+  if(!validatePeerReviewReport(data)) throw new Error('Enter a valid peer review report.');
+  return data;
 }
 export function peerReviewEmailURL(data) {
   if(!validatePeerReviewReport(data)) throw new Error('Enter a valid reproduced score.');
@@ -171,7 +194,7 @@ export function makeIssueURL(data) {
     : artifacts ? `[DASE7506 artifacts] #${data.submission}` : `[DASE7506 Peer Review Report] #${data.submission}`;
   const intro = submission
     ? (data.project==='mp3'
-      ? 'Self-reported public test result, subject to instructor reproduction and compliance checks. Student IDs, scores, model declarations and artifact hashes are public. Artifact URLs are encrypted for the instructor. GitHub retains the submitting account.\n\nKeep the JSON unchanged. Submit improvements as new issues before the score deadline.'
+      ? 'Self-reported public test result, subject to instructor reproduction and compliance checks. Student IDs, scores and artifact hashes are public. Artifact URLs are sealed until the instructor publishes them for peer review. GitHub retains the submitting account.\n\nKeep the JSON unchanged. Submit improvements as new issues before the score deadline.'
       : 'Self-reported score. The leaderboard displays student IDs and scores. Artifact links are sealed for the instructor until release. GitHub records retain the submitting account.\n\nKeep the JSON unchanged. Submit improvements as new issues before the score deadline.')
     : artifacts ? 'Sealed code and checkpoint links for an existing score submission. The instructor will publish links together for a seven-day review. Keep the JSON unchanged.'
     : 'Peer review report, pending instructor review. Your GitHub account and report are public. Use the same checkpoint and evaluator. Reports alone do not affect grades.';
@@ -337,7 +360,7 @@ export function buildSnapshot(issues, previous={}, now=new Date().toISOString(),
     const parsed=parseIssue(issue);
     if (!parsed || !validateChallenge(parsed.data) || !PROJECTS[parsed.data.project].score_deadline) return true;
     const release=publication.projects?.[parsed.data.project];
-    const start=Date.parse(release?.published_at), end=reviewEndTime(parsed.data.project,release);
+    const start=reviewStartTime(parsed.data.project,release), end=reviewEndTime(parsed.data.project,release);
     return Number.isFinite(start) && Date.parse(parsed.created_at)>=start && Date.parse(parsed.created_at)<end;
   });
   const result=buildBaseSnapshot(effective,previous,now);
@@ -391,8 +414,11 @@ export function buildSnapshot(issues, previous={}, now=new Date().toISOString(),
     row.code_url=published?.code_url || null;
     row.checkpoint_url=published?.checkpoint_url || null;
     row.artifact_access={code:publication.link_checks?.[row.code_url]||null,checkpoint:publication.link_checks?.[row.checkpoint_url]||null};
-    if(published) row.artifact_status=row.code_url && row.checkpoint_url ? 'published' : row.code_url || row.checkpoint_url ? 'partial' : 'missing';
-    else if(['review','complete'].includes(phase) && ['self-reported','verified'].includes(row.status)) row.status='links-missing';
+    const adapterRequired=row.project==='mp3' && (row.model?.kind==='lora' || !!row.model?.adapter_sha256);
+    if(published) row.artifact_status=row.code_url && (row.project==='mp3' ? !adapterRequired || row.checkpoint_url : row.checkpoint_url)
+      ? 'published' : row.code_url || row.checkpoint_url ? 'partial' : 'missing';
+    else if(['review','complete'].includes(phase) && release && Date.parse(release.published_at)<=instant
+      && ['self-reported','verified'].includes(row.status)) row.status='links-missing';
   }
   // The release file is teacher-controlled. Unreleased links never enter new
   // score signatures: the browser seals them before creating a public issue.
@@ -412,8 +438,10 @@ export function buildSnapshot(issues, previous={}, now=new Date().toISOString(),
     if(!target || target.project!==(challenge?.project??p.data.project)) return null;
     const self=p.author.toLowerCase()===target.author.toLowerCase();
     const release=publication.projects?.[target.project];
-    const end=release ? reviewEndTime(target.project,release) : Infinity;
-    const status=self?'self-request':Date.parse(p.created_at)>=end?'late':p.labels.includes('7506:rejected')?'rejected':p.closed?'closed':!validScore(target.project,challenge?.reproduced_score??p.data.reproduced_score)?'score-missing':challenge?.status||'pending';
+    const fixedReview=!!PROJECTS[target.project].review_deadline;
+    const start=fixedReview ? reviewStartTime(target.project,release) : -Infinity;
+    const end=release || fixedReview ? reviewEndTime(target.project,release) : Infinity;
+    const status=self?'self-request':Date.parse(p.created_at)<start?'early':Date.parse(p.created_at)>=end?'late':p.labels.includes('7506:rejected')?'rejected':p.closed?'closed':!validScore(target.project,challenge?.reproduced_score??p.data.reproduced_score)?'score-missing':challenge?.status||'pending';
     return {number:p.number,submission:target.number,project:target.project,author:p.author,url:p.url,
       reason:p.data.reason||'',evidence_url:challenge?.evidence_url||p.data.evidence_url||null,
       reproduced_score:challenge?.reproduced_score??p.data.reproduced_score??null,created_at:p.created_at,status};
