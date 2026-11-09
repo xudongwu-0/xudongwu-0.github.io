@@ -61,7 +61,7 @@ function render() {
     for(const [label,url,kind] of [['Source',row.code_url,'code'],['LoRA',row.checkpoint_url,'checkpoint']]) {
       if(!released || !url) continue;
       const item=element('span',undefined,'artifact-item'), link=artifactLink(label,url);
-      link.title=label==='Source'?row.source_sha256:row.model?.adapter_sha256||'Submitted LoRA adapter';
+      link.title=label==='Source'?row.source_sha256||'Submitted source export':row.model?.adapter_sha256||'Submitted LoRA adapter';
       item.append(link);
       const access=row.artifact_access?.[kind];
       if(access?.status==='unavailable') {
@@ -129,19 +129,18 @@ $('submission-form').addEventListener('submit',async event=>{
     const student_id=$('student-id').value.trim(), code=safeURL($('code-url').value.trim());
     if(!validStudentID(student_id)) throw new Error('Enter a student ID of 1–64 visible characters.');
     if(!code) throw new Error('Provide an HTTPS source ZIP link without credentials.');
-    const rawAdapter=$('adapter-url').value.trim(), adapterHash=$('adapter-sha').value.trim().toLowerCase();
+    const rawAdapter=$('adapter-url').value.trim();
     const adapter=rawAdapter?safeURL(rawAdapter):null;
     if(rawAdapter && !adapter) throw new Error('Provide an HTTPS adapter ZIP link without credentials.');
-    if(Boolean(adapter)!==Boolean(adapterHash)) throw new Error('Provide both the optional LoRA adapter link and its SHA-256, or leave both empty.');
-    const model={kind:'report',adapter_sha256:adapterHash||null};
+    const model={kind:'report',has_adapter:adapter!==null};
     const data={schema:'dase7506/submission-v1',protocol:PROTOCOL,project:'mp3',student_id,
       score:scoreReport.accuracy,correct:scoreReport.correct,n:scoreReport.n,score_sha256:scoreHash,
       predictions_sha256:scoreReport.predictions_sha256,
-      source_sha256:$('source-sha').value.trim().toLowerCase(),benchmark:{...MP3_EVALUATION},model};
+      benchmark:{...MP3_EVALUATION},model};
     data.artifacts=await encryptArtifactLinks(code,adapter,'mp3');
     if(version!==formVersion) throw new Error('The form changed while preparing. Check your fields and prepare again.');
     if(!submissionsOpen()) throw new Error('Score submissions closed while preparing. The GitHub issue must be created before the deadline.');
-    if(!validateSubmission(data)) throw new Error('Check the source/adapter SHA-256 values and the official test-score JSON. Describe your method and model, if any, in the report.');
+    if(!validateSubmission(data)) throw new Error('Check the official test-score JSON and submission details. Describe your method and model, if any, in the report.');
     prepared($('submission-status'),makeIssueURL(data),'Score submission');
     $('code-url').value=''; $('adapter-url').value='';
   } catch(error) {$('submission-status').append(element('p',error.message,'error'));}

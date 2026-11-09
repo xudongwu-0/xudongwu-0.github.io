@@ -67,6 +67,9 @@ test('MP3 publishes public self-evaluation, a score form and the current fingerp
   assert.ok(read('mp3/PROJECT.md').includes('if you train an LLM, use **LoRA on `Qwen/Qwen3-0.6B` only**'));
   assert.ok(!/deploy no extra live llm|no additional live llm, or|one llm with at most/i.test(html+read('mp3/PROJECT.md')));
   assert.ok(!/id="model-(?:kind|fields|repo|revision|parameters)"|<th[^>]*>Route<\/th>/.test(html));
+  assert.ok(!/id="(?:source-sha|adapter-sha)"|Source ZIP SHA-256|Adapter ZIP SHA-256/.test(html));
+  assert.ok(!/\$\('(?:source-sha|adapter-sha)'\)/.test(source));
+  assert.ok(!/source ZIP link\/hash|adapter link\/hash|Record the source ZIP SHA-256/.test(read('mp3/PROJECT.md')));
   assert.ok(html.includes('One leaderboard') && html.includes('id="challenge-dialog"'));
   assert.ok(html.includes('30 November 2026, 23:59 (UTC+8)') && html.includes('7 December 2026, 23:59 (UTC+8)'));
   assert.ok(html.includes('id="reproduced-score"') && html.includes('id="email-report"'));

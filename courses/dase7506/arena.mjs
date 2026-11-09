@@ -84,6 +84,9 @@ export function validateSubmission(d) {
 export function validSHA256(value) {
   return typeof value==='string' && /^[a-f0-9]{64}$/.test(value);
 }
+export function hasMP3Adapter(model) {
+  return model?.has_adapter===true || model?.kind==='lora' || !!model?.adapter_sha256;
+}
 function validMP3Counts(d) {
   return d.n===240 && Number.isSafeInteger(d.correct) && d.correct>=0 && d.correct<=240
     && typeof d.accuracy==='number' && Math.abs(d.accuracy-100*d.correct/d.n)<1e-10;
@@ -102,16 +105,23 @@ export function validateMP3Score(d) {
 }
 function validateMP3Details(d) {
   if(!validStudentID(d.student_id) || !validMP3Counts({...d,accuracy:d.score})
-    || !validSHA256(d.source_sha256) || !validSHA256(d.score_sha256)
+    || !validSHA256(d.score_sha256)
     || !validSHA256(d.predictions_sha256) || !validSealedArtifacts(d.artifacts)) return false;
   const fields=['schema','protocol','project','student_id','score','correct','n',
-    'source_sha256','score_sha256','predictions_sha256','benchmark','model','artifacts'];
+    'score_sha256','predictions_sha256','benchmark','model','artifacts'];
+  if(Object.hasOwn(d,'source_sha256')) {
+    if(!validSHA256(d.source_sha256)) return false;
+    fields.push('source_sha256');
+  }
   if(Object.keys(d).length!==fields.length || !fields.every(key=>Object.hasOwn(d,key))) return false;
   if(!d.benchmark || Object.keys(d.benchmark).length!==Object.keys(MP3_EVALUATION).length
     || !Object.entries(MP3_EVALUATION).every(([key,value])=>d.benchmark[key]===value)) return false;
   const model=d.model;
-  if(model?.kind==='report') return Object.keys(model).length===2
-    && Object.hasOwn(model,'adapter_sha256') && (model.adapter_sha256===null || validSHA256(model.adapter_sha256));
+  if(model?.kind==='report') {
+    if(Object.keys(model).length!==2) return false;
+    return Object.hasOwn(model,'has_adapter') ? typeof model.has_adapter==='boolean'
+      : Object.hasOwn(model,'adapter_sha256') && (model.adapter_sha256===null || validSHA256(model.adapter_sha256));
+  }
   if(!model || !['none','public','lora'].includes(model.kind)) return false;
   if(model.kind==='none') return Object.keys(model).length===1;
   if(typeof model.repository!=='string' || !/^\w(?:[\w.-]*\w)?\/\w(?:[\w.-]*\w)?$/.test(model.repository)
@@ -194,7 +204,7 @@ export function makeIssueURL(data) {
     : artifacts ? `[DASE7506 artifacts] #${data.submission}` : `[DASE7506 Peer Review Report] #${data.submission}`;
   const intro = submission
     ? (data.project==='mp3'
-      ? 'Self-reported public test result, subject to instructor reproduction and compliance checks. Student IDs, scores and artifact hashes are public. Artifact URLs are sealed until the instructor publishes them for peer review. GitHub retains the submitting account.\n\nKeep the JSON unchanged. Submit improvements as new issues before the score deadline.'
+      ? 'Self-reported public test result, subject to instructor reproduction and compliance checks. Student IDs, scores and evaluation metadata are public. Artifact URLs are sealed until the instructor publishes them for peer review. GitHub retains the submitting account.\n\nKeep the JSON unchanged. Submit improvements as new issues before the score deadline.'
       : 'Self-reported score. The leaderboard displays student IDs and scores. Artifact links are sealed for the instructor until release. GitHub records retain the submitting account.\n\nKeep the JSON unchanged. Submit improvements as new issues before the score deadline.')
     : artifacts ? 'Sealed code and checkpoint links for an existing score submission. The instructor will publish links together for a seven-day review. Keep the JSON unchanged.'
     : 'Peer review report, pending instructor review. Your GitHub account and report are public. Use the same checkpoint and evaluator. Reports alone do not affect grades.';
@@ -414,7 +424,7 @@ export function buildSnapshot(issues, previous={}, now=new Date().toISOString(),
     row.code_url=published?.code_url || null;
     row.checkpoint_url=published?.checkpoint_url || null;
     row.artifact_access={code:publication.link_checks?.[row.code_url]||null,checkpoint:publication.link_checks?.[row.checkpoint_url]||null};
-    const adapterRequired=row.project==='mp3' && (row.model?.kind==='lora' || !!row.model?.adapter_sha256);
+    const adapterRequired=row.project==='mp3' && hasMP3Adapter(row.model);
     if(published) row.artifact_status=row.code_url && (row.project==='mp3' ? !adapterRequired || row.checkpoint_url : row.checkpoint_url)
       ? 'published' : row.code_url || row.checkpoint_url ? 'partial' : 'missing';
     else if(['review','complete'].includes(phase) && release && Date.parse(release.published_at)<=instant

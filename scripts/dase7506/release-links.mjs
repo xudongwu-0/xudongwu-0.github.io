@@ -4,7 +4,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {parseArgs} from 'node:util';
 import {privateDecrypt,createDecipheriv,constants} from 'node:crypto';
-import {REPO,KEY_ID,PROJECTS,safeURL,parseIssue,bestRows,buildSnapshot,reviewEndTime} from '../../courses/dase7506/arena.mjs';
+import {REPO,KEY_ID,PROJECTS,safeURL,parseIssue,bestRows,buildSnapshot,reviewEndTime,hasMP3Adapter} from '../../courses/dase7506/arena.mjs';
 const root=fileURLToPath(new URL('../../',import.meta.url));
 export function decryptLinks(sealed,key) {
   if(sealed?.key_id!==KEY_ID || sealed.algorithm!=='RSA-OAEP-256+AES-256-GCM') throw new Error('Invalid sealed artifact envelope.');
@@ -40,7 +40,7 @@ export function prepareRelease(snapshot,issues,key,project='mp1',now=new Date().
       if(links.project!==project || (links.submission!=null && links.submission!==row.number)) throw new Error('Artifact reference mismatch.');
       const code=safeURL(links.code_url), checkpoint=safeURL(links.checkpoint_url);
       if((links.code_url && !code)||(links.checkpoint_url && !checkpoint)) throw new Error('Invalid HTTPS artifact URL.');
-      const adapterRequired=project==='mp3' && (row.model?.kind==='lora' || !!row.model?.adapter_sha256);
+      const adapterRequired=project==='mp3' && hasMP3Adapter(row.model);
       if(!code || (!checkpoint && (project!=='mp3' || adapterRequired))) {
         missing.push(row.number);
         if(!options.allowIncomplete) continue;

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {webcrypto,generateKeyPairSync} from 'node:crypto';
-import {PROTOCOL,KEY_ID,PROJECTS,MP3_EVALUATION,MP3_LORA_BASE,validateSubmission,validateMP3Score,makeIssueURL,parseIssue,buildSnapshot,bestRows,encryptArtifactLinks,submissionPhase,reviewStartTime,reviewEndTime,createPeerReviewReport} from '../../courses/dase7506/arena.mjs';
+import {PROTOCOL,KEY_ID,PROJECTS,MP3_EVALUATION,MP3_LORA_BASE,validateSubmission,validateMP3Score,makeIssueURL,parseIssue,buildSnapshot,bestRows,encryptArtifactLinks,submissionPhase,reviewStartTime,reviewEndTime,createPeerReviewReport,hasMP3Adapter} from '../../courses/dase7506/arena.mjs';
 import {prepareRelease} from './release-links.mjs';
 
 const before='2026-11-10T00:00:00Z', cutoff='2026-12-01T00:00:00+08:00', reviewEnd='2026-12-08T00:00:00+08:00';
@@ -13,6 +13,11 @@ const claim=(changes={})=>({
   artifacts:{algorithm:'RSA-OAEP-256+AES-256-GCM',key_id:KEY_ID,wrapped_key:'A'.repeat(512),iv:'A'.repeat(16),ciphertext:'A'.repeat(24)},
   ...changes,
 });
+const simpleClaim=(hasAdapter=false,changes={})=>{
+  const data=claim({model:{kind:'report',has_adapter:hasAdapter},...changes});
+  delete data.source_sha256;
+  return data;
+};
 const issue=(data=claim(),changes={})=>({
   number:501,user:{type:'User',login:'example-student'},state:'open',labels:[],
   created_at:'2026-11-10T00:00:00Z',updated_at:'2026-11-10T00:00:00Z',
@@ -49,6 +54,39 @@ test('MP3 accepts no-model, public-model and pinned LoRA self-reports, not other
     {score_sha256:'bad'},{predictions_sha256:'bad'},{benchmark:{...MP3_EVALUATION,manifest_sha256:'f'.repeat(64)}},
     {student_id:''},{artifacts:null},{code_url:'https://example.org/plaintext.zip'},
     {schema:'dase7506/evaluation-request-v1'},{status:'verified'}]) assert.ok(!validateSubmission(claim(change)));
+});
+test('simplified entries need no source or adapter ZIP hashes, but retain automatic evaluation fingerprints',()=>{
+  for(const hasAdapter of [false,true]) {
+    const data=simpleClaim(hasAdapter);
+    assert.ok(validateSubmission(data));
+    assert.equal(Object.hasOwn(data,'source_sha256'),false);
+    assert.equal(Object.hasOwn(data.model,'adapter_sha256'),false);
+    assert.equal(hasMP3Adapter(data.model),hasAdapter);
+    assert.deepEqual(parseIssue(issue(data)).data,data);
+    const url=new URL(makeIssueURL(data));
+    assert.deepEqual(parseIssue({...issue(),body:url.searchParams.get('body')}).data,data);
+    for(const changes of [{score_sha256:undefined},{predictions_sha256:'bad'},{source_sha256:'bad'},
+      {model:{kind:'report',has_adapter:'true'}},{model:{kind:'report',has_adapter:null}},
+      {model:{kind:'report',has_adapter:hasAdapter,adapter_sha256:'e'.repeat(64)}}]) {
+      assert.ok(!validateSubmission({...data,...changes}));
+    }
+  }
+  assert.equal(hasMP3Adapter({kind:'report',adapter_sha256:null}),false);
+  assert.equal(hasMP3Adapter({kind:'report',adapter_sha256:'e'.repeat(64)}),true);
+  assert.equal(hasMP3Adapter({kind:'lora'}),true);
+});
+test('simplified entries preserve review binding and deadline-frozen adapter declarations',()=>{
+  const original=issue(simpleClaim(),{labels:['7506:verified']});
+  const previous=buildSnapshot([original],{},before);
+  assert.equal(buildSnapshot([original],previous,before).submissions[0].status,'verified');
+  const edited=issue(simpleClaim(true),{labels:['7506:verified'],updated_at:cutoff});
+  const changed=buildSnapshot([edited],previous,before);
+  assert.equal(changed.submissions[0].status,'review');
+  const frozen=buildSnapshot([edited],previous,cutoff);
+  assert.equal(frozen.submissions[0].status,'verified');
+  assert.equal(frozen.submissions[0].model.has_adapter,false);
+  assert.equal(Object.hasOwn(JSON.parse(frozen.submissions[0].signature)[6],'source_sha256'),false);
+  assert.deepEqual(bestRows(frozen.submissions,'mp3').map(row=>row.number),[501]);
 });
 test('score-file validation requires complete public test identity and consistent three-case counts',()=>{
   assert.ok(validateMP3Score(score()));
@@ -190,25 +228,29 @@ test('MP3 uses the same hybrid encryption as MP2 and fails closed without HTTPS'
       const data=JSON.parse(new TextDecoder().decode(plaintext));
       assert.equal(data.code_url,'https://example.org/code.zip'); assert.equal(data.checkpoint_url,adapter);
       assert.ok(!new URL(makeIssueURL(claim({artifacts:sealed}))).searchParams.get('body').includes('example.org'));
-      const original=issue(claim({artifacts:sealed,model:{kind:'report',adapter_sha256:adapter?'e'.repeat(64):null}}));
-      const previous=buildSnapshot([original],{},before);
-      assert.ok(!JSON.stringify(previous).includes('https://example.org'));
-      assert.throws(()=>prepareRelease(previous,[original],privateKey,'mp3',before),/deadline/);
-      const release=prepareRelease(previous,[original],privateKey,'mp3',cutoff);
-      assert.equal(release.review_ends_at,new Date(reviewEnd).toISOString());
-      const publication={projects:{mp3:release}};
-      const published=buildSnapshot([original],previous,cutoff,publication);
-      assert.equal(published.submissions[0].artifact_status,'published');
-      assert.equal(published.submissions[0].code_url,'https://example.org/code.zip');
-      assert.equal(published.submissions[0].checkpoint_url,adapter);
-      const edited=issue(claim({artifacts:await encryptArtifactLinks('https://example.org/changed.zip',adapter,'mp3'),
-        model:{kind:'report',adapter_sha256:adapter?'e'.repeat(64):null}}),{updated_at:cutoff});
-      const frozen=buildSnapshot([edited],previous,cutoff);
-      const frozenRelease=prepareRelease(frozen,[edited],privateKey,'mp3',cutoff);
-      assert.equal(frozenRelease.entries[0].code_url,'https://example.org/code.zip');
-      if(!adapter) {
-        const missing=issue(claim({artifacts:sealed,model:{kind:'report',adapter_sha256:'e'.repeat(64)}}));
-        assert.throws(()=>prepareRelease(buildSnapshot([missing],{},before),[missing],privateKey,'mp3',cutoff),/required/);
+      for(const legacy of [false,true]) {
+        const makeClaim=(artifacts,hasAdapter=adapter!==null)=>legacy
+          ? claim({artifacts,model:{kind:'report',adapter_sha256:hasAdapter?'e'.repeat(64):null}})
+          : simpleClaim(hasAdapter,{artifacts});
+        const original=issue(makeClaim(sealed));
+        const previous=buildSnapshot([original],{},before);
+        assert.ok(!JSON.stringify(previous).includes('https://example.org'));
+        assert.throws(()=>prepareRelease(previous,[original],privateKey,'mp3',before),/deadline/);
+        const release=prepareRelease(previous,[original],privateKey,'mp3',cutoff);
+        assert.equal(release.review_ends_at,new Date(reviewEnd).toISOString());
+        const publication={projects:{mp3:release}};
+        const published=buildSnapshot([original],previous,cutoff,publication);
+        assert.equal(published.submissions[0].artifact_status,'published');
+        assert.equal(published.submissions[0].code_url,'https://example.org/code.zip');
+        assert.equal(published.submissions[0].checkpoint_url,adapter);
+        const edited=issue(makeClaim(await encryptArtifactLinks('https://example.org/changed.zip',adapter,'mp3')),{updated_at:cutoff});
+        const frozen=buildSnapshot([edited],previous,cutoff);
+        const frozenRelease=prepareRelease(frozen,[edited],privateKey,'mp3',cutoff);
+        assert.equal(frozenRelease.entries[0].code_url,'https://example.org/code.zip');
+        if(!adapter) {
+          const missing=issue(makeClaim(sealed,true));
+          assert.throws(()=>prepareRelease(buildSnapshot([missing],{},before),[missing],privateKey,'mp3',cutoff),/required/);
+        }
       }
     }
   } finally {
