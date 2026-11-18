@@ -830,48 +830,6 @@ strong {
   text-underline-offset: 0.18em;
 }
 
-.jomoha-walkthrough {
-  margin: 1.5rem 0;
-  padding: 0.9rem 1rem;
-  border: 1px solid var(--line);
-  border-radius: 0.45rem;
-}
-
-.jomoha-walkthrough summary {
-  cursor: pointer;
-  font-weight: 700;
-}
-
-.jomoha-steps {
-  margin: 0.85rem 0 0;
-  padding-left: 1.5rem;
-}
-
-.jomoha-steps li + li {
-  margin-top: 0.5rem;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .jomoha-walkthrough[open] .jomoha-steps li {
-    animation: jomoha-step-in 0.4s ease-out var(--step-delay, 0s) both;
-  }
-
-  .jomoha-steps li:nth-child(2) { --step-delay: 0.55s; }
-  .jomoha-steps li:nth-child(3) { --step-delay: 1.1s; }
-  .jomoha-steps li:nth-child(4) { --step-delay: 1.65s; }
-}
-
-@keyframes jomoha-step-in {
-  from {
-    opacity: 0;
-    transform: translateY(0.35rem);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
 .post-back-link {
   margin-top: 3rem;
   padding-top: 1.5rem;
