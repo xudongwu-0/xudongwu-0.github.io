@@ -775,6 +775,61 @@ strong {
   max-width: 760px;
 }
 
+.jomoha-tldr {
+  margin-bottom: 2rem;
+  padding: clamp(1rem, 3vw, 1.65rem);
+  border: 1px solid #d5e4ed;
+  border-radius: 0.65rem;
+  background: linear-gradient(135deg, #edf5fa, var(--paper));
+}
+
+.jomoha-tldr h2 {
+  margin: 0 0 0.45rem;
+  color: var(--link-hover);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+.jomoha-tldr .jomoha-tldr-lead {
+  margin: 0 0 0.45rem;
+  color: var(--link-hover);
+  font-size: clamp(1.25rem, 3vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.jomoha-tldr-results,
+.jomoha-tldr .jomoha-tldr-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.6rem;
+  margin: 1rem 0 0;
+}
+
+.jomoha-tldr-results > div {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.jomoha-tldr-results dt {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.jomoha-tldr-results dd {
+  margin: 0;
+  color: var(--link-hover);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.jomoha-tldr-links a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
 .jomoha-walkthrough {
   margin: 1.5rem 0;
   padding: 0.9rem 1rem;
