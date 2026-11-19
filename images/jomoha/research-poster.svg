@@ -55,7 +55,7 @@
       <text x="50" y="503">in the next phase. Their performance together can collapse.</text>
     </g>
     <text x="50" y="547" fill="#fff" font-size="29" font-weight="700">83.0% &#8594; 90.5% &#8594; <tspan fill="#ffb5a8">31.5%</tspan></text>
-    <text x="397" y="545" fill="#d0d6d6" font-size="15">ALFWorld / long-phase alternating training</text>
+    <text x="397" y="545" fill="#d0d6d6" font-size="15">ALFWorld success</text>
 
     <g fill="#d0d6d6" font-size="18">
       <text x="50" y="637">The Engineer writes a harness. The Solver uses it to do the task.</text>
@@ -80,5 +80,8 @@
     <path d="M50 1251h660" fill="none" stroke="#505758"/>
     <text x="50" y="1277" fill="#c4cece" font-size="14">Xudong Wu, Guangchen Lan, Mingqi Yuan, and Jiayu Chen</text>
     <text x="710" y="1277" fill="#a5e5d2" font-family="monospace" font-size="12" text-anchor="end">arXiv:2611.11499</text>
+    <a href="https://github.com/xudongwu-0/coevolve" target="_blank" rel="noopener noreferrer">
+      <text x="50" y="1297" fill="#a5e5d2" font-family="monospace" font-size="13" text-decoration="underline">github.com/xudongwu-0/coevolve</text>
+    </a>
   </g>
 </svg>
