@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="1010" viewBox="0 0 760 1010" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="1320" viewBox="0 0 760 1320" role="img" aria-labelledby="title description">
   <title id="title">JoMoHa: How should we train the model and its harness together?</title>
   <desc id="description">A research poster about JoMoHa. After an initial improvement from 83.0% to 90.5%, alternating training fell to 31.5% on ALFWorld. JoMoHa trains the Engineer and Solver on the same task attempt using a shared reward and separate collaboration-aware critics. It reaches 97.0% on ALFWorld and averages 70.3% over three benchmarks.</desc>
   <defs>
@@ -14,9 +14,9 @@
       <path d="M0 0 7 3.5 0 7Z" fill="#9bdfcb"/>
     </marker>
   </defs>
-  <rect width="760" height="1010" fill="url(#background)"/>
-  <rect width="760" height="1010" fill="url(#grid)"/>
-  <path d="M22 37V22H37 M723 22h15v15 M22 973v15h15 M723 988h15v-15" fill="none" stroke="#697175"/>
+  <rect width="760" height="1320" fill="url(#background)"/>
+  <rect width="760" height="1320" fill="url(#grid)"/>
+  <path d="M22 37V22H37 M723 22h15v15 M22 1283v15h15 M723 1298h15v-15" fill="none" stroke="#697175"/>
   <g font-family="system-ui, -apple-system, sans-serif">
     <g fill="#f3f5f5" font-size="17" font-weight="650">
       <text x="50" y="67">The University of Hong Kong</text>
@@ -45,41 +45,38 @@
 
     <g fill="#a5e5d2" font-size="13" font-weight="700" letter-spacing="2">
       <text x="50" y="426">01 / THE PROBLEM</text>
-      <text x="50" y="574">02 / OUR APPROACH</text>
-      <text x="50" y="766">03 / RESULTS</text>
+      <text x="50" y="606">02 / OUR APPROACH</text>
+      <text x="50" y="1076">03 / RESULTS</text>
     </g>
-    <path d="M232 421h478 M235 569h475 M180 761h530" fill="none" stroke="#505758"/>
-    <text x="50" y="478" fill="#fff" font-size="29" font-weight="700">83.0% &#8594; 90.5% &#8594; <tspan fill="#ffb5a8">31.5%</tspan></text>
-    <text x="50" y="516" fill="#d0d6d6" font-size="17">Alternating training on ALFWorld first helped, then broke down.</text>
+    <path d="M232 421h478 M235 601h475 M180 1071h530" fill="none" stroke="#505758"/>
+    <g fill="#d0d6d6" font-size="18">
+      <text x="50" y="465">When both model weights and the harness need to improve,</text>
+      <text x="50" y="492">naive alternating training can lead to performance collapse.</text>
+    </g>
+    <text x="50" y="547" fill="#fff" font-size="29" font-weight="700">83.0% &#8594; 90.5% &#8594; <tspan fill="#ffb5a8">31.5%</tspan></text>
+    <text x="397" y="545" fill="#d0d6d6" font-size="15">ALFWorld / long-phase alternating training</text>
 
     <g fill="#d0d6d6" font-size="18">
-      <text x="50" y="616">The Engineer writes the harness. The Solver acts under it.</text>
-      <text x="50" y="647">Both learn from the same task reward, with separate critics</text>
-      <text x="50" y="678">that account for how the two policies worked together.</text>
+      <text x="50" y="645">JoMoHa mitigates this mismatch by training the Engineer and</text>
+      <text x="50" y="672">Solver on the same task attempt, with separate critics that</text>
+      <text x="50" y="699">account for the conditions under which they worked together.</text>
     </g>
-    <g fill="none" stroke="#596466">
-      <rect x="50" y="702" width="151" height="26"/>
-      <rect x="212" y="702" width="143" height="26"/>
-      <rect x="366" y="702" width="242" height="26"/>
-    </g>
-    <g fill="#e0e8e7" font-family="monospace" font-size="11" letter-spacing=".8" text-anchor="middle">
-      <text x="125.5" y="719">JOINT TRAINING</text>
-      <text x="283.5" y="719">SHARED REWARD</text>
-      <text x="487" y="719">COLLABORATION-AWARE CRITICS</text>
-    </g>
+    <rect x="50" y="725" width="660" height="302" rx="6" fill="#fff"/>
+    <image href="overview.png" x="86" y="728" width="588" height="296"/>
+    <text x="50" y="1051" fill="#c4cece" font-size="14">JoMoHa training algorithm (paper Figure 3, CC BY 4.0)</text>
 
-    <rect x="50" y="791" width="660" height="117" fill="#111619" stroke="#596466"/>
-    <path d="M51 791v117 M380 809v81" fill="none" stroke="#9bdfcb"/>
+    <rect x="50" y="1101" width="660" height="117" fill="#111619" stroke="#596466"/>
+    <path d="M51 1101v117 M380 1119v81" fill="none" stroke="#9bdfcb"/>
     <g fill="#fff" font-size="37" font-weight="750">
-      <text x="73" y="846">97.0%</text>
-      <text x="403" y="846">70.3%</text>
+      <text x="73" y="1156">97.0%</text>
+      <text x="403" y="1156">70.3%</text>
     </g>
     <g fill="#c6d1d1" font-size="17">
-      <text x="73" y="879">ALFWorld success</text>
-      <text x="403" y="879">Average across three benchmarks</text>
+      <text x="73" y="1189">ALFWorld success</text>
+      <text x="403" y="1189">Average across three benchmarks</text>
     </g>
-    <path d="M50 941h660" fill="none" stroke="#505758"/>
-    <text x="50" y="967" fill="#c4cece" font-size="14">Xudong Wu, Guangchen Lan, Mingqi Yuan, and Jiayu Chen</text>
-    <text x="710" y="967" fill="#a5e5d2" font-family="monospace" font-size="12" text-anchor="end">arXiv:2611.11499</text>
+    <path d="M50 1251h660" fill="none" stroke="#505758"/>
+    <text x="50" y="1277" fill="#c4cece" font-size="14">Xudong Wu, Guangchen Lan, Mingqi Yuan, and Jiayu Chen</text>
+    <text x="710" y="1277" fill="#a5e5d2" font-family="monospace" font-size="12" text-anchor="end">arXiv:2611.11499</text>
   </g>
 </svg>
