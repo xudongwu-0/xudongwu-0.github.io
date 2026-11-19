@@ -1,47 +1,85 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="530" viewBox="0 0 760 530" role="img" aria-labelledby="title description">
-  <title id="title">JoMoHa: One task attempt, two policies learning together</title>
-  <desc id="description">On ALFWorld, long-phase alternating training rose from 83.0 percent to 90.5 percent, then fell to 31.5 percent. In JoMoHa, the Engineer writes a harness and the Solver acts under it. A shared task reward and separate collaboration-aware critics train both policies. JoMoHa reaches 97.0 percent on ALFWorld and averages 70.3 percent across three benchmarks.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="1010" viewBox="0 0 760 1010" role="img" aria-labelledby="title description">
+  <title id="title">JoMoHa: How should we train the model and its harness together?</title>
+  <desc id="description">A research poster about JoMoHa. After an initial improvement from 83.0% to 90.5%, alternating training fell to 31.5% on ALFWorld. JoMoHa trains the Engineer and Solver on the same task attempt using a shared reward and separate collaboration-aware critics. It reaches 97.0% on ALFWorld and averages 70.3% over three benchmarks.</desc>
   <defs>
-    <linearGradient id="background" x2="1" y2="1" gradientUnits="objectBoundingBox">
-      <stop stop-color="#0b182c"/>
-      <stop offset="1" stop-color="#142d47"/>
+    <linearGradient id="background" x2="1" y2="1">
+      <stop stop-color="#292d30"/>
+      <stop offset=".65" stop-color="#14171a"/>
+      <stop offset="1" stop-color="#101214"/>
     </linearGradient>
-    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-      <path d="M0 0 7 3.5 0 7Z" fill="#87caff"/>
+    <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M25 0H0V25" fill="none" stroke="#fff" stroke-opacity=".065"/>
+    </pattern>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 7 3.5 0 7Z" fill="#9bdfcb"/>
     </marker>
   </defs>
-  <rect width="760" height="530" rx="18" fill="url(#background)"/>
+  <rect width="760" height="1010" fill="url(#background)"/>
+  <rect width="760" height="1010" fill="url(#grid)"/>
+  <path d="M22 37V22H37 M723 22h15v15 M22 973v15h15 M723 988h15v-15" fill="none" stroke="#697175"/>
   <g font-family="system-ui, -apple-system, sans-serif">
-    <text x="34" y="46" fill="#8bd6ff" font-size="17" font-weight="700" letter-spacing="2">JOMOHA / RESEARCH SNAPSHOT</text>
-    <text x="34" y="98" fill="#fff" font-size="39" font-weight="750">One task attempt,</text>
-    <text x="34" y="143" fill="#fff" font-size="39" font-weight="750">two policies learning together.</text>
+    <g fill="#f3f5f5" font-size="17" font-weight="650">
+      <text x="50" y="67">The University of Hong Kong</text>
+      <text x="308" y="67">Salesforce</text>
+    </g>
+    <path d="M289 46v28 M50 97h660" fill="none" stroke="#606769"/>
+    <text x="50" y="139" fill="#a5e5d2" font-size="14" font-weight="700" letter-spacing="3">RESEARCH SPOTLIGHT / AGENT TRAINING</text>
+    <text x="50" y="235" fill="#fff" font-size="84" font-weight="750">JoMoHa</text>
+    <g fill="#f3f5f5" font-size="27" font-weight="650">
+      <text x="52" y="281">How should we train the model</text>
+      <text x="52" y="314">and its harness together?</text>
+    </g>
+    <text x="52" y="355" fill="#bac5c7" font-size="17">Joint Model&#8211;Harness Optimization with Reinforcement Learning</text>
 
-    <rect x="34" y="172" width="692" height="90" rx="12" fill="#292942"/>
-    <text x="54" y="201" fill="#ffb5a5" font-size="17" font-weight="700" letter-spacing="1">ALTERNATING TRAINING / ALFWORLD</text>
-    <text x="54" y="239" fill="#fff" font-size="27" font-weight="700">83.0% &#8594; 90.5% &#8594; <tspan fill="#ffb5a5">31.5%</tspan></text>
+    <g fill="none" stroke="#9bdfcb" stroke-width="1.5">
+      <rect x="525" y="171" width="185" height="127"/>
+      <path d="M589 210h56 M675 227v31h-92v-30" marker-end="url(#arrow)"/>
+      <rect x="540" y="194" width="49" height="32" fill="#242b2d"/>
+      <rect x="646" y="194" width="49" height="32" fill="#242b2d"/>
+    </g>
+    <g fill="#e1fff5" font-family="monospace" text-anchor="middle" font-weight="700">
+      <text x="564.5" y="215" font-size="16">E</text>
+      <text x="670.5" y="215" font-size="16">S</text>
+      <text x="620" y="282" font-size="11" letter-spacing="1">SHARED REWARD</text>
+    </g>
 
-    <rect x="34" y="278" width="692" height="148" rx="12" fill="#1e3c56"/>
-    <text x="54" y="308" fill="#a5e5ff" font-size="17" font-weight="700" letter-spacing="1">JOMOHA / JOINT REINFORCEMENT LEARNING</text>
-    <g fill="#fff" font-size="22" font-weight="700">
-      <text x="136" y="353" text-anchor="middle">Engineer</text>
-      <text x="380" y="353" text-anchor="middle">Solver</text>
-      <text x="620" y="353" text-anchor="middle">Task reward</text>
+    <g fill="#a5e5d2" font-size="13" font-weight="700" letter-spacing="2">
+      <text x="50" y="426">01 / THE PROBLEM</text>
+      <text x="50" y="574">02 / OUR APPROACH</text>
+      <text x="50" y="766">03 / RESULTS</text>
     </g>
-    <g fill="#c3dcee" font-size="17" text-anchor="middle">
-      <text x="136" y="377">Writes the harness</text>
-      <text x="380" y="377">Acts under it</text>
-      <text x="620" y="377">Trains both policies</text>
-    </g>
-    <path d="M225 347h73 M461 347h75" fill="none" stroke="#87caff" stroke-width="2.5" marker-end="url(#arrow)"/>
-    <text x="380" y="407" text-anchor="middle" fill="#a5e5ff" font-size="18" font-weight="600">Separate critics account for how the pair worked together.</text>
+    <path d="M232 421h478 M235 569h475 M180 761h530" fill="none" stroke="#505758"/>
+    <text x="50" y="478" fill="#fff" font-size="29" font-weight="700">83.0% &#8594; 90.5% &#8594; <tspan fill="#ffb5a8">31.5%</tspan></text>
+    <text x="50" y="516" fill="#d0d6d6" font-size="17">Alternating training on ALFWorld first helped, then broke down.</text>
 
-    <g font-weight="750" fill="#fff" font-size="35">
-      <text x="34" y="478">97.0%</text>
-      <text x="388" y="478">70.3%</text>
+    <g fill="#d0d6d6" font-size="18">
+      <text x="50" y="616">The Engineer writes the harness. The Solver acts under it.</text>
+      <text x="50" y="647">Both learn from the same task reward, with separate critics</text>
+      <text x="50" y="678">that account for how the two policies worked together.</text>
     </g>
-    <g fill="#c3dcee" font-size="18">
-      <text x="34" y="505">ALFWorld success</text>
-      <text x="388" y="505">Average across three benchmarks</text>
+    <g fill="none" stroke="#596466">
+      <rect x="50" y="702" width="151" height="26"/>
+      <rect x="212" y="702" width="143" height="26"/>
+      <rect x="366" y="702" width="242" height="26"/>
     </g>
+    <g fill="#e0e8e7" font-family="monospace" font-size="11" letter-spacing=".8" text-anchor="middle">
+      <text x="125.5" y="719">JOINT TRAINING</text>
+      <text x="283.5" y="719">SHARED REWARD</text>
+      <text x="487" y="719">COLLABORATION-AWARE CRITICS</text>
+    </g>
+
+    <rect x="50" y="791" width="660" height="117" fill="#111619" stroke="#596466"/>
+    <path d="M51 791v117 M380 809v81" fill="none" stroke="#9bdfcb"/>
+    <g fill="#fff" font-size="37" font-weight="750">
+      <text x="73" y="846">97.0%</text>
+      <text x="403" y="846">70.3%</text>
+    </g>
+    <g fill="#c6d1d1" font-size="17">
+      <text x="73" y="879">ALFWorld success</text>
+      <text x="403" y="879">Average across three benchmarks</text>
+    </g>
+    <path d="M50 941h660" fill="none" stroke="#505758"/>
+    <text x="50" y="967" fill="#c4cece" font-size="14">Xudong Wu, Guangchen Lan, Mingqi Yuan, and Jiayu Chen</text>
+    <text x="710" y="967" fill="#a5e5d2" font-family="monospace" font-size="12" text-anchor="end">arXiv:2611.11499</text>
   </g>
 </svg>
