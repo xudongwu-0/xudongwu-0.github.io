@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="1320" viewBox="0 0 760 1320" role="img" aria-labelledby="title description">
   <title id="title">JoMoHa: How should we train the model and its harness together?</title>
-  <desc id="description">A research poster about JoMoHa. After an initial improvement from 83.0% to 90.5%, alternating training fell to 31.5% on ALFWorld. JoMoHa trains the Engineer and Solver on the same task attempt using a shared reward and separate collaboration-aware critics. It reaches 97.0% on ALFWorld and averages 70.3% over three benchmarks.</desc>
+  <desc id="description">Alternating model and harness updates can pull the pair out of sync. On ALFWorld, success rose from 83.0% to 90.5%, then fell to 31.5%. JoMoHa trains the Engineer and Solver on the same task attempt: the Engineer writes the harness, the Solver uses it, and both learn from the task reward with separate critics that account for the partner. JoMoHa reaches 97.0% on ALFWorld and averages 70.3% across three benchmarks.</desc>
   <defs>
     <linearGradient id="background" x2="1" y2="1">
       <stop stop-color="#292d30"/>
@@ -44,22 +44,24 @@
     </g>
 
     <g fill="#a5e5d2" font-size="13" font-weight="700" letter-spacing="2">
-      <text x="50" y="426">01 / THE PROBLEM</text>
-      <text x="50" y="606">02 / OUR APPROACH</text>
+      <text x="50" y="426">01 / ALTERNATING UPDATES CAN PULL THE PAIR OUT OF SYNC</text>
+      <text x="50" y="606">02 / TRAIN BOTH ON THE SAME TASK ATTEMPT</text>
       <text x="50" y="1076">03 / RESULTS</text>
     </g>
-    <path d="M232 421h478 M235 601h475 M180 1071h530" fill="none" stroke="#505758"/>
+    <path d="M552 421h158 M458 601h252 M180 1071h530" fill="none" stroke="#505758"/>
     <g fill="#d0d6d6" font-size="18">
-      <text x="50" y="465">When both model weights and the harness need to improve,</text>
-      <text x="50" y="492">naive alternating training can lead to performance collapse.</text>
+      <text x="50" y="453">To improve both, a simple approach is to freeze the harness and</text>
+      <text x="50" y="478">train the model, then switch. Each adapts to a partner that changes</text>
+      <text x="50" y="503">in the next phase. Their performance together can collapse.</text>
     </g>
     <text x="50" y="547" fill="#fff" font-size="29" font-weight="700">83.0% &#8594; 90.5% &#8594; <tspan fill="#ffb5a8">31.5%</tspan></text>
     <text x="397" y="545" fill="#d0d6d6" font-size="15">ALFWorld / long-phase alternating training</text>
 
     <g fill="#d0d6d6" font-size="18">
-      <text x="50" y="645">JoMoHa mitigates this mismatch by training the Engineer and</text>
-      <text x="50" y="672">Solver on the same task attempt, with separate critics that</text>
-      <text x="50" y="699">account for the conditions under which they worked together.</text>
+      <text x="50" y="637">The Engineer writes a harness. The Solver uses it to do the task.</text>
+      <text x="50" y="661">Both update from that run's reward instead of taking turns.</text>
+      <text x="50" y="685">Each has its own critic: one accounts for the Solver using the</text>
+      <text x="50" y="709">code, the other for the harness guiding the Solver's actions.</text>
     </g>
     <rect x="50" y="725" width="660" height="302" rx="6" fill="#fff"/>
     <image href="overview.png" x="86" y="728" width="588" height="296"/>
