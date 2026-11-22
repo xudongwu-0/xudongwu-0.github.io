@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-11-22T12:26:23.745Z",
+  "generated_at": "2026-11-22T14:47:36.646Z",
   "submissions": [
     {
       "number": 1,
@@ -9013,6 +9013,90 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 399,
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 400,
+      "author": "KokoNAa",
+      "student_id": "3036802595",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/400",
+      "project": "mp3",
+      "score": 81.66666666666667,
+      "code_url": null,
+      "checkpoint_url": null,
+      "correct": 196,
+      "n": 240,
+      "model_kind": "report",
+      "score_sha256": "ecbd75349f0e18b4960c9162a6264616ff7c47f485e587b5e799a8ec8563c7d6",
+      "predictions_sha256": "a086c08392ede2296c2677c96f55348e0071823e125a899153047871d1e557e3",
+      "benchmark": {
+        "protocol": "dase7506-sql-repair-v1",
+        "benchmark": "spider-sql-repair-public-evaluation-v3",
+        "manifest_sha256": "bf7a517249ebe31b9cad8cbf5d6598fde98316d89f9aa1172cae3ad83289a6bc",
+        "bank_sha256": "598b1a072a47cdcf7308dc5646ae2bffd356390ab8df533510b69f2c884d712c",
+        "references_sha256": "8be5f2746ee324d6b4b880dd84a2f8de56fa540af08e93842c0476adec581506",
+        "scorer_sha256": "87870af26173fbe6d8994e4de179fb272ef1fadf7dcaafc2e7b4c814c61ec95b",
+        "executor_sha256": "4ecc3839728d68bd83f0d2a52cdd8392fd76dbaec3e54a19422118dee587b471"
+      },
+      "model": {
+        "kind": "report",
+        "has_adapter": true
+      },
+      "artifact_status": "received",
+      "status": "self-reported",
+      "created_at": "2026-11-22T12:44:09Z",
+      "signature": "[\"mp3\",81.66666666666667,null,null,\"3036802595\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"AF9cy/KpROK9ryfZjVvVSExwoggSuR034NkY7ebXxKHVX0zu/3v9TqtykRq3ObSjnLXcqfhUJjbFTdx+q/pbQ10tSkOuajiRMwpDa99eXGpssxTuYktIkTygKtYBe1BI/pmBKcTajiOm9Uh3l4skbAnuKRmLogYiA8KW3iBMvxXkVkbqOYESUYEHmd2JwTpt+bDfb3Ow8mpr/6cNOFZZAt7GR2A7EJ7kUPFQ4F8XMHmWjH3NuJ8rdiqbj9qDwIbOECCAemDwJvFXiVH8bArRvfRQ6L1hMIcmOQZbO2FEeh0RpgOq25q//aCNseI0gyvJkSGJxlaK/SfiX/PACQhuh7VnI52q7RTtVZ/xs893tsHTjLpVo8flrF8Qu07qFBtgRc+siFC3vhCOi0UTo6Xw7YTbg9n0pm07lPHxFwIg2EBIzbj0/u7pPK9PZMEilWhZZf3dmKG47w0WS8FDBHlVwP/eb9Y0p8xK6ZPHlB5ln6OTde5otqm20u9I8o1j+AwT\",\"iv\":\"qIFY1hJBgmop3ENF\",\"ciphertext\":\"+3xgofZunqSmv/u1ikJOdCfBtHhsljkTyZTU1pxn9EPMSdu9mLWQrH14ixGiYA+5QWiuN0d/tI2MqL1NKccj15CYXOF08dFAVWhcO5n6XMBHIEU2SCX6K/jiU4fWp66K6oOta2abXkTBs85rEbMwBSi7MMxJZImuy/RhWLO9wjmIzg9DAhXdO073NVjT7Ia8bofFqRRnVWijwKqBCyFuPPNyUBm1atuaAZGITvGM4AMdSFnGknSxvSL5pPN+2rYOyTHT8xLVxYmCRP7qS5qSeNYFncMSV6qTSVeDQToB/jkn6gM8dwHUuvtOaZU3RD6MWX0u0VBAOhsUB5P43AxNnIpI0vqWchMHyzoC+bJ/X104FipMRyibGYL3b6ZZNnoZQJ8K/tqMxzvDV8toNTSdumXg4lOpbRXb/JxaoMAtNO1pomTSVUZM1Kr5rdldTkD/syArpn8bNqvvSoCD60lWOw==\"},{\"correct\":196,\"n\":240,\"score_sha256\":\"ecbd75349f0e18b4960c9162a6264616ff7c47f485e587b5e799a8ec8563c7d6\",\"predictions_sha256\":\"a086c08392ede2296c2677c96f55348e0071823e125a899153047871d1e557e3\",\"benchmark\":{\"protocol\":\"dase7506-sql-repair-v1\",\"benchmark\":\"spider-sql-repair-public-evaluation-v3\",\"manifest_sha256\":\"bf7a517249ebe31b9cad8cbf5d6598fde98316d89f9aa1172cae3ad83289a6bc\",\"bank_sha256\":\"598b1a072a47cdcf7308dc5646ae2bffd356390ab8df533510b69f2c884d712c\",\"references_sha256\":\"8be5f2746ee324d6b4b880dd84a2f8de56fa540af08e93842c0476adec581506\",\"scorer_sha256\":\"87870af26173fbe6d8994e4de179fb272ef1fadf7dcaafc2e7b4c814c61ec95b\",\"executor_sha256\":\"4ecc3839728d68bd83f0d2a52cdd8392fd76dbaec3e54a19422118dee587b471\"},\"model\":{\"kind\":\"report\",\"has_adapter\":true}}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 400,
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 401,
+      "author": "JINWEI-1031",
+      "student_id": "3036708414",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/401",
+      "project": "mp3",
+      "score": 82.08333333333333,
+      "code_url": null,
+      "checkpoint_url": null,
+      "correct": 197,
+      "n": 240,
+      "model_kind": "report",
+      "score_sha256": "c1050c3448e25dae6b05e27376053552e9a8c3614d3b72aea9cb116b29093ba3",
+      "predictions_sha256": "9da23f16fb1d651cd1b9336ab5a799603e8dfee1eaa2bbbcf20a178fc0a1700a",
+      "benchmark": {
+        "protocol": "dase7506-sql-repair-v1",
+        "benchmark": "spider-sql-repair-public-evaluation-v3",
+        "manifest_sha256": "bf7a517249ebe31b9cad8cbf5d6598fde98316d89f9aa1172cae3ad83289a6bc",
+        "bank_sha256": "598b1a072a47cdcf7308dc5646ae2bffd356390ab8df533510b69f2c884d712c",
+        "references_sha256": "8be5f2746ee324d6b4b880dd84a2f8de56fa540af08e93842c0476adec581506",
+        "scorer_sha256": "87870af26173fbe6d8994e4de179fb272ef1fadf7dcaafc2e7b4c814c61ec95b",
+        "executor_sha256": "4ecc3839728d68bd83f0d2a52cdd8392fd76dbaec3e54a19422118dee587b471"
+      },
+      "model": {
+        "kind": "report",
+        "has_adapter": true
+      },
+      "artifact_status": "received",
+      "status": "self-reported",
+      "created_at": "2026-11-22T14:47:15Z",
+      "signature": "[\"mp3\",82.08333333333333,null,null,\"3036708414\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"I0a3K5DI9IcJNFMS984JebI4GmTUIqfr+/5D9KIV9t3A0pS2fX5EVOgPNrvtz0yGLOYmgR4s+3XZsTv5GMhsjUs4loFVhhrdFqE3JrrN4DfDFg7qV3xKT5gb8441nY/8hcnjDwWP7w/MqJ6uy5MiPj48KK27xc/OQuH5yYnDqH/HPp3+AjhLYJYxtqVFAYzVW8xnGIZj5aUv3NKObUOFVqn+I2XJmwRd+P9NM4dmlbiwTXVYUJcfIGfXDBBt+zisxuTFuLw8nvLcnbCT55/9+T7R4JcdhbSqevgHnPpE4+QZnPMKOzV0/BqKoWjwBTaadY7e9qtcKLJR6U3F5Yfi/amGEGXK6M+USyCUlTuF+r+U5W5Z49Fk06K/UU8psz5RrfMyeMtcKwPDRk2sPRRsEt9PRuAWRAXkDkfVA/qc8zptBcKNIK8fJbJcHnyBPXnbMzeRruHiu8YoHE97MFeKkdgmoPlB0pZ38la7ir0HMbuPtzN4TUIcCdNaJX5xSKtb\",\"iv\":\"ZmPKCgVUFGf6MbJT\",\"ciphertext\":\"ai6tu+GX3kvj3iibUZfmnU9LAsKvLoswjcNpeAcyua+dxzhPKrOoTMMv0ZTcv/pHdXmqcAGrtFnaPtUSbUO1hBjqLQwcj0O1LhX7XNz4ZEyVyP/1setbNTTaSYkTTecKT/BOkSpNHgHYt5gMlG/ePvzZJi6Z5TLTZ1xtdkpOyOmRZmaKZy2BN1hwKemQcT7RMcqR3/ViOVQTwPgPnSN1yYDr4z1B8/uf2tiAJISsAMtOMj66sJKi9Nxc8Elb4yAKa/BSCK7dq37WW5sVpKsU/aYW49LW75La0dn7NpHwxnNN7AzXYZbL9Bhyo4ms1OmOH4FDfPws5FXs+HBu5rAdyvASj6NTlDM6Hqd/jWGnXvCS0ndEU5Q4U3FDlDi9RLlEwFTpqN48UaaIxFw4+WXtesRE\"},{\"correct\":197,\"n\":240,\"score_sha256\":\"c1050c3448e25dae6b05e27376053552e9a8c3614d3b72aea9cb116b29093ba3\",\"predictions_sha256\":\"9da23f16fb1d651cd1b9336ab5a799603e8dfee1eaa2bbbcf20a178fc0a1700a\",\"benchmark\":{\"protocol\":\"dase7506-sql-repair-v1\",\"benchmark\":\"spider-sql-repair-public-evaluation-v3\",\"manifest_sha256\":\"bf7a517249ebe31b9cad8cbf5d6598fde98316d89f9aa1172cae3ad83289a6bc\",\"bank_sha256\":\"598b1a072a47cdcf7308dc5646ae2bffd356390ab8df533510b69f2c884d712c\",\"references_sha256\":\"8be5f2746ee324d6b4b880dd84a2f8de56fa540af08e93842c0476adec581506\",\"scorer_sha256\":\"87870af26173fbe6d8994e4de179fb272ef1fadf7dcaafc2e7b4c814c61ec95b\",\"executor_sha256\":\"4ecc3839728d68bd83f0d2a52cdd8392fd76dbaec3e54a19422118dee587b471\"},\"model\":{\"kind\":\"report\",\"has_adapter\":true}}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 401,
       "artifact_access": {
         "code": null,
         "checkpoint": null
