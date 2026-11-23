@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-11-23T15:13:40.579Z",
+  "generated_at": "2026-11-23T16:50:40.842Z",
   "submissions": [
     {
       "number": 1,
@@ -9307,6 +9307,48 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 406,
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 407,
+      "author": "Lmy0415",
+      "student_id": "3035947946",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/407",
+      "project": "mp3",
+      "score": 80,
+      "code_url": null,
+      "checkpoint_url": null,
+      "correct": 192,
+      "n": 240,
+      "model_kind": "report",
+      "score_sha256": "46153af18fb3d5a8acf37cde3219035531c8a1cf1bb8353e94ef90cb9a89f858",
+      "predictions_sha256": "383c54ca6d2bb63710d0e45cd17748da22143254ae314eb6100fd25ec9c5691f",
+      "benchmark": {
+        "protocol": "dase7506-sql-repair-v1",
+        "benchmark": "spider-sql-repair-public-evaluation-v3",
+        "manifest_sha256": "bf7a517249ebe31b9cad8cbf5d6598fde98316d89f9aa1172cae3ad83289a6bc",
+        "bank_sha256": "598b1a072a47cdcf7308dc5646ae2bffd356390ab8df533510b69f2c884d712c",
+        "references_sha256": "8be5f2746ee324d6b4b880dd84a2f8de56fa540af08e93842c0476adec581506",
+        "scorer_sha256": "87870af26173fbe6d8994e4de179fb272ef1fadf7dcaafc2e7b4c814c61ec95b",
+        "executor_sha256": "4ecc3839728d68bd83f0d2a52cdd8392fd76dbaec3e54a19422118dee587b471"
+      },
+      "model": {
+        "kind": "report",
+        "has_adapter": true
+      },
+      "artifact_status": "received",
+      "status": "self-reported",
+      "created_at": "2026-11-23T16:50:23Z",
+      "signature": "[\"mp3\",80,null,null,\"3035947946\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"tKkjNUKvn1syYoU2O2HYfmeAAF40vM07N0Fa3jFbnGB6dosiWEsH0qNc1U+p7B7c6gw1a+NuaTT2cjrDtILWtFcWQPsKI7T/vKQKE78NAaZmG0EAogAkx2Nx9LKRmF9D55THn1kNPAommFRZyw/1cQJOl4XarIek77rlQd7yq/4dhUKaAgqsd2Aphlks1SJHDnXcigmcWc/TlOGns3cJX3masZkGpd0oRAhfm/vfvJZ8NfoHh+SGlOK3z5igbAjsWxhv9Q8QF7O64oj3Kr7wPm9g6Oq0vhqhD1toXbr6Zv8k6UhuIJxKi7hkpemQAmWzvYMnV+eUOvI+fRI2fOO3vWrCNJGMNoE3gSqYveP1vA58F0EQy8DryWJRBjnui4mXmrvOPzJ3fG/ts/X09CO91ptDuslwpfAIRd/dMgZNEK64h8p2OhAstVhpy9JUu41NT+YHx29jxpvHvpQhZbWbuC9s8pmpiA+9rWvJbIrrVFmFgAN6aXViLUMHnBSJCaeF\",\"iv\":\"vn4WXTz1nDCbGrj7\",\"ciphertext\":\"cEOs5yrE04peF2E7qMqGopLWcMuEyyJjr9g9D98P8dP4/KE1D+LFpxuP0RpjOqOUuDY8U4wc1r3/oxzyZFC3FuJZ9Xv60MDdWF/Zq38FXSsHPsDXCdeJ4ywWQ5019bpk9CrcpyS0zDFK5S4W8rEE88quBKWz3EMkX2XgxoJujdw5QbFaOJ5BgUkEPmvSvZ6E5hmydNJDVWDPFcc+kVXWO/1rjJHNL+ucVhOb+BqhAKZV/Cx33/TEAejyGaqgl3WkeOBDIgqolYZ63dOHGK2j6yP21Whp6S0oREV0jiErlWexaI8OEzKNv+5aW1D7DUOtRDl4npkq9owfzhQWCW1RmPkk2lS0b9mgHf8i0MrHnmUKq/cvIClHxmYr/V3zg4hvV3z/aTfgr42v2ib8xu6hOh5M2GVmbVVRXjPIqOmPQ4RboaTB9xrTQ4kOXv9Q74KJglnsw4d8UBKjwm+tW3BzXgwBCdwLAoOS976FwVoTK2bmNMdk1b9ePrHR3bsG7df2340=\"},{\"correct\":192,\"n\":240,\"score_sha256\":\"46153af18fb3d5a8acf37cde3219035531c8a1cf1bb8353e94ef90cb9a89f858\",\"predictions_sha256\":\"383c54ca6d2bb63710d0e45cd17748da22143254ae314eb6100fd25ec9c5691f\",\"benchmark\":{\"protocol\":\"dase7506-sql-repair-v1\",\"benchmark\":\"spider-sql-repair-public-evaluation-v3\",\"manifest_sha256\":\"bf7a517249ebe31b9cad8cbf5d6598fde98316d89f9aa1172cae3ad83289a6bc\",\"bank_sha256\":\"598b1a072a47cdcf7308dc5646ae2bffd356390ab8df533510b69f2c884d712c\",\"references_sha256\":\"8be5f2746ee324d6b4b880dd84a2f8de56fa540af08e93842c0476adec581506\",\"scorer_sha256\":\"87870af26173fbe6d8994e4de179fb272ef1fadf7dcaafc2e7b4c814c61ec95b\",\"executor_sha256\":\"4ecc3839728d68bd83f0d2a52cdd8392fd76dbaec3e54a19422118dee587b471\"},\"model\":{\"kind\":\"report\",\"has_adapter\":true}}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 407,
       "artifact_access": {
         "code": null,
         "checkpoint": null
