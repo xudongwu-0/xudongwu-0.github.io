@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-11-26T21:13:14.952Z",
+  "generated_at": "2026-11-27T06:32:12.746Z",
   "submissions": [
     {
       "number": 1,
@@ -10315,6 +10315,48 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 430,
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 431,
+      "author": "Henrystation",
+      "student_id": "3036747408",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/431",
+      "project": "mp3",
+      "score": 82.5,
+      "code_url": null,
+      "checkpoint_url": null,
+      "correct": 198,
+      "n": 240,
+      "model_kind": "report",
+      "score_sha256": "974635946720c9032390dc99d05d351d739162e3581cb39444b431ffc175c8ea",
+      "predictions_sha256": "9f2c7baa2d9aecb92e829f02ca5d3bc8710019b7678f1f7839bbf11e2115f0bc",
+      "benchmark": {
+        "protocol": "dase7506-sql-repair-v1",
+        "benchmark": "spider-sql-repair-public-evaluation-v3",
+        "manifest_sha256": "bf7a517249ebe31b9cad8cbf5d6598fde98316d89f9aa1172cae3ad83289a6bc",
+        "bank_sha256": "598b1a072a47cdcf7308dc5646ae2bffd356390ab8df533510b69f2c884d712c",
+        "references_sha256": "8be5f2746ee324d6b4b880dd84a2f8de56fa540af08e93842c0476adec581506",
+        "scorer_sha256": "87870af26173fbe6d8994e4de179fb272ef1fadf7dcaafc2e7b4c814c61ec95b",
+        "executor_sha256": "4ecc3839728d68bd83f0d2a52cdd8392fd76dbaec3e54a19422118dee587b471"
+      },
+      "model": {
+        "kind": "report",
+        "has_adapter": true
+      },
+      "artifact_status": "received",
+      "status": "self-reported",
+      "created_at": "2026-11-27T06:31:58Z",
+      "signature": "[\"mp3\",82.5,null,null,\"3036747408\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"GR7RWf7qOdH9JOgyWITCUFNXyvFJOLb8azx+/4ZoDM1HvYIj5ot2DRRom7d7Fcjv//aatvwFoKXjeULRl0G9/PsofXmlWGDSW3tBbwZxt4z/6lMF/uyAp++VZY3z/UdZu5SiC/OOF5F0XRyFRdCx28q3HEWOnKmLUee3dFrIX2OuUfTv/TrnhvK2etZ01+AekZRx9hcim7N5UNO20XwkPjnxQ0+WeXZCrwyp1F82pC7B+oWq3KomKRlwHXV/DiL80dfII0AhgsI3X5O8xscVo17T+0BqtMfdmYVx+h0fHcQ+UFZi6lxFxDTm9mYJcgDpwVxXxRlDoUvFysFsVaCZvglXN6GGd7M0ddS4oBImJgUPlyATqrx1pN448498bN9XoYbmqoOC7qHoxY9Az2OgngZYU5mjqrflj7GF5ONNwm5u6X/QbajJXJoo/tyh3gGWFx3AWllz2/PRbUqQZTJKaL+a5rFLIbEFjuzDjjJonAEQjF6jPpIpU3/kankM1QIN\",\"iv\":\"en0f5AiSDnzdaHoH\",\"ciphertext\":\"jfmSMeAN3smGuTUlxAUQDSsqNxVegBHChh4VAhR5jbcr0n6sAuiIVXkOuGAbmX0iVH4i5dTdENSJM6OQfoSb6Af345MT0jbBj9mV9EiaYrTzZRsWZdxhQO/ZOLYDW011VLAbbO17R+CVsPoxjf47p+Oitk9WIo7XcBobM5/AyBgV7c4d3emKYmyhFMyXymTgv839WXxiffUSk+GJVqemMqfASO8oNarbhAaYcXhxHK7RKRdd4XwmJVdNRXL2Vhg6wV+0/HmK1YrtkTXYu1JHez6ST9T28GuVaPJlsiUiH/P4TB41TPpJnA5xY0fDixF+CAIEoHJGRU2F28/Ew9Ag29ULZO04PeKJmlqxxOhci3L7MdqFTq8hDW0/IjOHtEgA0R/BoH2nZORnWa7XlnWsueWcwFQBcJf0+AIydVB6lfpDEsjg+/eh+5yZmEsdq7ss+by1l4n6ij2nzH0DpN4nilnaPxrzPBhiWYUPeLKq0bxLh4DvAqSFPg3ve0m+RTgu8ncuY/iBSXZPn4JiGqHCRv5TmzWQXJn03VZu3+BybkA8YvrWR/BrTsVXnRNyDA==\"},{\"correct\":198,\"n\":240,\"score_sha256\":\"974635946720c9032390dc99d05d351d739162e3581cb39444b431ffc175c8ea\",\"predictions_sha256\":\"9f2c7baa2d9aecb92e829f02ca5d3bc8710019b7678f1f7839bbf11e2115f0bc\",\"benchmark\":{\"protocol\":\"dase7506-sql-repair-v1\",\"benchmark\":\"spider-sql-repair-public-evaluation-v3\",\"manifest_sha256\":\"bf7a517249ebe31b9cad8cbf5d6598fde98316d89f9aa1172cae3ad83289a6bc\",\"bank_sha256\":\"598b1a072a47cdcf7308dc5646ae2bffd356390ab8df533510b69f2c884d712c\",\"references_sha256\":\"8be5f2746ee324d6b4b880dd84a2f8de56fa540af08e93842c0476adec581506\",\"scorer_sha256\":\"87870af26173fbe6d8994e4de179fb272ef1fadf7dcaafc2e7b4c814c61ec95b\",\"executor_sha256\":\"4ecc3839728d68bd83f0d2a52cdd8392fd76dbaec3e54a19422118dee587b471\"},\"model\":{\"kind\":\"report\",\"has_adapter\":true}}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 431,
       "artifact_access": {
         "code": null,
         "checkpoint": null
