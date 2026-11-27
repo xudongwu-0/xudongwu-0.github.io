@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-11-27T11:31:51.923Z",
+  "generated_at": "2026-11-27T15:06:32.129Z",
   "submissions": [
     {
       "number": 1,
@@ -10567,6 +10567,48 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 436,
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 437,
+      "author": "laier029",
+      "student_id": "3036779621",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/437",
+      "project": "mp3",
+      "score": 81.25,
+      "code_url": null,
+      "checkpoint_url": null,
+      "correct": 195,
+      "n": 240,
+      "model_kind": "report",
+      "score_sha256": "fb68ac3140e81207b404bee2abd5b4d0fb0a858cc04df5c8bd946b5366995394",
+      "predictions_sha256": "fdca4c0284bea8394e9ada70de5d524fd81a9777a27727230113eb90192de792",
+      "benchmark": {
+        "protocol": "dase7506-sql-repair-v1",
+        "benchmark": "spider-sql-repair-public-evaluation-v3",
+        "manifest_sha256": "bf7a517249ebe31b9cad8cbf5d6598fde98316d89f9aa1172cae3ad83289a6bc",
+        "bank_sha256": "598b1a072a47cdcf7308dc5646ae2bffd356390ab8df533510b69f2c884d712c",
+        "references_sha256": "8be5f2746ee324d6b4b880dd84a2f8de56fa540af08e93842c0476adec581506",
+        "scorer_sha256": "87870af26173fbe6d8994e4de179fb272ef1fadf7dcaafc2e7b4c814c61ec95b",
+        "executor_sha256": "4ecc3839728d68bd83f0d2a52cdd8392fd76dbaec3e54a19422118dee587b471"
+      },
+      "model": {
+        "kind": "report",
+        "has_adapter": true
+      },
+      "artifact_status": "received",
+      "status": "self-reported",
+      "created_at": "2026-11-27T15:06:15Z",
+      "signature": "[\"mp3\",81.25,null,null,\"3036779621\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"Jw/kt3Yfx0LjIzURZnQNgdEWHs5WtotpFdRWero/Jh+tVXIT3sz9r2AHpsIJKInf2yBZEPzfKyoW6pyObIeRaK/vrP4Yvu4R1aQQPy7xvROT50q4wVScwt8/V8tXEXKn7YStEBuvq+SKh4EUSDvQ+I6qlL4ow2s/nV+HKsfLJOMk6dkFL/fgJzTqfr56vJPpDaJN1+bZuiHKj6YafAXW8Oal4AjGuwfv6cFHWpWqpu4RBoMAw2qxkB0OrsZoKKKSya9M03BBtELMCphu/0WpUH9JsTYBw25OKT3QeKFYmPswCrzhf19NiE5gmF2Mu2B/vHrRmKnqNuJY1ArsaFKuIqrEY/9qfa137yRdZ+zvwAsZ2QpTNRHtmFDamvwYOahb2TWh0/fO0VzVsWRM9YCqg533duYwEwze8Gp0TPfQ7PcSPx1VQZOS0OgzrXTB1OIivj3mNZvlgcO4AnjnjWH/Y7J1WErm4TgMPFL5KTTuGlxPb8+ISADhTF3ZiHJP76Ch\",\"iv\":\"haNj7kG1RhLUni/L\",\"ciphertext\":\"gNnh8o05vEs8AO7NsZMdyq+3GBcFovtP+aFaqpllrl7CuvcbnaE+qHwExHniOQLSwUD3dOX8ayEA60lKZwn5NEaZ+9szU1nefgLUoTrzZjevefOVaGaBt+ShbmxmvkCcJ/KUmG1ZijsGK7qDANKZ8QJWMlVgMAyXQlfEDfzA3/hqeXEXkG0X1KAi7rcI+cvJFlQlrxyAEHC+Z5DruH2X8X6GYnl6Jdz7ma1WppSdL7fOtmnm5E7UKQ/SnzmiPTZKl+JEVsfEl/jFSDCxq/FxotDomWH7QF6dtwnQQcvZwHhkWzoJNj3bCf+QEJYUgonVbzsLCLxA6fcBzpbdxHHQPsMiUHsoIsOuSzQ8O9aKpCbxn4yPX8AvBtTzdeucxOXZ/yhR5F9mljmEHme54yr0TFRDf17MSwpaaPwUrY8fUgCD1rycyKFloaXe/Kjl16s4J42K8U/lAF8CzpLm6vks5jtZD5V2TnDcT+w5EtgTE5HJhi8L88I7mw==\"},{\"correct\":195,\"n\":240,\"score_sha256\":\"fb68ac3140e81207b404bee2abd5b4d0fb0a858cc04df5c8bd946b5366995394\",\"predictions_sha256\":\"fdca4c0284bea8394e9ada70de5d524fd81a9777a27727230113eb90192de792\",\"benchmark\":{\"protocol\":\"dase7506-sql-repair-v1\",\"benchmark\":\"spider-sql-repair-public-evaluation-v3\",\"manifest_sha256\":\"bf7a517249ebe31b9cad8cbf5d6598fde98316d89f9aa1172cae3ad83289a6bc\",\"bank_sha256\":\"598b1a072a47cdcf7308dc5646ae2bffd356390ab8df533510b69f2c884d712c\",\"references_sha256\":\"8be5f2746ee324d6b4b880dd84a2f8de56fa540af08e93842c0476adec581506\",\"scorer_sha256\":\"87870af26173fbe6d8994e4de179fb272ef1fadf7dcaafc2e7b4c814c61ec95b\",\"executor_sha256\":\"4ecc3839728d68bd83f0d2a52cdd8392fd76dbaec3e54a19422118dee587b471\"},\"model\":{\"kind\":\"report\",\"has_adapter\":true}}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 437,
       "artifact_access": {
         "code": null,
         "checkpoint": null
