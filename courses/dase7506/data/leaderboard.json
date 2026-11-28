@@ -1,7 +1,7 @@
 {
   "schema": "dase7506/board-v1",
   "protocol": "7506-submissions-v1",
-  "generated_at": "2026-11-28T03:22:25.051Z",
+  "generated_at": "2026-11-28T07:58:15.114Z",
   "submissions": [
     {
       "number": 1,
@@ -10777,6 +10777,48 @@
       "edited_after_review": false,
       "review_labels": [],
       "artifact_issue": 441,
+      "artifact_access": {
+        "code": null,
+        "checkpoint": null
+      },
+      "review_request_total": 0,
+      "review_request_count": 0,
+      "review_flag": false
+    },
+    {
+      "number": 442,
+      "author": "jeffrey032420-wq",
+      "student_id": "3036798641",
+      "url": "https://github.com/xudongwu-0/xudongwu-0.github.io/issues/442",
+      "project": "mp3",
+      "score": 81.25,
+      "code_url": null,
+      "checkpoint_url": null,
+      "correct": 195,
+      "n": 240,
+      "model_kind": "report",
+      "score_sha256": "4e7a6cc3f9fab80afd9fa33f6998503217d04934a2026b4bc856da00e4360c1d",
+      "predictions_sha256": "c1d374b6dbe56f05209019017eb0e65f488abd71be7a780875bdb3e4895e5b95",
+      "benchmark": {
+        "protocol": "dase7506-sql-repair-v1",
+        "benchmark": "spider-sql-repair-public-evaluation-v3",
+        "manifest_sha256": "bf7a517249ebe31b9cad8cbf5d6598fde98316d89f9aa1172cae3ad83289a6bc",
+        "bank_sha256": "598b1a072a47cdcf7308dc5646ae2bffd356390ab8df533510b69f2c884d712c",
+        "references_sha256": "8be5f2746ee324d6b4b880dd84a2f8de56fa540af08e93842c0476adec581506",
+        "scorer_sha256": "87870af26173fbe6d8994e4de179fb272ef1fadf7dcaafc2e7b4c814c61ec95b",
+        "executor_sha256": "4ecc3839728d68bd83f0d2a52cdd8392fd76dbaec3e54a19422118dee587b471"
+      },
+      "model": {
+        "kind": "report",
+        "has_adapter": true
+      },
+      "artifact_status": "received",
+      "status": "self-reported",
+      "created_at": "2026-11-28T07:58:02Z",
+      "signature": "[\"mp3\",81.25,null,null,\"3036798641\",{\"algorithm\":\"RSA-OAEP-256+AES-256-GCM\",\"key_id\":\"7506-2026-v1\",\"wrapped_key\":\"rHnr9a93onN0NFhtQJ3HgV/ogKwjJ0rivp3EfunJdpdtclJrM7Ovw4yK9xXPCCYXJlWdOePPqfjFVgKRIyj4vYfIs43ObeUO9HkfgMpMCE58rZ/HxfjC9VveMMCuypg/K3tF9Ne6YhW8s/EZmB5KJgnR+isBiQwR2qQ/t1IJU/KSE5G9f0KLidQPj2tejG6a6F8ZE12JcaBmZfSygpljYFrQZxSZe5JoH6LjlNwoLaQcB32dCCU60VzUnHYv+6nh6v8LQqMG2N0W6byIG0HhPWDteJ6c/x1jtQ6l1ZfdnDygvzVCKMJJoU5rWhi/wHmMvMlgzCakAzQbfF0J3dmD4Fpo3+FTXlWawmZlhFP3lT2KnDfmEPjJIxEm5ks0Iixp645b39gowXR75QOqZ6kcfayFSqGpzkmkunAqXfCHpQpWzJBHtLsq1KRM8qVsAT0NDi9ioQzOEcg6gxBuRk3NKoFD691JQ0JBI++FIdwuevs+It/DBilKyaXoRvwZ8oup\",\"iv\":\"hKX6k2b5PU7nhsPs\",\"ciphertext\":\"uE+tuKe/+SL8FRgkLQ5uwj8hq4cQ3U1xycchxH4aLXhqnb8ZZmSY3x1TCrOpxXJZFUAUw3bFRp00uHtCdxvRqxObPbd6C9Clwj9ZsL/CwBk5bRKTtovMucGerqJn4zJA4dyc6QmehrF52kHbHPbQwHLWEbgrBQIveOLdqNc5hcSJGJre3lD+oGOH3a9nhlOtqI/wAiGWYhHILQVRdH0/S7job407xi0tTYa6EvYMl7EknRP0PmnnCJi0VqaJxR2dN3TEv7RhNojpunAklqMNnw1k9UDh2EsRzUdzafUZgAAD2BYOY1ZA59BUmsPDXztEs5FGjM3ynzYkrXWDFlZo3BDdPbJNr/ug6wFotbybKteGs2XfTRzJOdKIUA/+esoIGiURR09EEBycySXLn6tSNLHJV+CnSUh1s1FiewCsdI0ww9sLshpvHHQTHSnVSwmEtdewaJ48j3hSzo5Zgpx+AAHc79EyqHfFzH175sUUqzfwasUhylpky1DYzw==\"},{\"correct\":195,\"n\":240,\"score_sha256\":\"4e7a6cc3f9fab80afd9fa33f6998503217d04934a2026b4bc856da00e4360c1d\",\"predictions_sha256\":\"c1d374b6dbe56f05209019017eb0e65f488abd71be7a780875bdb3e4895e5b95\",\"benchmark\":{\"protocol\":\"dase7506-sql-repair-v1\",\"benchmark\":\"spider-sql-repair-public-evaluation-v3\",\"manifest_sha256\":\"bf7a517249ebe31b9cad8cbf5d6598fde98316d89f9aa1172cae3ad83289a6bc\",\"bank_sha256\":\"598b1a072a47cdcf7308dc5646ae2bffd356390ab8df533510b69f2c884d712c\",\"references_sha256\":\"8be5f2746ee324d6b4b880dd84a2f8de56fa540af08e93842c0476adec581506\",\"scorer_sha256\":\"87870af26173fbe6d8994e4de179fb272ef1fadf7dcaafc2e7b4c814c61ec95b\",\"executor_sha256\":\"4ecc3839728d68bd83f0d2a52cdd8392fd76dbaec3e54a19422118dee587b471\"},\"model\":{\"kind\":\"report\",\"has_adapter\":true}}]",
+      "edited_after_review": false,
+      "review_labels": [],
+      "artifact_issue": 442,
       "artifact_access": {
         "code": null,
         "checkpoint": null
